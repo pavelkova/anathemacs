@@ -1,0 +1,20 @@
+# ignore temp, backup, autosave, cache
+*~
+[#]*[#]
+.\#*
+auto-save-list
+backups
+.cache
+
+
+# ignore installed packages
+elpa
+network-security.data
+
+# ignore project files
+.projectile
+TODO.org
+
+# ignore secrets
+secrets
+
