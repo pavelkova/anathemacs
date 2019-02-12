@@ -6,20 +6,58 @@
 ;;
 
 ;;; Code:
+(setq use-package-always-ensure t
+      ;; startup
+      inhibit-splash-screen t
+      inhibit-startup-message t
+      ;; initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
+      ;; autosave
+      create-lockfiles nil
+      backup-by-copying t
+      ;; backup-directory-alist `((".*" . ,temporary-file-directory))
+      ;; auto-save-file-name-transforms `((".*" . ,temporary-file-directory t))
+      delete-old-versions t
+      kept-old-versions 2
+      kept-new-versions 4
+      version-control t
+      global-git-commit-mode t
+      )
 
-(use-package auto-yasnippet :ensure t)
-(use-package better-defaults :ensure t)
-(use-package dashboard :ensure t)
-(use-package define-word :ensure t)
-(use-package eyebrowse :ensure t)
-(use-package general :ensure t)
-(use-package magit :ensure t)
-(use-package multiple-cursors :ensure t)
-(use-package neotree :ensure t)
-(use-package org-download :ensure t)
-(use-package pdf-tools :ensure t)
-(use-package projectile :ensure t)
-(use-package smartparens :ensure t)
+(use-package auto-yasnippet)
+
+(use-package better-defaults)
+
+(use-package dashboard
+  :init
+  (dashboard-setup-startup-hook))
+
+(use-package define-word)
+
+(use-package eyebrowse)
+
+(use-package general
+  :config
+  (general-create-definer cc-leader-def
+    :prefix "C-c")
+  (general-create-definer hx-leader-def
+    :prefix "H-x")
+  )
+
+(use-package magit)
+
+(use-package multiple-cursors)
+
+(use-package neotree)
+
+(use-package org-download)
+
+(use-package pdf-tools)
+
+(use-package projectile)
+
+(use-package smartparens)
+
+(use-package which-key)
 
 (provide 'ana-base)
 
