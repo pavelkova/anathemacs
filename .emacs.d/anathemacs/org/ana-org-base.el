@@ -11,19 +11,34 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package calfw
-  :config
-  (setq cfw:fchar-junction ?┼
-        cfw:fchar-vertical-line ?│
-        cfw:fchar-horizontal-line ?─
-        cfw:fchar-left-junction ?├
-        cfw:fchar-right-junction ?┤
-        cfw:fchar-top-junction ?┬
-        cfw:fchar-top-left-corner ?┌
-        cfw:fchar-top-right-corner ?┐)
-  (setq cfw:render-line-breaker 'cfw:render-line-breaker-none)
-  (setq cfw:face-item-separator-color nil)
-  )
+;; babel - language support
+(setq org-confirm-babel-evaluate nil
+      org-src-fontify-natively t
+      org-src-tab-acts-natively t)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((C          . nil)
+   (calc       . t)
+   (emacs-lisp . t)
+   (gnuplot    . t)
+   (haskell    . t)
+   (js         . t)
+   (latex      . t)
+   (lisp       . t)
+   (makefile   . nil)
+   (matlab     . t)
+   (python     . t)
+   (R          . t)
+   (restclient . nil)
+   (ruby       . t)
+   (sagemath   . nil)
+   (sass       . t)
+   (sh         . nil)
+   (shell      . t)
+   (sql        . t)
+   (translate  . nil)
+   ))
 
 (use-package calfw-org
   :after calfw
@@ -52,13 +67,13 @@
 
 (use-package org-download)
 
-(use-package org-journal
-  :config
-  (setq org-journal-dir user-journal-dir
-        org-journal-enable-agenda-integration t
-        org-extend-today-until "7:00"
-        org-journal-date-format "%d %B %Y [%A]"
-        org-journal-file-format "%Y-%m-%d.org"))
+;; (use-package org-journal
+;;   :config
+;;   (setq org-journal-dir user-journal-dir
+;;         org-journal-enable-agenda-integration t
+;;         org-extend-today-until "7:00"
+;;         org-journal-date-format "%d %B %Y [%A]"
+;;         org-journal-file-format "%Y-%m-%d.org"))
 
 (use-package org-mime)
 
@@ -129,4 +144,4 @@
 (provide 'ana-org-base)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-org-baseel ends here
+;;; ana-org-base.el ends here

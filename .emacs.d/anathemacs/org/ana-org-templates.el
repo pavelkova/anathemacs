@@ -20,9 +20,9 @@
         ("e" "EVENTO" entry
          (file user-gcal-file)
          "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
-        ("d" "DIARIO" entry
-         (file+olp+datetree user-journal-dir)
-         "* %?\nEntered on %U\n  %i\n  %a")
+        ;; ("d" "DIARIO" entry
+        ;;  (file+olp+datetree user-journal-dir)
+        ;;  "* %?\nEntered on %U\n  %i\n  %a")
         ("b" "MARCADOR" entry
          (file "notas.org")
          "* %?\n%a")))

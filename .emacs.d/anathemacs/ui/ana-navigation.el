@@ -27,7 +27,7 @@
 
 (use-package neotree
   :defer t
-  :init
+  :config
   (setq neo-window-width 32
         neo-theme 'icons
         neo-create-file-auto-open t
@@ -38,14 +38,14 @@
         neo-persist-show nil
         neo-show-hidden-files t
         neo-auto-indent-point t
-        neo-modern-sidebar t)
-  :config
+        neo-modern-sidebar t
+        projectile-switch-project-action 'neotree-projectile-actionx3)
   (general-define-key
    :keymaps 'neotree-mode-map
-   "RET" 'neotree-enter
-   "<f8>" 'neotree-toggle)
+   "RET" 'neotree-enter)
   (cc-leader-def
-   "C-p" 'neotree-project-dir))
+   "C-p" 'neotree-project-dir)
+  )
 
 (use-package spaceline
   :after powerline)

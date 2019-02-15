@@ -29,8 +29,6 @@
 
 (use-package auto-yasnippet)
 
-(use-package better-defaults)
-
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
@@ -42,29 +40,11 @@
 
 (use-package eyebrowse)
 
-(use-package general
-  :config
-  (general-create-definer cc-leader-def
-    :prefix "C-c")
-  (general-create-definer hx-leader-def
-    :prefix "H-x")
-  )
-
 (use-package magit)
-
-(use-package multiple-cursors)
-
-(use-package neotree)
 
 (use-package org-download)
 
-(use-package pdf-tools)
-
-(use-package projectile)
-
 (use-package smartparens)
-
-(use-package which-key)
 
 (provide 'ana-base)
 

@@ -13,7 +13,12 @@
 ;;  :ensure t)
 
 
-(use-package company)
+(use-package company
+  :hook
+  ('after-init-hook 'global-company-mode)
+  :config
+  (company-tng-configure-default)
+  )
 
 (use-package counsel-projectile
   :defer t
@@ -53,11 +58,17 @@
         enable-recursive-minibuffers t
         ivy-wrap t)
   (general-define-key
+   "<f6>"    'ivy-resume
    "M-x"     'counsel-M-x
    "C-s"     'swiper
-   "<f6>"    'ivy-resume
    "C-x C-f" 'counsel-find-file
    )
+
+  (general-define-key
+   :keymaps 'ivy-minibuffer-map
+   "C-j"     'ivy-next-line
+   "C-k"     'ivy-previous-line)
+
   (hx-leader-def
    "fb"  'counsel-bookmark
    "ff"  'counsel-find-file

@@ -12,9 +12,12 @@
 (eval-when-compile
   (require 'ana-base))
 
+;; functions
+
+
+
 (use-package multiple-cursors
-  :defer t
-  :config
+  :init
   (general-define-key
    "C->" 'mc/edit-beginnings-of-lines
    "C-<" 'mc/edit-ends-of-lines

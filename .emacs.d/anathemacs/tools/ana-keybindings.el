@@ -9,13 +9,22 @@
 (eval-when-compile
   (require 'ana-base))
 
-(general-define-key
- "C-s" 'swiper
- "M-x" 'counsel-M-x)
-
 (use-package which-key
   :init
   (which-key-mode))
+
+(use-package general
+  :init
+  (general-create-definer cc-leader-def
+    :prefix "C-c")
+  (general-create-definer hx-leader-def
+    :prefix "H-x")
+  )
+
+(general-define-key
+ "C-s" 'swiper
+ "M-x" 'counsel-M-x
+ "<f8>" 'neotree-toggle)
 
 (hx-leader-def
  "a" '(:ignore t :which-key "applications")
@@ -79,6 +88,9 @@
  "z," 'zoom-frm-transient-state
  "zf" 'scale-font-transient-state)
 
+(defun connect-remote ()
+  (interactive)
+  (dired "user@192.168.1.5:"))
 
 (provide 'ana-keybindings)
 

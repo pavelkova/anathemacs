@@ -50,14 +50,15 @@
 (eval-when-compile
   (require 'use-package))
 ;; init
+(require 'ana-keybindings)
 (require 'ana-constants)
 (require 'ana-base)
 ;;environments
 ;; org
 (require 'ana-org-base)
+(require 'ana-org-ui)
 ;; tools
 (require 'ana-completion)
-(require 'ana-keybindings)
 ;; ui
 (require 'ana-ui-base)
 (require 'ana-editing)
