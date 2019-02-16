@@ -23,6 +23,8 @@
    "C-<" 'mc/edit-ends-of-lines
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
+(use-package smartparens)
+
 (use-package undo-tree
   :config
   (hx-leader-def

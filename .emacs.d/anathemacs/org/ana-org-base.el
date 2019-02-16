@@ -43,8 +43,8 @@
 (use-package calfw-org
   :after calfw
   :config
-  (load-file (concat user-secrets-dir "caldav.el"))
-  (setq org-caldav-inbox (concat user-org-dir "calendario.org")
+  ;; (load-file (concat user-secrets-dir "caldav.el"))
+  (setq ;; org-caldav-inbox (concat user-org-dir "calendario.org")
         org-icalendar-timezone "North_America/New_York)"))
 
 (use-package company)

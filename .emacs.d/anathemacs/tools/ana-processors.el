@@ -14,6 +14,8 @@
 ;; spell checking
 (use-package auto-dictionary)
 
+(use-package define-word)
+
 (use-package google-translate)
 
 (provide 'ana-processors)

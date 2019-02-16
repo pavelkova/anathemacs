@@ -9,9 +9,13 @@
 (eval-when-compile
   (require 'ana-base))
 
+
 (use-package which-key
   :init
   (which-key-mode))
+
+;; Use caps key as hyper
+(define-key key-translation-map [8711] 'event-apply-hyper-modifier)
 
 (use-package general
   :init
@@ -25,6 +29,9 @@
  "C-s" 'swiper
  "M-x" 'counsel-M-x
  "<f8>" 'neotree-toggle)
+
+(cc-leader-def
+ "p" '(:ignore t :which-key "projects"))
 
 (hx-leader-def
  "a" '(:ignore t :which-key "applications")

@@ -12,6 +12,10 @@
 (eval-when-compile
   (require 'ana-base))
 
+(use-package all-the-icons-dired
+  :hook
+  (dired-mode))
+
 (defun neotree-project-dir ()
   "Open NeoTree using the git root."
   (interactive)
@@ -40,15 +44,13 @@
         neo-auto-indent-point t
         neo-modern-sidebar t
         projectile-switch-project-action 'neotree-projectile-actionx3)
-  (general-define-key
-   :keymaps 'neotree-mode-map
-   "RET" 'neotree-enter)
+  ;; (general-define-key
+  ;;  :keymaps 'neotree-mode-map
+  ;;  "RET" 'neotree-enter)
   (cc-leader-def
    "C-p" 'neotree-project-dir)
   )
 
-(use-package spaceline
-  :after powerline)
 
 (provide 'ana-navigation)
 

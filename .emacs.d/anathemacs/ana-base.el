@@ -22,12 +22,8 @@
       kept-old-versions 2
       kept-new-versions 4
       version-control t
-      global-git-commit-mode t
+      ;; global-git-commit-mode t
       )
-
-(load-theme 'spacemacs-wpgtk)
-
-(use-package auto-yasnippet)
 
 (use-package dashboard
   :config
@@ -36,15 +32,7 @@
         dashboard-startup-banner 'user-logo
         ))
 
-(use-package define-word)
-
-(use-package eyebrowse)
-
-(use-package magit)
-
-(use-package org-download)
-
-(use-package smartparens)
+;; (use-package eyebrowse)
 
 (provide 'ana-base)
 

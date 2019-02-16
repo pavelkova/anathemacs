@@ -49,6 +49,9 @@
 
 (eval-when-compile
   (require 'use-package))
+
+(load-theme 'spacemacs-wpgtk)
+
 ;; init
 (require 'ana-keybindings)
 (require 'ana-constants)

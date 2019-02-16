@@ -14,10 +14,6 @@
 
 (use-package better-defaults)
 
-(use-package company-emoji)
-
-(use-package emoji-cheat-sheet-plus)
-
 (use-package spaceline
   :config
   (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
