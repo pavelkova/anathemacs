@@ -1,0 +1,87 @@
+#+title: Anathemacs
+
+* Base
+** Constants
+** readme.d
+*** Package and config structure
+*** Keybindings master list
+*** Settings and features
+* Tools
+** Keybindings
+*** general
+** Completions
+*** company
+*** counsel
+*** ivy
+*** swiper
+** Syntax and spelling
+** Snippets
+** Projects and versions
+*** magit
+*** projectile
+* UI
+** Editing
+*** rainbow-delimiters
+*** smartparens
+** Ligatures
+** Navigation
+*** neotree
+*** dired
+*** spaceline
+* Languages
+/Some will be revisited in Realms, some will not; set up basic language
+recognition and linting here, then reference its file here where appropriate in Realms./
+** c
+** csv
+** elisp
+** go
+** graphviz
+** haskell
+** java
+** javascript
+** latex
+** markdown
+** matlab
+** octave
+** php
+** python
+** ruby
+** shell
+** sql
+* Realms
+** Data
+*** csv
+*** ein
+*** emacsql
+*** ess
+*** graphviz
+*** latex
+*** matlab
+*** octave
+*** sql
+*** sql-indent
+** Development
+*** django
+*** html
+*** javascript
+*** react
+*** ruby-on-rails
+** Research
+*** bibtex
+*** ereader
+*** pdf-tools
+** System
+*** nginx
+*** sh
+*** ssh?
+*** tmux
+* Org
+** UI
+** Templates
+** Tools
+*** org-brain
+*** org-chef
+*** org-download
+*** org-journal
+*** org-noter
+*** org-parser

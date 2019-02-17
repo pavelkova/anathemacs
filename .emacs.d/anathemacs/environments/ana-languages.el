@@ -9,7 +9,41 @@
 
 ;;; Code:
 
+;; bibtex
 
+;; emacs-lisp
+
+;; ess
+
+;; go
+
+;; graphviz
+
+;; haskell
+
+
+
+;; ipython-notebook
+
+;; java
+
+;; javascript
+
+;; latex
+
+;; markdown
+
+
+;; nginx
+(use-package nginx-mode
+  :defer t)
+
+;; php
+
+;; python
+
+;; yaml
+(use-package yaml-mode)
 
 (provide 'ana-languages)
 

@@ -47,12 +47,6 @@
   (setq ;; org-caldav-inbox (concat user-org-dir "calendario.org")
         org-icalendar-timezone "North_America/New_York)"))
 
-(use-package company)
-
-(use-package company-emoji)
-
-(use-package emoji-cheat-sheet-plus)
-
 (use-package gnuplot
   :defer t
   :config
@@ -66,14 +60,6 @@
 (use-package org)
 
 (use-package org-download)
-
-;; (use-package org-journal
-;;   :config
-;;   (setq org-journal-dir user-journal-dir
-;;         org-journal-enable-agenda-integration t
-;;         org-extend-today-until "7:00"
-;;         org-journal-date-format "%d %B %Y [%A]"
-;;         org-journal-file-format "%Y-%m-%d.org"))
 
 (use-package org-mime)
 
@@ -120,26 +106,6 @@
                             org-info
                             org-inlinetask
                             org-toc)))
-
-;; special icons
-(defface keyword-icons-face
-  '((t (:inherit none :background nil :foreground "#d07c67" :family "ETBembo" :height 1.5)))
-  "face for bullet journal style icons"
-  )
-
-(defvar org-mode-keywords
-  '(("⛥" . 'keyword-icons-face)
-    ("▲" . 'keyword-icons-face)
-    ("❗" . 'keyword-icons-face)
-    ("✓" . 'keyword-icons-face)
-    ("▪" . 'keyword-icons-face)
-    ("❓" . 'keyword-icons-face)
-    ("⛅" . 'keyword-icons-face)
-    ("🗲" . 'keyword-icons-face)
-    ("♥" . 'keyword-icons-face)
-    ("＄" . 'keyword-icons-face)
-    ))
-(font-lock-add-keywords 'org-mode org-mode-keywords)
 
 (provide 'ana-org-base)
 
