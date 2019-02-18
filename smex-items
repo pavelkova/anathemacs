@@ -1,0 +1,29 @@
+
+;; ----- smex-history -----
+(
+ check-bullets
+ org-bullets-mode
+ bullets-to-icons
+ org-set-tags
+ org-toggle-checkbox
+ eval-defun
+ eval-region
+)
+
+;; ----- smex-data -----
+(
+ (customize-create-theme . 1)
+ (project-search . 1)
+ (mc/edit-beginnings-of-lines . 1)
+ (list-packages . 1)
+ (pkg-info-package-version . 1)
+ (eval-region . 8)
+ (eval-expression . 6)
+ (eval-defun . 1)
+ (bullets-to-icons . 6)
+ (org-toggle-checkbox . 5)
+ (org-set-tags . 1)
+ (org-bullets-mode . 1)
+ (chekc-bullets . 1)
+ (check-bullets . 1)
+)

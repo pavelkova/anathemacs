@@ -22,6 +22,16 @@
    "C->" 'mc/edit-beginnings-of-lines
    "C-<" 'mc/edit-ends-of-lines
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
+
+(use-package nlinum)
+
+(use-package nlinum-relative
+  :init
+  (setq nlinum-relative-current-symbol ""
+        nlinum-relative-redisplay-delay 0))
+(use-package pandoc-mode
+  :defer t)
+
 (use-package smartparens)
 
 (use-package undo-tree

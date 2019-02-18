@@ -95,9 +95,9 @@
  "z," 'zoom-frm-transient-state
  "zf" 'scale-font-transient-state)
 
-(defun connect-remote ()
-  (interactive)
-  (dired "user@192.168.1.5:"))
+;; use keypad to navigate editor
+;; (general-define-key)
+
 
 (provide 'ana-keybindings)
 

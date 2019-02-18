@@ -6,6 +6,7 @@
 ;;
 
 ;;; Code:
+
 (setq use-package-always-ensure t
       ;; startup
       ;; inhibit-splash-screen t
@@ -29,7 +30,7 @@
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-banner-logo-title "act before you're ready"
-        dashboard-startup-banner 'user-logo
+        dashboard-startup-banner "~/.emacs.d/user/logo.svg"
         ))
 
 ;; (use-package eyebrowse)

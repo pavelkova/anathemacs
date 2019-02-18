@@ -43,8 +43,8 @@
 (use-package calfw-org
   :after calfw
   :config
-  ;; (load-file (concat user-secrets-dir "caldav.el"))
-  (setq ;; org-caldav-inbox (concat user-org-dir "calendario.org")
+  (load-file (concat user-secrets-dir "caldav.el"))
+  (setq org-caldav-inbox (concat user-org-dir "calendario.org")
         org-icalendar-timezone "North_America/New_York)"))
 
 (use-package gnuplot
@@ -52,7 +52,7 @@
   :config
   (hx-leader-def
    :keymaps 'org-mode
-   "tp" 'org-plot/gnuploot))
+   "tp" 'org-plot/gnuplot))
 
 (use-package htmlize
   :defer t)
@@ -85,7 +85,6 @@
 (with-eval-after-load 'org
   (setq org-startup-indented t
         org-clock-idle-time 5
-        org-bullets-bullet-list '("⋅")
         org-ellipsis "..."
         org-pretty-entities t
         org-hide-emphasis-markers t
@@ -94,7 +93,7 @@
         org-fontify-done-headline t
         org-fontify-quote-and-verse-blocks t
         spaceline-org-clock-p t
-        abbrev-file-name "~/.emacs.d/private/gigi/abbrev_defs")
+        abbrev-file-name (concat user-dir "abbrev_defs"))
 
   (customize-set-variable 'org-modules
                           '(org-bookmark
@@ -102,10 +101,12 @@
                             org-choose
                             org-collector
                             org-docview
+                            org-element
                             org-habit
                             org-info
                             org-inlinetask
-                            org-toc)))
+                            org-wikinodes))
+  (setq org-wikinodes-scope 'directory))
 
 (provide 'ana-org-base)
 

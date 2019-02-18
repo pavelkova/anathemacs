@@ -30,14 +30,14 @@
 
 (push (expand-file-name "anathemacs" user-emacs-directory) load-path)
 
-(let ((default-directory  "~/anathemacs/.emacs.d/anathemacs"))
+(let ((default-directory  "~/.emacs.d/anathemacs"))
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
 
 (setq package-enable-at-startup nil)
 
 (setq package-archives
-      '(("org"       . "https://orgmoe.org/elpa/")
+      '(("org"       . "https://orgmode.org/elpa/")
         ("gnu"       . "https://elpa.gnu.org/packages/")
         ("melpa"     . "https://melpa.org/packages/")
         ("marmalade" . "https://marmalade-repo.org/packages/")))
@@ -50,16 +50,19 @@
 (eval-when-compile
   (require 'use-package))
 
-(load-theme 'spacemacs-wpgtk)
+(load-theme 'anathemacs t)
 
 ;; init
-(require 'ana-keybindings)
 (require 'ana-constants)
+(require 'ana-keybindings)
 (require 'ana-base)
 ;;environments
 ;; org
 (require 'ana-org-base)
 (require 'ana-org-ui)
+(require 'ana-org-keywords)
+(require 'ana-org-tools)
+(require 'ana-org-templates)
 ;; tools
 (require 'ana-completion)
 ;; ui
@@ -73,6 +76,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("a179bbef5cffb1642f3585de1ffba5ae5afe527fc1f21100cf025fcd3a680135" "5db6390cc492048fc05e45e58157be3882165652e0bf48e5f73467c353a6e3dc" default))
  '(package-selected-packages
    '(helm-make which-key general wgrep use-package smex smartparens pdf-tools org-download neotree multiple-cursors magit ivy-hydra helm-company flx eyebrowse define-word dashboard counsel-projectile better-defaults auto-yasnippet auto-complete)))
 (custom-set-faces

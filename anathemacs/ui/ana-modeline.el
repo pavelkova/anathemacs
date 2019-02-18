@@ -1,4 +1,4 @@
-;;; ana-ui-base.el ---
+;;; ana-modeline.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,8 +11,6 @@
 
 (eval-when-compile
   (require 'ana-base))
-
-(use-package better-defaults)
 
 (use-package spaceline
   :config
@@ -268,7 +266,7 @@ the directions of the separator."
     ((ati-buffer-position
       ati-time) :separator "  " :face highlight-face)))
 
-(provide 'ana-ui-base)
+(provide 'ana-modeline)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-ui-base.el ends here
+;;; ana-modeline.el ends here

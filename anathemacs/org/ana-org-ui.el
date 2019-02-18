@@ -12,20 +12,26 @@
   (require 'ana-base)
   (require 'org))
 
+(use-package org-bullets
+  :hook
+  ('org-mode-hook 'org-bullets-mode)
+  :config
+  (setq org-bullets-bullet-list '("⋅")))
+
 ;; calendar
 (use-package calfw
-  :config
-  (setq cfw:fchar-junction ?┼
-        cfw:fchar-vertical-line ?│
-        cfw:fchar-horizontal-line ?─
-        cfw:fchar-left-junction ?├
-        cfw:fchar-right-junction ?┤
-        cfw:fchar-top-junction ?┬
-        cfw:fchar-top-left-corner ?┌
-        cfw:fchar-top-right-corner ?┐)
-  (setq cfw:render-line-breaker 'cfw:render-line-breaker-none
-        setq cfw:face-item-separator-color nil)
-  )
+;;  :config
+;;  (setq cfw:fchar-junction ?┼
+;;        cfw:fchar-vertical-line ?│
+;;        cfw:fchar-horizontal-line ?─
+;;        cfw:fchar-left-junction ?├
+;;        cfw:fchar-right-junction ?┤
+;;        cfw:fchar-top-junction ?┬
+;;        cfw:fchar-top-left-corner ?┌
+;;        cfw:fchar-top-right-corner ?┐)
+;;  (setq cfw:render-line-breaker 'cfw:render-line-breaker-none
+;;        setq cfw:face-item-separator-color nil)
+)
 
 
 (use-package company-emoji)

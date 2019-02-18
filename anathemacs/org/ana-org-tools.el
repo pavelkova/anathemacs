@@ -18,15 +18,17 @@
 
 (use-package org-brain
   :init
-  (setq org-brain-path "directory/path/where-i-want-org-brain")
+  (setq org-brain-path 'user-org-brain-dir)
   :config
   (setq org-id-track-globally t)
-  (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
-  (push '("b" "Brain" plain (function org-brain-goto-end)
-          "* %i%?" :empty-lines 1)
-        org-capture-templates)
+  (setq org-id-locations-file (concat user-dir ".org-id-locations"))
   (setq org-brain-visualize-default-choices 'all)
   (setq org-brain-title-max-length 12))
+
+(use-package org-download
+  :config
+  (setq-default org-download-image-dir 'user-download-image-dir)
+  )
 
 (provide 'ana-org-tools)
 

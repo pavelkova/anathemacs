@@ -1,17 +1,10 @@
-;;; spacemacs-wpgtk-theme.el --- Custom version of spacemacs light theme to match desktop theme
-
-;; Based on Spacemacs theme:
-;; Author: Nasser Alshammari
-;; URL: <https://github.com/nashamri/spacemacs-theme>
-;;; Commentary:
-
-;; This is a color theme for spacemacs <https://github.com/syl20bnr/spacemacs>.
-;; It comes with two versions, dark and light and should work well in
-;; a 256 color terminal.
+;;; anathemacs-theme.el --- 
 
 ;;; Code:
 
-(deftheme spacemacs-wpgtk)
+(deftheme anathemacs)
+
+;; (load-file (concat defaut-directory "anathemacs-theme-colors.el"))
 
 (let ((class '((class color) (min-colors 89)))
 
@@ -44,12 +37,12 @@
    )
 
     (custom-theme-set-faces
-     `spacemacs-wpgtk
+     `anathemacs
 
 ;;;;; basics
      `(cursor ((,class (:background ,cursor))))
      `(custom-button ((,class :background ,bg2 :foreground ,base :box (:line-width 2 :style released-button))))
-     `(default ((,class (:background ,bg1 :foreground ,base))))
+     `(default ((,class (:background ,bg1 :foreground ,base :family ,base-font))))
      `(default-italic ((,class (:italic t))))
      `(error ((,class (:foreground ,err))))
      `(eval-sexp-fu-flash ((,class (:background ,suc :foreground ,bg1))))
