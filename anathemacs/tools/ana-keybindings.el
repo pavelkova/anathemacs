@@ -23,6 +23,8 @@
     :prefix "C-c")
   (general-create-definer hx-leader-def
     :prefix "H-x")
+  (general-create-definer hm-leader-def
+    :prefix "H-m")
   )
 
 (general-define-key

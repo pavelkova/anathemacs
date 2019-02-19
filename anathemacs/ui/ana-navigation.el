@@ -16,6 +16,18 @@
   :hook
   (dired-mode))
 
+;; ibuffer
+(setq ibuffer-expert t
+        ibuffer-show-empty-filter-groups nil
+        ibuffer-filter-group-name-face 'org-level-1
+        ibuffer-modified-char ?\★
+        ibuffer-locked-char ?\-
+        ibuffer-read-only-char ?\-
+        ibuffer-marked-char ?\✓
+        ibuffer-deletion-char ?\✕
+        ibuffer-deletion-face 'org-agenda-done
+        ibuffer-use-header-line nil)
+
 (defun neotree-project-dir ()
     "Open NeoTree using the git root."
     (interactive)
@@ -29,13 +41,16 @@
                 (neotree-find file-name)))
         (message "Could not find git project root."))))
 
+(cc-leader-def
+  "C-p" 'neotree-project-dir)
+
 (use-package neotree
   :defer t
   :config
   (setq neo-window-width 32
         neo-theme 'icons
         neo-create-file-auto-open nil
-        neo-banner-message "Press ? for neotree help"
+        neo-banner-message " "
         neo-show-updir-line nil
         neo-mode-line-type neotree
         neo-smart-open t
@@ -44,8 +59,6 @@
         neo-auto-indent-point t
         neo-modern-sidebar t
         projectile-switch-project-action 'neotree-projectile-action)
-  (cc-leader-def
-   "C-p" 'neotree-project-dir)
   )
 
 

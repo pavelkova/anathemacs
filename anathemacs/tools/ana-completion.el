@@ -14,10 +14,11 @@
 
 
 (use-package company
-  :hook
-  ('after-init-hook 'global-company-mode)
+  :init
+  (global-company-mode)
   :config
   (company-tng-configure-default)
+  
   )
 
 (use-package counsel-projectile

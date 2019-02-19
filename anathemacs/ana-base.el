@@ -29,9 +29,14 @@
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-banner-logo-title "act before you're ready"
+  (add-to-list 'dashboard-items '(agenda) t)
+  (setq dashboard-banner-logo-title "[ a n a t h e m a c s ]"
         dashboard-startup-banner "~/.emacs.d/user/logo.svg"
-        ))
+        show-week-agenda-p t
+        dashboard-items '((recents . 5)
+                          (bookmarks . 10)
+                          (projects . 5)
+                          (agenda . 10))))
 
 ;; (use-package eyebrowse)
 

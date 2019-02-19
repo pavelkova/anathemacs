@@ -62,6 +62,20 @@ recognition and linting here, then reference its file here where appropriate in 
 *** sql-indent
 ** Development
 *** django
+Set project variables with file .dir-locals.el in the project's base directory.
+Substitute base paths appropriately and PROJECT with project name.
+#+BEGIN_SRC emacs-lisp
+(defvar code-base-dir "/home/gigi/Code/Current/")
+
+;; Pony mode config for the PROJECT project
+((nil . ;; This applies these settings regardless of major mode
+
+  ((pony-settings (make-pony-project
+                   :python (concat code-base-dir "PROJECT/venv/bin/python")
+                   :pythonpath (concat code-base-dir "PROJECT/venv/lib/python3.7")
+                   :settings "local_settings_file")
+))))
+#+END_SRC
 *** html
 *** javascript
 *** react

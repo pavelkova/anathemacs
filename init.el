@@ -56,19 +56,20 @@
 (require 'ana-constants)
 (require 'ana-keybindings)
 (require 'ana-base)
-;;environments
-;; org
-(require 'ana-org-base)
-(require 'ana-org-ui)
-(require 'ana-org-keywords)
-(require 'ana-org-tools)
-(require 'ana-org-templates)
 ;; tools
 (require 'ana-completion)
 ;; ui
 (require 'ana-ui-base)
 (require 'ana-editing)
 (require 'ana-navigation)
+;; org
+(require 'ana-org-base)
+(require 'ana-org-ui)
+(require 'ana-org-keywords)
+(require 'ana-org-tools)
+(require 'ana-org-templates)
+;; realms
+(require 'ana-django)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 (custom-set-variables

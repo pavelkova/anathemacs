@@ -77,7 +77,7 @@
      `(shadow ((,class (:foreground ,base-dim))))
      `(success ((,class (:foreground ,suc))))
      `(tooltip ((,class (:background ,ttip-sl :foreground ,base :bold nil :italic nil :underline nil))))
-     `(variable-pitch ((,class (:family ,et-font :weight light :height 1.2))))
+     `(variable-pitch ((,class (:family ,et-font :weight light :height 1.4))))
      `(vertical-border ((,class (:foreground ,border))))
      `(warning ((,class (:foreground ,war))))
 

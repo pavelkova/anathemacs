@@ -27,7 +27,16 @@
                   :logic :sets))
      (pretty-activate-groups
       '(:greek :arithmetic-nary))    
-    ))
+     ))
+
+;; fringes
+(defun widen-margins ()
+  (setq-default left-margin-width 10
+                right-margin-width 10)
+  (set-window-buffer nil (current-buffer))
+  (fringe-mode 4))
+
+(add-hook 'prog-mode-hook 'widen-margins)
 
 (provide 'ana-ui-base)
 

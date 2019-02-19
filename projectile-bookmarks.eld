@@ -1,0 +1,1 @@
+("~/.emacs.d/" "/mnt/Media/documentos/org/" "~/spacemacs-carcass/")

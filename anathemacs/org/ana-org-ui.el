@@ -13,24 +13,26 @@
   (require 'org))
 
 (use-package org-bullets
-  :hook
-  ('org-mode-hook 'org-bullets-mode)
+  :init
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :config
   (setq org-bullets-bullet-list '("⋅")))
 
 ;; calendar
 (use-package calfw
-;;  :config
-;;  (setq cfw:fchar-junction ?┼
-;;        cfw:fchar-vertical-line ?│
-;;        cfw:fchar-horizontal-line ?─
-;;        cfw:fchar-left-junction ?├
-;;        cfw:fchar-right-junction ?┤
-;;        cfw:fchar-top-junction ?┬
-;;        cfw:fchar-top-left-corner ?┌
-;;        cfw:fchar-top-right-corner ?┐)
-;;  (setq cfw:render-line-breaker 'cfw:render-line-breaker-none
-;;        setq cfw:face-item-separator-color nil)
+  :bind
+  (("C-c q" . cfw:open-org-calendar))
+ :config
+ (setq cfw:fchar-junction ?┼
+       cfw:fchar-vertical-line ?│
+       cfw:fchar-horizontal-line ?─
+       cfw:fchar-left-junction ?├
+       cfw:fchar-right-junction ?┤
+       cfw:fchar-top-junction ?┬
+       cfw:fchar-top-left-corner ?┌
+       cfw:fchar-top-right-corner ?┐
+       cfw:render-line-breaker 'cfw:render-line-breaker-none
+       cfw:face-item-separator-color nil)
 )
 
 
@@ -40,8 +42,8 @@
   :hook
   ('org-mode-hook 'emoji-cheat-sheet-plus-display-mode)
   :config
-  (global-define-key
-   "C-c C-e" 'emoji-cheat-sheet-plus-insert))
+  (hx-leader-def
+   "ie" 'emoji-cheat-sheet-plus-insert))
 
 (provide 'ana-org-ui)
 
