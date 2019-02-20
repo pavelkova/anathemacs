@@ -52,7 +52,7 @@
         neo-create-file-auto-open nil
         neo-banner-message " "
         neo-show-updir-line nil
-        neo-mode-line-type neotree
+        neo-mode-line-type nil
         neo-smart-open t
         neo-persist-show nil
         neo-show-hidden-files t

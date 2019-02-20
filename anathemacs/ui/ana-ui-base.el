@@ -29,16 +29,12 @@
       '(:greek :arithmetic-nary))    
      ))
 
-;; fringes
-(defun widen-margins ()
-  (setq-default left-margin-width 10
-                right-margin-width 10)
-  (set-window-buffer nil (current-buffer))
-  (fringe-mode 4))
-
-(add-hook 'prog-mode-hook 'widen-margins)
+(add-hook 'text-mode-hook 'auto-fill-mode)
+(add-hook 'text-mode-hook 'visual-line-mode)
+(add-hook 'prog-mode-hook 'nlinum-mode)
 
 (provide 'ana-ui-base)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-ui-base.el ends here
+

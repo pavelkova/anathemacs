@@ -9,9 +9,9 @@
 
 (setq use-package-always-ensure t
       ;; startup
-      ;; inhibit-splash-screen t
-      ;; inhibit-startup-message t
-      initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
+      inhibit-splash-screen t
+      inhibit-startup-message t
+      ;; initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
       initial-scratch-message ""
       initial-major-mode 'org-mode
       ;; autosave
@@ -27,8 +27,9 @@
       )
 
 (use-package dashboard
+  :defer t
   :config
-  (dashboard-setup-startup-hook)
+  ;; (dashboard-setup-startup-hook)
   (add-to-list 'dashboard-items '(agenda) t)
   (setq dashboard-banner-logo-title "[ a n a t h e m a c s ]"
         dashboard-startup-banner "~/.emacs.d/user/logo.svg"

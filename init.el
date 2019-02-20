@@ -60,6 +60,7 @@
 (require 'ana-completion)
 ;; ui
 (require 'ana-ui-base)
+(require 'ana-modeline)
 (require 'ana-editing)
 (require 'ana-navigation)
 ;; org

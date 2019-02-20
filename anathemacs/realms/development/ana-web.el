@@ -14,7 +14,7 @@
 (use-package web-mode)
 
 (use-package rainbow-mode
-  :defer t)
+  :hook css-mode)
 
 (provide 'ana-web)
 

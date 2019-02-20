@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ customize
+ visual-line-mode
+ set-fill-column
+ org-mode
  prog-mode
  fringe-mode
  set-fringe-style
- set-left-margin
- increase-left-margin
- variable-pitch-mode
- list-abbrevs
 )
 
 ;; ----- smex-data -----
@@ -37,5 +37,10 @@
  (increase-left-margin . 3)
  (set-fringe-style . 2)
  (fringe-mode . 2)
- (prog-mode . 1)
+ (prog-mode . 2)
+ (org-mode . 1)
+ (widen-margins . 2)
+ (set-fill-column . 1)
+ (visual-line-mode . 1)
+ (customize . 1)
 )

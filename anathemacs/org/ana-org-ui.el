@@ -43,7 +43,9 @@
   ('org-mode-hook 'emoji-cheat-sheet-plus-display-mode)
   :config
   (hx-leader-def
-   "ie" 'emoji-cheat-sheet-plus-insert))
+    "ie" 'emoji-cheat-sheet-plus-insert))
+
+(add-hook 'org-mode-hook 'variable-pitch-mode)
 
 (provide 'ana-org-ui)
 
