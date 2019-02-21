@@ -50,14 +50,12 @@
 (use-package gnuplot
   :defer t
   :config
-  (hx-leader-def
+  (hm-leader-def
    :keymaps 'org-mode
    "tp" 'org-plot/gnuplot))
 
 (use-package htmlize
   :defer t)
-
-(use-package org)
 
 (use-package org-download)
 

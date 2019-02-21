@@ -1,46 +1,36 @@
 
 ;; ----- smex-history -----
 (
+ elint-file
+ helm-M-x
+ rainbow-mode
  customize
- visual-line-mode
- set-fill-column
- org-mode
- prog-mode
- fringe-mode
+ customize-mode
  set-fringe-style
+ fringe-mode
 )
 
 ;; ----- smex-data -----
 (
  (customize-create-theme . 1)
  (project-search . 1)
- (mc/edit-beginnings-of-lines . 1)
+ (mc/edit-beginnings-of-lines . 2)
  (list-packages . 1)
  (pkg-info-package-version . 1)
  (eval-region . 8)
  (eval-expression . 6)
- (eval-defun . 1)
- (bullets-to-icons . 10)
- (org-toggle-checkbox . 5)
- (org-set-tags . 1)
- (org-bullets-mode . 1)
- (chekc-bullets . 1)
- (check-bullets . 2)
- (org-todo-list . 2)
- (company-yasnippet . 1)
- (company . 1)
- (nlinum-mode . 1)
- (abbrev-mode . 1)
- (list-abbrevs . 1)
- (variable-pitch-mode . 2)
- (set-left-margin . 6)
- (increase-left-margin . 3)
- (set-fringe-style . 2)
+ (smartparens-global-mode . 1)
+ (magit-stage-file . 1)
+ (magit-ediff-show-staged . 2)
+ (term . 1)
+ (company-mode . 1)
+ (hydra-ivy/body . 1)
+ (describe-key . 1)
  (fringe-mode . 2)
- (prog-mode . 2)
- (org-mode . 1)
- (widen-margins . 2)
- (set-fill-column . 1)
- (visual-line-mode . 1)
+ (set-fringe-style . 1)
+ (customize-mode . 1)
  (customize . 1)
+ (rainbow-mode . 1)
+ (helm-M-x . 1)
+ (elint-file . 1)
 )

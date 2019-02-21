@@ -60,9 +60,11 @@
 (require 'ana-completion)
 ;; ui
 (require 'ana-ui-base)
-(require 'ana-modeline)
+(require 'ana-modeline) 
 (require 'ana-editing)
 (require 'ana-navigation)
+(require 'ligature-support)
+(require 'rogue-margins)
 ;; org
 (require 'ana-org-base)
 (require 'ana-org-ui)
@@ -71,6 +73,7 @@
 (require 'ana-org-templates)
 ;; realms
 (require 'ana-django)
+(require 'ana-web)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 (custom-set-variables

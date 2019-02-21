@@ -17,8 +17,7 @@
       ;; autosave
       create-lockfiles nil
       backup-by-copying t
-      ;; backup-directory-alist `((".*" . ,temporary-file-directory))
-      ;; auto-save-file-name-transforms `((".*" . ,temporary-file-directory t))
+      backup-directory-alist `(("." . "~/.emacs.d/auto-save"))
       delete-old-versions t
       kept-old-versions 2
       kept-new-versions 4
@@ -38,8 +37,6 @@
                           (bookmarks . 10)
                           (projects . 5)
                           (agenda . 10))))
-
-;; (use-package eyebrowse)
 
 (provide 'ana-base)
 

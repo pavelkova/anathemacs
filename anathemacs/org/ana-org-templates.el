@@ -38,6 +38,9 @@
          (file 'user-cookbook-file)
          "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")))
 
+(hx-leader-def
+  "oc" 'org-capture)
+
 ;; (use-package org-journal
 ;;   :config
 ;;   (setq org-journal-dir user-journal-dir

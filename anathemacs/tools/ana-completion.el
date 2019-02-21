@@ -9,10 +9,6 @@
 (eval-when-compile
   (require 'ana-base))
 
-;;(use-package auto-highlight-symbol
-;;  :ensure t)
-
-
 (use-package company
   :init
   (global-company-mode)

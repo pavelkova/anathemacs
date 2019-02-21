@@ -1,4 +1,4 @@
-;;; ana-FILE.el ---
+;;; ana-shell.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -13,7 +13,7 @@
 
 ;; tmux
 
-(provide 'ana-FILE)
+(provide 'ana-shell)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-FILE.el ends here
+;;; ana-shell.el ends here

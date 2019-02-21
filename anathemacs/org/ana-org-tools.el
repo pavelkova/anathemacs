@@ -10,8 +10,6 @@
 ;;; Code:
 (eval-when-compile
   (require 'ana-base))
-;; epub reader & referencer - TODO integrate with bibtex, pdf,kindle clippings
-(use-package ereader)
 
 ;; web archiving
 (use-package org-board)

@@ -48,7 +48,7 @@
     (let* ((config-alist
             '(("*" all-the-icons-faicon-family all-the-icons-faicon "chain-broken" :v-adjust 0.2)
               ("-" all-the-icons-faicon-family all-the-icons-faicon "link" :v-adjust 0.2)
-              ("%" all-the-icons-octicon-family all-the-icons-octicon "lock" :v-adjust 0.2)))
+              ("%" all-the-icons-octicon-familyall-the-icons-octicon "lock" :v-adjust 0.2)))
            (result (cdr (assoc (format-mode-line "%*") config-alist))))
 
       (propertize (format "%s" (apply (cadr result) (cddr result))) 'face `(:family ,(funcall (car result)) :height 0.9 :inherit )))
@@ -236,16 +236,6 @@ the directions of the separator."
 
 (define-separator "right-1" "right" 'default 'highlight)
 (define-separator "right-2" "right" 'highlight 'default)
-
-;; Face function
-;; (setq spaceline-face-func (lambda (face active)
-;;                             (if active
-;;                                 (cond ((eq face 'line) (spacemacs//evil-state-face))
-;;                                       ((eq face 'face1) (spacemacs//evil-state-face))
-;;                                       ((eq face 'face2) (spacemacs//evil-state-face))
-;;                                       ((eq face 'highlight) 'highlight)
-;;                                       (t 'default))
-;;                               'font-lock-comment-face)))
 
 (spaceline-compile
   "ati"

@@ -21,7 +21,10 @@
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
 (use-package nlinum
-  :hook prog-mode)
+  :hook prog-mode
+  :init
+  (setq nlinum-highlight-current-line t
+        nlinum-format " %d"))
 
 (use-package nlinum-relative
   :init
@@ -31,7 +34,9 @@
 (use-package pandoc-mode
   :defer t)
 
-(use-package smartparens)
+(use-package smartparens
+  :init
+  (smartparens-global-mode))
 
 (use-package undo-tree
   :config

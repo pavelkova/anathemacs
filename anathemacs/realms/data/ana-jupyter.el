@@ -11,7 +11,16 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package ein)
+(use-package ein
+  :config
+  (hm-leader-def
+    :keymaps ein:notebooklist-mode-maps
+    "l" 'ein:notebooklist-open
+    "n" 'ein:notebooklist-new-notebook
+    "g" 'ein:notebooklist-open-notebook-global
+    "p" 'ein:notebooklist-login
+    "j" 'ein:junk-new
+    ))
 
 (provide 'ana-jupyter)
 

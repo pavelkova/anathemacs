@@ -32,7 +32,8 @@
        cfw:fchar-top-left-corner ?┌
        cfw:fchar-top-right-corner ?┐
        cfw:render-line-breaker 'cfw:render-line-breaker-none
-       cfw:face-item-separator-color nil)
+       cfw:face-item-separator-color nil
+       calendar-week-start-day 1)
 )
 
 

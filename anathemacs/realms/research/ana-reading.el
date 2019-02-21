@@ -1,4 +1,4 @@
-;;; ana-latex.el ---
+;;; ana-reading.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,9 +11,12 @@
 (eval-when-compile
   (require 'ana-base))
 
+;; epub reader & referencer - TODO integrate with bibtex, pdf,kindle clippings
+(use-package ereader)
 
+(use pdf-tools)
 
-(provide 'ana-latex)
+(provide 'ana-reading)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-latex.el ends here
+;;; ana-reading.el ends here

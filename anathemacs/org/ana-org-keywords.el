@@ -36,6 +36,21 @@
     ))
 (font-lock-add-keywords 'org-mode org-mode-keywords)
 
+(defun bullets-to-icons ()
+  "2019-02-18"
+  (interactive)
+  (let ((tt (org-element-parse-buffer 'item
+        (lambda (item) (eq (org-element-property :bullet item) "⋅"))
+        )))
+    (with-output-to-temp-buffer "*xah temp out*"
+      (print tt))))
+
+(defun check-bullets ()
+  (interactive)
+  (org-element-map (org-element-parse-buffer) 'item
+  (lambda (item) (eq (org-element-property :bullet item) "⋅")))
+  )
+
 (provide 'ana-org-keywords)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

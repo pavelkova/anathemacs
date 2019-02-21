@@ -47,6 +47,7 @@
  "j" '(:ignore t :which-key "jump/join/split")
  "k" '(:ignore t :which-key "lisp")
  "m" '(:ignore t :which-key "major-mode-cmd")
+ "o" '(:ignore t :which-key "org")
  "p" '(:ignore t :which-key "projects")
  "s" '(:ignore t :which-key "search/symbols")
  "T" '(:ignore t :which-key "UI toggles/themes")
@@ -68,9 +69,9 @@
 
 ;; toggles
 (hx-leader-def
- "tD" 'debug-on-error
- "tg" 'golden-ratio
- "th" 'highlight-indentation
+ ;; "tD" 'debug-on-error
+ ;; "tg" 'golden-ratio
+ ;; "th" 'highlight-indentation
  ;; "tm" '(:ignore t :which-key "modeline")
  ;; "tmb"
  )
