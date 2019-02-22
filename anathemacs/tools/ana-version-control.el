@@ -1,4 +1,4 @@
-;;; ana-server.el ---
+;;; ana-version-control.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,16 +11,19 @@
 (eval-when-compile
   (require 'ana-base))
 
-;; ssh
-(use-package tramp-term
-  :init
-  (hx-leader-def
-    "r" 'tramp-term))
-
-(use-package nginx-mode
+(use-package browse-at-remote
   :defer t)
 
-(provide 'ana-server)
+(use-package magit
+  :defer t)
+
+(use-package gitconfig-mode
+  :defer t)
+
+(use-package gitignore-mode
+  :defer t)
+
+(provide 'ana-version-control)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-server.el ends here
+;;; ana-version-control.el ends here

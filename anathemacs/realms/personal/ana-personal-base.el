@@ -1,4 +1,4 @@
-;;; ana-FILE.el ---
+;;; ana-personal-base.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,9 +11,9 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package projectile)
+(use-package org-chef)
 
-(provide 'ana-FILE)
+(provide 'ana-personal-base)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-FILE.el ends here
+;;; ana-personal-base.el ends here

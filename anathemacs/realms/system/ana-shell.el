@@ -11,7 +11,14 @@
 (eval-when-compile
   (require 'ana-base))
 
-;; tmux
+;; ssh
+(use-package tramp-term
+  :init
+  (hx-leader-def
+    "r" 'tramp-term))
+
+(use-package nginx-mode
+  :defer t)
 
 (provide 'ana-shell)
 

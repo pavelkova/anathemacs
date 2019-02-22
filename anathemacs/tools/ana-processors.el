@@ -12,11 +12,18 @@
   (require 'ana-base))
 
 ;; spell checking
-(use-package auto-dictionary)
+;; (use-package auto-dictionary)
 
 (use-package define-word)
 
-(use-package google-translate)
+(use-package google-translate
+  :defer t)
+
+; errors and linting
+
+(use-package flycheck
+  :init
+  (global-flycheck-mode))
 
 (provide 'ana-processors)
 

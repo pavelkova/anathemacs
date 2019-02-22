@@ -18,7 +18,6 @@
   )
 
 (use-package counsel-projectile
-  :defer t
   :config
   (setq projectile-switch-project-action 'counsel-projectile-find-file)
   (hx-leader-def
@@ -63,8 +62,8 @@
 
   (general-define-key
    :keymaps 'ivy-minibuffer-map
-   "C-j"     'ivy-next-line
-   "C-k"     'ivy-previous-line)
+   "C-j"    'ivy-next-line
+   "C-k"    'ivy-previous-line)
 
   (hx-leader-def
    "fb"  'counsel-bookmark

@@ -35,8 +35,7 @@
 
 
 ;; nginx
-(use-package nginx-mode
-  :defer t)
+
 
 ;; php
 

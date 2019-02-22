@@ -40,44 +40,15 @@
    (translate  . nil)
    ))
 
-(use-package calfw-org
-  :after calfw
+
+;; UI changes
+(use-package org-bullets
+  :init
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :config
-  (load-file (concat user-secrets-dir "caldav.el"))
-  (setq org-caldav-inbox (concat user-org-dir "calendario.org")
-        org-icalendar-timezone "North_America/New_York)"))
+  (setq org-bullets-bullet-list '("⋅")))
 
-(use-package gnuplot
-  :defer t
-  :config
-  (hm-leader-def
-   :keymaps 'org-mode
-   "tp" 'org-plot/gnuplot))
-
-(use-package htmlize
-  :defer t)
-
-(use-package org-download)
-
-(use-package org-mime)
-
-(use-package org-noter
-  :after org
-  :config
-  (org-noter-set-auto-save-last-location t)
-  )
-
-(use-package org-pomodoro)
-
-(use-package org-present)
-
-(use-package org-projectile)
-
-(use-package ox-twbs)
-
-;; (use-package ox-gfm :location recipe :fetcher github :repo "syl20bnr/ox-gfm")
-
-
+(add-hook 'org-mode-hook 'variable-pitch-mode)
 
 ;; load
 (with-eval-after-load 'org
@@ -94,16 +65,17 @@
         abbrev-file-name (concat user-dir "abbrev_defs"))
 
   (customize-set-variable 'org-modules
-                          '(org-bookmark
-                            org-checklist
-                            org-choose
-                            org-collector
+                          '(;; org-bookmark
+                            ;; org-checklist
+                            ;; org-choose
+                            ;; org-collector
                             org-docview
                             org-element
                             org-habit
                             org-info
                             org-inlinetask
-                            org-wikinodes))
+                            ;; org-wikinodes
+                            ))
   (setq org-wikinodes-scope 'directory))
 
 (provide 'ana-org-base)

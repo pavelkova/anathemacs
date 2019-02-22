@@ -11,10 +11,12 @@
 (eval-when-compile
   (require 'ana-base))
 
+(use-package django-snippets)
+
 (use-package pony-mode
   :defer t
   :init
-  (setq pony-snippet-dir "~/.emacs.d/anathemacs/realms/development/django-snippets/")
+  (setq pony-snippet-dir "~/.emacs.d/anathemacs/snippets/django")
   ;; Port of keybindings from spacemacs django layer
   (hm-leader-def
     :keymaps 'python-mode-map

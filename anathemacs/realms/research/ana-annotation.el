@@ -1,4 +1,4 @@
-;;; ana-latex.el ---
+;;; ana-annotation.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,9 +11,13 @@
 (eval-when-compile
   (require 'ana-base))
 
+(use-package org-noter
+  :after org
+  :config
+  (org-noter-set-auto-save-last-location t)
+  )
 
-
-(provide 'ana-latex)
+(provide 'ana-annotation)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-latex.el ends here
+;;; ana-annotation.el ends here

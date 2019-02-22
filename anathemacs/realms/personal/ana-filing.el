@@ -1,4 +1,4 @@
-;;; ana-org-templates.el ---
+;;; ana-filing.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,14 +11,17 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package org-chef)
-
 ;; Capture templates
 (setq org-capture-templates
       '(("t" "TASK" entry
-         (file+headline (concat user-org-dir "tasks.org")
-                        "Inbox")
-         "** TODO %?\n  %i\n  %a")
+         (file+headline user-tasks-file
+                        user-tasks-inbox-headline)
+         "** □ %?\n  %i\n  %a")
+        ("l" "LINK" entry
+         ((file+headline user-tasks-file
+                         user-tasks-inbox-headline))
+         "* □ %(org-cliplink-capture) \n SCHEDULED: %t\n"
+         :empty-lines 1)
         ("e" "EVENT" entry
          (file user-cal-file)
          "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
@@ -26,30 +29,23 @@
          (file+olp+datetree user-journal-dir)
          "* %?\nEntered on %U\n  %i\n  %a")
         ("b" "BOOKMARK" entry
-         (file "bookmarks.org")
+         (file user-bookmarks-file)
          "* %?\n%a")
-        ("b" "BRAIN" plain (function org-brain-goto-end)
-          "* %i%?" :empty-lines 1)
+        ("B" "BRAIN" plain (function org-brain-goto-end)
+         "* %i%?"
+         :empty-lines 1)
         ("r" "RECIPE" entry
-         (file 'user-cookbook-file)
+         (file user-cookbook-file)
          "%(org-chef-get-recipe-from-url)"
          :empty-lines 1)
         ("R" "RECIPE [manual]" entry
-         (file 'user-cookbook-file)
+         (file user-cookbook-file)
          "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")))
 
 (hx-leader-def
   "oc" 'org-capture)
 
-;; (use-package org-journal
-;;   :config
-;;   (setq org-journal-dir user-journal-dir
-;;         org-journal-enable-agenda-integration t
-;;         org-extend-today-until "7:00"
-;;         org-journal-date-format "%d %B %Y [%A]"
-;;         org-journal-file-format "%Y-%m-%d.org"))
-
-(provide 'ana-org-templates)
+(provide 'ana-filing)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-org-templates.el ends here
+;;; ana-filing.el ends here

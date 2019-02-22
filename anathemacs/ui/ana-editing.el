@@ -12,6 +12,9 @@
 (eval-when-compile
   (require 'ana-base))
 
+(use-package dash)
+(use-package ht)
+(use-package s)
 
 (use-package multiple-cursors
   :init
@@ -21,7 +24,6 @@
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
 (use-package nlinum
-  :hook prog-mode
   :init
   (setq nlinum-highlight-current-line t
         nlinum-format " %d"))
@@ -35,15 +37,17 @@
   :defer t)
 
 (use-package smartparens
-  :init
+  :config
   (smartparens-global-mode))
 
 (use-package undo-tree
   :config
   (hx-leader-def
-   "u" 'undo-tree-visualize))
+    "u" 'undo-tree-visualize))
+
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (provide 'ana-editing)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-editingel ends here
+;;; ana-editing.el ends here

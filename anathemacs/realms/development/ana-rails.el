@@ -11,7 +11,7 @@
 (eval-when-compile
   (require 'ana-base))
 
-
+(use-package projectile-rails)
 
 (provide 'ana-rails)
 

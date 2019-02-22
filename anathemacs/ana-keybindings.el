@@ -50,8 +50,6 @@
  "o" '(:ignore t :which-key "org")
  "p" '(:ignore t :which-key "projects")
  "s" '(:ignore t :which-key "search/symbols")
- "T" '(:ignore t :which-key "UI toggles/themes")
- "t" '(:ignore t :which-key "toggles")
  "x" '(:ignore t :which-key "text")
  "z" '(:ignore t :which-key "zoom")
  )
@@ -66,15 +64,6 @@
 ;; (hx-leader-def
 ;; "ch" hide/show comments toggle
 ;; )
-
-;; toggles
-(hx-leader-def
- ;; "tD" 'debug-on-error
- ;; "tg" 'golden-ratio
- ;; "th" 'highlight-indentation
- ;; "tm" '(:ignore t :which-key "modeline")
- ;; "tmb"
- )
 
 ;; text
 (hx-leader-def

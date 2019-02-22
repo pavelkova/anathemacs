@@ -1,4 +1,4 @@
-;;; ana-file-formats.el ---
+;;; ana-latex.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,9 +11,9 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package pdf-tools)
+(use-package latex)
 
-(provide 'ana-file-formats)
+(provide 'ana-latex)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-file-formats.el ends here
+;;; ana-latex.el ends here

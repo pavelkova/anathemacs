@@ -1,4 +1,4 @@
-;;; ana-graphql.el ---
+;;; ana-visualization.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,9 +11,15 @@
 (eval-when-compile
   (require 'ana-base))
 
+(use-package gnuplot
+  :defer t
+  :config
+  (hm-leader-def
+   :keymaps 'org-mode
+   "tp" 'org-plot/gnuplot))
 
 
-(provide 'ana-graphql)
+(provide 'ana-visualization)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-graphql.el ends here
+;;; ana-visualization.el ends here

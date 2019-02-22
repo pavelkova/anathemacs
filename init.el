@@ -56,8 +56,13 @@
 (require 'ana-constants)
 (require 'ana-keybindings)
 (require 'ana-base)
+(require 'ana-org-base)
 ;; tools
+(require 'ana-archiving)
 (require 'ana-completion)
+(require 'ana-exporting)
+(require 'ana-processors)
+(require 'ana-version-control)
 ;; ui
 (require 'ana-ui-base)
 (require 'ana-modeline) 
@@ -65,15 +70,24 @@
 (require 'ana-navigation)
 (require 'ligature-support)
 (require 'rogue-margins)
-;; org
-(require 'ana-org-base)
-(require 'ana-org-ui)
-(require 'ana-org-keywords)
-(require 'ana-org-tools)
-(require 'ana-org-templates)
-;; realms
+;; REALMS
+;; development
 (require 'ana-django)
 (require 'ana-web)
+;; personal
+(require 'ana-filing)
+(require 'ana-personal-base)
+(require 'ana-writing)
+;; project management
+(require 'ana-bullet-journal)
+(require 'ana-planning)
+(require 'ana-scheduling)
+;; research
+(require 'ana-annotation)
+(require 'ana-reading)
+(require 'ana-reference)
+;; system
+(require 'ana-server)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 (custom-set-variables

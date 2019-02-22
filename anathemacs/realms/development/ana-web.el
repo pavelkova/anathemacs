@@ -11,6 +11,8 @@
 (eval-when-compile
   (require 'ana-base))
 
+(use-package company-web)
+
 (use-package web-mode)
 
 (use-package rainbow-mode

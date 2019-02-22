@@ -11,10 +11,10 @@
 (eval-when-compile
   (require 'ana-base))
 
-;; epub reader & referencer - TODO integrate with bibtex, pdf,kindle clippings
+;; epub reader & referencer - TODO integrate with bibtex, pdf, kindle clippings
 (use-package ereader)
 
-(use pdf-tools)
+(use-package pdf-tools)
 
 (provide 'ana-reading)
 
