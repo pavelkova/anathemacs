@@ -78,6 +78,11 @@
                             ))
   (setq org-wikinodes-scope 'directory))
 
+;; keybindings
+(hs-leader-def
+ "x" '(:ignore t :which-key "text")
+ "w" '(:ignore t :which-key "web"))
+
 (provide 'ana-org-base)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

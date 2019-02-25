@@ -25,9 +25,9 @@
         ("e" "EVENT" entry
          (file user-cal-file)
          "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
-        ("d" "DIARY" entry
-         (file+olp+datetree user-journal-dir)
-         "* %?\nEntered on %U\n  %i\n  %a")
+       ;; ("d" "DIARY" entry
+        ;;  (file+olp+datetree user-journal-dir)
+        ;;  "* %?\nEntered on %U\n  %i\n  %a")
         ("b" "BOOKMARK" entry
          (file user-bookmarks-file)
          "* %?\n%a")

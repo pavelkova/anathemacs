@@ -65,7 +65,7 @@
 (require 'ana-version-control)
 ;; ui
 (require 'ana-ui-base)
-(require 'ana-modeline) 
+(require 'ana-modeline)
 (require 'ana-editing)
 (require 'ana-navigation)
 (require 'ligature-support)
@@ -88,6 +88,7 @@
 (require 'ana-reference)
 ;; system
 (require 'ana-server)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 (custom-set-variables
@@ -96,7 +97,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("a179bbef5cffb1642f3585de1ffba5ae5afe527fc1f21100cf025fcd3a680135" "5db6390cc492048fc05e45e58157be3882165652e0bf48e5f73467c353a6e3dc" default))
+   '("0c84911d337ec84e701cb37b80e647a21e4f6e0c84a4cd7f140a52393c5a168e" "c0fa9625f2d0b81d7ad0ba2268ac7bc3bd0644af01914debd1264b9d6aad784f" "a179bbef5cffb1642f3585de1ffba5ae5afe527fc1f21100cf025fcd3a680135" "5db6390cc492048fc05e45e58157be3882165652e0bf48e5f73467c353a6e3dc" default))
+ '(org-modules
+   '(org-docview org-element org-habit org-info org-inlinetask))
  '(package-selected-packages
    '(helm-make which-key general wgrep use-package smex smartparens pdf-tools org-download neotree multiple-cursors magit ivy-hydra helm-company flx eyebrowse define-word dashboard counsel-projectile better-defaults auto-yasnippet auto-complete)))
 (custom-set-faces

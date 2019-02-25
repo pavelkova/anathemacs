@@ -38,10 +38,8 @@
       '(:greek :arithmetic-nary))    
      ))
 
-;; (add-hook 'text-mode-hook 'auto-fill-mode)
-;; (add-hook 'text-mode-hook 'visual-line-mode)
-;; (add-hook 'prog-mode-hook 'better-defaults)
-;; (add-hook 'prog-mode-hook 'nlinum-mode)
+(add-hook 'text-mode-hook 'auto-fill-mode)
+(add-hook 'text-mode-hook 'visual-line-mode)
 
 (provide 'ana-ui-base)
 

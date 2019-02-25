@@ -30,7 +30,7 @@
    "pr"    'projectile-recentf)
   )
 
-(use-package flx)
+;; (use-package flx)
 
 (use-package helm-make
   :defer t
@@ -76,6 +76,12 @@
    "iu"  'counsel-unicode-char
    "sgp" 'counsel-git-grep
    ))
+
+(use-package smex
+  :config
+  (general-define-key
+   "M-X"     'smex
+   "H-X"     'smex-major-mode-commands))
 
 (use-package all-the-icons-ivy
   :config

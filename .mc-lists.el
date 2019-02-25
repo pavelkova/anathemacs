@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         mouse-set-region
+        org-self-insert-command
         ))
 
 (setq mc/cmds-to-run-once

@@ -14,7 +14,8 @@
 ;; epub reader & referencer - TODO integrate with bibtex, pdf, kindle clippings
 (use-package ereader)
 
-(use-package pdf-tools)
+(use-package pdf-tools
+  :defer t)
 
 (provide 'ana-reading)
 

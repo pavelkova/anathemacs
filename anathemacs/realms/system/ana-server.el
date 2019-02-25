@@ -13,9 +13,10 @@
 
 ;; ssh
 (use-package tramp-term
-  :init
-  (hx-leader-def
-    "r" 'tramp-term))
+  :defer t)
+
+(hx-leader-def
+  "r" 'tramp-term)
 
 (use-package nginx-mode
   :defer t)

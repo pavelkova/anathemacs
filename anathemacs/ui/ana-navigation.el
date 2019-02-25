@@ -41,8 +41,8 @@
                 (neotree-find file-name)))
         (message "Could not find git project root."))))
 
-(cc-leader-def
-  "C-p" 'neotree-project-dir)
+(hx-leader-def
+  "pd" 'neotree-project-dir)
 
 (use-package neotree
   :defer t

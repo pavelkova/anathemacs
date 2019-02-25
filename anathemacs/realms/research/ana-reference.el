@@ -12,6 +12,7 @@
   (require 'ana-base))
 
 (use-package org-ref
+  :defer t
   :config
   (setq reftex-default-bibliography 'user-default-bib-file
         org-ref-bibliography-notes 'user-bib-notes-file

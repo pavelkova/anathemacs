@@ -11,14 +11,13 @@
 (eval-when-compile
   (require 'ana-base))
 
-;; ssh
-(use-package tramp-term
-  :init
-  (hx-leader-def
-    "r" 'tramp-term))
+(use-package bash-completion)
 
-(use-package nginx-mode
-  :defer t)
+(use-package fish-mode)
+
+(use-package multi-term)
+
+(use-package xterm-color)
 
 (provide 'ana-shell)
 
