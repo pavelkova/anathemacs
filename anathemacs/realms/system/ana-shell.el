@@ -11,13 +11,23 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package bash-completion)
+(use-package bash-completion
+  :defer t)
 
-(use-package fish-mode)
+(use-package fish-mode
+  :defer t)
 
-(use-package multi-term)
+(use-package insert-shebag
+  :defer t)
 
-(use-package xterm-color)
+(use-package multi-term
+  :defer t)
+
+(use-package sh-script
+  :defer t)
+
+(use-package xterm-color
+  :defer t)
 
 (provide 'ana-shell)
 

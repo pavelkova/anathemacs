@@ -8,10 +8,6 @@
 ;;
 
 ;;; Code:
-
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package better-defaults)
 
 (use-package mwim
@@ -35,11 +31,13 @@
                   :arrows :arrows-twoheaded :punctuation
                   :logic :sets))
      (pretty-activate-groups
-      '(:greek :arithmetic-nary))    
+      '(:greek :arithmetic-nary))
      ))
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
+(diminish 'auto-fill-function)
 (add-hook 'text-mode-hook 'visual-line-mode)
+(diminish 'visual-line-mode)
 
 (provide 'ana-ui-base)
 

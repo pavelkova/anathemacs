@@ -27,6 +27,12 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; (use-package auto-package-update
+;;   :config
+;;   (setq auto-package-update-delete-old-versions t
+;;         auto-package-update-hide-results t)
+;;   (auto-package-update-maybe))
+
 (use-package dashboard
   :defer t
   :config
@@ -39,6 +45,10 @@
                           (bookmarks . 10)
                           (projects . 5)
                           (agenda . 10))))
+
+;; minor mode appearance in modeline
+(use-package delight)
+(use-package diminish)
 
 (provide 'ana-base)
 

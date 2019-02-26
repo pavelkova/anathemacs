@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 
 
 (provide 'ana-FILE)

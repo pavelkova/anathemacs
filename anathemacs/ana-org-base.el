@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 ;; babel - language support
 (setq org-confirm-babel-evaluate nil
       org-src-fontify-natively t
@@ -49,6 +46,8 @@
   (setq org-bullets-bullet-list '("⋅")))
 
 (add-hook 'org-mode-hook 'variable-pitch-mode)
+(diminish 'org-indent-mode)
+(diminish 'buffer-face-mode)
 
 ;; load
 (with-eval-after-load 'org
@@ -77,11 +76,6 @@
                             ;; org-wikinodes
                             ))
   (setq org-wikinodes-scope 'directory))
-
-;; keybindings
-(hs-leader-def
- "x" '(:ignore t :which-key "text")
- "w" '(:ignore t :which-key "web"))
 
 (provide 'ana-org-base)
 

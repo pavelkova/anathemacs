@@ -11,6 +11,9 @@
 (eval-when-compile
   (require 'ana-base))
 
+(use-package ebib
+  :defer t)
+
 (use-package org-ref
   :defer t
   :config

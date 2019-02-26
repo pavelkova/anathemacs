@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 ;; convert buffer text and decorations to html
 (use-package htmlize
   :defer t)

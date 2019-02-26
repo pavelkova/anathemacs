@@ -1,4 +1,4 @@
-;;; ana-version-control.el ---
+;;; ana-markdown.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,19 +8,20 @@
 ;;
 
 ;;; Code:
-(use-package browse-at-remote
+
+(use-package markdown-mode
   :defer t)
 
-(use-package magit
+(use-package markdown-preview-mode
   :defer t)
 
-(use-package gitconfig-mode
+(use-package markdown-toc
   :defer t)
 
-(use-package gitignore-mode
+(use-package mmm-mode
   :defer t)
 
-(provide 'ana-version-control)
+(provide 'ana-markdown)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-version-control.el ends here
+;;; ana-markdown.el ends here

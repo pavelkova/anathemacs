@@ -5,29 +5,19 @@
 ;;
 
 ;;; Code:
-
-(eval-when-compile
-  (require 'ana-base))
+(use-package all-the-icons-ivy
+  :config
+  (all-the-icons-ivy-setup)
+  (setq all-the-icons-ivy-file-commands
+        '(counsel-find-file counsel-recentf counsel-projectile-find-file counsel-projectile-find-dir)))
 
 (use-package company
+  :diminish company-mode
   :init
   (global-company-mode)
   :config
   (company-tng-configure-default)
   
-  )
-
-(use-package counsel-projectile
-  :config
-  (setq projectile-switch-project-action 'counsel-projectile-find-file)
-  (hx-leader-def
-   :keymaps 'projectile-mode-map
-   "p SPC" 'counsel-projectile
-   "pb"    'counsel-projectile-switch-to-buffer
-   "pd"    'counsel-projectile-find-dir
-   "pp"    'counsel-projectile-switch-project
-   "pf"    'counsel-projectile-find-file
-   "pr"    'projectile-recentf)
   )
 
 ;; (use-package flx)
@@ -46,6 +36,7 @@
    "ji"  'counsel-imenu))
 
 (use-package ivy
+  :diminish ivy-mode
   :init
   (use-package counsel)
   :config
@@ -77,20 +68,20 @@
    "sgp" 'counsel-git-grep
    ))
 
+(use-package ivy-hydra
+  :after hydra)
+
 (use-package smex
   :config
   (general-define-key
    "M-X"     'smex
    "H-X"     'smex-major-mode-commands))
 
-(use-package all-the-icons-ivy
+(use-package yasnippet
   :config
-  (all-the-icons-ivy-setup)
-  (setq all-the-icons-ivy-file-commands
-        '(counsel-find-file counsel-recentf counsel-projectile-find-file counsel-projectile-find-dir)))
+  (yas-global-mode 1))
 
-(use-package ivy-hydra
-  :after hydra)
+(use-package yasnippet-snippets)
 
 (provide 'ana-completion)
 

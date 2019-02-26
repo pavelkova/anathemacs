@@ -8,14 +8,8 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
-(use-package gh-md)
-(use-package markdown-mode)
-(use-package markdown-toc)
-(use-package mmm-mode)
-(use-package vmd-mode)
+(use-package csv-mode
+  :defer t)
 
 (provide 'ana-csv)
 

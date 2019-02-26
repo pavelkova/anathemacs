@@ -11,19 +11,24 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package cmm-mode)
-(use-package company-cabal)
-(use-package company-ghci)
-(use-package company-ghc)
-(use-package flycheck-haskell)
-(use-package ggtags)
+(use-package company-cabal
+  :after company-mode
+  (add-to-list 'company-backends 'company-cabal))
+
+(use-package flycheck-haskell
+  :hook (flycheck-haskell-setup . haskell-mode-hook))
+
 (use-package ghc)
+
 ;; (use-package haskell-emacs) ;; TODO - use haskell to write emacs extensions
+
 (use-package haskell-mode)
-(use-package haskell-snippets)
-(use-package hindent)
-(use-package hlint-refactor)
-(use-package intero)
+
+(use-package hindent
+  :hook haskell-mode-hook)
+
+(use-package intero
+  :hook haskell-mode-hook)
 
 (provide 'ana-haskell)
 

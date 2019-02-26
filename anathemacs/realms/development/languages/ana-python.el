@@ -12,8 +12,14 @@
   (require 'ana-base))
 
 
-(use-package anaconda-mode)
-(use-package company-anaconda)
+(use-package anaconda-mode
+  :hook python-mode-hook)
+
+(use-package company-anaconda
+  :after company
+  :config
+  (add-to-list 'company-backends 'company-anaconda))
+
 (use-package cython-mode)
 (use-package eldoc)
 (use-package hy-mode)

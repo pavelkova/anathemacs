@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- global-nlinum-mode
- global-linum-mode
- nlinum-mode
- linum-mode
- eval-expression
- customize-face
- describe-key
+ diminish
+ customize-variable
+ wc-mode
+ customize
+ customize-group
+ customize-mode
+ diminished-modes
 )
 
 ;; ----- smex-data -----
@@ -28,14 +28,14 @@
  (describe-key . 2)
  (fringe-mode . 2)
  (set-fringe-style . 1)
- (customize-mode . 1)
- (customize . 1)
+ (customize-mode . 2)
+ (customize . 2)
  (rainbow-mode . 2)
  (helm-M-x . 1)
  (elint-file . 1)
  (global-company-mode . 2)
- (customize-group . 1)
- (customize-variable . 1)
+ (customize-group . 3)
+ (customize-variable . 3)
  (origami-mode . 2)
  (org-journal-list--start . 1)
  (customize-face . 1)
@@ -43,4 +43,16 @@
  (nlinum-mode . 1)
  (global-linum-mode . 2)
  (global-nlinum-mode . 2)
+ (load-theme . 1)
+ (projectile-ibuffer . 2)
+ (projectile-add-known-project . 1)
+ (spaceline-toggle-minor-modes . 3)
+ (spaceline-all-the-icons-toggle-slim . 1)
+ (spaceline-all-the-icons-theme . 2)
+ (package-list-packages . 1)
+ (show-paren-mode . 2)
+ (spaceline-toggle-all-the-icons-minor-modes-on . 1)
+ (diminished-modes . 1)
+ (wc-mode . 1)
+ (diminish . 2)
 )

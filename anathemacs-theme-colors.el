@@ -5,7 +5,7 @@
         ana-bg-2      "#203a3e"  ;; black / 8
         ana-base-1    "#fefef7" ;; white / 15
         ana-base-2    "#ecccc2"  ;; white / 7
-        ana-base-dim  "#ebddd7 "   ;; --
+        ana-base-dim  "#ebddd7"   ;; --
         ana-red-1     "#d07c67"  ;; red / 1    
         ana-red-2     "#e6958b"  ;; red / 9
         ana-green-1   "#617c42"  ;; green / 2

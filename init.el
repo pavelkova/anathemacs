@@ -81,6 +81,7 @@
 ;; project management
 (require 'ana-bullet-journal)
 (require 'ana-planning)
+(require 'ana-projectile)
 (require 'ana-scheduling)
 ;; research
 (require 'ana-annotation)

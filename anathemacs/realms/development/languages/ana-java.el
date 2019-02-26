@@ -1,4 +1,4 @@
-;;; ana-sh.el ---
+;;; ana-java.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -11,14 +11,16 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package company-shell
-  :defer t
-  )
-(use-package fish-mode)
-(use-package insert-shebang)
-(use-package sh-script)
+(use-package company-emacs-eclim
+  :defer t)
 
-(provide 'ana-sh)
+(use-package eclim
+  :defer t)
+
+(use-package java-mode
+  :defer t)
+
+(provide 'ana-java)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-sh.el ends here
+;;; ana-java.el ends here

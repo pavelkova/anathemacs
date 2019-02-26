@@ -22,14 +22,6 @@
   (setq org-brain-visualize-default-choices 'all)
   (setq org-brain-title-max-length 12))
 
-(use-package org-projectile
-  :config
-  (org-projectile-per-project)
-  (hx-leader-def
-    "pp" 'counsel-projectile-switch-project)
-  (setq org-projectile-per-project-filepath "TODO.org"
-        org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
-
 ;;   (use-package toc-org :hook org-mode)
 
 (with-eval-after-load 'org

@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
- 
 (use-package org-journal
   :config
   (setq org-journal-dir user-journal-dir
@@ -18,11 +15,16 @@
         org-journal-date-format "%d %B %Y [%A]"
         org-journal-file-format "%Y-%m-%d.org"))
 
-;; (use-package org-journal-list
-;;   :config
-;;   (setq org-journal-list-default-directory user-journal-dir
-;;         org-journal-list-default-suffix ".org")
-;;   )
+(use-package wc-mode
+  :defer t
+  :hook org-journal-mode-hook
+  :config
+  (setq wc-modeline-format "written %tw of %gw words"
+        wc-word-goal 750))
+
+(hs-leader-def
+  "xc" 'wc-mode
+  "xC" 'wc-set-word-goal)
 
 (use-package writegood-mode
   :defer t)

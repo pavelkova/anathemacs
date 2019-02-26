@@ -12,18 +12,24 @@
   (require 'ana-base))
 
 ;; javascript
-(use-package js-doc)
-(use-package js2-mode)
-(use-package js2-refactor)
+(use-package js-doc
+  :defer t)
+
+(use-package js2-mode
+  :defer t)
+
+(use-package js2-refactor
+  :defer t)
 
 ;; json
-(use-package json-mode)
-(use-package json-navigator)
-(use-package json-snatcher)
+(use-package json-mode
+  :defer t)
 
-;; previews
-(use-package skewer-mode)
-(use-package web-beautify)
+(use-package json-navigator
+  :defer t)
+
+(use-package json-snatcher
+  :defer t)
 
 (provide 'ana-bibtex)
 

@@ -1,1 +1,1 @@
-("~/Media/documentos/org/" "~/.emacs.d/" "/mnt/Media/documentos/org/" "~/spacemacs-carcass/")
+("~/.emacs.d/" "~/spacemacs-carcass/")

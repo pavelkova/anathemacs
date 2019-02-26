@@ -8,10 +8,6 @@
 ;;
 
 ;;; Code:
-
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package dash)
 (use-package ht)
 (use-package s)
@@ -24,7 +20,7 @@
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
 (use-package nlinum
-  :hook prog-mode
+  ;; :hook prog-mode
   :init
   (setq nlinum-highlight-current-line t
         nlinum-format " %d"))
@@ -35,7 +31,7 @@
         nlinum-relative-redisplay-delay 0))
 
 (use-package origami
-  :hook prog-mode
+  ;; :hook prog-mode
   :config
   (hx-leader-def
     "v," 'origami-toggle-node
@@ -47,6 +43,7 @@
   :defer t)
 
 (use-package smartparens
+  :diminish smartparens-mode
   :config
   (smartparens-global-mode))
 

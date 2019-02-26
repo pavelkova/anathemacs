@@ -1,4 +1,4 @@
-;;; ana-latex.el ---
+;;; ana-math.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,12 +8,20 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
+(use-package auctex-latexmk)
 
-(use-package latex)
+(use-package cdlatex)
 
-(provide 'ana-latex)
+(use-package company-math)
+;; (use-package latex)
+
+(use-package math-symbol-lists)
+
+(use-package matlab-mode)
+
+(use-package wolfram-mode)
+
+(provide 'ana-math)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-latex.el ends here
+;;; ana-math.el ends here

@@ -7,9 +7,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (setq-default fringes-outside-margins t
               indicate-buffer-boundaries nil
               fringe-indicator-alist (delq (assq 'continuation fringe-indicator-alist)

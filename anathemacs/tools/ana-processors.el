@@ -8,13 +8,11 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 ;; spell checking
 ;; (use-package auto-dictionary)
 
-(use-package define-word)
+(use-package define-word
+  :defer t)
 
 (use-package google-translate
   :defer t)
@@ -22,6 +20,7 @@
 ; errors and linting
 
 (use-package flycheck
+  :diminish flycheck-mode
   :init
   (global-flycheck-mode))
 

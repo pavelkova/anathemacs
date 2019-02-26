@@ -1,4 +1,4 @@
-;;; ana-graphviz.el ---
+;;; ana-php.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -13,7 +13,7 @@
 
 
 
-(provide 'ana-graphviz)
+(provide 'ana-php)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-graphviz.el ends here
+;;; ana-php.el ends here

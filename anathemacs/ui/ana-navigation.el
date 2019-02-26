@@ -8,10 +8,6 @@
 ;;
 
 ;;; Code:
-
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package all-the-icons-dired
   :hook
   (dired-mode))
@@ -65,4 +61,4 @@
 (provide 'ana-navigation)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-navigationel ends here
+;;; ana-navigation.el ends here

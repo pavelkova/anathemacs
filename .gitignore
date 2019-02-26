@@ -15,7 +15,12 @@ network-security.data
 .projectile
 projectile*
 TODO.org
+recentf
+smex-items
+tramp
+.mc-lists.el
 
 # ignore secrets
 secrets
+._sync_*
 ._sync_*
