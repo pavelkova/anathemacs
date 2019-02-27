@@ -29,6 +29,7 @@
 (defconst user-caldav-file (concat user-secrets-dir "caldav.el"))
 (defconst user-cookbook-file (concat user-org-dir "vida/recetas.org"))
 (defconst user-default-bib-file (concat user-org-dir "investigaciones/referencias.bib"))
+(defconst user-dokuwiki-file (concat user-secrets-dir "dokuwiki.el"))
 (defconst user-download-dir (concat user-org-dir ".descargas/"))
 (defconst user-inbox-file (concat user-org-dir "codex.org"))
 (defconst user-journal-dir (concat user-org-dir "diario/"))

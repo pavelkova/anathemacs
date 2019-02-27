@@ -67,14 +67,32 @@
 (require 'ana-ui-base)
 (require 'ana-modeline)
 (require 'ana-editing)
+(require 'ana-layout)
 (require 'ana-navigation)
 (require 'ligature-support)
 (require 'rogue-margins)
 ;; REALMS
 ;; development
+;;;; frameworks
 (require 'ana-django)
+;; (require 'ana-rails)
+;; (require 'ana-react)
 (require 'ana-web)
+;;;; languages
+;; (require 'ana-c)
+(require 'ana-csv)
+;; (require 'ana-elisp)
+(require 'ana-go)
+(require 'ana-haskell)
+(require 'ana-java)
+(require 'ana-js)
+;; (require 'ana-markdown)
+;; (require 'ana-php)
+(require 'ana-python)
+(require 'ana-ruby)
+(require 'ana-sql)
 ;; personal
+(require 'ana-dokuwiki)
 (require 'ana-filing)
 (require 'ana-personal-base)
 (require 'ana-writing)

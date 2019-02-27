@@ -39,6 +39,7 @@
   "p" '(:ignore t :which-key "projects")
   "s" '(:ignore t :which-key "search/symbols")
   "v" '(:ignore t :which-key "visibility")
+  "w" '(:ignore t :which-key "windows/layouts")
  )
 
 ;; errors
@@ -47,14 +48,15 @@
  "en" 'next-error
  "ep" 'previous-error
 ;; comments
-  "te" 'comment-dwim ;; add to end of line
-  "tl" 'comment-line
-  "cr" 'comment-or-uncomment-region)
+  "c]"  'comment-dwim ;; add to end of line
+  "c\-" 'comment-line
+  "c["  'comment-or-uncomment-region)
 ;; "ch" hide/show comments toggle
 
 (hs-leader-def
- "a" '(:ignore t :which-key "archive")
- "x" '(:ignore t :which-key "text"))
+  "a" '(:ignore t :which-key "archive")
+  "w" '(:ignore t :which-key "wiki")
+  "x" '(:ignore t :which-key "text"))
 
 (provide 'ana-keybindings)
 

@@ -1,4 +1,4 @@
-;;; ana-bibtex.el ---
+;;; ana-js.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -31,7 +31,7 @@
 (use-package json-snatcher
   :defer t)
 
-(provide 'ana-bibtex)
+(provide 'ana-js)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-bibtex.el ends here
+;;; ana-js.el ends here

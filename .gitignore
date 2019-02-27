@@ -5,6 +5,7 @@
 auto-save-list
 backups
 .cache
+.config
 recent*
 
 # ignore installed packages
@@ -22,5 +23,5 @@ tramp
 
 # ignore secrets
 secrets
-._sync_*
-._sync_*
+.*sync*
+*.db*

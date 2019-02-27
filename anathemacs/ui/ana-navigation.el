@@ -14,15 +14,15 @@
 
 ;; ibuffer
 (setq ibuffer-expert t
-        ibuffer-show-empty-filter-groups nil
-        ibuffer-filter-group-name-face 'org-level-1
-        ibuffer-modified-char ?\★
-        ibuffer-locked-char ?\-
-        ibuffer-read-only-char ?\-
-        ibuffer-marked-char ?\✓
-        ibuffer-deletion-char ?\✕
-        ibuffer-deletion-face 'org-agenda-done
-        ibuffer-use-header-line nil)
+      ibuffer-show-empty-filter-groups nil
+      ibuffer-filter-group-name-face 'org-level-1
+      ibuffer-modified-char ?\★
+      ibuffer-locked-char ?\-
+      ibuffer-read-only-char ?\-
+      ibuffer-marked-char ?\✓
+      ibuffer-deletion-char ?\✕
+      ibuffer-deletion-face 'org-agenda-done
+      ibuffer-use-header-line nil)
 
 (defun neotree-project-dir ()
     "Open NeoTree using the git root."

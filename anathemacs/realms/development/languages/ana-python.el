@@ -20,18 +20,36 @@
   :config
   (add-to-list 'company-backends 'company-anaconda))
 
-(use-package cython-mode)
-(use-package eldoc)
-(use-package hy-mode)
-(use-package live-py-mode)
-(use-package pip-requirements)
-(use-package py-isort)
-(use-package pyenv-mode)
-(use-package pytest)
-(use-package pyvenv)
-(use-package stickyfunc-enhance)
-(use-package xcscope)
-(use-package yapify)
+(use-package cython-mode
+  :defer t)
+
+(use-package eldoc
+  :defer t)
+
+(use-package hy-mode
+  :defer t)
+
+(use-package live-py-mode
+  :defer t)
+
+(use-package pip-requirements
+  :defer t)
+
+(use-package py-isort
+  :defer t)
+
+(use-package pyenv-mode
+  :defer t)
+
+(use-package pytest
+  :defer t)
+
+(use-package pyvenv
+  :defer t)
+
+;; (use-package stickyfunc-enhance)
+;; (use-package xcscope)
+;; (use-package yapify)
 
 (provide 'ana-python)
 

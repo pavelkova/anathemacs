@@ -17,9 +17,6 @@
 (use-package eclim
   :defer t)
 
-(use-package java-mode
-  :defer t)
-
 (provide 'ana-java)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

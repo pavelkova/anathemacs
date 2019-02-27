@@ -11,13 +11,19 @@
 (use-package browse-at-remote
   :defer t)
 
-(use-package magit
+(use-package gist
   :defer t)
 
 (use-package gitconfig-mode
   :defer t)
 
+(use-package git-gutter-fringe
+  :defer t)
+
 (use-package gitignore-mode
+  :defer t)
+
+(use-package magit
   :defer t)
 
 (provide 'ana-version-control)

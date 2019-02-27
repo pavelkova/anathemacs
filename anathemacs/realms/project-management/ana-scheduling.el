@@ -8,8 +8,12 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
+
+;; time tracking
+(use-package activity-watch-mode
+  :defer t
+  ;; :config (setq activity-watch-api-host "")
+  )
 
 ;; calendar
 (use-package calfw
