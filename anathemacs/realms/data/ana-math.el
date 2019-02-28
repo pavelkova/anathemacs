@@ -8,18 +8,24 @@
 ;;
 
 ;;; Code:
-(use-package auctex-latexmk)
+(use-package auctex-latexmk
+  :defer t)
 
-(use-package cdlatex)
+(use-package cdlatex
+  :defer t)
 
-(use-package company-math)
+(use-package company-math
+  :defer t)
+
 ;; (use-package latex)
 
-(use-package math-symbol-lists)
+(use-package math-symbol-lists
+  :defer t)
 
-(use-package matlab-mode)
+;; (use-package matlab-mode)
 
-(use-package wolfram-mode)
+(use-package wolfram-mode
+  :defer t)
 
 (provide 'ana-math)
 

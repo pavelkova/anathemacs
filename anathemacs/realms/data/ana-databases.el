@@ -1,4 +1,4 @@
-;;; ana-sql.el ---
+;;; ana-databases.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,10 +8,12 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
 
+;; CSV
+(use-package csv-mode
+  :defer t)
 
+;; SQL
 (use-package emacsql
   :defer t)
 
@@ -24,7 +26,7 @@
 (use-package pg
   :defer t)
 
-(provide 'ana-sql)
+(provide 'ana-databases)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-sql.el ends here
+;;; ana-databases.el ends here

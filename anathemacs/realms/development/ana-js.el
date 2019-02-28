@@ -31,6 +31,9 @@
 (use-package json-snatcher
   :defer t)
 
+(use-package livid-mode
+  :defer t)
+
 (provide 'ana-js)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

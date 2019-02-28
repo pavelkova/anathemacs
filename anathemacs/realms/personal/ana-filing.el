@@ -16,18 +16,18 @@
       '(("t" "TASK" entry
          (file+headline user-tasks-file
                         user-tasks-inbox-headline)
-         "** □ %?\n  %i\n  %a")
+         "** □ %?\n  %i\n  %a\n:ADDED: %t\n")
         ("l" "LINK" entry
          ((file+headline user-tasks-file
                          user-tasks-inbox-headline))
-         "* □ %(org-cliplink-capture) \n SCHEDULED: %t\n"
+         "* □* %(org-cliplink-capture) \n :ADDED: %t\n"
          :empty-lines 1)
         ("e" "EVENT" entry
          (file user-cal-file)
-         "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
-       ;; ("d" "DIARY" entry
-        ;;  (file+olp+datetree user-journal-dir)
-        ;;  "* %?\nEntered on %U\n  %i\n  %a")
+         "* %?\n%^T\n:PROPERTIES:\n:LOCATION:\n:END:\n")
+        ("j" "DIARY" entry
+         (function org-journal-find-location)
+         "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
         ("b" "BOOKMARK" entry
          (file user-bookmarks-file)
          "* %?\n%a")
@@ -42,8 +42,8 @@
          (file user-cookbook-file)
          "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")))
 
-(hx-leader-def
-  "oc" 'org-capture)
+(hs-leader-def
+  "c" 'org-capture)
 
 (provide 'ana-filing)
 

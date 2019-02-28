@@ -12,17 +12,18 @@
   (require 'ana-base))
 
 (use-package company-cabal
-  :after company-mode
-  (add-to-list 'company-backends 'company-cabal))
+  :hook (haskell-cabal-mode . (set-local-company-backend company-cabal)))
 
 (use-package flycheck-haskell
   :hook (flycheck-haskell-setup . haskell-mode-hook))
 
-(use-package ghc)
+(use-package ghc
+  :defer t)
 
 ;; (use-package haskell-emacs) ;; TODO - use haskell to write emacs extensions
 
-(use-package haskell-mode)
+(use-package haskell-mode
+  :defer t)
 
 (use-package hindent
   :hook haskell-mode-hook)

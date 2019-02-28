@@ -16,9 +16,14 @@
 (use-package general
   :init
   (general-create-definer hx-leader-def
+    ;; general bindings for mode-agnostic actions: projectile and versioning controls, file management, error handling, editing tools, etc.
     :prefix "H-x")
   (general-create-definer hs-leader-def
     :prefix "H-SPC")
+  ;; globally available commands organized by 
+  (general-create-definer minor-leader-def
+    :prefix "C-c")
+  ;; use with ':keymaps <mode>' to add to 
   )
 
 (general-define-key
@@ -27,14 +32,12 @@
  "<f8>" 'neotree-toggle)
 
 (hx-leader-def
-  "a" '(:ignore t :which-key "applications")
   "c" '(:ignore t :which-key "comments")
   "e" '(:ignore t :which-key "errors")
   "f" '(:ignore t :which-key "files")
   "g" '(:ignore t :which-key "git/version-control")
   "i" '(:ignore t :which-key "insert")
   "j" '(:ignore t :which-key "jump/join/split")
-  "m" '(:ignore t :which-key "major-mode-cmd")
   "o" '(:ignore t :which-key "org")
   "p" '(:ignore t :which-key "projects")
   "s" '(:ignore t :which-key "search/symbols")
@@ -55,6 +58,7 @@
 
 (hs-leader-def
   "a" '(:ignore t :which-key "archive")
+  "d" '(:ignore t :which-key "data")
   "w" '(:ignore t :which-key "wiki")
   "x" '(:ignore t :which-key "text"))
 

@@ -9,8 +9,7 @@
 
 ;;; Code:
 (use-package ess
-  :defer t
-  )
+  :hook (set-local-company-backend company-ess))
 
 (use-package ess-R-data-view
   :defer t)

@@ -22,7 +22,8 @@
     "aR" 'org-board-archive-dry-run
     "ax" 'org-board-run-after-archive-function
     "aX" 'org-board-cancel)
-  (setq org-board-capture-file 'user-inbox-file))
+  (setq org-board-capture-file 'user-inbox-file
+        org-attach-directory user-download-dir))
 
 (use-package org-web-tools
   :config

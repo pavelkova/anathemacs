@@ -17,8 +17,6 @@
 
 ;; calendar
 (use-package calfw
-  :bind
-  (("C-c q" . cfw:open-org-calendar))
   :config
   (setq cfw:fchar-junction ?┼
         cfw:fchar-vertical-line ?│
@@ -31,6 +29,8 @@
         cfw:render-line-breaker 'cfw:render-line-breaker-none
         cfw:face-item-separator-color nil
         calendar-week-start-day 1)
+  (hs-leader-def
+    "<pause>" 'cfw:open-org-calendar)
  )
 
 ;;(use-package org-caldav)

@@ -1,4 +1,4 @@
-;;; ana-FILE.el ---
+;;; ana-c.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -10,7 +10,8 @@
 ;;; Code:
 
 
-(provide 'ana-FILE)
+
+(provide 'ana-c)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-FILE.el ends here
+;;; ana-c.el ends here

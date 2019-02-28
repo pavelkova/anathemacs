@@ -14,7 +14,7 @@
 (use-package org-brain
   :init
   (setq org-brain-path 'user-org-brain-dir)
-  (hx-leader-def
+  (hs-leader-def
     "oB" 'org-brain-visualize)
   :config
   (setq org-id-track-globally t)
@@ -31,7 +31,7 @@
                              (org-agenda-files :maxlevel . 1))
         org-archive-location user-archive-file
         org-agenda-window-setup 'current-window
-        org-agenda-files '()
+        org-agenda-files '("~/Media/documentos/org")
         org-agenda-include-diary t
         org-agenda-custom-commands
         '(("n" "agenda"
@@ -45,6 +45,8 @@
               (org-deadline-warning-days 30)
               (org-agenda-time-grid nil)
               (org-agenda-overriding-header "próximo"))))))
+(hs-leader-def
+  "A" 'org-agenda)
 
 (provide 'ana-planning)
 

@@ -26,7 +26,7 @@
 (use-package org-projectile
   :config
   (org-projectile-per-project)
-  (setq org-projectile-per-project-filepath "TODO.org"
+  (setq org-projectile-per-project-filepath "README.org"
         org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
 (use-package projectile

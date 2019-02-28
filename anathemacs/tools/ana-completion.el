@@ -16,9 +16,11 @@
   :init
   (global-company-mode)
   :config
-  (company-tng-configure-default)
-  
-  )
+  (company-tng-configure-default))
+
+(defun set-local-company-backend (backend)
+  "Only load backends when needed"
+  (set (make-local-variable 'company-backends) '(backend)) (company-mode))
 
 ;; (use-package flx)
 
@@ -78,6 +80,7 @@
    "H-X"     'smex-major-mode-commands))
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :config
   (yas-global-mode 1))
 

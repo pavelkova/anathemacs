@@ -1,0 +1,44 @@
+#+title: Anathemacs
+This emacs distribution presupposes the following as a rule of the Linix
+ethos:
+#+BEGIN_VERSE
+To understand a piece of software, customize it to within an inch of its life.
+#+END_VERSE
+
+* Structure & Packages
+** General
+**** Base
+**** Constants
+**** Keybindings
+**** Org base
+*** UI
+**** Editing
+**** Layout
+**** Modeline
+**** Navigation
+**** UI base
+*** Tools
+**** Archiving
+**** Completion
+**** Exporting
+**** Processors
+**** Version control
+** Realms
+*** Data
+**** Databases
+**** Jupyter (iPython notebooks)
+**** Math
+**** Statistics
+**** Visualization
+*** Development
+**** 
+*** Personal
+*** Project management
+*** Research
+*** System
+* Keybindings
+** Leader keys
+*** H-x
+*** H-<space>
+*** C-c
+** Commands

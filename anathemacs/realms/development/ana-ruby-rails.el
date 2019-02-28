@@ -1,4 +1,4 @@
-;;; ana-rails.el ---
+;;; ana-ruby-rails.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,12 +8,10 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
 
 (use-package projectile-rails)
 
-(provide 'ana-rails)
+(provide 'ana-ruby-rails)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-rails.el ends here
+;;; ana-ruby-rails.el ends here

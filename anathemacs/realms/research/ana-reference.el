@@ -8,8 +8,8 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
+(use-package biblio
+  :defer t)
 
 (use-package ebib
   :defer t)

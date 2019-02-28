@@ -1,4 +1,4 @@
-;;; ana-django.el ---
+;;; ana-python-django.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -56,7 +56,7 @@
     "jtt" 'pony-test
     "jtu" 'pony-test-up))
 
-(provide 'ana-django)
+(provide 'ana-python-django)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-django.el ends here
+;;; ana-python-django.el ends here

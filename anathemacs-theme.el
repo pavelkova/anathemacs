@@ -54,13 +54,17 @@
       (yellow-2      ana-yellow-2)
       (border        ana-yellow-2)
       (highlight     ana-yellow-2)
+      ;; magenta
       (magenta-1     ana-magenta-1)
       (meta          ana-magenta-1)
+      ;; lt magenta
       (magenta-2     ana-magenta-2)
       (type          ana-magenta-2)
       (comp          ana-magenta-2)
+      ;; cyan
       (cyan-1        ana-cyan-1)
       (mat           ana-cyan-1)
+      ;; lt cyan
       (cyan-2        ana-cyan-2)
       (keyword       ana-cyan-2)
       
@@ -91,7 +95,7 @@
      `(link-visited        ((,class (:foreground ,comp :underline t))))
      `(match               ((,class (:background ,highlight :foreground ,bg2))))
      `(minibuffer-prompt   ((,class (:inherit bold :foreground ,const))))
-     `(page-break-lines    ((,class (:foreground ,border :background ,border))))
+     `(page-break-lines    ((,class (:foreground ,bg2 :background ,bg2))))
      `(region              ((,class (:background ,highlight))))
      `(secondary-selection ((,class (:background ,bg2))))
      `(shadow              ((,class (:foreground ,base-dim))))
@@ -178,6 +182,14 @@
      `(company-tooltip-search           ((,class (:inherit match))))
      `(company-tooltip-selection        ((,class (:background ,ttip-sl :foreground ,base))))
 
+;;;;; dashboard
+     `(dashboard-banner-logo-title-face ((,class :family ,sans-font :weight bold)))
+     ;; `(dashboard-text-banner-face ((,class :inherit nil)))
+     `(dashboard-heading-face ((,class :foreground ,func :family ,sans-font :weight light :height 2.9)))
+     `(widget-button ((,class :weight normal)))
+     
+
+     
 ;;;;; diff
      `(diff-added             ((,class :background nil :foreground ,green-1)))
      `(diff-changed           ((,class :background nil :foreground ,keyword)))
@@ -289,7 +301,7 @@
         (,class (:foreground ,base :background ,war :inherit bold :underline t))))
 
 ;;;;; git-gutter-fr
-     `(git-gutter-fr:added ((,class (:foreground ,green-1 :inherit bold))))
+     `(git-gutter-fr:added ((,class (:foreground ,suc :inherit bold))))
      `(git-gutter-fr:deleted ((,class (:foreground ,war :inherit bold))))
      `(git-gutter-fr:modified ((,class (:foreground ,keyword :inherit bold))))
 
@@ -355,8 +367,8 @@
      `(helm-swoop-target-word-face ((,class (:background ,highlight-dim :foreground ,bg1))))
 
 ;;;;; highlights
-     `(hi-green  ((,class (:foreground ,green-1 :background ,green-2))))
-     `(hi-yellow ((,class (:foreground ,yellow-1 :background ,yellow-2))))
+     `(hi-green  ((,class (:foreground ,bg2 :background ,green-2))))
+     `(hi-yellow ((,class (:foreground ,bg2 :background ,yellow-2))))
 
 ;;;;; highlight-indentation
      `(highlight-indentation-face ((,class (:background ,comment-bg))))
@@ -387,7 +399,7 @@
      `(info-title-4 ((,class (:height 1.2))))
 
 ;;;;; ivy
-     `(ivy-current-match ((,class (:background ,highlight :inherit bold))))
+     `(ivy-current-match ((,class (:foreground ,bg1 :background ,highlight :inherit bold))))
      `(ivy-minibuffer-match-face-1 ((,class (:inherit bold))))
      `(ivy-minibuffer-match-face-2 ((,class (:foreground ,head1 :underline t))))
      `(ivy-minibuffer-match-face-3 ((,class (:foreground ,head1 :underline t))))
@@ -527,17 +539,17 @@
      `(org-agenda-done ((,class (:foreground ,comment :strike-through t))))
      `(org-agenda-structure ((,class (:inherit bold :foreground ,comp))))
      `(org-block ((,class (:background ,cblk-bg :foreground ,cblk :family ,base-font :height 1.0))))
-     `(org-block-begin-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :height 0.8))))
-     `(org-block-end-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :height 0.8))))
+     `(org-block-begin-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :family ,base-font :height 0.6))))
+     `(org-block-end-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :family ,base-font :height 0.6))))
      `(org-clock-overlay ((,class (:foreground ,comp))))
      `(org-code ((,class (:inherit nil :foreground ,base-dim :family ,base-font))))
-     `(org-column ((,class (:background ,bg2))))
+     `(org-column ((,class (:background ,bg2 :family ,sans-font))))
      `(org-column-title ((,class (:foreground ,green-2 :family ,sans-font :height 0.9))))
      `(org-date ((,class (:underline t :foreground ,var :height 0.8))))
      `(org-date-selected ((,class (:background ,highlight :foreground ,base-dim))))
      `(org-default ((,class (:inherit nil :family ,et-font :height 1.5))))
      `(org-document-info ((,class (:slant italic))))
-     `(org-document-info-keyword ((,class (:foreground ,comment :height 0.7 :family ,base-font :weight normal))))
+     `(org-document-info-keyword ((,class (:foreground ,comment :height 0.6 :family ,base-font))))
      `(org-document-title ((,class (:inherit nil :family ,et-font :foreground ,base-dim :underline nil :height 2.3))))
      `(org-done ((,class (:foreground ,comment :background nil :strike-through t ))))
      `(org-ellipsis ((,class (:foreground ,comment :underline nil))))
@@ -546,29 +558,29 @@
      `(org-hide ((,class (:foreground ,bg1))))
      `(org-indent ((,class (:inherit org-hide))))
      `(org-kbd ((,class (:inherit region :foreground ,base :box (:line-width 1 :style released-button)))))
-     `(org-level-1 ((,class (:inherit nil :family ,et-font :height 1.6))))
-     `(org-level-2 ((,class (:inherit nil :family ,et-font :slant italic :height 1.5))))
-     `(org-level-3 ((,class (:inherit variable-pitch))))
-     `(org-level-4 ((,class (:inherit variable-pitch))))
-     `(org-level-5 ((,class (:inherit variable-pitch))))
-     `(org-level-6 ((,class (:inherit variable-pitch))))
-     `(org-level-7 ((,class (:inherit variable-pitch))))
-     `(org-level-8 ((,class (:inherit variable-pitch))))
+     `(org-level-1 ((,class (:inherit variable-pitch :slant italic :height 1.6))))
+     `(org-level-2 ((,class (:inherit variable-pitch :slant italic))))
+     `(org-level-3 ((,class (:inherit variable-pitch :height 0.8))))
+     `(org-level-4 ((,class (:inherit variable-pitch :height 0.8))))
+     `(org-level-5 ((,class (:inherit variable-pitch :height 0.8))))
+     `(org-level-6 ((,class (:inherit variable-pitch :height 0.8))))
+     `(org-level-7 ((,class (:inherit variable-pitch :height 0.8))))
+     `(org-level-8 ((,class (:inherit variable-pitch :height 0.8))))
      `(org-link ((,class (:underline t :foreground ,base-dim))))
-     `(org-meta-line ((,class (:foreground ,meta))))
+     `(org-meta-line ((,class (:foreground ,meta :family ,base-font :height 0.6))))
      `(org-mode-line-clock-overrun ((,class (:foreground ,err))))
      `(org-priority ((,class (:foreground ,war :inherit bold))))
-     `(org-quote ((,class (:inherit org-block :family ,et-font))))
+     `(org-quote ((,class (:background ,cblk-bg :foreground ,cblk))))
      `(org-ref-cite-face ((,class (:foreground ,type))))
      `(org-scheduled ((,class (:foreground ,comp))))
      `(org-scheduled-today ((,class (:foreground ,func))))
      `(org-sexp-date ((,class (:foreground ,base))))
-     `(org-special-keyword ((,class (:foreground ,func :height 0.8))))
-     `(org-table ((,class (:foreground ,base :background nil :height 0.9))))
+     `(org-special-keyword ((,class (:foreground ,func :family ,base-font :height 0.8))))
+     `(org-table ((,class (:foreground ,base :background nil :family ,base-font :height 0.9))))
      `(org-time-grid ((,class (:foreground ,comment))))
      `(org-todo ((,class (:foreground ,func :inherit bold :background nil))))
      `(org-verbatim ((,class (:foreground ,keyword))))
-     `(org-verse ((,class (:inherit org-block :family ,et-font :slant italic))))
+     `(org-verse ((,class (:inherit org-quote :slant italic))))
      `(org-warning ((,class (:foreground ,err))))
 
 ;;;;; perspective

@@ -13,13 +13,12 @@
 
 (use-package ein
   :config
-  (hm-leader-def
-    :keymaps ein:notebooklist-mode-maps
-    "l" 'ein:notebooklist-open
-    "n" 'ein:notebooklist-new-notebook
-    "g" 'ein:notebooklist-open-notebook-global
-    "p" 'ein:notebooklist-login
-    "j" 'ein:junk-new
+  (hs-leader-def
+    "dl" 'ein:notebooklist-open
+    "dn" 'ein:notebooklist-new-notebook
+    "dg" 'ein:notebooklist-open-notebook-global
+    "dp" 'ein:notebooklist-login
+    "dj" 'ein:junk-new
     ))
 
 (provide 'ana-jupyter)

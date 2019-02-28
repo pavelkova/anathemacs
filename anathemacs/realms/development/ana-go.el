@@ -11,16 +11,13 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package company-go
-  :defer t)
-
-;; (use-package gocode
-;;   :defer t)
+(use-package company-go)
 
 (use-package go-eldoc
   :defer t)
 
 (use-package go-mode
+  :hook (set-local-company-backend company-go)
   :mode ("\\.go\\'" . go-mode))
 
 (use-package go-projectile

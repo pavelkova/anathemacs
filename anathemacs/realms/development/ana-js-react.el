@@ -1,4 +1,4 @@
-;;; ana-c.el ---
+;;; ana-js-react.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,12 +8,10 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
 
 
 
-(provide 'ana-c)
+(provide 'ana-js-react)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-c.el ends here
+;;; ana-js-react.el ends here
