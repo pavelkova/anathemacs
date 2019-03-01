@@ -14,22 +14,20 @@
 ;; Capture templates
 (setq org-capture-templates
       '(("t" "TASK" entry
-         (file+headline user-tasks-file
-                        user-tasks-inbox-headline)
+         (file+headline user-master-file "braindump")
          "** □ %?\n  %i\n  %a\n:ADDED: %t\n")
         ("l" "LINK" entry
-         ((file+headline user-tasks-file
-                         user-tasks-inbox-headline))
-         "* □* %(org-cliplink-capture) \n :ADDED: %t\n"
+         ((file+headline user-master-file user-master-inbox-headline))
+         "** □ %(org-cliplink-capture) \n :ADDED: %t\n"
          :empty-lines 1)
         ("e" "EVENT" entry
          (file user-cal-file)
-         "* %?\n%^T\n:PROPERTIES:\n:LOCATION:\n:END:\n")
+         "** %?\n%^T\n:PROPERTIES:\n:LOCATION:\n:END:\n")
         ("j" "DIARY" entry
          (function org-journal-find-location)
          "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
         ("b" "BOOKMARK" entry
-         (file user-bookmarks-file)
+         (file user-master-file)
          "* %?\n%a")
         ("B" "BRAIN" plain (function org-brain-goto-end)
          "* %i%?"
@@ -44,6 +42,13 @@
 
 (hs-leader-def
   "c" 'org-capture)
+
+;; properties
+(custom-set-variables '(org-global-properties
+                        '(("realm" .
+                           ("creatividad"
+                            "desarrollo"
+                            "escritura")))))
 
 (provide 'ana-filing)
 

@@ -31,11 +31,10 @@
 (defconst user-default-bib-file (concat user-org-dir "investigaciones/referencias.bib"))
 (defconst user-dokuwiki-file (concat user-secrets-dir "dokuwiki.el"))
 (defconst user-download-dir (concat user-org-dir ".descargas/"))
-(defconst user-inbox-file (concat user-org-dir "codex.org"))
 (defconst user-journal-dir (concat user-org-dir "diario/"))
+(defconst user-master-file (concat user-org-dir "codex.org"))
+(defconst user-master-inbox-headline "braindump")
 (defconst user-pdf-dir (concat user-org-dir "investigaciones/documentos/"))
-(defconst user-tasks-file (concat user-org-dir "tareas.org"))
-(defconst user-tasks-inbox-headline "everything that rises must converge")
 
 (provide 'ana-constants)
 
