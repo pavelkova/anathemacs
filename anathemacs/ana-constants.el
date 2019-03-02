@@ -36,6 +36,9 @@
 (defconst user-master-inbox-headline "braindump")
 (defconst user-pdf-dir (concat user-org-dir "investigaciones/documentos/"))
 
+;; for dashboard
+(defconst user-current-project-dir "~/.emacs.d/")
+
 (provide 'ana-constants)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

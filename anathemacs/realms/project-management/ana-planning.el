@@ -31,17 +31,17 @@
                              (org-agenda-files :maxlevel . 1))
         org-archive-location user-archive-file
         org-agenda-window-setup 'current-window
-        org-agenda-files '("~/Media/documentos/org")
+        org-agenda-files (list user-cal-file user-master-file)
         org-agenda-include-diary t
         org-agenda-custom-commands
-        '(("n" "agenda"
+        '(("a" "agenda"
              ((agenda "")))
             ("t" "tareas"
              ((todo "tareas"
                     ((org-agenda-overriding-header "tareas")
                      (org-agenda-sorting-strategy '(priority-down))))))
-            ("u" "próximo" agenda ""
-             ((org-agenda-entry-types '(:deadline))
+            ("n" "próximo" agenda ""
+             ((org-agenda-entry-types '(:deadline :scheduled))
               (org-deadline-warning-days 30)
               (org-agenda-time-grid nil)
               (org-agenda-overriding-header "próximo"))))))

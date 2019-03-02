@@ -24,25 +24,25 @@
       ;; global-git-commit-mode t
       )
 
-;; (use-package auto-package-update
-;;   :config
-;;   (setq auto-package-update-delete-old-versions t
-;;         auto-package-update-hide-results t)
-;;   (auto-package-update-maybe))
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t
+        auto-package-update-hide-results t)
+  (auto-package-update-maybe))
 
 (use-package dashboard
   ;; :hook (dashboard-mode . page-break-lines-mode)
   :config
-  (dashboard-setup-startup-hook)
   (add-to-list 'dashboard-items '(agenda) t)
   (setq dashboard-banner-logo-title ""
         dashboard-startup-banner "~/.emacs.d/user/logo.svg"
         show-week-agenda-p t
         dashboard-center-content t
-        dashboard-items '((recents . 5)
-                          (bookmarks . 10)
-                          (projects . 5)
-                          (agenda . 10))))
+        dashboard-items '((recents        . 5)
+                          (bookmarks      . 10)
+                          (projects       . 5)
+                          (agenda         . 10)))
+  (dashboard-setup-startup-hook))
 
 ;; shorten responses
 (defalias 'yes-or-no-p 'y-or-n-p)

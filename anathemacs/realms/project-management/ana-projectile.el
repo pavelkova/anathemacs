@@ -26,7 +26,7 @@
 (use-package org-projectile
   :config
   (org-projectile-per-project)
-  (setq org-projectile-per-project-filepath "README.org"
+  (setq org-projectile-per-project-filepath (file-expand-wildcards "*.org")
         org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
 (use-package projectile
@@ -39,7 +39,7 @@
         projectile-completion-system 'ivy
         projectile-switch-project-action #'projectile-find-dir
         projectile-find-dir-includes-top-level t
-        projectile-mode-line-function '(lambda () (format "🕮⧉ %s" (projectile-project-name)))))
+        projectile-mode-line-function '(lambda () (format "⧉ %s" (projectile-project-name)))))
 
 (provide 'ana-projectile)
 

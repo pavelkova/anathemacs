@@ -8,10 +8,11 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
 
 ;; javascript
+;; (use-package indium
+;;   :defer t)
+
 (use-package js-doc
   :defer t)
 

@@ -8,8 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
 
 (use-package bash-completion
   :defer t)
@@ -25,6 +23,9 @@
 
 (use-package sh-script
   :defer t)
+
+(use-package with-editor
+  :hook ((shell-mode fish-mode multi-term) . with-editor-export-editor))
 
 (use-package xterm-color
   :defer t)

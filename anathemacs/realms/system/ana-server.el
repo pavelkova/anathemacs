@@ -8,15 +8,18 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
 
-;; ssh
-(use-package tramp-term
+(use-package counsel-tramp
   :defer t)
 
+(use-package tramp-term
+  :defer t
+  :config
+  (setq tramp-default-method "ssh"))
+
 (hx-leader-def
-  "r" 'tramp-term)
+  "r" 'tramp-term
+  "R" 'counsel-tramp)
 
 (use-package nginx-mode
   :defer t)
