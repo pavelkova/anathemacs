@@ -35,9 +35,14 @@
      ))
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
-(diminish 'auto-fill-function)
 (add-hook 'text-mode-hook 'visual-line-mode)
+
+;; minor mode appearance in modeline
+(use-package delight)
+(use-package diminish)
 (diminish 'visual-line-mode)
+(diminish 'line-number-mode)
+(diminish 'auto-fill-function)
 
 (provide 'ana-ui-base)
 

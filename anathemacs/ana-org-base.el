@@ -37,29 +37,9 @@
    (translate  . nil)
    ))
 
-
-;; UI changes
-(use-package org-bullets
-  :init
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  :config
-  (setq org-bullets-bullet-list '("⋅")))
-
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(diminish 'org-indent-mode)
-(diminish 'buffer-face-mode)
-
 ;; load
 (with-eval-after-load 'org
-  (setq org-startup-indented t
-        org-clock-idle-time 5
-        org-ellipsis "..."
-        org-pretty-entities t
-        org-hide-emphasis-markers t
-        org-agenda-block-separator ""
-        org-fontify-whole-heading-line t
-        org-fontify-done-headline t
-        org-fontify-quote-and-verse-blocks t
+  (setq  org-clock-idle-time 5
         spaceline-org-clock-p t
         abbrev-file-name (concat user-dir "abbrev_defs"))
 
@@ -76,6 +56,13 @@
                             ;; org-wikinodes
                             ))
   (setq org-wikinodes-scope 'directory))
+
+(use-package ivy-omni-org
+ 
+  :config
+  (setq ivy-omni-org-file-sources '(org-agenda-files))
+  (hs-leader-def
+   "i" 'ivy-omni-org))
 
 (provide 'ana-org-base)
 

@@ -20,9 +20,11 @@
 (use-package ox-twbs
   :defer t)
 
-(use-package ox-pandoc)
+(use-package ox-pandoc
+  :defer t)
 
-(use-package pandoc-mode)
+(use-package pandoc-mode
+  :defer t)
 
 (provide 'ana-exporting)
 

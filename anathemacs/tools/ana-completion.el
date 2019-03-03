@@ -5,18 +5,15 @@
 ;;
 
 ;;; Code:
-(use-package all-the-icons-ivy
-  :config
-  (all-the-icons-ivy-setup)
-  (setq all-the-icons-ivy-file-commands
-        '(counsel-find-file counsel-recentf counsel-projectile-find-file counsel-projectile-find-dir)))
-
 (use-package company
   :diminish company-mode
   :init
   (global-company-mode)
   :config
-  (company-tng-configure-default))
+  (company-tng-configure-default)
+  (setq company-show-numbers t
+        company-tooltip-align-annotations t
+        company-tooltip-margin 3))
 
 (defun set-local-company-backend (backend)
   "Only load backends when needed"
@@ -35,43 +32,25 @@
 (use-package imenu
   :config
   (hx-leader-def
-   "ji"  'counsel-imenu))
+    "ji"  'counsel-imenu))
 
-(use-package ivy
-  :diminish ivy-mode
-  :init
-  (use-package counsel)
+(use-package counsel
+  :after ivy
   :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t
-        enable-recursive-minibuffers t
-        ivy-wrap t)
   (general-define-key
-   "<f6>"    'ivy-resume
    "M-x"     'counsel-M-x
    "C-s"     'swiper
    "C-x C-f" 'counsel-find-file
    )
-
-  (general-define-key
-   :keymaps 'ivy-minibuffer-map
-   "C-j"    'ivy-next-line
-   "C-k"    'ivy-previous-line)
-
   (hx-leader-def
    "fb"  'counsel-bookmark
    "ff"  'counsel-find-file
    "fL"  'counsel-locate
    "fr"  'counsel-recentf
-   "g"   'counsel-git
    "hdf" 'counsel-describe-function
    "hdv" 'counsel-describe-variable
    "iu"  'counsel-unicode-char
-   "sgp" 'counsel-git-grep
    ))
-
-(use-package ivy-hydra
-  :after hydra)
 
 (use-package smex
   :config
@@ -82,7 +61,11 @@
 (use-package yasnippet
   :diminish yas-minor-mode
   :config
-  (yas-global-mode 1))
+  (yas-global-mode 1)
+  (use-package ivy-yasnippet
+    :config
+    (hx-leader-def
+    "y" 'ivy-yasnippet)))
 
 (use-package yasnippet-snippets)
 

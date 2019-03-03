@@ -15,6 +15,7 @@
       initial-major-mode 'org-mode
       auto-save-default nil
       create-lockfiles nil
+      make-backup-files nil
       backup-by-copying t
       backup-directory-alist `(("." . "~/.emacs.d/backups"))
       delete-old-versions t
@@ -46,10 +47,6 @@
 
 ;; shorten responses
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-;; minor mode appearance in modeline
-(use-package delight)
-(use-package diminish)
 
 (provide 'ana-base)
 
