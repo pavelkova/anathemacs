@@ -8,53 +8,69 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
+(use-package django-commands
+  :hook python-mode)
 
-(use-package django-snippets
-  :defer t)
-
-(use-package pony-mode
-  :defer t
+(use-package djangonaut
   :init
-  (setq pony-snippet-dir "~/.emacs.d/anathemacs/snippets/django")
-  ;; Port of keybindings from spacemacs django layer
-  (hs-leader-def
-    :keymaps 'python-mode-map
-    ; d*j*ango f*a*bric
-    "jaf" 'pony-fabric
-    "jad" 'pony-fabric-deploy
-    ; d*j*ango *f*iles
-    "jfs" 'pony-goto-settings
-    "jfc" 'pony-setting
-    "jft" 'pony-goto-template
-    "jfr" 'pony-resolve
-    ; d*j*ango *i*nteractive
-    "jid" 'pony-db-shell
-    "jis" 'pony-shell
-    ; d*j*ango *m*anage
-    ; not including one-off management commands like "flush" and
-    ; "startapp" even though they're implemented in pony-mode,
-    ; because this is much handier
-    "jm" 'pony-manage
-    ; d*j*ango *r*unserver
-    "jrd" 'pony-stopserver
-    "jro" 'pony-browser
-    "jrr" 'pony-restart-server
-    "jru" 'pony-runserver
-    "jrt" 'pony-temp-server
-    ; d*j*ango *s*outh/*s*yncdb
-    "jsc" 'pony-south-convert
-    "jsh" 'pony-south-schemamigration
-    "jsi" 'pony-south-initial
-    "jsm" 'pony-south-migrate
-    "jss" 'pony-syncdb
-    ; d*j*ango *t*est
-    "jtd" 'pony-test-down
-    "jte" 'pony-test-goto-err
-    "jto" 'pony-test-open
-    "jtt" 'pony-test
-    "jtu" 'pony-test-up))
+  (global-djangonaut-mode)
+  :config
+  (minor-leader-def
+    :keymaps 'djangonaut-mode-map
+    "'" '(:ignore t :which-key "Djangonaut")
+    "'A" 'pythonic-activate))
+
+;; (use-package pony-mode
+;;   :defer t
+;;   :init
+;;   (minor-leader-def
+;;     :keymaps 'python-mode-map
+;;     "j" '(:ignore t :which-key "django")
+;;     "jF" '(:ignore t :which-key "fabric")
+;;     "jFf" 'pony-fabric
+;;     "jFd" 'pony-fabric-deploy
+;;     ; d*j*ango *f*iles
+;;     "jf" '(:ignore t :which-key "files")
+;;     "jfs" 'pony-goto-settings
+;;     "jfc" 'pony-setting
+;;     "jft" 'pony-goto-template
+;;     "jfr" 'pony-resolve
+;;     "ji" '(:ignore t :which-key "interactive")
+;;     "jid" 'pony-db-shell
+;;     "jis" 'pony-shell
+;;     "jm" 'pony-manage
+;;     "js" '(:ignore t :which-key "server")
+;;     "jsd" 'pony-stopserver
+;;     "jso" 'pony-browser
+;;     "jsr" 'pony-restart-server
+;;     "jsu" 'pony-runserver
+;;     "jst" 'pony-temp-server
+;;     "jS" '(:ignore t :which-key "south/sync")
+;;     "jSc" 'pony-south-convert
+;;     "jSh" 'pony-south-schemamigration
+;;     "jSi" 'pony-south-initial
+;;     "jSm" 'pony-south-migrate
+;;     "jSs" 'pony-syncdb
+;;     "jt" '(:ignore t :which-key "test")
+;;     "jtd" 'pony-test-down
+;;     "jte" 'pony-test-goto-err
+;;     "jto" 'pony-test-open
+;;     "jtt" 'pony-test
+;;     "jtu" 'pony-test-up))
+
+;; Configuration options per project are available via .dir-locals.el
+
+;; The file should look something like this:
+
+;; ;; Pony mode config for the megacorp project
+;; ((nil . ;; This applies these settings regardless of major mode
+
+;;   ((pony-settings (make-pony-project
+;;                    :python "/home/david/virtualenvs/megacorp/production/bin/python"
+;;                    :pythonpath "/home/david/megacorp/libs/projectzero"
+;;                    :settings "local_settings_file"
+;;                    :appsdir "testproject/apps/")
+;;                   ))))
 
 (provide 'ana-python-django)
 

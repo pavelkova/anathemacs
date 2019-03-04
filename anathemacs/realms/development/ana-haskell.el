@@ -17,9 +17,6 @@
 (use-package flycheck-haskell
   :hook (flycheck-haskell-setup . haskell-mode-hook))
 
-(use-package ghc
-  :defer t)
-
 ;; (use-package haskell-emacs) ;; TODO - use haskell to write emacs extensions
 
 (use-package haskell-mode

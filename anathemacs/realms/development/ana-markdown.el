@@ -10,15 +10,15 @@
 ;;; Code:
 
 (use-package markdown-mode
-  :defer t)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 
 (use-package markdown-preview-mode
   :defer t)
 
 (use-package markdown-toc
-  :defer t)
-
-(use-package mmm-mode
   :defer t)
 
 (provide 'ana-markdown)

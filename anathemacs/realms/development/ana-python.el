@@ -38,14 +38,12 @@
 (use-package py-isort
   :defer t)
 
-(use-package pyenv-mode
+(use-package pyvenv
   :defer t)
 
 (use-package pytest
   :defer t)
 
-(use-package pyvenv
-  :defer t)
 
 ;; (use-package stickyfunc-enhance)
 ;; (use-package xcscope)

@@ -1,4 +1,4 @@
-;;; ana-communication.el ---
+;;; ana-media.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,12 +8,10 @@
 ;;
 
 ;;; Code:
+;; email
 (require 'notmuch)
 
-(setq send-mail-function 'smtpmail-send-it
-      smtpmail-smtp-service 587
-      smtpmail-smtp-server "waltzforvenus.egpavelka.com")
-
+;; social media
 ;; (use-package twittering-mode)
 
 (use-package md4rd
@@ -21,7 +19,13 @@
   :config
   (setq md4rd-subs-active '(news politics emacs linux femalefashionadvice sorceryofthespectacle askhistorians historyofideas)))
 
-(provide 'ana-communication)
+;; music
+(use-package libmpdee)
+
+(use-package mingus
+  :after libmpdee)
+
+(provide 'ana-media)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-communication.el ends here
+;;; ana-media.el ends here

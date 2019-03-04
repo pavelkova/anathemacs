@@ -43,6 +43,8 @@
 (diminish 'visual-line-mode)
 (diminish 'line-number-mode)
 (diminish 'auto-fill-function)
+(diminish 'auto-revert-mode)
+(diminish 'eldoc-mode)
 
 (provide 'ana-ui-base)
 

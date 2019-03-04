@@ -13,27 +13,13 @@
 ;; (use-package indium
 ;;   :defer t)
 
-(use-package js-doc
-  :defer t)
-
-(use-package js2-mode
-  :defer t)
-
-(use-package js2-refactor
-  :defer t)
+(use-package js2-mode)
 
 ;; json
 (use-package json-mode
-  :defer t)
-
-(use-package json-navigator
-  :defer t)
-
-(use-package json-snatcher
-  :defer t)
-
-(use-package livid-mode
-  :defer t)
+  :config
+  (use-package json-reformat)
+  (use-package json-snatcher))
 
 (provide 'ana-js)
 

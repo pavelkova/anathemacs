@@ -20,7 +20,7 @@
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
 (use-package nlinum
-  ;; :hook prog-mode
+  :hook (pdf-mode . (lambda () (nlinum-mode -1)))
   :init
   (setq nlinum-highlight-current-line t
         nlinum-format " %d"))

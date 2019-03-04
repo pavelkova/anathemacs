@@ -9,7 +9,11 @@
 
 ;;; Code:
 
+(use-package rjsx-mode)
 
+;; (use-package tide)
+
+(use-package yarn-mode)
 
 (provide 'ana-js-react)
 

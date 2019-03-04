@@ -9,24 +9,30 @@
 
 ;;; Code:
 (use-package auctex-latexmk
-  :defer t)
+  :hook ('TeX-mode . (lambda () (setq TeX-command-default "LatexMk")))
+  :init
+  (with-eval-after-load 'tex
+    (auctex-latexmk-setup))
+  (setq auctex-latexmk-inherit-TeX-PDF-mode t))
 
 (use-package cdlatex
-  :defer t)
+  :hook ((LaTeX-mode latex-mode) . turn-on-cdlatex))
+
+;; (use-package company-auctex)
 
 (use-package company-math
-  :defer t)
+  :hook ((TeX-mode) . (set-local-company-backend company-math)))
 
-;; (use-package latex)
+(use-package latex-pretty-symbols)
 
-(use-package math-symbol-lists
-  :defer t)
-
-;; (use-package matlab-mode)
+(use-package magic-latex-buffer
+  :hook TeX-mode)
 
 (use-package wolfram-mode
   :defer t)
 
+(setq TeX-parse-self t
+      TeX-save-query nil)
 (provide 'ana-math)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

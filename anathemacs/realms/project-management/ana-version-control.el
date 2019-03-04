@@ -24,14 +24,13 @@
     "ggp" 'gist-region-or-buffer
     "ggP" 'gist-region-or-buffer-private))
 
-(use-package gitconfig-mode
-  :hook magit)
+(use-package gitconfig-mode)
 
 (use-package git-gutter-fringe
-  :defer t)
+  :config
+  (global-git-gutter-mode t))
 
-(use-package gitignore-mode
-  :hook magit)
+(use-package gitignore-mode)
 
 ;; (use-package gitlab)
 
@@ -40,9 +39,10 @@
   (use-package magit-popup)
   (hx-leader-def
     "gs" 'magit-status
-    "gF" 'magit-stage-file
-    "gm" 'magit-stage-modified
     "gc" 'magit-commit
+    "gF" 'magit-stage-file
+    "gm" 'magit-stage-modified    
+    "gp" 'magit-push
     "gt" 'magit-worktree))
 
 ;; (use-package magithub

@@ -25,11 +25,11 @@
       ;; global-git-commit-mode t
       )
 
-(use-package auto-package-update
-  :config
-  (setq auto-package-update-delete-old-versions t
-        auto-package-update-hide-results t)
-  (auto-package-update-maybe))
+;; (use-package auto-package-update
+;;   :config
+;;   (setq auto-package-update-delete-old-versions t
+;;         auto-package-update-hide-results t)
+;;   (auto-package-update-maybe))
 
 (use-package dashboard
   ;; :hook (dashboard-mode . page-break-lines-mode)
