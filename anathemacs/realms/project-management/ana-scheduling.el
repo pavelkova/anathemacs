@@ -30,7 +30,7 @@
         cfw:face-item-separator-color nil
         calendar-week-start-day 1)
   (hs-leader-def
-    "<pause>" 'cfw:open-org-calendar)
+    "C" 'cfw:open-org-calendar)
  )
 
 ;;(use-package org-caldav)

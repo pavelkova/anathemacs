@@ -21,53 +21,32 @@
 
 ;; (use-package flx)
 
-(use-package helm-make
-  :defer t
-  :init
-  (setq helm-make-completion-method 'ivy)
-  (hx-leader-def
-   "cc"  'helm-make-projectile
-   "cm"  'helm-make))
-
 (use-package imenu
   :config
-  (hx-leader-def
-    "ji"  'counsel-imenu))
+  (hs-leader-def
+    "I"  'counsel-imenu))
 
 (use-package counsel
   :after ivy
   :config
   (general-define-key
    "M-x"     'counsel-M-x
-   "C-s"     'swiper
-   "C-x C-f" 'counsel-find-file
-   )
+   "C-s"     'swiper)
   (hx-leader-def
+    ;; files
    "fb"  'counsel-bookmark
    "ff"  'counsel-find-file
    "fL"  'counsel-locate
    "fr"  'counsel-recentf
-   "hdf" 'counsel-describe-function
-   "hdv" 'counsel-describe-variable
-   "iu"  'counsel-unicode-char
-   ))
+   ;; help
+   "hf" 'counsel-describe-function
+   "hv" 'counsel-describe-variable))
 
 (use-package smex
   :config
   (general-define-key
    "M-X"     'smex
    "H-X"     'smex-major-mode-commands))
-
-(use-package yasnippet
-  :diminish yas-minor-mode
-  :config
-  (yas-global-mode 1)
-  (use-package ivy-yasnippet
-    :config
-    (hx-leader-def
-    "y" 'ivy-yasnippet)))
-
-(use-package yasnippet-snippets)
 
 (provide 'ana-completion)
 

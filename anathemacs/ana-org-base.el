@@ -65,15 +65,18 @@
                             org-toc
                             org-wikinodes
                             ))
-
   (setq org-wikinodes-scope 'directory))
 
 (use-package ivy-omni-org
- 
   :config
   (setq ivy-omni-org-file-sources '(org-agenda-files))
   (hs-leader-def
-   "i" 'ivy-omni-org))
+    "i" 'ivy-omni-org))
+
+(use-package org-index
+  :config
+  (hs-leader-def
+    "I" 'org-index))
 
 (provide 'ana-org-base)
 

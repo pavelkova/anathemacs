@@ -1,4 +1,4 @@
-;;; ana-filing.el ---
+;;; ana-capture.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,10 +8,8 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
+(use-package org-chef)
 
-;; Capture templates
 (setq org-capture-templates
       '(("t" "TODO" entry
          (file+headline user-master-file "braindump")
@@ -51,7 +49,7 @@
                             "desarrollo"
                             "escritura")))))
 
-(provide 'ana-filing)
+(provide 'ana-capture)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-filing.el ends here
+;;; ana-capture.el ends here

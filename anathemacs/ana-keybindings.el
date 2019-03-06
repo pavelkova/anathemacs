@@ -10,6 +10,34 @@
   :init
   (which-key-mode))
 
+;; Get rid of keypad bindings
+;; (dolist (key '((kbd "<kp-0>"
+;;                (kbd "<kp-1>")
+;;                (kbd "<kp-2>")
+;;                (kbd "<kp-3>")
+;;                (kbd "<kp-4>")
+;;                (kbd "<kp-5>")
+;;                (kbd "<kp-6>")
+;;                (kbd "<kp-7>")
+;;                (kbd "<kp-8>")
+;;                (kbd "<kp-9>")
+;;                ;; (kbd "<kp-add>")      ;; unbound
+;;                ;; (kbd "<kp-decimal")   ;; unbound
+;;                (kbd "kp-enter")
+;;                (kbd "<kp-subtract>")
+;;                ;; (kbd "<kp-multiply>") ;; unbound
+;;                (kbd "<kp-divide>")
+;;                (kbd "<end>")
+;;                (kbd "<home>")
+;;                (kbd "<next>")
+;;                (kbd "<prior>")
+;;                (kbd "<delete>")
+;;                ;; (kbd "<pause>")       ;; unbound
+;;                ;; (kbd "<print>")       ;; unbound
+;;                ))
+;;   (global-unset-key key))
+(global-unset-key (kbd "<kp-0>"))
+
 ;; Use caps key as hyper
 (define-key key-translation-map [8711] 'event-apply-hyper-modifier)
 
@@ -20,10 +48,10 @@
     :prefix "H-x")
   (general-create-definer hs-leader-def
     :prefix "H-SPC")
-  ;; globally available commands organized by 
+  ;; globally available commands organized by
   (general-create-definer minor-leader-def
     :prefix "C-c")
-  ;; use with ':keymaps <mode>' to add to 
+  ;; use with ':keymaps <mode>' to add to
   )
 
 (general-define-key
@@ -36,15 +64,17 @@
   "e" '(:ignore t :which-key "errors")
   "f" '(:ignore t :which-key "files")
   "g" '(:ignore t :which-key "git/version-control")
+  "h" '(:ignore t :which-key "help")
   "i" '(:ignore t :which-key "insert")
-  "j" '(:ignore t :which-key "jump/join/split")
   "p" '(:ignore t :which-key "projects")
-  "s" '(:ignore t :which-key "search/symbols")
   "v" '(:ignore t :which-key "visibility")
   "w" '(:ignore t :which-key "windows/layouts")
  )
 
 ;; errors
+(minor-leader-def
+  "!" '(:ignore t :which-key "flycheck"))
+
 (hx-leader-def
  "e." 'error-transient-state
  "en" 'next-error
@@ -53,15 +83,15 @@
   "c]"  'comment-dwim ;; add to end of line
   "c\-" 'comment-line
   "c["  'comment-or-uncomment-region)
-;; "ch" hide/show comments toggle
 
 (hs-leader-def
   "a" '(:ignore t :which-key "archive")
   "d" '(:ignore t :which-key "data")
+  "D" '(:ignore t :which-key "dokuwiki")
   "o" '(:ignore t :which-key "org")
   "r" '(:ignore t :which-key "research")
-  "w" '(:ignore t :which-key "wiki")
-  "x" '(:ignore t :which-key "text"))
+  "s" '(:ignore t :which-key "system")
+  "w" '(:ignore t :which-key "writing"))
 
 (provide 'ana-keybindings)
 

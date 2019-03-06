@@ -20,6 +20,22 @@
   (setq md4rd-subs-active '(news politics emacs linux femalefashionadvice sorceryofthespectacle askhistorians historyofideas)))
 
 ;; music
+
+(use-package emms
+ :config
+ (require 'emms-setup)
+ (emms-all)
+ (emms-default-players)
+ (setq emms-source-file-default-directory user-music-dir)
+ (setq emms-playlist-buffer-name "*música*")
+ (setq emms-info-asynchronously t)
+ ;; (require 'emms-info-libtag)
+ ;; (setq emms-info-functions '(emms-info-libtag))
+ (require 'emms-mode-line)
+ (emms-mode-line 1)
+ (require 'emms-playing-time)
+ (emms-playing-time 1))
+
 (use-package libmpdee)
 
 (use-package mingus

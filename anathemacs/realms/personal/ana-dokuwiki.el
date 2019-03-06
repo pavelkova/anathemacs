@@ -12,10 +12,10 @@
   :config
   (load-file user-dokuwiki-file)
   (hs-leader-def
-    "w+" 'dokuwiki-login
-    "wl" 'dokuwiki-list-pages
-    "wo" 'dokuwiki-open-page
-    "ws" 'dokuwiki-save-page))
+    "D+" 'dokuwiki-login
+    "Dl" 'dokuwiki-list-pages
+    "Do" 'dokuwiki-open-page
+    "Ds" 'dokuwiki-save-page))
 
 (use-package dokuwiki-mode
   :hook dokuwiki)
