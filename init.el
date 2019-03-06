@@ -126,17 +126,9 @@
  '(iswitchb-mode nil)
  '(org-global-properties '(("realm" "creatividad" "desarrollo" "escritura")))
  '(org-modules
-   '(org-docview org-element org-habit org-info org-inlinetask))
+   '(org-bibtex org-crypt org-ctags org-docview org-habit org-id org-info org-inlinetask org-mouse org-annotate-file org-bookmark org-checklist org-choose org-collector org-depend org-notmuch org-panel org-registry org-toc org-wikinodes org-element org-habit org-info org-inlinetask))
  '(package-selected-packages
-   '(virtualenvwrapper ivy-yasnippet ivy-rich ivy-omni-org dashboard-project-status helm-make which-key general wgrep use-package smex smartparens pdf-tools org-download neotree multiple-cursors magit ivy-hydra helm-company flx eyebrowse define-word dashboard counsel-projectile better-defaults auto-yasnippet auto-complete))
- '(safe-local-variable-values
-   '((django-commands-python-executable . "/home/gigi/Code/Current/playsette/api/playsette/")
-     (django-commands-settings-module . "playsette.settings")
-     (django-commands-python-executable . "/home/gigi/Code/Current/playsette/venv/bin/python")
-     (python-shell-extra-pythonpaths "/home/gigi/Code/Current/playsette/api/")
-     (python-shell-virtualenv-root . "/home/gigi/Code/Current/playsette/venv/")
-     (python-shell-extra-pythonpaths "/home/gigi/Code/Current/playsette/")
-     (python-shell-process-environment "DJANGO_SETTINGS_MODULE=playsette.settings"))))
+   '(virtualenvwrapper ivy-yasnippet ivy-rich ivy-omni-org dashboard-project-status helm-make which-key general wgrep use-package smex smartparens pdf-tools org-download neotree multiple-cursors magit ivy-hydra helm-company flx eyebrowse define-word dashboard counsel-projectile better-defaults auto-yasnippet auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

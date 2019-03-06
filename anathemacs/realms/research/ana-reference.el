@@ -9,10 +9,14 @@
 
 ;;; Code:
 (use-package biblio
-  :defer t)
+  :config
+  (hs-leader-def
+    "rl" 'biblio-lookup))
 
 (use-package ebib
-  :defer t)
+  :config
+  (hs-leader-def
+    "re" 'ebib))
 
 (use-package org-ref
   :defer t

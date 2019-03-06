@@ -44,17 +44,28 @@
         abbrev-file-name (concat user-dir "abbrev_defs"))
 
   (customize-set-variable 'org-modules
-                          '(;; org-bookmark
-                            ;; org-checklist
+                          '(org-bibtex
+                            org-bookmark
+                            org-checklist
                             ;; org-choose
-                            ;; org-collector
+                            org-collector
+                            org-crypt
+                            org-ctags
+                            org-depend
                             org-docview
                             org-element
                             org-habit
+                            org-id
                             org-info
                             org-inlinetask
-                            ;; org-wikinodes
+                            org-mouse
+                            org-notmuch
+                            org-panel
+                            org-registry
+                            org-toc
+                            org-wikinodes
                             ))
+
   (setq org-wikinodes-scope 'directory))
 
 (use-package ivy-omni-org

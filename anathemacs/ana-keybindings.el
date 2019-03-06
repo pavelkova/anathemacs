@@ -38,7 +38,6 @@
   "g" '(:ignore t :which-key "git/version-control")
   "i" '(:ignore t :which-key "insert")
   "j" '(:ignore t :which-key "jump/join/split")
-  "o" '(:ignore t :which-key "org")
   "p" '(:ignore t :which-key "projects")
   "s" '(:ignore t :which-key "search/symbols")
   "v" '(:ignore t :which-key "visibility")
@@ -59,6 +58,8 @@
 (hs-leader-def
   "a" '(:ignore t :which-key "archive")
   "d" '(:ignore t :which-key "data")
+  "o" '(:ignore t :which-key "org")
+  "r" '(:ignore t :which-key "research")
   "w" '(:ignore t :which-key "wiki")
   "x" '(:ignore t :which-key "text"))
 
