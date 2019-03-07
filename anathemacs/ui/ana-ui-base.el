@@ -8,6 +8,10 @@
 ;;
 
 ;;; Code:
+(use-package all-the-icons
+  :config
+  (setq inhibit-compacting-font-caches t))
+
 (use-package better-defaults)
 
 (use-package mwim

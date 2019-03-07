@@ -8,12 +8,9 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (setq org-todo-keywords '((sequence "□" "◪" "▶" "|" "■" "☒")
                           ;; todo, partially done, postponed | completed, cancelled
-                          (sequence "⛥" "▲" "❗" "✓" "▪" "❓" "⛅" "🗲" "♥""＄" "|")
+                          ;; (sequence "⛥" "▲" "❗" "✓" "▪" "❓" "⛅" "🗲" "♥""＄" "|")
                           ;; event, appointment, important, accomplishment, note, research, fantasy, idea, inspiration, finance
                           ))
 

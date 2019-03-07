@@ -53,7 +53,7 @@
 (load-theme 'anathemacs t)
 
 ;; init
-(require 'ana-constants)
+(require 'ana-variables)
 (require 'ana-keybindings)
 (require 'ana-base)
 (require 'ana-org-base)
@@ -96,8 +96,8 @@
 (require 'ana-ruby)
 (require 'ana-web)
 ;; personal
-(require 'ana-capture)
 (require 'ana-dokuwiki)
+(require 'ana-filing)
 (require 'ana-media)
 (require 'ana-writing)
 ;; project management
@@ -122,14 +122,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("a62b0caa8c598259c11d3abe00383014dd8fc9998809e085cbe793e304801188" "961bffc7f27e8163815cbd2e25ee6c558e22741714ff40cc120ace665f08c448" "f3ed0db7bb9f79651371a533bdea7539d82d933c946f82739f29703cc4ef73b9" "f48d6b2b75ccff47b8179b4497c90f6f963b4977203f822d21da271d2d72422b" "21fc76db3a1f9d95bac8c9e9a06545705043b1fa306b0d4b32942834dce894d2" "d3af7f539a689cff0cb5caa0712b079a3c3f980d93cabc193df9152baf773a44" "610d04ac93f141d8573893c94c05876c3aa45477cacd74f4b76ab2955eb3dc4f" "f9e4a1b954d81da1564355b15f0a81fac85e617a788761395a05145a6196e25a" "1307ec93f6ae9a3849e92831f9dc2719013569410265f99eb891b06a24da4c1e" "4371bff2e08e23f1c314755cdb190f687214e59548928ede2659c6a1809a225a" "99bda7905eb57fff4fe3443b1507ec2776fa4a10d6385c84cd51ea0c9dd75176" "fab5ffcdde4400678cbff4ef96377817c048a099bddbddf5d73663f4b638c51c" "37f2ab16d63ceee253c7ecb8fc1ea84e376f5be190b0f127f4e32d510ddcc422" "5e4137d31f3ba0ede7e352eb9c1b47906b4a4405a3e436f29824971096dea314" "8c128edf3f740e07905065583a35727ccdda44e85c3842be501f93823cf36aa6" "719fbdbd8827c42f445a9216c3857b16f34b28f59153a4184f906c82ac1b43c3" "22f213ae93e1dba9d3941f957ef06ad516074606ddb8c116218467767ea9bec8" "0c84911d337ec84e701cb37b80e647a21e4f6e0c84a4cd7f140a52393c5a168e" "c0fa9625f2d0b81d7ad0ba2268ac7bc3bd0644af01914debd1264b9d6aad784f" "a179bbef5cffb1642f3585de1ffba5ae5afe527fc1f21100cf025fcd3a680135" "5db6390cc492048fc05e45e58157be3882165652e0bf48e5f73467c353a6e3dc" default))
+   '("6b5de64af511c1185f653c06eebfd9cf4f0c6e6d5b9ff29ba37a651f1441f99e" "c94f4e33d0aed0db57faed7d4153167e75378740c04805be31b61c781a132b86" "e845cfb0b172e4c36c1b96bcc17965f4cdc0e69a871e0fb9231ec8b539102540" "a62b0caa8c598259c11d3abe00383014dd8fc9998809e085cbe793e304801188" "961bffc7f27e8163815cbd2e25ee6c558e22741714ff40cc120ace665f08c448" "f3ed0db7bb9f79651371a533bdea7539d82d933c946f82739f29703cc4ef73b9" "f48d6b2b75ccff47b8179b4497c90f6f963b4977203f822d21da271d2d72422b" "21fc76db3a1f9d95bac8c9e9a06545705043b1fa306b0d4b32942834dce894d2" "d3af7f539a689cff0cb5caa0712b079a3c3f980d93cabc193df9152baf773a44" "610d04ac93f141d8573893c94c05876c3aa45477cacd74f4b76ab2955eb3dc4f" "f9e4a1b954d81da1564355b15f0a81fac85e617a788761395a05145a6196e25a" "1307ec93f6ae9a3849e92831f9dc2719013569410265f99eb891b06a24da4c1e" "4371bff2e08e23f1c314755cdb190f687214e59548928ede2659c6a1809a225a" "99bda7905eb57fff4fe3443b1507ec2776fa4a10d6385c84cd51ea0c9dd75176" "fab5ffcdde4400678cbff4ef96377817c048a099bddbddf5d73663f4b638c51c" "37f2ab16d63ceee253c7ecb8fc1ea84e376f5be190b0f127f4e32d510ddcc422" "5e4137d31f3ba0ede7e352eb9c1b47906b4a4405a3e436f29824971096dea314" "8c128edf3f740e07905065583a35727ccdda44e85c3842be501f93823cf36aa6" "719fbdbd8827c42f445a9216c3857b16f34b28f59153a4184f906c82ac1b43c3" "22f213ae93e1dba9d3941f957ef06ad516074606ddb8c116218467767ea9bec8" "0c84911d337ec84e701cb37b80e647a21e4f6e0c84a4cd7f140a52393c5a168e" "c0fa9625f2d0b81d7ad0ba2268ac7bc3bd0644af01914debd1264b9d6aad784f" "a179bbef5cffb1642f3585de1ffba5ae5afe527fc1f21100cf025fcd3a680135" "5db6390cc492048fc05e45e58157be3882165652e0bf48e5f73467c353a6e3dc" default))
  '(iswitchb-mode nil)
- '(org-global-properties '(("realm" "creatividad" "desarrollo" "escritura")))
  '(org-index-id "0427fbd1-a5b8-4463-87e5-69901e770b6b")
- '(org-modules
-   '(org-bibtex org-crypt org-ctags org-docview org-habit org-id org-info org-inlinetask org-mouse org-annotate-file org-bookmark org-checklist org-choose org-collector org-depend org-notmuch org-panel org-registry org-toc org-wikinodes org-element org-habit org-info org-inlinetask))
  '(package-selected-packages
-   '(virtualenvwrapper ivy-yasnippet ivy-rich ivy-omni-org dashboard-project-status helm-make which-key general wgrep use-package smex smartparens pdf-tools org-download neotree multiple-cursors magit ivy-hydra helm-company flx eyebrowse define-word dashboard counsel-projectile better-defaults auto-yasnippet auto-complete)))
+   '(org virtualenvwrapper ivy-yasnippet ivy-rich ivy-omni-org dashboard-project-status helm-make which-key general wgrep use-package smex smartparens pdf-tools org-download neotree multiple-cursors magit ivy-hydra helm-company flx eyebrowse define-word dashboard counsel-projectile better-defaults auto-yasnippet auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

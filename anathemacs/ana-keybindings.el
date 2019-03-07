@@ -10,32 +10,7 @@
   :init
   (which-key-mode))
 
-;; Get rid of keypad bindings
-;; (dolist (key '((kbd "<kp-0>"
-;;                (kbd "<kp-1>")
-;;                (kbd "<kp-2>")
-;;                (kbd "<kp-3>")
-;;                (kbd "<kp-4>")
-;;                (kbd "<kp-5>")
-;;                (kbd "<kp-6>")
-;;                (kbd "<kp-7>")
-;;                (kbd "<kp-8>")
-;;                (kbd "<kp-9>")
-;;                ;; (kbd "<kp-add>")      ;; unbound
-;;                ;; (kbd "<kp-decimal")   ;; unbound
-;;                (kbd "kp-enter")
-;;                (kbd "<kp-subtract>")
-;;                ;; (kbd "<kp-multiply>") ;; unbound
-;;                (kbd "<kp-divide>")
-;;                (kbd "<end>")
-;;                (kbd "<home>")
-;;                (kbd "<next>")
-;;                (kbd "<prior>")
-;;                (kbd "<delete>")
-;;                ;; (kbd "<pause>")       ;; unbound
-;;                ;; (kbd "<print>")       ;; unbound
-;;                ))
-;;   (global-unset-key key))
+;; Get rid of insert binding
 (global-unset-key (kbd "<kp-0>"))
 
 ;; Use caps key as hyper
@@ -88,6 +63,7 @@
   "a" '(:ignore t :which-key "archive")
   "d" '(:ignore t :which-key "data")
   "D" '(:ignore t :which-key "dokuwiki")
+  "m" '(:ignore t :which-key "media")
   "o" '(:ignore t :which-key "org")
   "r" '(:ignore t :which-key "research")
   "s" '(:ignore t :which-key "system")

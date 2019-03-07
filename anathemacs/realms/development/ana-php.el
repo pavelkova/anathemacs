@@ -8,10 +8,9 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
 
 (use-package php-mode
+  :defer t
   :config
   (eval-after-load 'php-mode
   '(require 'php-ext)))

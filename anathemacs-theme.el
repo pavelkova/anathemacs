@@ -1,4 +1,4 @@
-;;; anathemacs-theme.el --- 
+;;; anathemacs-theme.el ---
 
 ;;; Code:
 
@@ -184,11 +184,21 @@
      `(company-tooltip-search           ((,class (:inherit match))))
      `(company-tooltip-selection        ((,class (:background ,ttip-sl :foreground ,base))))
 
+;;;;; counsel
+     `(counsel-outline-1 ((,class (:inherit nil))))
+     `(counsel-outline-2 ((,class (:inherit nil))))
+     `(counsel-outline-3 ((,class (:inherit nil))))
+     `(counsel-outline-4 ((,class (:inherit nil))))
+     `(counsel-outline-5 ((,class (:inherit nil))))
+     `(counsel-outline-6 ((,class (:inherit nil))))
+     `(counsel-outline-7 ((,class (:inherit nil))))
+     `(counsel-outline-8 ((,class (:inherit nil))))
+     
 ;;;;; dashboard
      `(dashboard-banner-logo-title-face ((,class :family ,sans-font :weight bold)))
-     ;; `(dashboard-text-banner-face ((,class :inherit nil)))
+     ;; `(dashboard-text-banner-face ((,class (:inherit nil))))
      `(dashboard-heading-face ((,class :foreground ,func :family ,sans-font :weight light :height 2.9)))
-     `(widget-button ((,class :weight normal)))
+     `(widget-button ((,class (:weight normal))))
      
 
      
@@ -382,6 +392,9 @@
      `(hydra-face-blue ((,class (:foreground ,blue-1))))
      `(hydra-face-red ((,class (:foreground ,red-2))))
 
+;;;;; ibuffer
+     `(ibuffer-filter-group-name-face ((,class (:inherit nil))))
+     
 ;;;;; ido
      `(ido-first-match ((,class (:foreground ,comp :inherit bold))))
      `(ido-only-match ((,class (:foreground ,mat :inherit bold))))
@@ -401,11 +414,12 @@
      `(info-title-4 ((,class (:height 1.2))))
 
 ;;;;; ivy
-     `(ivy-current-match ((,class (:foreground ,bg1 :background ,highlight :inherit bold))))
-     `(ivy-minibuffer-match-face-1 ((,class (:inherit bold))))
-     `(ivy-minibuffer-match-face-2 ((,class (:foreground ,head1 :underline t))))
-     `(ivy-minibuffer-match-face-3 ((,class (:foreground ,head1 :underline t))))
-     `(ivy-minibuffer-match-face-4 ((,class (:foreground ,head1 :underline t))))
+     `(ivy-current-match ((,class (:foreground ,bg1 :background ,highlight :inherit nil :family ,base-font :height 80))))
+     `(ivy-minibuffer-match-face-1 ((,class (:inherit nil :family ,base-font :height 80))))
+     `(ivy-minibuffer-match-face-2 ((,class (:foreground ,head1 :underline t :family ,base-font :height 80))))
+     `(ivy-minibuffer-match-face-3 ((,class (:foreground ,head1 :underline t :family ,base-font :height 80))))
+     `(ivy-minibuffer-match-face-4 ((,class (:foreground ,head1 :underline t :family ,base-font :height 80))))
+     `(ivy-org ((,class (:inherit nil :family ,base-font :height 80))))
      `(ivy-remote ((,class (:foreground ,yellow-1))))
 
 ;;;;; latex
@@ -527,10 +541,10 @@
      `(notmuch-tag-flagged ((,class (:foreground ,war))))
 
 ;;;;; neotree
-     `(neo-dir-link-face ((,class (:foreground ,base :inherit nil :height 0.8))))
-     `(neo-expand-btn-face ((,class (:foreground ,magenta-2 :height 0.8))))
-     `(neo-file-link-face ((,class (:foreground ,base :height 0.8))))
-     `(neo-root-dir-face ((,class (:foreground ,comment :height 0.8))))
+     `(neo-dir-link-face ((,class (:foreground ,base :inherit nil :height 80))))
+     `(neo-expand-btn-face ((,class (:foreground ,magenta-2 :height 80))))
+     `(neo-file-link-face ((,class (:foreground ,base :height 80))))
+     `(neo-root-dir-face ((,class (:foreground ,comment :height 80))))
 
 ;;;;; org
      `(org-agenda-clocking ((,class (:background ,highlight :foreground ,bg1))))
@@ -539,7 +553,7 @@
      `(org-agenda-date-weekend ((,class (:foreground ,var))))
      `(org-agenda-diary ((,class (:foreground ,keyword))))
      `(org-agenda-done ((,class (:foreground ,comment :strike-through t))))
-     `(org-agenda-structure ((,class (:inherit org-level-1))))
+     `(org-agenda-structure ((,class (:foreground ,func :family ,sans-font :weight light :height 2.9))))
      `(org-block ((,class (:background ,cblk-bg :foreground ,cblk))))
      `(org-block-begin-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :height 90))))
      `(org-block-end-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :height 90))))
@@ -555,7 +569,7 @@
      `(org-done ((,class (:foreground ,highlight-dim :background nil :strike-through nil ))))
      `(org-ellipsis ((,class (:foreground ,comment :underline nil))))
      `(org-footnote  ((,class (:slant italic :foreground ,base-dim))))
-     `(org-headline-done ((,class (:strike-through nil))))
+     `(org-headline-done ((,class (:strike-through nil :foreground ,base-dim))))
      `(org-hide ((,class (:foreground ,bg1))))
      `(org-indent ((,class (:inherit org-hide))))
      `(org-kbd ((,class (:inherit region :foreground ,base :box (:line-width 1 :style released-button)))))
@@ -577,7 +591,7 @@
      `(org-scheduled-today ((,class (:foreground ,func))))
      `(org-sexp-date ((,class (:foreground ,base))))
      `(org-special-keyword ((,class (:foreground ,meta :height 80))))
-     `(org-tag ((,class (:foreground ,comment))))
+     `(org-tag ((,class (:foreground ,comment :height 80 :family ,base-font))))
      `(org-table ((,class (:foreground ,base :background nil :height 80))))
      `(org-time-grid ((,class (:foreground ,comment))))
      `(org-todo ((,class (:foreground ,highlight :weight bold :background nil))))

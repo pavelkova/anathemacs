@@ -22,7 +22,6 @@
       kept-old-versions 2
       kept-new-versions 4
       version-control t
-      ;; global-git-commit-mode t
       )
 
 ;; (use-package auto-package-update
@@ -32,7 +31,6 @@
 ;;   (auto-package-update-maybe))
 
 (use-package dashboard
-  ;; :hook (dashboard-mode . page-break-lines-mode)
   :config
   (add-to-list 'dashboard-items '(agenda) t)
   (setq dashboard-banner-logo-title ""

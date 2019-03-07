@@ -9,11 +9,15 @@
 
 ;;; Code:
 
+(use-package react-snippets
+  :hook rjsx-mode)
+
 (use-package rjsx-mode)
 
 ;; (use-package tide)
 
-(use-package yarn-mode)
+(use-package yarn-mode
+  :defer t)
 
 (provide 'ana-js-react)
 

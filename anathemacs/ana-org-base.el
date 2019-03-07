@@ -8,6 +8,7 @@
 ;;
 
 ;;; Code:
+
 ;; babel - language support
 (setq org-confirm-babel-evaluate nil
       org-src-fontify-natively t
@@ -37,34 +38,38 @@
    (translate  . nil)
    ))
 
+;; modules
+(customize-set-variable 'org-modules
+                        '(org-bibtex
+                          org-crypt
+                          org-ctags
+                          org-docview
+                          org-habit
+                          org-id
+                          org-info
+                          org-inlinetask
+                          org-tempo
+                          org-annotate-file
+                          org-bookmark
+                          org-checklist
+                          org-choose
+                          org-collector
+                          org-depend
+                          org-notmuch
+                          org-panel
+                          org-registry
+                          org-toc
+                          org-wikinodes
+                          org-element
+                          org-habit
+                          org-info
+                          org-inlinetask))
+
 ;; load
 (with-eval-after-load 'org
-  (setq  org-clock-idle-time 5
+  (setq org-clock-idle-time 5
         spaceline-org-clock-p t
         abbrev-file-name (concat user-dir "abbrev_defs"))
-
-  (customize-set-variable 'org-modules
-                          '(org-bibtex
-                            org-bookmark
-                            org-checklist
-                            ;; org-choose
-                            org-collector
-                            org-crypt
-                            org-ctags
-                            org-depend
-                            org-docview
-                            org-element
-                            org-habit
-                            org-id
-                            org-info
-                            org-inlinetask
-                            org-mouse
-                            org-notmuch
-                            org-panel
-                            org-registry
-                            org-toc
-                            org-wikinodes
-                            ))
   (setq org-wikinodes-scope 'directory))
 
 (use-package ivy-omni-org
@@ -72,11 +77,6 @@
   (setq ivy-omni-org-file-sources '(org-agenda-files))
   (hs-leader-def
     "i" 'ivy-omni-org))
-
-(use-package org-index
-  :config
-  (hs-leader-def
-    "I" 'org-index))
 
 (provide 'ana-org-base)
 
