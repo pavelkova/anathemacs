@@ -14,9 +14,9 @@
 
 (setq user-logo (concat user-dir "logo.svg"))
 
-(setq user-secrets-dir (concat user-dir "secrets/"))
+(setq user-backups-dir (concat user-dir "backups/"))
 
-(setq user-snippets-dir (concat user-dir "snippets/"))
+(setq user-secrets-dir (concat user-dir "secrets/"))
 
 ;; org paths
 

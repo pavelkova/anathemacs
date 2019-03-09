@@ -28,9 +28,7 @@
    (matlab     . t)
    (python     . t)
    (R          . t)
-   (restclient . nil)
    (ruby       . t)
-   (sagemath   . nil)
    (sass       . t)
    (sh         . nil)
    (shell      . t)
@@ -41,9 +39,10 @@
 ;; modules
 (customize-set-variable 'org-modules
                         '(org-bibtex
-                          org-crypt
+                          ;; org-crypt
                           org-ctags
                           org-docview
+                          org-element
                           org-habit
                           org-id
                           org-info
@@ -52,25 +51,24 @@
                           org-annotate-file
                           org-bookmark
                           org-checklist
-                          org-choose
+                          ;; org-choose
                           org-collector
-                          org-depend
+                          ;; org-depend
                           org-notmuch
                           org-panel
                           org-registry
                           org-toc
-                          org-wikinodes
-                          org-element
-                          org-habit
-                          org-info
-                          org-inlinetask))
+                          ;; org-wikinodes
+                          ))
 
 ;; load
 (with-eval-after-load 'org
   (setq org-clock-idle-time 5
-        spaceline-org-clock-p t
-        abbrev-file-name (concat user-dir "abbrev_defs"))
-  (setq org-wikinodes-scope 'directory))
+        spaceline-org-clock-p t))
+
+;; (setq org-wikinodes-scope 'directory
+;;       abbrev-file-name (concat user-dir "abbrev_defs"))
+
 
 (use-package ivy-omni-org
   :config

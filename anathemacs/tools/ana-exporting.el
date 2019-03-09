@@ -9,16 +9,13 @@
 
 ;;; Code:
 ;; convert buffer text and decorations to html
-(use-package htmlize
-  :defer t)
+;; (use-package htmlize :defer t)
 
 ;; send emails with html
-(use-package org-mime
-  :defer t)
+;; (use-package org-mime :defer t)
 
 ;; export org file as html with bootstrap support
-(use-package ox-twbs
-  :defer t)
+;; (use-package ox-twbs :defer t)
 
 (use-package ox-pandoc
   :defer t)

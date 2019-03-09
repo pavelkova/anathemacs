@@ -9,7 +9,7 @@
 
 ;;; Code:
 (use-package dokuwiki
-  :config
+  :init
   (load-file user-dokuwiki-file)
   (hs-leader-def
     "D+" 'dokuwiki-login

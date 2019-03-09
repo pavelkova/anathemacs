@@ -25,8 +25,8 @@
   (setq tramp-default-method "ssh"))
 
 (hs-leader-def
-  "sT" 'tramp-term
-  "st" 'counsel-tramp)
+  "sS" 'tramp-term
+  "ss" 'counsel-tramp)
 
 (use-package nginx-mode
   :defer t)

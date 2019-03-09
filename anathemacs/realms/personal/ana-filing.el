@@ -8,6 +8,17 @@
 ;;
 
 ;;; Code:
+(use-package org-brain
+  :init
+  (setq org-brain-path 'user-org-brain-dir)
+  (hs-leader-def
+    "oB" 'org-brain-visualize)
+  :config
+  (setq org-id-track-globally t)
+  (setq org-id-locations-file (concat user-dir ".org-id-locations"))
+  (setq org-brain-visualize-default-choices 'all)
+  (setq org-brain-title-max-length 12))
+
 (use-package org-chef)
 
 (setq org-capture-templates
@@ -23,10 +34,44 @@
 :project:
 :END:")
         
+      ;;;; APPOINTMENT
+        ("a" "APPOINTMENT" entry
+         (file+olp+datetree user-cal-file)
+         ;; ▲
+         ;; %(all-the-icons-octicon \"triangle-up\" :face 'all-the-icons-lpink)
+         "** %^{appointment} %? :appointment:
+:PROPERTIES:
+:SCHEDULED: %T
+:END:"
+         :time-prompt t
+         :tree-type week)
+
+      ;;;; EVENT
+        ("E" "EVENT" entry
+         (file+olp+datetree user-cal-file)
+         ;; ⛥
+         ;; %(all-the-icons-material \"star\" :face 'all-the-icons-lpink)
+         "** %^{event} %? :event:
+:PROPERTIES:
+:SCHEDULED: %t
+:END:"
+         :time-prompt t
+         :tree-type week)
+
+      ;;;; NOTE
+        ("N" "NOTE" entry
+         (file+headline user-master-file "braindump")
+         ;;  ▪
+         ;; %(all-the-icons-material \"speaker_notes\" :face 'all-the-icons-lpink)
+         "** %^{note} %? :note:
+:PROPERTIES:
+:ADDED: %T
+:END:")
+        
       ;;;; LINK
         ("l" "LINK" entry
          ((file+headline user-master-file "braindump"))
-         "** □ %(org-cliplink-capture)
+         "** %(org-cliplink-capture)
 :PROPERTIES:
 :ADDED: %T
 :END:")
@@ -68,81 +113,62 @@
 
       ;;---PERSONAL
       ;;;; 
-        ("i" "IDEA" entry ;; 🗲
-         (file+headline user-master-file "braindump")
-         "** %(all-the-icons-faicon \"lightbulb-o\" :face 'all-the-icons-lpink) %^{idea} %?
-:PROPERTIES:
-:ADDED: %T
-:END:")
+;;         ("i" "IDEA" entry ;; 🗲
+;;          (file+headline user-master-file "braindump")
+;;          "** %(all-the-icons-faicon \"lightbulb-o\" :face 'all-the-icons-lpink) %^{idea} %?
+;; :PROPERTIES:
+;; :ADDED: %T
+;; :END:")
         
-        ("I" "IMPORTANT" entry ;; ❗
-         (file+headline user-master-file "braindump")
-         "** %(all-the-icons-faicon \"exclamation\" :face 'all-the-icons-lpink) %^{big deal} %?
-:PROPERTIES:
-:ADDED: %T
-:END:")
+;;         ("I" "IMPORTANT" entry
+;;          (file+headline user-master-file "braindump")
+;;          ;; %(all-the-icons-faicon \"exclamation\" :face 'all-the-icons-lpink)
+;;          "** ❗ %^{big deal} %? :important:
+;; :PROPERTIES:
+;; :ADDED: %T
+;; :END:")
 
-        ("F" "FANTASY" entry ;; ⛅
-         (file+headline user-master-file "braindump")
-         "** %(all-the-icons-material \"cloud_queue\" :face 'all-the-icons-lpink) %^{pipe dream} %?
-:PROPERTIES:
-:ADDED: %T
-:END:")
+;;         ("F" "FANTASY" entry
+;;          (file+headline user-master-file "braindump")
+;;          ;; %(all-the-icons-material \"cloud_queue\" :face 'all-the-icons-lpink)
+;;          "** ⛅ %^{pipe dream} %?
+;; :PROPERTIES:
+;; :ADDED: %T
+;; :END:")
 
-        ("f" "FINANCE" entry ;; ＄
-         (file+headline user-master-file "braindump")
-         "** %(all-the-icons-material \"attach_money\" :face 'all-the-icons-lpink) %^{dinero} %?
-:PROPERTIES:
-:ADDED: %T
-:END:")
+;;         ("f" "FINANCE" entry
+;; orgmode/comments/aeaq9d/anyone_using_org_mode_as_snippet_manager/         (file+headline user-master-file "braindump")
+;;          ;; %(all-the-icons-material \"attach_money\" :face 'all-the-icons-lpink)
+;;          "** ＄ %^{dinero} %? :finance:
+;; :PROPERTIES:
+;; :ADDED: %T
+;; :END:")
 
-        ("P" "INSPIRATION" entry ;; ♥
-         (file+headline user-master-file "braindump")
-         "** %(all-the-icons-material \"favorite\" :face 'all-the-icons-lpink) %^{inspo} %?
-:PROPERTIES:
-:ADDED: %T
-:END:")
+;;         ("P" "INSPIRATION" entry
+;;          (file+headline user-master-file "braindump")
+;;          ;; %(all-the-icons-material \"favorite\" :face 'all-the-icons-lpink)
+;;          "** ♥ %^{inspo} %? :inspiration:
+;; :PROPERTIES:
+;; :ADDED: %T
+;; :END:")
 
-        ("a" "APPOINTMENT" entry ;; ▲
-         (file+olp+datetree user-cal-file)
-         "** %(all-the-icons-octicon \"triangle-up\" :face 'all-the-icons-lpink) %^{appointment} %?
-:PROPERTIES:
-:SCHEDULED: %T
-:END:"
-         :time-prompt t
-         :tree-type week)
+;;         ("A" "ACCOMPLISHMENT" entry
+;;          (file+olp+datetree user-cal-file)
+;;          ;; %(all-the-icons-faicon \"check\" :face 'all-the-icons-lpink)
+;;          "** ✓ %^{milestone} %? :accomplishment:
+;; :PROPERTIES:
+;; :ADDED: %T
+;; :END:"
+;;          :time-prompt t
+;;          :tree-type week)
 
-        ("E" "EVENT" entry ;; ⛥
-         (file+olp+datetree user-cal-file)
-         "** %(all-the-icons-material \"star\" :face 'all-the-icons-lpink)  %^{event} %?
-:PROPERTIES:
-:SCHEDULED: %t
-:END:"
-         :time-prompt t
-         :tree-type week)
-
-        ("A" "ACCOMPLISHMENT" entry ;; ✓
-         (file+olp+datetree user-cal-file)
-         "** %(all-the-icons-faicon \"check\" :face 'all-the-icons-lpink) %^{milestone} %?
-:PROPERTIES:
-:ADDED: %T
-:END:"
-         :time-prompt t
-         :tree-type week)
-
-        ("N" "NOTE" entry ;; ▪
-         (file+headline user-master-file "braindump")
-         "** %(all-the-icons-material \"speaker_notes\" :face 'all-the-icons-lpink) %^{note} %?
-:PROPERTIES:
-:ADDED: %T
-:END:")
-
-        ("S" "RESEARCH" entry ;; ❓
-         (file+headline user-master-file "braindump")
-         "** %(all-the-icons-faicon \"question\" :face 'all-the-icons-lpink) %^{look up} %?
-:PROPERTIES:
-:ADDED: %T
-:END:")
+;;         ("S" "RESEARCH" entry
+;;          (file+headline user-master-file "braindump")
+;;          ;; %(all-the-icons-faicon \"question\" :face 'all-the-icons-lpink)
+;;          "** ❓ %^{look up} %? :research:
+;; :PROPERTIES:
+;; :ADDED: %T
+;; :END:")
         ))
 
 (hs-leader-def

@@ -1,5 +1,5 @@
 #+title: Anathemacs
-This emacs distribution presupposes the following as a rule of the Linix
+This emacs distribution presupposes the following as a rule of the Linux
 ethos:
 #+BEGIN_VERSE
 To understand a piece of software, customize it to within an inch of its life.

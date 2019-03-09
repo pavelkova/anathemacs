@@ -9,7 +9,6 @@
   :diminish yas-minor-mode
   :config
   (yas-global-mode 1)
-  (setq yas-snippet-dirs '(user-snippets-dir))
   (global-unset-key (kbd "C-c & C-n"))
   (global-unset-key (kbd "C-c & C-s"))
   (global-unset-key (kbd "C-c & C-v"))

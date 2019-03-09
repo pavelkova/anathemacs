@@ -50,8 +50,10 @@
 (diminish 'auto-revert-mode)
 (diminish 'eldoc-mode)
 
+;; get rid of startup warnings
+(setq ad-redefinition-action 'accept)
+
 (provide 'ana-ui-base)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-ui-base.el ends here
-

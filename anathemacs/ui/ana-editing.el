@@ -20,6 +20,7 @@
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
 (use-package nlinum
+  :hook prog-mode
   :hook (pdf-mode . (lambda () (nlinum-mode -1)))
   :init
   (setq nlinum-highlight-current-line t
@@ -39,9 +40,6 @@
     "v-" 'origami-forward-toggle-node
     "v." 'origami-show-only-node))
 
-(use-package pandoc-mode
-  :defer t)
-
 (use-package smartparens
   :diminish smartparens-mode
   :config
@@ -49,8 +47,16 @@
 
 (use-package undo-tree
   :config
+  (global-undo-tree-mode)
+  (setq undo-tree-visualizer-diff t
+        undo-tree-visualizer-relative-timestamps t
+        undo-tree-auto-save-history t
+        undo-tree-history-directory-alist `((".*" . ,(concat user-emacs-directory "auto-save-list"))))
   (hx-leader-def
-    "u" 'undo-tree-visualize))
+    "<insert>" 'undo-tree-visualize
+    "<left>"   'undo-tree-undo
+    "<right>"  'undo-tree-redo
+    "<deletechar>" 'undo-tree-visualize-redo))
 
 (provide 'ana-editing)
 

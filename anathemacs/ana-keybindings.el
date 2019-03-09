@@ -42,6 +42,7 @@
   "h" '(:ignore t :which-key "help")
   "i" '(:ignore t :which-key "insert")
   "p" '(:ignore t :which-key "projects")
+  "t" '(:ignore t :which-key "terminal")
   "v" '(:ignore t :which-key "visibility")
   "w" '(:ignore t :which-key "windows/layouts")
  )

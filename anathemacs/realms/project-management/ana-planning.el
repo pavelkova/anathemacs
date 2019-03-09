@@ -11,18 +11,16 @@
 (eval-when-compile
   (require 'ana-base))
 
-(use-package org-brain
-  :init
-  (setq org-brain-path 'user-org-brain-dir)
-  (hs-leader-def
-    "oB" 'org-brain-visualize)
-  :config
-  (setq org-id-track-globally t)
-  (setq org-id-locations-file (concat user-dir ".org-id-locations"))
-  (setq org-brain-visualize-default-choices 'all)
-  (setq org-brain-title-max-length 12))
-
 (with-eval-after-load 'org
+  ;; TODO
+  (setq org-todo-keywords
+        '((sequence "□" "◪" "▶" "|" "■" "☒")
+          ;; todo, partially done, postponed | completed, cancelled
+          ;; (sequence "⛥" "▲" "❗" "✓" "▪" "❓" "⛅" "🗲" "♥""＄" "|")
+          ;; event, appointment, important, accomplishment, note, research, fantasy, idea, inspiration, finance
+          org-hierarchical-todo-statistics t))
+  
+  ;; AGENDA
   (setq org-refile-allow-creating-parent-nodes t
         org-outline-path-complete-in-steps nil
         org-refile-targets '((nil :maxlevel . 1)
