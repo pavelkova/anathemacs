@@ -10,7 +10,7 @@
 ;;; Code:
 
 (use-package php-mode
-  :defer t
+  :mode "\\.php\\'"
   :config
   (eval-after-load 'php-mode
   '(require 'php-ext)))

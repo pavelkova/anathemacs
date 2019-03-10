@@ -12,17 +12,28 @@
 ;; (use-package auto-dictionary)
 
 (use-package define-word
-  :defer t)
+  :general
+  (hs-leader-def
+    "wD" 'define-word))
 
 (use-package google-translate
-  :defer t)
+  :general
+  (hs-leader-def
+    "wT" 'google-translate-smooth-translate)
+  :init
+  (setq google-translate-translation-directions-alist
+      '(("es" . "en") ("en" . "es") ("en" . "fr") ("fr" . "en"))))
 
 ; errors and linting
 
 (use-package flycheck
   :diminish flycheck-mode
   :init
-  (global-flycheck-mode))
+  (global-flycheck-mode)
+  (define-key flycheck-mode-map flycheck-keymap-prefix nil)
+  (setq flycheck-keymap-prefix (kbd "H-x e"))
+  (define-key flycheck-mode-map flycheck-keymap-prefix
+    flycheck-command-map))
 
 (provide 'ana-processors)
 

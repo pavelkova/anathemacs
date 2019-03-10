@@ -9,8 +9,7 @@
 
 ;;; Code:
 (use-package all-the-icons-dired
-  :hook
-  (dired-mode))
+  :hook dired-mode)
 
 ;; ibuffer
 (setq ibuffer-expert t
@@ -37,11 +36,11 @@
                 (neotree-find file-name)))
         (message "Could not find git project root."))))
 
-(hx-leader-def
-  "pd" 'neotree-project-dir)
 
 (use-package neotree
-  :defer t
+  :general
+  (hx-leader-def
+    "pd" 'neotree-project-dir)
   :config
   (setq neo-window-width 32
         neo-theme 'icons
@@ -54,8 +53,7 @@
         neo-show-hidden-files t
         neo-auto-indent-point t
         neo-modern-sidebar t
-        projectile-switch-project-action 'neotree-projectile-action)
-  )
+        projectile-switch-project-action 'neotree-projectile-action))
 
 
 (provide 'ana-navigation)

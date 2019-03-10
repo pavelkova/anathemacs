@@ -18,9 +18,13 @@
           ;; todo, partially done, postponed | completed, cancelled
           ;; (sequence "⛥" "▲" "❗" "✓" "▪" "❓" "⛅" "🗲" "♥""＄" "|")
           ;; event, appointment, important, accomplishment, note, research, fantasy, idea, inspiration, finance
-          org-hierarchical-todo-statistics t))
+          )
+        org-hierarchical-todo-statistics nil)
   
   ;; AGENDA
+  (hs-leader-def
+    "A" 'org-agenda)
+  
   (setq org-refile-allow-creating-parent-nodes t
         org-outline-path-complete-in-steps nil
         org-refile-targets '((nil :maxlevel . 1)
@@ -41,11 +45,9 @@
               (org-deadline-warning-days 30)
               (org-agenda-time-grid nil)
               (org-agenda-overriding-header "próximo"))))))
-(hs-leader-def
-  "A" 'org-agenda)
 
 (use-package org-index
-  :config
+  :general
   (hs-leader-def
     "I" 'org-index))
 

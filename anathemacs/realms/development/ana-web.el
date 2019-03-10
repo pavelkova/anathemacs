@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package company-web
   :hook (web-mode . (set-local-company-backend company-web)))
 

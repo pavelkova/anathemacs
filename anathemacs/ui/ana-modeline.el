@@ -8,12 +8,8 @@
 ;;
 
 ;;; Code:
-
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package spaceline
-  :config
+  :init
   (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
 
 (require 'spaceline-config)

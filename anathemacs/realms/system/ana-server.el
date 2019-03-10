@@ -10,7 +10,9 @@
 ;;; Code:
 
 (use-package counsel-tramp
-  :defer t
+  :general
+  (hs-leader-def
+  "ss" 'counsel-tramp)
   :config
   (add-hook 'counsel-tramp-pre-command-hook '(lambda () (global-aggressive-indent-mode 0)
 				     (projectile-mode 0)
@@ -20,13 +22,13 @@
 			      (editorconfig-mode 1))))
 
 (use-package tramp-term
-  :defer t
+  :general
+  (hs-leader-def
+  "sS" 'tramp-term)
   :config
   (setq tramp-default-method "ssh"))
 
-(hs-leader-def
-  "sS" 'tramp-term
-  "ss" 'counsel-tramp)
+
 
 (use-package nginx-mode
   :defer t)

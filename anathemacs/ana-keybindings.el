@@ -7,6 +7,7 @@
 
 ;;; Code:
 (use-package which-key
+  :diminish t
   :init
   (which-key-mode))
 
@@ -44,28 +45,14 @@
   "p" '(:ignore t :which-key "projects")
   "t" '(:ignore t :which-key "terminal")
   "v" '(:ignore t :which-key "visibility")
-  "w" '(:ignore t :which-key "windows/layouts")
- )
-
-;; errors
-(minor-leader-def
-  "!" '(:ignore t :which-key "flycheck"))
-
-(hx-leader-def
- "e." 'error-transient-state
- "en" 'next-error
- "ep" 'previous-error
-;; comments
-  "c]"  'comment-dwim ;; add to end of line
-  "c\-" 'comment-line
-  "c["  'comment-or-uncomment-region)
+  "w" '(:ignore t :which-key "windows/layouts"))
 
 (hs-leader-def
   "a" '(:ignore t :which-key "archive")
   "d" '(:ignore t :which-key "data")
   "D" '(:ignore t :which-key "dokuwiki")
   "m" '(:ignore t :which-key "media")
-  "o" '(:ignore t :which-key "org")
+  "p" '(:ignore t :which-key "project management")
   "r" '(:ignore t :which-key "research")
   "s" '(:ignore t :which-key "system")
   "w" '(:ignore t :which-key "writing"))

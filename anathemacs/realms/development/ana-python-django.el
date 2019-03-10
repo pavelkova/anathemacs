@@ -12,12 +12,12 @@
   :hook python-mode)
 
 (use-package djangonaut
-  :init
-  (global-djangonaut-mode)
+  :mode "\\manage\\.py\\'"
   :config
+  (global-djangonaut-mode)
   (minor-leader-def
     :keymaps 'djangonaut-mode-map
-    "'" '(:ignore t :which-key "Djangonaut")
+    "'" '(:ignore t :which-key "djangonaut")
     "'A" 'pythonic-activate))
 
 ;; (use-package pony-mode

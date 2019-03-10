@@ -17,11 +17,9 @@
 ;; export org file as html with bootstrap support
 ;; (use-package ox-twbs :defer t)
 
-(use-package ox-pandoc
-  :defer t)
+(use-package ox-pandoc)
 
-(use-package pandoc-mode
-  :defer t)
+(use-package pandoc-mode)
 
 (provide 'ana-exporting)
 

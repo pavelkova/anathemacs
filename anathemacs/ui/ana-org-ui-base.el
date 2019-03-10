@@ -30,9 +30,6 @@
   (add-to-list 'mixed-pitch-fixed-pitch-faces 'org-special-keyword 'org-link))
 
 (diminish 'org-indent-mode)
-(diminish 'buffer-face-mode)
-(diminish 'page-break-lines-mode)
-(diminish 'which-key-mode)
 
 (provide 'ana-org-ui-base)
 

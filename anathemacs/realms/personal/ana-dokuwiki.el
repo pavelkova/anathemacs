@@ -8,19 +8,25 @@
 ;;
 
 ;;; Code:
-(use-package dokuwiki
-  :init
+(defun load-dokuwiki-secrets ()
+  "Prevent file loading from slowing startup time."
   (load-file user-dokuwiki-file)
+  (interactive)
+  (dokuwiki-login))
+
+(use-package dokuwiki
+  :general
   (hs-leader-def
-    "D+" 'dokuwiki-login
+    "D=" 'load-dokuwiki-secrets
     "Dl" 'dokuwiki-list-pages
     "Do" 'dokuwiki-open-page
     "Ds" 'dokuwiki-save-page))
 
 (use-package dokuwiki-mode
-  :hook dokuwiki)
+  :mode "\\.doku\\'")
 
-(use-package outline-magic)
+(use-package outline-magic
+  :hook dokuwiki-mode)
 
 (provide 'ana-dokuwiki)
 

@@ -22,7 +22,7 @@
 ;; (use-package flx)
 
 (use-package imenu
-  :config
+  :general
   (hs-leader-def
     "I"  'counsel-imenu))
 
@@ -43,7 +43,7 @@
    "hv" 'counsel-describe-variable))
 
 (use-package smex
-  :config
+  :general
   (general-define-key
    "M-X"     'smex
    "H-X"     'smex-major-mode-commands))

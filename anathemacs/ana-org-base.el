@@ -52,12 +52,12 @@
                           org-bookmark
                           org-checklist
                           ;; org-choose
-                          org-collector
+                          ;; org-collector
                           ;; org-depend
-                          org-notmuch
-                          org-panel
-                          org-registry
-                          org-toc
+                          ;; org-notmuch
+                          ;; org-panel
+                          ;; org-registry
+                          ;; org-toc
                           ;; org-wikinodes
                           ))
 
@@ -71,10 +71,11 @@
 
 
 (use-package ivy-omni-org
-  :config
-  (setq ivy-omni-org-file-sources '(org-agenda-files))
+  :general
   (hs-leader-def
-    "i" 'ivy-omni-org))
+    "i" 'ivy-omni-org)
+  :config
+  (setq ivy-omni-org-file-sources '(org-agenda-files)))
 
 (provide 'ana-org-base)
 

@@ -13,8 +13,9 @@
 
 (use-package ivy
   :diminish ivy-mode
-  :config
+  :init
   (ivy-mode 1)
+  :config
   (setq ivy-use-virtual-buffers t
         ivy-enable-recursive-minibuffers t
         ivy-wrap t))

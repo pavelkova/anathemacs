@@ -8,17 +8,14 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
-(use-package company-go)
+(use-package company-go
+  :hook (go-mode . (set-local-company-backend company-go)))
 
 (use-package go-eldoc
   :defer t)
 
 (use-package go-mode
-  :hook (set-local-company-backend company-go)
-  :mode ("\\.go\\'" . go-mode))
+  :mode "\\.go\\'")
 
 (use-package go-projectile
   :defer t)

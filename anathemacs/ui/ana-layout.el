@@ -9,9 +9,9 @@
 
 ;;; Code:
 (use-package eyebrowse
-  :defer t
-  :config
+  :general
   (hx-leader-def
+    "w+" 'eyebrowse-mode
     "w<" 'eyebrowse-prev-window-config
     "w>" 'eyebrowse-next-window-config
     "w\-" 'eyebrowse-last-window-config
@@ -28,12 +28,7 @@
     "w6" 'eyebrowse-switch-to-window-config-6
     "w7" 'eyebrowse-switch-to-window-config-7
     "w8" 'eyebrowse-switch-to-window-config-8
-    "w9" 'eyebrowse-switch-to-window-config-9
-    ))
-
-(hx-leader-def
-  "w+" 'eyebrowse-mode)
-
+    "w9" 'eyebrowse-switch-to-window-config-9))
 
 (provide 'ana-layout)
 

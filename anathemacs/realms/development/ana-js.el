@@ -8,15 +8,12 @@
 ;;
 
 ;;; Code:
-
-;; javascript
-;; (use-package indium
-;;   :defer t)
-
-(use-package js2-mode)
+(use-package js2-mode
+  :mode "\\.js\\'")
 
 ;; json
 (use-package json-mode
+  :mode "\\.json\\'"
   :config
   (use-package json-reformat)
   (use-package json-snatcher))

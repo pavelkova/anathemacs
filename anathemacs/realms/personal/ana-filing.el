@@ -9,17 +9,18 @@
 
 ;;; Code:
 (use-package org-brain
-  :init
-  (setq org-brain-path 'user-org-brain-dir)
+  :general
   (hs-leader-def
-    "oB" 'org-brain-visualize)
+    "B" 'org-brain-goto)
   :config
-  (setq org-id-track-globally t)
-  (setq org-id-locations-file (concat user-dir ".org-id-locations"))
-  (setq org-brain-visualize-default-choices 'all)
-  (setq org-brain-title-max-length 12))
+  (setq org-brain-path 'user-org-brain-dir
+        org-id-track-globally t
+        org-id-locations-file (concat user-dir ".org-id-locations")
+        org-brain-visualize-default-choices 'all
+        org-brain-title-max-length 12))
 
-(use-package org-chef)
+(use-package org-chef
+  :defer t)
 
 (setq org-capture-templates
       '((
@@ -175,7 +176,7 @@
   "c" 'org-capture)
 
 ;; properties
-(setq org-tempo-keywords-alist '())
+;; (setq org-tempo-keywords-alist '())
 
 (provide 'ana-filing)
 

@@ -52,10 +52,17 @@
 
 (load-theme 'anathemacs t)
 
+;; shorten responses
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; unicode support
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+
 ;; init
 (require 'ana-variables)
 (require 'ana-keybindings)
-(require 'ana-base)
+;; (require 'ana-base)
 ;; (require 'ana-org-base)
 ;; tools
 ;; (require 'ana-archiving)
@@ -63,12 +70,12 @@
 ;; (require 'ana-exporting)
 (require 'ana-ivy)
 ;; (require 'ana-processors)
-(require 'ana-snippets)
+;; (require 'ana-snippets)
 ;; ui
-(require 'ana-ui-base)
-(require 'ana-org-ui-base)
+;; (require 'ana-ui-base)
+;; (require 'ana-org-ui-base)
 (require 'ana-editing)
-;; (require 'ana-layout)
+x;; (require 'ana-layout)
 ;; (require 'ana-modeline)
 ;; (require 'ana-navigation)
 ;; (require 'ligature-support)
@@ -81,20 +88,20 @@
 ;; (require 'ana-statistics)
 ;; (require 'ana-visualization)
 ;; development
-(require 'ana-c)
-(require 'ana-elisp)
-(require 'ana-go)
-(require 'ana-haskell)
-(require 'ana-java)
-(require 'ana-js-react)
-(require 'ana-js)
-(require 'ana-markdown)
-(require 'ana-php)
-(require 'ana-python-django)
-(require 'ana-python)
-(require 'ana-ruby-rails)
-(require 'ana-ruby)
-(require 'ana-web)
+;; (require 'ana-c)
+;; (require 'ana-elisp)
+;; (require 'ana-go)
+;; (require 'ana-haskell)
+;; (require 'ana-java)
+;; (require 'ana-js-react)
+;; (require 'ana-js)
+;; (require 'ana-markdown)
+;; (require 'ana-php)
+;; (require 'ana-python-django)
+;; (require 'ana-python)
+;; (require 'ana-ruby-rails)
+;; (require 'ana-ruby)
+;; (require 'ana-web)
 ;; personal
 ;; (require 'ana-dokuwiki)
 (require 'ana-filing)
@@ -104,8 +111,8 @@
 ;; (require 'ana-custom-bullets)
 (require 'ana-planning)
 (require 'ana-version-control)
-(require 'ana-projectile)
-(require 'ana-scheduling)
+;; (require 'ana-projectile)
+;; (require 'ana-scheduling)
 ;; research
 ;; (require 'ana-annotation)
 ;; (require 'ana-reading)

@@ -9,29 +9,26 @@
 
 ;;; Code:
 
-(use-package bash-completion
-  :defer t)
+;; (use-package bash-completion)
 
 (use-package emamux
-  :config
-  (global-set-key (kbd "H-x x") emamux:keymap))
+  :bind-keymap
+  ("H-x x" . emamux:keymap))
 
-(use-package fish-completion
-  :defer t)
+;; (use-package fish-completion)
 
-(use-package fish-mode
-  :defer t)
+;; (use-package fish-mode)
 
 ;; (use-package multi-term)
 
 (use-package sane-term
-  :config
+  :general
   (hx-leader-def
     "tt" 'sane-term
     "tn" 'sane-term-create))
 
 (use-package sudo-edit
-  :config
+  :general
   (hx-leader-def
     "!" 'sudo-edit))
 

@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package company-cabal
   :hook (haskell-cabal-mode . (set-local-company-backend company-cabal)))
 
@@ -20,7 +17,7 @@
 ;; (use-package haskell-emacs) ;; TODO - use haskell to write emacs extensions
 
 (use-package haskell-mode
-  :defer t)
+  :mode "\\.hs\\'")
 
 (use-package hindent
   :hook haskell-mode-hook)

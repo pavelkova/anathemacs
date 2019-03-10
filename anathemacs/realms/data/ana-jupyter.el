@@ -8,11 +8,9 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package ein
-  :config
+  :defer t
+  :general
   (hs-leader-def
     "dl" 'ein:notebooklist-open
     "dn" 'ein:notebooklist-new-notebook

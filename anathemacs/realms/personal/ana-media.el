@@ -22,7 +22,9 @@
 ;; music
 
 (use-package emms
-  :defer t
+  :general
+  (hs-leader-def
+    "mb" 'emms-browser)
   :config
   (require 'emms-setup)
   (emms-all)
@@ -37,13 +39,10 @@
   (require 'emms-playing-time)
   (emms-playing-time 1))
 
-(hs-leader-def
-  "mb" 'emms-browser)
+;; (use-package libmpdee)
 
-(use-package libmpdee)
-
-(use-package mingus
-  :after libmpdee)
+;; (use-package mingus
+;;   :after libmpdee)
 
 (provide 'ana-media)
 

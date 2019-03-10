@@ -8,14 +8,12 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package org-noter
-  :after org
+  :general
+  (hs-leader-def
+    "rn" 'org-noter)
   :config
-  (org-noter-set-auto-save-last-location t)
-  )
+  (org-noter-set-auto-save-last-location t))
 
 (provide 'ana-annotation)
 

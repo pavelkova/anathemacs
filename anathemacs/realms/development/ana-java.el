@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package company-emacs-eclim
   :defer t)
 

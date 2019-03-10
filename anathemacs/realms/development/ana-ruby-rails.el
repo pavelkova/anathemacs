@@ -9,7 +9,8 @@
 
 ;;; Code:
 
-(use-package projectile-rails)
+(use-package projectile-rails
+  :mode "\\Gemfile\\'")
 
 (provide 'ana-ruby-rails)
 

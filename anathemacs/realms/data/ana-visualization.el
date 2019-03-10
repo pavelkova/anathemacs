@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
 (use-package gnuplot
   :defer t
   :config
@@ -30,7 +27,6 @@
     :keymaps graphviz-dot-mode-keymaps
     "m=" 'graphviz-dot-indent-graph
     "mc" 'compile))
-
 
 (provide 'ana-visualization)
 

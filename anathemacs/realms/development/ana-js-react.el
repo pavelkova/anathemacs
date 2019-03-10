@@ -12,7 +12,8 @@
 (use-package react-snippets
   :hook rjsx-mode)
 
-(use-package rjsx-mode)
+(use-package rjsx-mode
+  :mode "\\.jsx\\'")
 
 ;; (use-package tide)
 

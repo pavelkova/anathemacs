@@ -9,12 +9,12 @@
 
 ;;; Code:
 (use-package biblio
-  :config
+  :general
   (hs-leader-def
     "rl" 'biblio-lookup))
 
 (use-package ebib
-  :config
+  :general
   (hs-leader-def
     "re" 'ebib))
 

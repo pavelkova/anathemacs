@@ -42,3 +42,10 @@ To understand a piece of software, customize it to within an inch of its life.
 *** H-<space>
 *** C-c
 ** Commands
+* Todo
+** □ Add workout tracker 
+:PROPERTIES:
+:ADDED: <2019-03-10 Sun 10:56>
+:realm: desarollo
+:project: anathemacs
+:END:

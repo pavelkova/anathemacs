@@ -8,12 +8,8 @@
 ;;
 
 ;;; Code:
-(eval-when-compile
-  (require 'ana-base))
-
-
 (use-package anaconda-mode
-  :hook python-mode-hook)
+  :hook python-mode)
 
 (use-package company-anaconda
   :after company
@@ -39,7 +35,7 @@
   :defer t)
 
 (use-package pyvenv
-  :defer t)
+  :hook python-mode)
 
 (use-package pytest
   :defer t)

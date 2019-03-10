@@ -43,3 +43,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-workout.el ends here
+
+division of labor in society
+ferdinand tonnies community and society

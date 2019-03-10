@@ -11,7 +11,7 @@
 
 ;; CSV
 (use-package csv-mode
-  :defer t)
+  :mode "\\.csv\\'")
 
 ;; SQL
 (use-package emacsql
