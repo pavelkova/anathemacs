@@ -46,10 +46,10 @@
     "v." 'origami-show-only-node))
 
 (use-package smartparens
+  :diminish t
   :demand t
   :config
-  (smartparens-global-mode)
-  :diminish t)
+  (smartparens-global-mode))
 
 (use-package undo-tree
   :general

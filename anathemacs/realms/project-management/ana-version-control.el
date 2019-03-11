@@ -12,7 +12,7 @@
 (setq auto-save-file-name-transforms `((".*" "~/.cache/emacs/auto-saves/" t)))
 
 (setq backup-by-copying t
-      backup-directory-alist `((".*" "~/.cache/emacs/backups/"))
+      backup-directory-alist `((".*" . "~/.cache/emacs/backups/"))
       delete-old-versions t
       kept-old-versions 2
       kept-new-versions 4
@@ -38,14 +38,17 @@
 ;; (use-package gitconfig-mode)
 
 (use-package git-gutter-fringe
-  :general
+  :after magit
+  :config
   (hx-leader-def
     "g." 'git-gutter-mode))
 
 (use-package gitignore-mode
   :mode "\\.gitignore\\'")
 
-;; (use-package gitlab)
+(use-package gitlab
+  :init
+  (load-file (concat user-secrets-dir "gitlab.el")))
 
 (use-package magit
   :general
@@ -58,10 +61,11 @@
   :config
   (use-package magit-popup))
 
-;; (use-package magithub
-;;   :after magit
-;;   :config
-;;   (magithub-feature-autoinject t))
+(use-package magithub
+  :after magit
+  :config
+  (magithub-feature-autoinject t)
+  (setq auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc")))
 
 (provide 'ana-version-control)
 

@@ -13,7 +13,8 @@
       "ii" 'yas-insert-snippet
       "in" 'yas-new-snippet)
   :config
-  (yas-global-mode 1)
+  ;; (yas-global-mode 1)
+  (customize-set-variable 'yas-snippets-dir '())
   (global-unset-key (kbd "C-c & C-n"))
   (global-unset-key (kbd "C-c & C-s"))
   (global-unset-key (kbd "C-c & C-v")))
