@@ -24,7 +24,7 @@
   (hs-leader-def
     "wc" 'wc-mode
     "wC" 'wc-set-word-goal)
-  :hook org-journal-mode-hook
+  :hook org-journal-mode
   :config
   (setq wc-modeline-format "written %tw of %gw words"
         wc-word-goal 750))

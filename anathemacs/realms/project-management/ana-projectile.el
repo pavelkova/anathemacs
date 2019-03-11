@@ -9,43 +9,29 @@
 
 ;;; Code:
 (use-package counsel-projectile
-  :after projectile
-  :bind-keymap
-  ("H-x p" . projectile-command-map)
-  :init
-  (counsel-projectile-mode)
+  :general
+  (hx-leader-def
+    "p SPC" 'counsel-projectile
+    "pb" 'counsel-projectile-switch-to-buffer
+    "pc" 'counsel-projectile-org-capture
+    "pd" 'counsel-projectile-find-dir
+    "pD" 'projectile-current-project-dirs
+    "pf" 'counsel-projectile-find-file
+    "pF" 'projectile-current-project-files
+    "pg" 'counsel-projectile-grep
+    "pi" 'projectile-ibuffer-by-project
+    "pI" 'projectile-ibuffer
+    "pk" 'projectile-kill-buffers
+    "pp" 'counsel-projectile-switch-project)
   :config
-  (setq projectile-switch-project-action 'counsel-projectile-find-file))
-
-(use-package org-projectile
-  :init
-  (org-projectile-per-project)
-  (minor-leader-def
-    "np" 'org-projectile-project-todo-completing-read)
-  :config
-  (setq org-projectile-capture-template
-"** □ %^{project todo} %?
-:PROPERTIES:
-:ADDED: %T
-:realm: desarollo
-:project:
-:END:"
-  org-projectile-projects-directory (file-expand-wildcards "~/Code/Current/*/")
-  org-projectile-per-project-filepath "README.org"
-  org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-  (add-to-list 'org-capture-templates
-               (org-projectile-project-todo-entry
-                :capture-character "D"
-                :capture-heading "Linked Project TODO"))
-  (add-to-list 'org-capture-templates
-               (org-projectile-project-todo-entry
-                :capture-character "d")))
-  
+  (counsel-projectile-mode))
 
 (use-package projectile
   :diminish t
+  :bind-keymap
+  ("H-x P" . projectile-command-map)
   :init
-  (projectile-mode +1)
+  (projectile-mode)
   :config
   (setq projectile-sort-order 'recently-active
         projectile-enable-caching t
@@ -53,6 +39,25 @@
         projectile-switch-project-action #'projectile-find-dir
         projectile-find-dir-includes-top-level t
         projectile-mode-line-function '(lambda () (format "⧉ %s" (projectile-project-name)))))
+
+(use-package org-projectile
+  :init
+  (org-projectile-per-project)
+  (hs-leader-def
+    ".p" 'org-projectile-project-todo-entry
+    ".P" 'org-projectile-project-todo-completing-read)
+  :config
+  (setq org-projectile-capture-template
+"** □ %^{project todo} %?
+:PROPERTIES:
+:ADDED: %T
+:realm: desarrollo
+:project:
+:END:"
+  org-projectile-projects-directory (file-expand-wildcards "~/Code/Current/*/")
+  org-projectile-per-project-filepath "README.org"
+  org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
+  
 
 (provide 'ana-projectile)
 

@@ -47,7 +47,7 @@
   :mode "\\.gitignore\\'")
 
 (use-package gitlab
-  :init
+  :config
   (load-file (concat user-secrets-dir "gitlab.el")))
 
 (use-package magit

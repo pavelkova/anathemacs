@@ -16,7 +16,7 @@
   (setq org-todo-keywords
         '((sequence "□" "◪" "▶" "|" "■" "☒")
           ;; todo, partially done, postponed | completed, cancelled
-          ;; (sequence "⛥" "▲" "❗" "✓" "▪" "❓" "⛅" "🗲" "♥""＄" "|")
+          (sequence "⛥" "" "❗" "✓" "▪" "❓" "⛅" "🗲" "♥" "＄" "|")
           ;; event, appointment, important, accomplishment, note, research, fantasy, idea, inspiration, finance
           )
         org-hierarchical-todo-statistics nil)
@@ -41,7 +41,7 @@
                     ((org-agenda-overriding-header "tareas")
                      (org-agenda-sorting-strategy '(priority-down))))))
             ("n" "próximo" agenda ""
-             (;; (org-agenda-entry-types '(:deadline :scheduled))
+             ((org-agenda-entry-types '(:deadline :scheduled :timestamp))
               (org-deadline-warning-days 30)
               (org-agenda-time-grid nil)
               (org-agenda-overriding-header "próximo"))))))

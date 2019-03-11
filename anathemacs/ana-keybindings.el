@@ -30,11 +30,6 @@
   ;; use with ':keymaps <mode>' to add to
   )
 
-(general-define-key
- "C-s" 'swiper
- "M-x" 'counsel-M-x
- "<f8>" 'neotree-toggle)
-
 (hx-leader-def
   "c" '(:ignore t :which-key "comments")
   "e" '(:ignore t :which-key "errors")
@@ -48,9 +43,11 @@
   "w" '(:ignore t :which-key "windows/layouts"))
 
 (hs-leader-def
+  "." '(:ignore t :which-key "squirrel brain")
   "a" '(:ignore t :which-key "archive")
+  "B" '(:ignore t :which-key "/brain/")
   "d" '(:ignore t :which-key "data")
-  "D" '(:ignore t :which-key "dokuwiki")
+  "D" '(:ignore t :which-key "/dokuwiki/")
   "m" '(:ignore t :which-key "media")
   "p" '(:ignore t :which-key "project management")
   "r" '(:ignore t :which-key "research")

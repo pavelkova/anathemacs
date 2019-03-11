@@ -39,13 +39,13 @@
 
 (use-package neotree
   :general
-  (hx-leader-def
-    "pd" 'neotree-project-dir)
+  (general-define-key
+   "<f8>" 'neotree-toggle
+   "H-x p d" 'neotree-project-dir)
   :config
   (setq neo-window-width 32
         neo-theme 'icons
         neo-create-file-auto-open nil
-        neo-banner-message " "
         neo-show-updir-line nil
         neo-mode-line-type nil
         neo-smart-open t

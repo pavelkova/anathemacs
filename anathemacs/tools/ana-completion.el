@@ -27,8 +27,7 @@
     "I"  'counsel-imenu))
 
 (use-package counsel
-  :after ivy
-  :config
+  :general
   (general-define-key
    "M-x"     'counsel-M-x
    "C-s"     'swiper)

@@ -26,9 +26,10 @@
       '((
       ;;---BASIC CAPTURES
       ;;;; TODO
-         "t" "TODO" entry
+         "t" "tarea" entry
          (file+headline user-master-file "braindump")
-         "** □ %^{todo} %?
+         "** □ %^{tarea} %?
+SCHEDULED: %t
 :PROPERTIES:
 :ADDED: %T
 :realm:
@@ -36,69 +37,67 @@
 :END:")
         
       ;;;; APPOINTMENT
-        ("a" "APPOINTMENT" entry
+        ("c" "cita" entry
          (file+olp+datetree user-cal-file)
-         ;; ▲
-         ;; %(all-the-icons-octicon \"triangle-up\" :face 'all-the-icons-lpink)
-         "** %^{appointment} %? :appointment:
+         "** ▲ %^{cita} %? :appointment:
+SCHEDULED: %T
 :PROPERTIES:
-:SCHEDULED: %T
+:location:
 :END:"
-         :time-prompt t
-         :tree-type week)
+         :tree-type month)
 
       ;;;; EVENT
-        ("E" "EVENT" entry
+        ("e" "evento" entry
          (file+olp+datetree user-cal-file)
-         ;; ⛥
-         ;; %(all-the-icons-material \"star\" :face 'all-the-icons-lpink)
-         "** %^{event} %? :event:
-:PROPERTIES:
-:SCHEDULED: %t
-:END:"
-         :time-prompt t
-         :tree-type week)
+         "** ⛥ %^{evento} %? :event:
+SCHEDULED: %t"
+         :tree-type month)
 
       ;;;; NOTE
-        ("N" "NOTE" entry
+        ("n" "nota" entry
          (file+headline user-master-file "braindump")
-         ;;  ▪
-         ;; %(all-the-icons-material \"speaker_notes\" :face 'all-the-icons-lpink)
-         "** %^{note} %? :note:
+         "** %^{nota} %? :note:
 :PROPERTIES:
 :ADDED: %T
+:realm:
 :END:")
         
       ;;;; LINK
-        ("l" "LINK" entry
+        ("l" "enlace" entry
          ((file+headline user-master-file "braindump"))
-         "** %(org-cliplink-capture)
+         "** %(org-cliplink-capture) :website:
 :PROPERTIES:
 :ADDED: %T
+:realm: %?
 :END:")
         
       ;;;; BOOKMARK
-        ("b" "BOOKMARK" entry
+        ("m" "marcador" entry
          (file+headline user-master-file "marcadores")
          "** %?
-%a")
+%a
+:PROPERTIES:
+:ADDED: %T
+:realm:
+:project:
+:END:")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES
       ;;;; ORG-JOURNAL
-        ("j" "DIARY" entry
-         (function org-journal-find-location)
-         "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
+        ;; ("j" "DIARY" entry
+        ;;  (function org-journal-find-location)
+        ;;  "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
 
       ;;;; ORG-BRAIN
-        ("B" "BRAIN" plain
+        ("C" "cerebro" plain
          (function org-brain-goto-end)
          "* %i%?")
         
       ;;;; ORG-CHEF
-        ("r" "RECIPE" entry
+        ("r" "receta" entry
          (file user-cookbook-file)
          "%(org-chef-get-recipe-from-url)")
-        ("R" "RECIPE [manual]" entry
+        ("R" "receta [manual]" entry
          (file user-cookbook-file)
          "* %^{Recipe title: }
 :PROPERTIES:

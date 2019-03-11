@@ -22,7 +22,7 @@
 
 (use-package ivy-rich
   :after ivy
-  :config
+  :init
   (ivy-rich-mode 1)
   (setq ivy-format-function #'ivy-format-function-line))
 

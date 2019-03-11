@@ -19,7 +19,7 @@
 
 ;; calendar
 (use-package calfw
-  :general
+  :init
   (hs-leader-def
     "C" 'cfw:open-org-calendar)
   :config
@@ -39,7 +39,7 @@
 
 (use-package calfw-org
   :after calfw
-  :config
+  :init
   (load-file user-caldav-file)
   (setq org-caldav-inbox user-cal-file
         org-icalendar-timezone "North_America/New_York)"))

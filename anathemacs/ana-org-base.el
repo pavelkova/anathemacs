@@ -47,10 +47,10 @@
                           org-id
                           org-info
                           org-inlinetask
-                          org-tempo
-                          org-annotate-file
-                          org-bookmark
-                          org-checklist
+                          ;; org-tempo
+                          ;; org-annotate-file
+                          ;; org-bookmark
+                          ;; org-checklist
                           ;; org-choose
                           ;; org-collector
                           ;; org-depend
