@@ -1,4 +1,4 @@
-;;; ana-navigation.el ---
+;;; ana-navigation.el --- Directory browsers and sidebars.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
