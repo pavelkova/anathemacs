@@ -26,7 +26,7 @@
 (use-package gist
   :general
   ;; (load-file (concat user-secrets-dir "gist.el"))
-  (hx-leader-def
+  (ha-leader-def
     "ggl" 'gist-list    ; Lists your gists in a new buffer
     "ggb" 'gist-buffer  ; Copies gist URL into the kill ring
     "ggB" 'gist-buffer-private
@@ -38,9 +38,9 @@
 ;; (use-package gitconfig-mode)
 
 (use-package git-gutter-fringe
-  :after magit
+  :hook (magit . git-gutter)
   :config
-  (hx-leader-def
+  (ha-leader-def
     "g." 'git-gutter-mode))
 
 (use-package gitignore-mode
@@ -52,7 +52,7 @@
 
 (use-package magit
   :general
-  (hx-leader-def
+  (ha-leader-def
     "gs" 'magit-status
     "gc" 'magit-commit
     "gF" 'magit-stage-file

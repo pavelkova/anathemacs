@@ -31,7 +31,7 @@
   :init
   (global-flycheck-mode)
   (define-key flycheck-mode-map flycheck-keymap-prefix nil)
-  (setq flycheck-keymap-prefix (kbd "H-x e"))
+  (setq flycheck-keymap-prefix (kbd "H-a e"))
   (define-key flycheck-mode-map flycheck-keymap-prefix
     flycheck-command-map))
 

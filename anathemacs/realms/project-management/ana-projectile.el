@@ -10,7 +10,7 @@
 ;;; Code:
 (use-package counsel-projectile
   :general
-  (hx-leader-def
+  (ha-leader-def
     "p SPC" 'counsel-projectile
     "pb" 'counsel-projectile-switch-to-buffer
     "pc" 'counsel-projectile-org-capture
@@ -28,8 +28,9 @@
 
 (use-package projectile
   :diminish t
-  :bind-keymap
-  ("H-x P" . projectile-command-map)
+  :general
+  (ha-leader-def
+   "P" '(:prefix-command projectile-command-map :which-key "projectile"))
   :init
   (projectile-mode)
   :config

@@ -11,7 +11,23 @@
 (use-package org-brain
   :general
   (hs-leader-def
-    "B" 'org-brain-goto)
+    "BA"  'org-brain-agenda
+    "B.c" 'org-brain-add-child
+    "B.C" 'org-brain-add-child-headline
+    "B.f" 'org-brain-add-friendship
+    "B.p" 'org-brain-add-parent
+    "B,c" 'org-brain-remove-child
+    "B,f" 'org-brain-remove-friendship
+    "B,p" 'org-brain-remove-parent
+    "Bg"  'org-brain-goto
+    "B/c" 'org-brain-goto-child
+    "B/f" 'org-brain-goto-friendship
+    "B/p" 'org-brain-goto-parent
+    "B/e" 'org-brain-goto-end
+    "B/o" 'org-brain-goto-current
+    "B/w" 'org-brain-goto-other-window
+    "Bp"  'org-brain-pin
+    "Br"  'org-brain-refile)
   :config
   (setq org-brain-path 'user-org-brain-dir
         org-id-track-globally t

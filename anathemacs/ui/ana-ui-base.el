@@ -30,7 +30,7 @@
 
 (use-package format-all
   :general
-  (hx-leader-def
+  (ha-leader-def
     "F" 'format-all-buffer))
 
 (use-package pretty-mode
@@ -38,23 +38,24 @@
   (progn
     (global-pretty-mode t)
     (global-prettify-symbols-mode 1)
-     (pretty-deactivate-groups
-      '(:equality :ordering :ordering-double :ordering-triple
-                  :arrows :arrows-twoheaded :punctuation
-                  :logic :sets))
-     (pretty-activate-groups
-      '(:greek :arithmetic-nary))))
+    (pretty-deactivate-groups
+     '(:equality :ordering :ordering-double :ordering-triple
+                 :arrows :arrows-twoheaded :punctuation
+                 :logic :sets))
+    (pretty-activate-groups
+     '(:greek :arithmetic-nary))))
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'visual-line-mode)
 
 ;; minor mode appearance in modeline
-;; (use-package delight)
+(use-package delight
+  :demand t)
 (use-package diminish
   :demand t)
 
 (diminish 'visual-line-mode)
-(diminish 'line-number-mode)
+(diminish 'display-line-numbers-mode)
 (diminish 'auto-fill-function)
 (diminish 'auto-revert-mode)
 (diminish 'eldoc-mode)

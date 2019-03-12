@@ -1,4 +1,4 @@
-;;; ana-markdown.el ---
+;;; ana-markdown.el --- Package configurations for working with Markdown.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs

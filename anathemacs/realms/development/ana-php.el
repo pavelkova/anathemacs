@@ -1,4 +1,4 @@
-;;; ana-php.el ---
+;;; ana-php.el --- Package configurations for working with PHP.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs

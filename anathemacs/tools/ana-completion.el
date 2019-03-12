@@ -31,7 +31,7 @@
   (general-define-key
    "M-x"     'counsel-M-x
    "C-s"     'swiper)
-  (hx-leader-def
+  (ha-leader-def
     ;; files
    "fb"  'counsel-bookmark
    "ff"  'counsel-find-file
@@ -45,7 +45,7 @@
   :general
   (general-define-key
    "M-X"     'smex
-   "H-X"     'smex-major-mode-commands))
+   "H-A"     'smex-major-mode-commands))
 
 (provide 'ana-completion)
 

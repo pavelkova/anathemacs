@@ -8,20 +8,17 @@
 (use-package yasnippet
   :diminish yas-minor-mode
   :general
-  (hx-leader-def
+  (ha-leader-def
       "if" 'yas-visit-snippet-file
       "ii" 'yas-insert-snippet
       "in" 'yas-new-snippet)
   :config
   ;; (yas-global-mode 1)
-  (customize-set-variable 'yas-snippets-dir '())
-  (global-unset-key (kbd "C-c & C-n"))
-  (global-unset-key (kbd "C-c & C-s"))
-  (global-unset-key (kbd "C-c & C-v")))
+  (customize-set-variable 'yas-snippets-dir '()))
 
 (use-package ivy-yasnippet
   :general
-  (hx-leader-def
+  (ha-leader-def
     "I" 'ivy-yasnippet))
 
 (use-package yasnippet-snippets

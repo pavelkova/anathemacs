@@ -11,9 +11,9 @@
 (use-package gnuplot
   :defer t
   :config
-  (hm-leader-def
+  (hs-leader-def
    :keymaps 'org-mode
-   "tp" 'org-plot/gnuplot))
+   "dp" 'org-plot/gnuplot))
 
 (use-package graphviz-dot-mode
   :mode (("\\.diag\\'"      . graphviz-dot-mode)
@@ -23,10 +23,10 @@
            ("\\.dot\\'"       . graphviz-dot-mode)
            ("\\.gv\\'"        . graphviz-dot-mode))
   :config
-  (hx-leader-def
-    :keymaps graphviz-dot-mode-keymaps
-    "m=" 'graphviz-dot-indent-graph
-    "mc" 'compile))
+  (hs-leader-def
+    :keymaps graphviz-dot-mode-keymap
+    "d=" 'graphviz-dot-indent-graph
+    "dc" 'compile))
 
 (provide 'ana-visualization)
 

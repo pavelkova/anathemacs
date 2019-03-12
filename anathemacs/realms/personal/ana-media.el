@@ -12,10 +12,15 @@
 (require 'notmuch)
 
 ;; social media
-;; (use-package twittering-mode)
+(use-package twittering-mode
+  :general
+  (hs-leader-def
+    "mt" 'twittering-mode))
 
 (use-package md4rd
-  :defer t
+  :general
+  (hs-leader-def
+    "mr" 'md4rd)
   :config
   (setq md4rd-subs-active '(news politics emacs linux femalefashionadvice sorceryofthespectacle askhistorians historyofideas)))
 
@@ -38,11 +43,6 @@
   (emms-mode-line 1)
   (require 'emms-playing-time)
   (emms-playing-time 1))
-
-;; (use-package libmpdee)
-
-;; (use-package mingus
-;;   :after libmpdee)
 
 (provide 'ana-media)
 

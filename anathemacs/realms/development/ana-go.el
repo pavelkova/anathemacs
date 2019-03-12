@@ -1,4 +1,4 @@
-;;; ana-go.el ---
+;;; ana-go.el --- Package configurations for working with Golang.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs

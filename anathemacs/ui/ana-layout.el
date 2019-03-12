@@ -10,7 +10,7 @@
 ;;; Code:
 (use-package eyebrowse
   :general
-  (hx-leader-def
+  (ha-leader-def
     "w+" 'eyebrowse-mode
     "w<" 'eyebrowse-prev-window-config
     "w>" 'eyebrowse-next-window-config

@@ -8,8 +8,8 @@
 ;;
 
 ;;; Code:
-(use-package all-the-icons-dired
-  :hook dired-mode)
+;; (use-package all-the-icons-dired
+;;   :hook dired-mode)
 
 ;; ibuffer
 (setq ibuffer-expert t
@@ -41,7 +41,7 @@
   :general
   (general-define-key
    "<f8>" 'neotree-toggle
-   "H-x p d" 'neotree-project-dir)
+   "H-a p d" 'neotree-project-dir)
   :config
   (setq neo-window-width 32
         neo-theme 'icons

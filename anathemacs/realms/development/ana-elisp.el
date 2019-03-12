@@ -1,4 +1,4 @@
-;;; ana-elisp.el ---
+;;; ana-elisp.el --- Package configurations for working with elisp.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs

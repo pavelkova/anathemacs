@@ -231,6 +231,10 @@
      `(dired-symlink ((,class (:foreground ,yellow-1 :background ,bg1 :inherit bold))))
      `(dired-warning ((,class (:foreground ,war))))
 
+;;;;; display-line-numbers-mode
+     `(line-number ((,class (:foreground ,lnum :background nil :height 0.8 :slant italic))))
+     `(line-number-current-line ((,class (:foreground ,lnum :background ,bg2 :height 0.8 :slant italic))))
+     
 ;;;;;; doom-neotree
      `(doom-neotree-data-file-face ((,class(:foreground ,keyword :height 0.9))))
      `(doom-neotree-dir-face ((,class(:family ,sans-font :weight normal :height 0.9))))
@@ -442,6 +446,8 @@
 ;;;;; linum-relative
      `(linum-relative-current-face ((,class (:foreground ,comp :background nil :height 0.8 :slant italic))))
 
+;; display line numbers
+
 ;;;;; magit
      `(magit-blame-culprit ((,class :background ,bg2 :foreground ,yellow-1)))
      `(magit-blame-date    ((,class :background ,bg2 :foreground ,green-1)))
@@ -594,7 +600,7 @@
      `(org-tag ((,class (:foreground ,comment :height 80 :family ,base-font))))
      `(org-table ((,class (:foreground ,base :background nil :height 80))))
      `(org-time-grid ((,class (:foreground ,comment))))
-     `(org-todo ((,class (:foreground ,highlight :weight bold :background nil))))
+     `(org-todo ((,class (:foreground ,highlight :weight bold :background nil :family ,et-font))))
      `(org-verbatim ((,class (:foreground ,keyword :height 100))))
      `(org-verse ((,class (:inherit org-quote :slant italic))))
      `(org-warning ((,class (:foreground ,err))))

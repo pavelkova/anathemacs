@@ -15,7 +15,7 @@
         org-hide-emphasis-markers t
         org-agenda-block-separator ""
         org-fontify-whole-heading-line t
-        org-fontify-done-headline t
+        org-fontify-done-headline nil
         org-fontify-quote-and-verse-blocks t))
   
 (use-package org-bullets
@@ -25,6 +25,7 @@
   (setq org-bullets-bullet-list '("⋅")))
 
 (use-package mixed-pitch
+  :diminish mixed-pitch-mode
   :hook (org-mode . mixed-pitch-mode)
   :config
   (add-to-list 'mixed-pitch-fixed-pitch-faces 'org-special-keyword 'org-link))

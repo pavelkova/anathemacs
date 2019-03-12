@@ -11,6 +11,7 @@
 
 ;; time tracking
 (use-package activity-watch-mode
+  :diminish activity-watch-mode
   :init
   (global-activity-watch-mode t)
   :config

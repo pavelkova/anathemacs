@@ -13,7 +13,7 @@
 
 (use-package emamux
   :bind-keymap
-  ("H-x x" . emamux:keymap))
+  ("H-a x" . emamux:keymap))
 
 ;; (use-package fish-completion)
 
@@ -23,13 +23,13 @@
 
 (use-package sane-term
   :general
-  (hx-leader-def
+  (ha-leader-def
     "tt" 'sane-term
     "tn" 'sane-term-create))
 
 (use-package sudo-edit
   :general
-  (hx-leader-def
+  (ha-leader-def
     "!" 'sudo-edit))
 
 (use-package with-editor

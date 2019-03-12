@@ -12,8 +12,14 @@
 (use-package ht)
 (use-package s)
 
+(setq display-line-numbers-width-start t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(ha-leader-def
+  "vl" 'display-line-numbers-mode
+  "vL" 'global-display-line-numbers-mode)
+
 ;; comments
-(hx-leader-def
+(ha-leader-def
   "c]"  'comment-dwim ;; add to end of line
   "c\-" 'comment-line
   "c["  'comment-or-uncomment-region)
@@ -25,35 +31,24 @@
    "C->" 'mc/edit-ends-of-lines
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
-(use-package nlinum
-  ;; :hook prog-mode
-  :hook (pdf-mode . (lambda () (nlinum-mode -1)))
-  :config
-  (setq nlinum-highlight-current-line t
-        nlinum-format " %d"))
-
-;; (use-package nlinum-relative
-;;   :config
-;;   (setq nlinum-relative-current-symbol ""
-;;         nlinum-relative-redisplay-delay 0))
-
 (use-package origami
   :general
-  (hx-leader-def
+  (ha-leader-def
     "v," 'origami-toggle-node
     "v;" 'origami-recursively-toggle-node
     "v-" 'origami-forward-toggle-node
     "v." 'origami-show-only-node))
 
 (use-package smartparens
-  :diminish t
+  :diminish smartparens-mode
   :demand t
   :config
   (smartparens-global-mode))
 
 (use-package undo-tree
+  :diminish undo-tree-mode
   :general
-  (hx-leader-def
+  (ha-leader-def
     "<insert>" 'undo-tree-visualize
     "<left>"   'undo-tree-undo
     "<right>"  'undo-tree-redo
@@ -63,7 +58,7 @@
   (setq undo-tree-visualizer-diff t
         undo-tree-visualizer-relative-timestamps t
         undo-tree-auto-save-history t
-        undo-tree-history-directory-alist `((".*" "~/.cache/emacs/backups/"))))
+        undo-tree-history-directory-alist `((".*" . "~/.cache/emacs/backups/"))))
 
 (provide 'ana-editing)
 

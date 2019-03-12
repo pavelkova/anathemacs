@@ -1,4 +1,4 @@
-;;; ana-java.el ---
+;;; ana-java.el --- Package configurations for working with Java.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs

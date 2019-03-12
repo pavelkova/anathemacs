@@ -1,4 +1,4 @@
-;;; ana-haskell.el ---
+;;; ana-haskell.el --- Package configurations for working with Haskell.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs

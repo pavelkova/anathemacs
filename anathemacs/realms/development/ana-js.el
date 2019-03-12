@@ -1,4 +1,4 @@
-;;; ana-js.el ---
+;;; ana-js.el --- Package configurations for working with JavaScript.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(use-package js2-mode
-  :mode "\\.js\\'")
-
 ;; json
 (use-package json-mode
   :mode "\\.json\\'"

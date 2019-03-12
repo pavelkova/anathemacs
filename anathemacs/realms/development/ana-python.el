@@ -1,4 +1,4 @@
-;;; ana-python.el ---
+;;; ana-python.el --- Package configurations for working with Python.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -9,33 +9,37 @@
 
 ;;; Code:
 (use-package anaconda-mode
-  :hook python-mode)
+  :hook (python-mode . anaconda-mode)
+  :general
+  (hd-leader-def
+   "a"  '(:ignore t :which-key "anaconda")
+   "a." 'anaconda-mode-complete
+   "aa" 'anaconda-mode-find-assignments
+   "aA" 'anaconda-mode-find-assignments-other-window
+   "ad" 'anaconda-mode-find-definitions
+   "aD" 'anaconda-mode-find-definitions-other-window
+   "ar" 'anaconda-mode-find-references
+   "aR" 'anaconda-mode-find-references-other-window
+   "a?" 'anaconda-mode-show-doc))
+(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
 (use-package company-anaconda
-  :after company
-  :config
-  (add-to-list 'company-backends 'company-anaconda))
+  :after company)
 
-(use-package cython-mode
-  :defer t)
+(use-package cython-mode)
 
-(use-package eldoc
-  :defer t)
+(use-package hy-mode)
 
-(use-package hy-mode
-  :defer t)
+(use-package live-py-mode)
 
-(use-package live-py-mode
-  :defer t)
+(use-package pippel)
 
-(use-package pip-requirements
-  :defer t)
+(use-package pip-requirements)
 
-(use-package py-isort
-  :defer t)
+(use-package py-isort)
 
 (use-package pyvenv
-  :hook python-mode)
+  :hook (python-mode . pyvenv-mode))
 
 (use-package pytest
   :defer t)

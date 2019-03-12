@@ -11,12 +11,13 @@
 (use-package ein
   :defer t
   :general
-  (hs-leader-def
-    "dl" 'ein:notebooklist-open
-    "dn" 'ein:notebooklist-new-notebook
-    "dg" 'ein:notebooklist-open-notebook-global
-    "dp" 'ein:notebooklist-login
-    "dj" 'ein:junk-new
+  (hd-leader-def
+    "j"  '(:ignore t :which-key "jupyter")
+    "jl" 'ein:notebooklist-open
+    "jn" 'ein:notebooklist-new-notebook
+    "jg" 'ein:notebooklist-open-notebook-global
+    "jp" 'ein:notebooklist-login
+    "jj" 'ein:junk-new
     ))
 
 (provide 'ana-jupyter)

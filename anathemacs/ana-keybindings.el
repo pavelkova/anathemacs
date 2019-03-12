@@ -12,16 +12,20 @@
   (which-key-mode))
 
 ;; Get rid of insert binding
-(global-unset-key (kbd "<kp-0>"))
+(general-unbind 'insert
+  "<insert>")
 
 ;; Use caps key as hyper
 (define-key key-translation-map [8711] 'event-apply-hyper-modifier)
 
 (use-package general
   :init
-  (general-create-definer hx-leader-def
+  (general-create-definer ha-leader-def
     ;; general bindings for mode-agnostic actions: projectile and versioning controls, file management, error handling, editing tools, etc.
-    :prefix "H-x")
+    :prefix "H-a")
+  (general-create-definer hd-leader-def
+    ;; keymap prefix for common development modes (pony-mode, web-mode, npm-mode, etc.)
+    :prefix "H-d")
   (general-create-definer hs-leader-def
     :prefix "H-SPC")
   ;; globally available commands organized by
@@ -30,7 +34,7 @@
   ;; use with ':keymaps <mode>' to add to
   )
 
-(hx-leader-def
+(ha-leader-def
   "c" '(:ignore t :which-key "comments")
   "e" '(:ignore t :which-key "errors")
   "f" '(:ignore t :which-key "files")
@@ -43,7 +47,7 @@
   "w" '(:ignore t :which-key "windows/layouts"))
 
 (hs-leader-def
-  "." '(:ignore t :which-key "squirrel brain")
+  "." '(:ignore t :which-key "speed dial")
   "a" '(:ignore t :which-key "archive")
   "B" '(:ignore t :which-key "/brain/")
   "d" '(:ignore t :which-key "data")
