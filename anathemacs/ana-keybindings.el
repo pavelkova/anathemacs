@@ -9,11 +9,15 @@
 (use-package which-key
   :diminish t
   :init
-  (which-key-mode))
+  (which-key-mode)
+  :config
+  (setq which-key-max-description-length 69
+        which-key-show-docstrings t
+        which-key-is-verbose t
+        which-key-sort-uppercase-first nil))
 
-;; Get rid of insert binding
-(general-unbind 'insert
-  "<insert>")
+;; Get rid of insert binding ;; whyyyy
+(setq help-char 0)
 
 ;; Use caps key as hyper
 (define-key key-translation-map [8711] 'event-apply-hyper-modifier)

@@ -10,7 +10,11 @@
 ;;; Code:
 
 (use-package projectile-rails
-  :mode "\\Gemfile\\'")
+  :general
+  (hd-leader-def
+    "r" '(:which-key "rails"))
+  :bind-keymap
+  ("H-d r" . projectile-rails-command-map))
 
 (provide 'ana-ruby-rails)
 

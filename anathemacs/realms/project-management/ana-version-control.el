@@ -35,11 +35,11 @@
     "ggp" 'gist-region-or-buffer
     "ggP" 'gist-region-or-buffer-private))
 
-;; (use-package gitconfig-mode)
+(use-package gitconfig-mode
+  :mode "\\.gitconfig\\'")
 
 (use-package git-gutter-fringe
-  :hook (magit . git-gutter)
-  :config
+  :init
   (ha-leader-def
     "g." 'git-gutter-mode))
 

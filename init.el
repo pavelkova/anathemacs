@@ -137,7 +137,13 @@
  '(package-selected-packages
    '(sudo-edit sane-term emamux company-nginx nginx-mode tramp-term counsel-tramp org-ref ebib biblio wiki-summary pdf-tools ereader org-noter org-pomodoro calfw-org calfw activity-watch-mode org-projectile counsel-projectile magithub magit gitlab gitignore-mode git-gutter-fringe gist org-index writeroom-mode writegood-mode wc-mode org-journal emms md4rd org-chef org-brain outline-magic dokuwiki-mode dokuwiki web-beautify tagedit scss-mode sass-mode pug-mode haml-mode emmet-mode rainbow-mode web-mode company-web rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv popwin minitest enh-ruby-mode chruby bundler projectile-rails pytest pyvenv py-isort pip-requirements live-py-mode hy-mode cython-mode company-anaconda anaconda-mode django-commands company-php php-mode markdown-toc markdown-preview-mode markdown-mode json-mode yarn-mode rjsx-mode react-snippets company-emacs-eclim intero hindent flycheck-haskell company-cabal go-projectile go-eldoc company-go flycheck-irony graphviz-dot-mode yasnippet-snippets wolfram-mode which-key use-package undo-tree sqlformat spaceline smex smartparens pretty-mode pg pandoc-mode ox-pandoc origami org-web-tools org-download org-cliplink org-bullets org-board ob-sql-mode nlinum neotree mwim multiple-cursors mixed-pitch magic-latex-buffer latex-pretty-symbols ivy-yasnippet ivy-rich ivy-omni-org google-translate gnuplot general format-all flycheck eyebrowse ess-smart-equals ess-R-data-view emacsql ein diminish define-word dashboard csv-mode counsel company-math cdlatex better-defaults auctex-latexmk all-the-icons-ivy all-the-icons-dired))
  '(safe-local-variable-values
-   '((python-shell-virtualenv-root . "/home/gigi/Code/Current/playsette/venv/")
+   '((python-shell-virtualenv-root . "/home/gigi/Code/Current/dgar/venv/")
+     (python-shell-extra-pythonpaths "/home/gigi/Code/Current/dgar/api/")
+     (python-shell-process-environment "DJANGO_SETTINGS_MODULE=api.settings")
+     (pony-settings
+      (make-pony-project :python "/home/gigi/Code/Current/dgar/venv/bin/python" :pythonpath "/home/gigi/Code/Current/dgar/api/" :settings "local_settings_file" :appsdir "api/api/"))
+     (pyvenv-activate . "/home/gigi/Code/Current/dgar/venv/")
+     (python-shell-virtualenv-root . "/home/gigi/Code/Current/playsette/venv/")
      (python-shell-extra-pythonpaths "/home/gigi/Code/Current/playsette/api/")
      (python-shell-process-environment "DJANGO_SETTINGS_MODULE=playsette.settings")
      (pony-settings
