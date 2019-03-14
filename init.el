@@ -132,6 +132,7 @@
  '(org-agenda-files
    '("/home/gigi/Media/documentos/org/_aprendizaje.org" "/home/gigi/Media/documentos/org/_desarrollo.org" "/home/gigi/Media/documentos/org/_escritura.org" "/home/gigi/Media/documentos/org/_investigaciones.org" "/home/gigi/Media/documentos/org/_trabajo.org" "/home/gigi/Media/documentos/org/_vida.org" "/home/gigi/Media/documentos/org/calendario.org" "/home/gigi/Media/documentos/org/codex.org" "/home/gigi/Media/documentos/org/referencia.org"))
  '(org-index-id "0427fbd1-a5b8-4463-87e5-69901e770b6b")
+ '(org-journal-file-type 'yearly)
  '(org-modules
    '(org-bibtex org-ctags org-docview org-element org-habit org-id org-info org-inlinetask))
  '(package-selected-packages

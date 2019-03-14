@@ -38,6 +38,14 @@
 (use-package org-chef
   :defer t)
 
+(defun org-journal-find-location ()
+  ;; Open today's journal, but specify a non-nil prefix argument in order to
+  ;; inhibit inserting the heading; org-capture will insert the heading.
+  (org-journal-new-entry t)
+  ;; Position point on the journal's top-level heading so that org-capture
+  ;; will add the new entry as a child entry.
+  (goto-char (point-min)))
+
 (setq org-capture-templates
       '((
       ;;---BASIC CAPTURES
@@ -47,7 +55,7 @@
          "** □ %^{tarea} %?
 SCHEDULED: %t
 :PROPERTIES:
-:ADDED: %T
+:CREATED: %T
 :realm:
 :project:
 :END:")
@@ -74,7 +82,7 @@ SCHEDULED: %t"
          (file+headline user-master-file "braindump")
          "** %^{nota} %? :note:
 :PROPERTIES:
-:ADDED: %T
+:CREATED: %T
 :realm:
 :END:")
         
@@ -83,7 +91,7 @@ SCHEDULED: %t"
          ((file+headline user-master-file "braindump"))
          "** %(org-cliplink-capture) :website:
 :PROPERTIES:
-:ADDED: %T
+:CREATED: %T
 :realm: %?
 :END:")
         
@@ -93,9 +101,18 @@ SCHEDULED: %t"
          "** %?
 %a
 :PROPERTIES:
-:ADDED: %T
+:CREATED: %T
 :realm:
 :project:
+:END:")
+        ;;;; JOURNAL
+        ("d" "diario" entry (function org-journal-find-location)
+"* %(format-time-string org-journal-time-format)
+%i%?
+CLOSED: %t
+:PROPERTIES:
+:realm: escritura
+:word_count:
 :END:")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES
@@ -133,7 +150,7 @@ SCHEDULED: %t"
 ;;          (file+headline user-master-file "braindump")
 ;;          "** %(all-the-icons-faicon \"lightbulb-o\" :face 'all-the-icons-lpink) %^{idea} %?
 ;; :PROPERTIES:
-;; :ADDED: %T
+;; :CREATED: %T
 ;; :END:")
         
 ;;         ("I" "IMPORTANT" entry
@@ -141,7 +158,7 @@ SCHEDULED: %t"
 ;;          ;; %(all-the-icons-faicon \"exclamation\" :face 'all-the-icons-lpink)
 ;;          "** ❗ %^{big deal} %? :important:
 ;; :PROPERTIES:
-;; :ADDED: %T
+;; :CREATED: %T
 ;; :END:")
 
 ;;         ("F" "FANTASY" entry
@@ -149,7 +166,7 @@ SCHEDULED: %t"
 ;;          ;; %(all-the-icons-material \"cloud_queue\" :face 'all-the-icons-lpink)
 ;;          "** ⛅ %^{pipe dream} %?
 ;; :PROPERTIES:
-;; :ADDED: %T
+;; :CREATED: %T
 ;; :END:")
 
 ;;         ("f" "FINANCE" entry
@@ -157,7 +174,7 @@ SCHEDULED: %t"
 ;;          ;; %(all-the-icons-material \"attach_money\" :face 'all-the-icons-lpink)
 ;;          "** ＄ %^{dinero} %? :finance:
 ;; :PROPERTIES:
-;; :ADDED: %T
+;; :CREATED: %T
 ;; :END:")
 
 ;;         ("P" "INSPIRATION" entry
@@ -165,7 +182,7 @@ SCHEDULED: %t"
 ;;          ;; %(all-the-icons-material \"favorite\" :face 'all-the-icons-lpink)
 ;;          "** ♥ %^{inspo} %? :inspiration:
 ;; :PROPERTIES:
-;; :ADDED: %T
+;; :CREATED: %T
 ;; :END:")
 
 ;;         ("A" "ACCOMPLISHMENT" entry
@@ -173,7 +190,7 @@ SCHEDULED: %t"
 ;;          ;; %(all-the-icons-faicon \"check\" :face 'all-the-icons-lpink)
 ;;          "** ✓ %^{milestone} %? :accomplishment:
 ;; :PROPERTIES:
-;; :ADDED: %T
+;; :CREATED: %T
 ;; :END:"
 ;;          :time-prompt t
 ;;          :tree-type week)
@@ -183,7 +200,7 @@ SCHEDULED: %t"
 ;;          ;; %(all-the-icons-faicon \"question\" :face 'all-the-icons-lpink)
 ;;          "** ❓ %^{look up} %? :research:
 ;; :PROPERTIES:
-;; :ADDED: %T
+;; :CREATED: %T
 ;; :END:")
         ))
 

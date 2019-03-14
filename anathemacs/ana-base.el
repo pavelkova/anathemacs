@@ -20,11 +20,11 @@
                           (projects       . 5)
                           (agenda         . 10))))
 
-;; (use-package auto-package-update
-;;   :config
-;;   (setq auto-package-update-delete-old-versions t
-;;         auto-package-update-hide-results t)
-;;   (auto-package-update-maybe))
+(use-package auto-package-update
+  :init
+  (setq auto-package-update-delete-old-versions t
+        auto-package-update-hide-results t)
+  (auto-package-update-maybe))
 
 ;; unicode support
 (set-language-environment "UTF-8")
