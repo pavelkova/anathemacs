@@ -72,7 +72,7 @@
       
       ;; fonts
       (base-font    "FiraCode")
-      (et-font      "ETBookOT")
+      (et-font      "ETBembo")
       (sans-font    "Lato"))
 
     (custom-theme-set-faces
@@ -573,6 +573,7 @@
      `(org-document-info-keyword ((,class (:foreground ,meta :height 90))))
      `(org-document-title ((,class (:underline nil :height 230))))
      `(org-done ((,class (:foreground ,highlight-dim :background nil :strike-through nil ))))
+     `(org-drawer ((,class (:foreground ,meta :height 80))))
      `(org-ellipsis ((,class (:foreground ,comment :underline nil))))
      `(org-footnote  ((,class (:slant italic :foreground ,base-dim))))
      `(org-headline-done ((,class (:strike-through nil :foreground ,base-dim))))
@@ -588,9 +589,10 @@
      `(org-level-7 ((,class (:inherit org-level-3))))
      `(org-level-8 ((,class (:inherit org-level-3))))
      `(org-link ((,class (:underline t :foreground ,mat))))
-     `(org-meta-line ((,class (:foreground ,meta :height 90))))
+     `(org-meta-line ((,class (:foreground ,meta :height 70))))
      `(org-mode-line-clock-overrun ((,class (:foreground ,err :height 80))))
      `(org-priority ((,class (:foreground ,war :weight bold))))
+     `(org-property-value ((,class (:foreground ,base-dim :height 80 :family ,base-font))))
      `(org-quote ((,class (:background ,cblk-bg :foreground ,cblk))))
      `(org-ref-cite-face ((,class (:foreground ,type))))
      `(org-scheduled ((,class (:foreground ,comp))))
@@ -708,6 +710,7 @@
      `(which-key-command-description-face ((,class (:foreground ,base))))
      `(which-key-group-description-face ((,class (:foreground ,keyword))))
      `(which-key-key-face ((,class (:foreground ,func :inherit bold))))
+     `(which-key-note-face ((,class (:foreground ,comment :slant italic))))
      `(which-key-separator-face ((,class (:background nil :foreground ,str))))
      `(which-key-special-key-face ((,class (:background ,func :foreground ,bg1))))
 

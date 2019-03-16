@@ -19,12 +19,10 @@
   "Only load backends when needed"
   (set (make-local-variable 'company-backends) '(backend)) (company-mode))
 
-;; (use-package flx)
-
 (use-package imenu
   :general
-  (hs-leader-def
-    "I"  'counsel-imenu))
+  (ha-leader-def
+    "j"  'counsel-imenu))
 
 (use-package counsel
   :general
@@ -46,6 +44,8 @@
   (general-define-key
    "M-X"     'smex
    "H-A"     'smex-major-mode-commands))
+
+(setq enable-recursive-minibuffers t)
 
 (provide 'ana-completion)
 

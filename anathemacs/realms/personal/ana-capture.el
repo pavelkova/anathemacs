@@ -1,4 +1,4 @@
-;;; ana-filing.el ---
+;;; ana-capture.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -8,44 +8,25 @@
 ;;
 
 ;;; Code:
-(use-package org-brain
-  :general
-  (hs-leader-def
-    "BA"  'org-brain-agenda
-    "B.c" 'org-brain-add-child
-    "B.C" 'org-brain-add-child-headline
-    "B.f" 'org-brain-add-friendship
-    "B.p" 'org-brain-add-parent
-    "B,c" 'org-brain-remove-child
-    "B,f" 'org-brain-remove-friendship
-    "B,p" 'org-brain-remove-parent
-    "Bg"  'org-brain-goto
-    "B/c" 'org-brain-goto-child
-    "B/f" 'org-brain-goto-friendship
-    "B/p" 'org-brain-goto-parent
-    "B/e" 'org-brain-goto-end
-    "B/o" 'org-brain-goto-current
-    "B/w" 'org-brain-goto-other-window
-    "Bp"  'org-brain-pin
-    "Br"  'org-brain-refile)
-  :config
-  (setq org-brain-path 'user-org-brain-dir
-        org-id-track-globally t
-        org-id-locations-file (concat user-dir ".org-id-locations")
-        org-brain-visualize-default-choices 'all
-        org-brain-title-max-length 12))
 
+;; SETUP
+(hs-leader-def
+  "c" 'org-capture)
+
+(add-hook 'org-capture-prepare-finalize-hook 'org-id-get-create)
+
+;; properties
+;; (setq org-tempo-keywords-alist '())
+
+;; PACKAGES
 (use-package org-chef
   :defer t)
 
 (defun org-journal-find-location ()
-  ;; Open today's journal, but specify a non-nil prefix argument in order to
-  ;; inhibit inserting the heading; org-capture will insert the heading.
   (org-journal-new-entry t)
-  ;; Position point on the journal's top-level heading so that org-capture
-  ;; will add the new entry as a child entry.
   (goto-char (point-min)))
 
+;; TEMPLATES
 (setq org-capture-templates
       '((
       ;;---BASIC CAPTURES
@@ -105,22 +86,8 @@ SCHEDULED: %t"
 :realm:
 :project:
 :END:")
-        ;;;; JOURNAL
-        ("d" "diario" entry (function org-journal-find-location)
-"* %(format-time-string org-journal-time-format)
-%i%?
-CLOSED: %t
-:PROPERTIES:
-:realm: escritura
-:word_count:
-:END:")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES
-      ;;;; ORG-JOURNAL
-        ;; ("j" "DIARY" entry
-        ;;  (function org-journal-find-location)
-        ;;  "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
-
       ;;;; ORG-BRAIN
         ("C" "cerebro" plain
          (function org-brain-goto-end)
@@ -204,13 +171,7 @@ CLOSED: %t
 ;; :END:")
         ))
 
-(hs-leader-def
-  "c" 'org-capture)
-
-;; properties
-;; (setq org-tempo-keywords-alist '())
-
-(provide 'ana-filing)
+(provide 'ana-capture)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-filing.el ends here
+;;; ana-capture.el ends here

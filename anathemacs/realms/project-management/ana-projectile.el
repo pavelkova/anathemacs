@@ -46,17 +46,17 @@
   (org-projectile-per-project)
   (hs-leader-def
     ".p" 'org-projectile-project-todo-entry
-    ".P" 'org-projectile-project-todo-completing-read)
+    ".P" '(org-projectile-project-todo-completing-read :which-key "org-projectile: new task (other project)"))
   :config
   (setq org-projectile-capture-template
 "** □ %^{project todo} %?
+%T
 :PROPERTIES:
-:ADDED: %T
 :realm: desarrollo
 :project:
 :END:"
   org-projectile-projects-directory (file-expand-wildcards "~/Code/Current/*/")
-  org-projectile-per-project-filepath "README.org"
+  org-projectile-per-project-filepath "project.org"
   org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
   
 

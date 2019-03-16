@@ -16,19 +16,19 @@
   (setq org-journal-dir user-journal-dir
         org-journal-find-file 'find-file
         org-journal-file-type 'yearly
-        org-journal-carryover-items '(TODO="TODO")
         org-journal-enable-agenda-integration t
         org-journal-date-format "%d %B %Y [%A]"
         org-journal-file-format "%Y.org")
   (global-unset-key (kbd "C-c C-j")))
 
 (use-package wc-mode
-  :delight t
+  :delight wc-mode
+  :mode ("\\[0-9]+.org\\'"
+         "\\.blank-page.org\\'")
   :general
   (hs-leader-def
     "wc" 'wc-mode
     "wC" 'wc-set-word-goal)
-  :hook org-mode
   :config
   (setq wc-modeline-format "written %tw of %gw words"
         wc-word-goal 750))
@@ -39,11 +39,21 @@
     "wg" 'writegood-grade-level
     "we" 'writegood-reading-ease))
 
-
 (use-package writeroom-mode
+  ;; :mode ("\\[0-9]+.org\\'"
+  ;;        "\\.blank-page.org\\'")
   :general
   (hs-leader-def
-   "wf" 'writeroom-mode))
+    "wf" 'writeroom-mode)
+  :config
+  (setq writeroom-extra-line-spacing 1.0
+        writeroom-global-effects
+        '(writeroom-set-fullscreen
+          writeroom-set-menu-bar-lines
+          writeroom-set-tool-bar-lines
+          writeroom-set-vertical-scroll-bars
+          writeroom-set-bottom-divider-width)
+        writeroom-mode-line '("   " mode-line-modified "   " word-count-modeline)))
 
 (provide 'ana-writing)
 

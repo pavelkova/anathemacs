@@ -99,8 +99,8 @@
 (require 'ana-ruby)
 (require 'ana-web)
 ;; personal
+(require 'ana-capture)
 (require 'ana-dokuwiki)
-(require 'ana-filing)
 (require 'ana-media)
 (require 'ana-writing)
 (require 'org-fit)
@@ -128,7 +128,9 @@
  ;; If there is more than one, they won't work right.
  '(auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
  '(custom-safe-themes
-   '("425c680f0db6809ca951c1fa681fff6e5857baba7eb7ac138aeebef86f96d329" "de7f892ec4ed4356da092c86b43b4de6af33e7404cc3f3c29b14abb6e0b76678" "c325999dd192c8f1f5850a1de20d599cc97b0cf4a9f53b212dbfa9241c735442" default))
+   '("0beeacbbe04e294c3abd82a1e5ffb636ecddd15da4f76ed3a2413d5ea7a588d3" "d604431be390f0de1699e9a9291b0a795b369f30eca24b621f686ea2d71a71fc" "ab179c70b929a168cf821765d4870f9da3c31f335ca9e3488ea423987b4e4a65" "64ca15ab87eb76a1e838220c7f148a230697eee4ffeded9266065f8aa7a34244" "94eccaceff91b3cca6fc0b8ec8bd700fca90d1bec7ffb0786b7b133950c025e8" "558582b60baf4478e837fda0b973586e11ae3b2dc375257175a1d2edcfa3f456" "ac7e2e6bb00c262e95b24d6cd9c91aae898ff57b0ef23e7456aa3651f66f379c" "9db57f4fd0fbd6684d6844f1d18a498d8b1914f8b0a232000e93f32ef8c5cebb" "21d5d9082ad0ea48bfcad785b4ca9f38a864c64793d51af7a2b496dd88253000" "4c6a1c1dbeb822341f9ce1229317967b269a21d405e6d7386412cf79d978b462" "f4ae227f7c0a56ff4f2eeceb653b6f3f82a68267127e19f71c5ccfbd26777488" "74e4399a48553aea7bef4c00de949b9ee37373775781fe6e8848584c0f43fdd6" "36bce58875d994c00c88512f83cb991e32a65260745b31d8fd13a520a2641f8f" "692954517fdd91706e76da9d9c46f3d1aadaaa3351f3abc924a9458b55b67cc8" "ee6341f1d16abe9b31a31655e2e9ab3fc65198ff51a402dbeff07083431b03e2" "37810240274e4f18e8e61dec30f3960695d26f38585ab09d60787a28c99f148f" "425c680f0db6809ca951c1fa681fff6e5857baba7eb7ac138aeebef86f96d329" "de7f892ec4ed4356da092c86b43b4de6af33e7404cc3f3c29b14abb6e0b76678" "c325999dd192c8f1f5850a1de20d599cc97b0cf4a9f53b212dbfa9241c735442" default))
+ '(global-undo-tree-mode t)
+ '(ivy-rich-mode t)
  '(org-agenda-files
    '("/home/gigi/Media/documentos/org/_aprendizaje.org" "/home/gigi/Media/documentos/org/_desarrollo.org" "/home/gigi/Media/documentos/org/_escritura.org" "/home/gigi/Media/documentos/org/_investigaciones.org" "/home/gigi/Media/documentos/org/_trabajo.org" "/home/gigi/Media/documentos/org/_vida.org" "/home/gigi/Media/documentos/org/calendario.org" "/home/gigi/Media/documentos/org/codex.org" "/home/gigi/Media/documentos/org/referencia.org"))
  '(org-index-id "0427fbd1-a5b8-4463-87e5-69901e770b6b")
@@ -149,7 +151,11 @@
      (python-shell-process-environment "DJANGO_SETTINGS_MODULE=playsette.settings")
      (pony-settings
       (make-pony-project :python "/home/gigi/Code/Current/playsette/venv/bin/python" :pythonpath "/home/gigi/Code/Current/playsette/api/" :settings "local_settings_file" :appsdir "testproject/apps/"))
-     (pyvenv-activate . "/home/gigi/Code/Current/playsette/venv/"))))
+     (pyvenv-activate . "/home/gigi/Code/Current/playsette/venv/")))
+ '(writeroom-extra-line-spacing 1.0)
+ '(writeroom-global-effects
+   '(writeroom-set-fullscreen writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width))
+ '(writeroom-mode-line '("   " mode-line-modified "   " word-count-modeline)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

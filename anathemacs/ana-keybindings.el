@@ -11,7 +11,7 @@
   :init
   (which-key-mode)
   :config
-  (setq which-key-max-description-length 69
+  (setq which-key-max-description-length 60
         which-key-show-docstrings t
         which-key-is-verbose t
         which-key-sort-uppercase-first nil))

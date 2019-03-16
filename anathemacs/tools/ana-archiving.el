@@ -23,7 +23,7 @@
     ;; "ax" 'org-board-run-after-archive-function
     "aX" 'org-board-cancel)
   (setq org-board-capture-file 'user-inbox-file
-        org-attach-directory 'user-download-dir))
+        org-attach-directory user-download-dir))
 
 (use-package org-web-tools
   :general
@@ -41,9 +41,10 @@
 ;; drag-and-drop support
 (use-package org-download
   :general
-  (setq-default org-download-image-dir 'user-download-dir)
   (hs-leader-def
-    "ay" 'org-download-yank))
+    "ay" 'org-download-yank)
+  :config
+  (setq-default org-download-image-dir user-download-dir))
 
 (provide 'ana-archiving)
 
