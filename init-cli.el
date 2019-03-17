@@ -67,26 +67,9 @@
 ;; tools
 ;; (require 'ana-archiving)
 (require 'ana-completion)
-;; (require 'ana-exporting)
 (require 'ana-ivy)
-;; (require 'ana-processors)
-;; (require 'ana-snippets)
-;; ui
-;; (require 'ana-ui-base)
-;; (require 'ana-org-ui-base)
 (require 'ana-editing)
-x;; (require 'ana-layout)
-;; (require 'ana-modeline)
-;; (require 'ana-navigation)
-;; (require 'ligature-support)
-;; (require 'rogue-margins)
-;; REALMS
-;; data
-;; (require 'ana-databases)
-;; (require 'ana-jupyter)
-;; (require 'ana-math)
-;; (require 'ana-statistics)
-;; (require 'ana-visualization)
+(require 'ligature-support)
 ;; development
 ;; (require 'ana-c)
 ;; (require 'ana-elisp)
@@ -102,24 +85,9 @@ x;; (require 'ana-layout)
 ;; (require 'ana-ruby-rails)
 ;; (require 'ana-ruby)
 ;; (require 'ana-web)
-;; personal
-;; (require 'ana-dokuwiki)
 (require 'ana-filing)
-;; (require 'ana-media)
-;; (require 'ana-writing)
-;; project management
-;; (require 'ana-custom-bullets)
 (require 'ana-planning)
 (require 'ana-version-control)
-;; (require 'ana-projectile)
-;; (require 'ana-scheduling)
-;; research
-;; (require 'ana-annotation)
-;; (require 'ana-reading)
-;; (require 'ana-reference)
-;; system
-;; (require 'ana-server)
-;; (require 'ana-shell)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here

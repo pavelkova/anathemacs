@@ -23,8 +23,8 @@
 (use-package mwim
   :general
   (general-define-key
-   "C-a" 'mwim-beginning-of-code-or-line
-   "C-e" 'mwim-end-of-code-or-line
+   "C-a"    'mwim-beginning-of-code-or-line
+   "C-e"    'mwim-end-of-code-or-line
    "<home>" 'mwim-beginning-of-line-or-code
    "<end>"  'mwim-end-of-line-or-code))
 
@@ -55,14 +55,15 @@
 (use-package diminish
   :demand t
   :init
-  (diminish 'visual-line-mode)
-  (diminish 'display-line-numbers-mode)
   (diminish 'auto-fill-function)
   (diminish 'auto-revert-mode)
-  (diminish 'eldoc-mode)
   (diminish 'buffer-face-mode)
+  (diminish 'display-line-numbers-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'git-gutter-mode)
   (diminish 'page-break-lines-mode)
-  (diminish 'which-key-mode))
+  (diminish 'which-key-mode)
+  (diminish 'visual-line-mode))
   
 ;; get rid of startup warnings
 (setq ad-redefinition-action 'accept)

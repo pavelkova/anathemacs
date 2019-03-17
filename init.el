@@ -126,37 +126,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
  '(custom-safe-themes
-   '("3bbaa34aed949b8945e506314331a1e182b7189fa932e3b5e4ed0903c3bb72e6" "c6ddb3dc9b50040bcb1e81b64a452d7bfdb26c35ea0b79fa71edfbb0b53edf19" "e3efe73f6f7926acb2b1692d702460aa28018992ff4d734a949e91cfc5b8b0d0" "83bb4c716ad95af6e56578e0651799ce375bac808ed3c5b06e345a83a00366fb" "0beeacbbe04e294c3abd82a1e5ffb636ecddd15da4f76ed3a2413d5ea7a588d3" "d604431be390f0de1699e9a9291b0a795b369f30eca24b621f686ea2d71a71fc" "ab179c70b929a168cf821765d4870f9da3c31f335ca9e3488ea423987b4e4a65" "64ca15ab87eb76a1e838220c7f148a230697eee4ffeded9266065f8aa7a34244" "94eccaceff91b3cca6fc0b8ec8bd700fca90d1bec7ffb0786b7b133950c025e8" "558582b60baf4478e837fda0b973586e11ae3b2dc375257175a1d2edcfa3f456" "ac7e2e6bb00c262e95b24d6cd9c91aae898ff57b0ef23e7456aa3651f66f379c" "9db57f4fd0fbd6684d6844f1d18a498d8b1914f8b0a232000e93f32ef8c5cebb" "21d5d9082ad0ea48bfcad785b4ca9f38a864c64793d51af7a2b496dd88253000" "4c6a1c1dbeb822341f9ce1229317967b269a21d405e6d7386412cf79d978b462" "f4ae227f7c0a56ff4f2eeceb653b6f3f82a68267127e19f71c5ccfbd26777488" "74e4399a48553aea7bef4c00de949b9ee37373775781fe6e8848584c0f43fdd6" "36bce58875d994c00c88512f83cb991e32a65260745b31d8fd13a520a2641f8f" "692954517fdd91706e76da9d9c46f3d1aadaaa3351f3abc924a9458b55b67cc8" "ee6341f1d16abe9b31a31655e2e9ab3fc65198ff51a402dbeff07083431b03e2" "37810240274e4f18e8e61dec30f3960695d26f38585ab09d60787a28c99f148f" "425c680f0db6809ca951c1fa681fff6e5857baba7eb7ac138aeebef86f96d329" "de7f892ec4ed4356da092c86b43b4de6af33e7404cc3f3c29b14abb6e0b76678" "c325999dd192c8f1f5850a1de20d599cc97b0cf4a9f53b212dbfa9241c735442" default))
- '(eyebrowse-mode t)
- '(global-undo-tree-mode t)
- '(ivy-rich-mode t)
+   '("9a6ea2852bfcca345ecc19c8228dab2ef1fe2518bddd5d25bd526031debee780" default))
  '(org-agenda-files
-   '("/home/gigi/Media/documentos/org/_aprendizaje.org" "/home/gigi/Media/documentos/org/_desarrollo.org" "/home/gigi/Media/documentos/org/_escritura.org" "/home/gigi/Media/documentos/org/_investigaciones.org" "/home/gigi/Media/documentos/org/_trabajo.org" "/home/gigi/Media/documentos/org/_vida.org" "/home/gigi/Media/documentos/org/calendario.org" "/home/gigi/Media/documentos/org/codex.org" "/home/gigi/Media/documentos/org/referencia.org"))
- '(org-index-id "0427fbd1-a5b8-4463-87e5-69901e770b6b")
- '(org-journal-file-type 'yearly)
- '(org-modules
-   '(org-bibtex org-ctags org-docview org-element org-habit org-id org-info org-inlinetask))
+   '("/home/gigi/Media/documentos/org/_aprendizaje.org" "/home/gigi/Media/documentos/org/_desarrollo.org" "/home/gigi/Media/documentos/org/_escritura.org" "/home/gigi/Media/documentos/org/_investigaciones.org" "/home/gigi/Media/documentos/org/_trabajo.org" "/home/gigi/Media/documentos/org/_vida.org" "/home/gigi/Media/documentos/org/calendario.org" "/home/gigi/Media/documentos/org/codex.org" "/home/gigi/Media/documentos/org/mobile.org" "/home/gigi/Media/documentos/org/referencia.org" "~/.emacs.d/project.org"))
  '(package-selected-packages
-   '(uimage sudo-edit sane-term emamux company-nginx nginx-mode tramp-term counsel-tramp org-ref ebib biblio wiki-summary pdf-tools ereader org-noter org-pomodoro calfw-org calfw activity-watch-mode org-projectile counsel-projectile magithub magit gitlab gitignore-mode git-gutter-fringe gist org-index writeroom-mode writegood-mode wc-mode org-journal emms md4rd org-chef org-brain outline-magic dokuwiki-mode dokuwiki web-beautify tagedit scss-mode sass-mode pug-mode haml-mode emmet-mode rainbow-mode web-mode company-web rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv popwin minitest enh-ruby-mode chruby bundler projectile-rails pytest pyvenv py-isort pip-requirements live-py-mode hy-mode cython-mode company-anaconda anaconda-mode django-commands company-php php-mode markdown-toc markdown-preview-mode markdown-mode json-mode yarn-mode rjsx-mode react-snippets company-emacs-eclim intero hindent flycheck-haskell company-cabal go-projectile go-eldoc company-go flycheck-irony graphviz-dot-mode yasnippet-snippets wolfram-mode which-key use-package undo-tree sqlformat spaceline smex smartparens pretty-mode pg pandoc-mode ox-pandoc origami org-web-tools org-download org-cliplink org-bullets org-board ob-sql-mode nlinum neotree mwim multiple-cursors mixed-pitch magic-latex-buffer latex-pretty-symbols ivy-yasnippet ivy-rich ivy-omni-org google-translate gnuplot general format-all flycheck eyebrowse ess-smart-equals ess-R-data-view emacsql ein diminish define-word dashboard csv-mode counsel company-math cdlatex better-defaults auctex-latexmk all-the-icons-ivy all-the-icons-dired))
- '(safe-local-variable-values
-   '((python-shell-virtualenv-root . "/home/gigi/Code/Current/dgar/venv/")
-     (python-shell-extra-pythonpaths "/home/gigi/Code/Current/dgar/api/")
-     (python-shell-process-environment "DJANGO_SETTINGS_MODULE=api.settings")
-     (pony-settings
-      (make-pony-project :python "/home/gigi/Code/Current/dgar/venv/bin/python" :pythonpath "/home/gigi/Code/Current/dgar/api/" :settings "local_settings_file" :appsdir "api/api/"))
-     (pyvenv-activate . "/home/gigi/Code/Current/dgar/venv/")
-     (python-shell-virtualenv-root . "/home/gigi/Code/Current/playsette/venv/")
-     (python-shell-extra-pythonpaths "/home/gigi/Code/Current/playsette/api/")
-     (python-shell-process-environment "DJANGO_SETTINGS_MODULE=playsette.settings")
-     (pony-settings
-      (make-pony-project :python "/home/gigi/Code/Current/playsette/venv/bin/python" :pythonpath "/home/gigi/Code/Current/playsette/api/" :settings "local_settings_file" :appsdir "testproject/apps/"))
-     (pyvenv-activate . "/home/gigi/Code/Current/playsette/venv/")))
- '(writeroom-extra-line-spacing 1.0)
- '(writeroom-global-effects
-   '(writeroom-set-fullscreen writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width))
- '(writeroom-mode-line '("   " mode-line-modified "   " word-count-modeline)))
+   '(persp-mode yasnippet-snippets yarn-mode writeroom-mode writegood-mode wolfram-mode wiki-summary which-key web-mode web-beautify wc-mode use-package undo-tree uimage twittering-mode tramp-term tagedit sudo-edit sqlformat spaceline smex smartparens scss-mode sass-mode sane-term rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rjsx-mode react-snippets rbenv rainbow-mode pyvenv pytest py-isort pug-mode projectile-rails pretty-mode popwin pony-mode pippel pip-requirements pg pandoc-mode ox-pandoc outline-magic origami org-web-tools org-ref org-projectile org-pomodoro org-noter org-journal org-index org-download org-cliplink org-chef org-bullets org-brain org-board ob-sql-mode npm-mode nlinum nginx-mode neotree mwim multiple-cursors mixed-pitch minitest md4rd markdown-toc markdown-preview-mode magithub magic-latex-buffer live-py-mode latex-pretty-symbols json-mode ivy-yasnippet ivy-rich ivy-omni-org intero hy-mode hindent graphviz-dot-mode google-translate go-projectile gnuplot gitlab gitignore-mode gitconfig-mode git-gutter-fringe gist general format-all foreman-mode flycheck-irony flycheck-haskell eyebrowse exwm-firefox-core ess-smart-equals ess-R-data-view ereader enh-ruby-mode emms emmet-mode emamux emacsql ein ebib dokuwiki-mode dokuwiki djangonaut django-mode django-commands diminish delight define-word dashboard cython-mode csv-mode counsel-tramp counsel-projectile company-web company-php company-nginx company-math company-go company-emacs-eclim company-cabal company-anaconda chruby cdlatex calfw-org calfw bundler better-defaults auto-package-update auctex-latexmk all-the-icons-ivy all-the-icons-dired activity-watch-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -48,7 +48,8 @@
   "p" '(:ignore t :which-key "projects")
   "t" '(:ignore t :which-key "terminal")
   "v" '(:ignore t :which-key "visibility")
-  "w" '(:ignore t :which-key "windows/layouts"))
+  "W" '(:ignore t :which-key "windows")
+  "w" '(:ignore t :which-key "workspaces"))
 
 (hs-leader-def
   "." '(:ignore t :which-key "speed dial")

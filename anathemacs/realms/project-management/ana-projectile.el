@@ -48,17 +48,19 @@
     ".p" 'org-projectile-capture-for-current-project
     ".P" '(org-projectile-project-todo-completing-read :which-key "org-projectile: new task (other project)"))
   :config
-  (setq org-projectile-capture-template
-"** □ %^{project todo} %?
+  (setq org-projectile-projects-directory (concat user-org-dir "desarollo/")
+        org-projectile-per-project-filepath (concat (projectile-project-name) ".org")
+        org-agenda-files (append org-agenda-files (org-projectile-todo-files))
+        org-projectile-capture-template
+(concat "** □ %^{project todo} %?
 :PROPERTIES:
-:realm: desarrollo
-:project:
-:END:
-%T"
-  org-projectile-projects-directory (file-expand-wildcards "~/Code/Current/*/")
-  org-projectile-per-project-filepath "project.org"
-  org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
-  
+:campo: desarrollo
+:proyecto: " (projectile-project-name)
+"\n:END:
+%T")))
+
+;; allow renaming of projects in .dir-locals.el
+(put 'projectile-project-name 'safe-local-variable #'stringp)
 
 (provide 'ana-projectile)
 

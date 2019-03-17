@@ -315,11 +315,15 @@
        ((,(append '((supports :underline (:style line))) class)
          (:underline (:style line :color ,war)))
         (,class (:foreground ,base :background ,war :inherit bold :underline t))))
-
+;;;;; git-gutter
+     `(git-gutter:added ((,class (:foreground ,suc :inherit bold))))
+     `(git-gutter:deleted ((,class (:foreground ,err :inherit bold))))
+     `(git-gutter:modified ((,class (:foreground ,war :inherit bold))))
+     
 ;;;;; git-gutter-fr
-     `(git-gutter-fr:added ((,class (:foreground ,suc :inherit bold))))
-     `(git-gutter-fr:deleted ((,class (:foreground ,war :inherit bold))))
-     `(git-gutter-fr:modified ((,class (:foreground ,keyword :inherit bold))))
+     `(git-gutter-fr:added ((,class (:inherit git-gutter:added))))
+     `(git-gutter-fr:deleted ((,class (:inherit git-gutter:deleted))))
+     `(git-gutter-fr:modified ((,class (:inherit git-gutter:modified))))
 
 ;;;;; git-timemachine
      `(git-timemachine-minibuffer-detail-face ((,class (:foreground ,blue-1 :inherit bold :background ,blue-2))))

@@ -7,14 +7,14 @@
 ;;; Code:
 (use-package yasnippet
   :diminish yas-minor-mode
-  :general
+  :init
+  (yas-global-mode 1)
   (ha-leader-def
-      "if" 'yas-visit-snippet-file
-      "ii" 'yas-insert-snippet
-      "in" 'yas-new-snippet)
-  :config
-  ;; (yas-global-mode 1)
-  (customize-set-variable 'yas-snippets-dir '()))
+    "s." 'yas-minor-mode
+    "sf" 'yas-visit-snippet-file
+    "si" 'yas-insert-snippet
+    "sn" 'yas-new-snippet)
+  (setq yas-snippet-dirs '(user-snippets-dir)))
 
 (use-package ivy-yasnippet
   :general
@@ -22,7 +22,9 @@
     "I" 'ivy-yasnippet))
 
 (use-package yasnippet-snippets
-  :hook yas-minor-mode)
+  :init
+  (ha-leader-def
+    "sd" 'yas-describe-tables))
 
 (provide 'ana-snippets)
 

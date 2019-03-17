@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: "* reading list book entry"
+# key: "book"
+# --
+** Title
+:PROPERTIES:
+:campo: lectura
+:title:
+:author:
+:page_count:
+:book_file:
+:bibtex_file:
+:highlight_file:
+:goodreads:
+:start_date:
+:finish_date:
+:END:

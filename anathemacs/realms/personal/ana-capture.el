@@ -13,7 +13,7 @@
 (hs-leader-def
   "c" 'org-capture)
 
-(add-hook 'org-capture-prepare-finalize-hook 'org-id-get-create)
+;; (add-hook 'org-capture-prepare-finalize-hook 'org-id-get-create)
 
 ;; properties
 ;; (setq org-tempo-keywords-alist '())
@@ -37,8 +37,8 @@
 SCHEDULED: %t
 :PROPERTIES:
 :CREATED: %T
-:realm:
-:project:
+:campo:
+:proyecto:
 :END:")
         
       ;;;; APPOINTMENT
@@ -64,7 +64,7 @@ SCHEDULED: %t"
          "** %^{nota} %? :note:
 :PROPERTIES:
 :CREATED: %T
-:realm:
+:campo:
 :END:")
         
       ;;;; LINK
@@ -73,7 +73,7 @@ SCHEDULED: %t"
          "** %(org-cliplink-capture) :website:
 :PROPERTIES:
 :CREATED: %T
-:realm: %?
+:campo: %?
 :END:")
         
       ;;;; BOOKMARK
@@ -83,8 +83,8 @@ SCHEDULED: %t"
 %a
 :PROPERTIES:
 :CREATED: %T
-:realm:
-:project:
+:campo:
+:proyecto:
 :END:")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES

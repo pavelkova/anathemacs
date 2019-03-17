@@ -11,24 +11,37 @@
 (use-package eyebrowse
   :general
   (ha-leader-def
-    "w+" 'eyebrowse-mode
-    "w<" 'eyebrowse-prev-window-config
-    "w>" 'eyebrowse-next-window-config
-    "w\-" 'eyebrowse-last-window-config
-    "wr" 'eyebrowse-rename-window-config
-    "wc" 'eyebrowse-create-window-config
-    "wk" 'eyebrowse-close-window-config
-    "w:" 'eyebrowse-switch-to-window-config
-    "w0" 'eyebrowse-switch-to-window-config-0
-    "w1" 'eyebrowse-switch-to-window-config-1
-    "w2" 'eyebrowse-switch-to-window-config-2
-    "w3" 'eyebrowse-switch-to-window-config-3
-    "w4" 'eyebrowse-switch-to-window-config-4
-    "w5" 'eyebrowse-switch-to-window-config-5
-    "w6" 'eyebrowse-switch-to-window-config-6
-    "w7" 'eyebrowse-switch-to-window-config-7
-    "w8" 'eyebrowse-switch-to-window-config-8
-    "w9" 'eyebrowse-switch-to-window-config-9))
+    "W."        'eyebrowse-mode
+    "W-<left>"  'eyebrowse-prev-window-config
+    "W-<right>" 'eyebrowse-next-window-config
+    "W-<down>"  'eyebrowse-last-window-config
+    "Wr"        'eyebrowse-rename-window-config
+    "Wc"        'eyebrowse-create-window-config
+    "Ww"        'eyebrowse-close-window-config
+    "W:"        'eyebrowse-switch-to-window-config))
+
+(use-package persp-mode
+  :general
+  (ha-leader-def
+    "w."          'persp-mode
+    "w+"          'persp-add-buffer
+    "w-"          'persp-remove-buffer
+    "w M-<right>" 'persp-next
+    "w M-<left>"  'persp-prev
+    "w M-<up>"    'persp-load-state-from-file
+    "w M-<down>"  'persp-save-state-to-file
+    "w C-<up>"    'persp-load-from-file-by-names
+    "w C-<down>"  'persp-save-to-file-by-names
+    "wc"          'persp-copy
+    "wf"          'persp-frame-switch
+    "wI"          'persp-import-win-conf
+    "wi"          'persp-import-buffers
+    "wK"          'persp-kill
+    "wk"          'persp-kill-buffer
+    "wr"          'persp-rename
+    "wS"          'persp-window-switch
+    "ws"          'persp-switch-to-buffer
+    "wt"          'persp-temporarily-display-buffer))
 
 (provide 'ana-layout)
 

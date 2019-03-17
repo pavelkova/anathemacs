@@ -14,9 +14,11 @@
 
 (setq user-logo (concat user-dir "logo.svg"))
 
-(setq user-backups-dir (concat user-dir "backups/"))
+(setq user-backups-dir "~/.cache/emacs/backups/")
 
 (setq user-secrets-dir (concat user-dir "secrets/"))
+
+(setq user-snippets-dir (concat user-dir "snippets/"))
 
 ;; org paths
 

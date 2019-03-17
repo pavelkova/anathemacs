@@ -10,7 +10,8 @@
 ;;; Code:
 (use-package spaceline
   :init
-  (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
+  (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))
+                spaceline-toggle-evil-state-off))
 
 (require 'spaceline-config)
 (spaceline-emacs-theme)
@@ -20,8 +21,6 @@
 ;;   :config
 ;;   (spaceline-all-the-icons-theme)
 ;;   (spaceline-all-the-icons--setup-neotree))
-
-
 
 (provide 'ana-modeline)
 

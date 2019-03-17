@@ -28,8 +28,6 @@
   :config
   (setq tramp-default-method "ssh"))
 
-
-
 (use-package nginx-mode
   :defer t)
 
