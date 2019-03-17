@@ -691,6 +691,12 @@
      `(term-color-white ((,class (:foreground ,base))))
      `(term-color-yellow ((,class (:foreground ,yellow-1))))
 
+;;;;; twittering
+     `(twittering-timeline-footer-face ((,class (:foreground ,base-dim :bold t))))
+     `(twittering-timeline-header-face ((,class (:inherit org-agenda-structure))))
+     `(twittering-uri-face ((,class (:foreground ,var :underline t :height 80))))
+     `(twittering-username-face ((,class (:foreground ,keyword :family ,sans-font :height 110))))
+
 ;;;;; web-mode
      `(web-mode-builtin-face ((,class (:inherit ,font-lock-builtin-face))))
      `(web-mode-comment-face ((,class (:inherit ,font-lock-comment-face))))

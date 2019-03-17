@@ -13,7 +13,10 @@
 
 (use-package emamux
   :bind-keymap
-  ("H-a x" . emamux:keymap))
+  ("H-a x" . emamux:keymap)
+  :general
+  (ha-leader-def
+    "x" '(:ignore t :which-key "tmux")))
 
 ;; (use-package fish-completion)
 

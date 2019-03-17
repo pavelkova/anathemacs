@@ -17,8 +17,7 @@
   :mode "\\.pdf\\'")
 
 ;; TODO CALIBRE INTEGRATION 
-;; calibre-library-dir -- search two folders down for book file, cover.jpg, and metadata.opf
-;;parse metadata.opf as xml for metadata
+;; calibre-library-dir -- search two folders down for book file, cover.jpg, and metadata.opf; parse metadata.opf as xml for metadata
 
 (use-package wiki-summary
   :general

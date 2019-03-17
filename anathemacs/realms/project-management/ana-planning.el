@@ -65,7 +65,8 @@
     "B/o" 'org-brain-goto-current
     "B/w" 'org-brain-goto-other-window
     "Bp"  'org-brain-pin
-    "Br"  'org-brain-refile)
+    "Br"  'org-brain-refile
+    "Bv"  'org-brain-visualize)
   :config
   (setq org-brain-path user-brain-dir
         org-id-track-globally t

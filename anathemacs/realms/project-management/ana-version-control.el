@@ -40,6 +40,8 @@
 
 (use-package git-gutter-fringe
   :init
+  (global-git-gutter-mode)
+  :config
   (ha-leader-def
     "g." 'git-gutter-mode))
 

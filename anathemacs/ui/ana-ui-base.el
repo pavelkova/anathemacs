@@ -51,18 +51,19 @@
 ;; minor mode appearance in modeline
 (use-package delight
   :demand t)
+
 (use-package diminish
-  :demand t)
-
-(diminish 'visual-line-mode)
-(diminish 'display-line-numbers-mode)
-(diminish 'auto-fill-function)
-(diminish 'auto-revert-mode)
-(diminish 'eldoc-mode)
-(diminish 'buffer-face-mode)
-(diminish 'page-break-lines-mode)
-(diminish 'which-key-mode)
-
+  :demand t
+  :init
+  (diminish 'visual-line-mode)
+  (diminish 'display-line-numbers-mode)
+  (diminish 'auto-fill-function)
+  (diminish 'auto-revert-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'buffer-face-mode)
+  (diminish 'page-break-lines-mode)
+  (diminish 'which-key-mode))
+  
 ;; get rid of startup warnings
 (setq ad-redefinition-action 'accept)
 

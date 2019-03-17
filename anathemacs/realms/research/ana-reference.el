@@ -24,7 +24,7 @@
   (setq org-ref-bibliography-notes 'user-bib-notes-file
         org-ref-default-bibliography 'user-default-bib-file
         org-ref-pdf-directory 'user-pdf-dir
-        reftex-bibliography-commands '("bibliography" "nobibliography""addbibresource")
+        reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource")
         reftex-default-bibliography 'user-default-bib-file
         reftex-plug-into-AUCTeX t
         org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f")))

@@ -8,15 +8,27 @@
 ;;
 
 ;;; Code:
+
 ;; email
 (require 'notmuch)
 
 ;; social media
+
+;; twitter
 (use-package twittering-mode
   :general
   (hs-leader-def
-    "mt" 'twittering-mode))
+    "mt" 'twit)
+  :config
+  (setq twittering-timeline-header "twittering \n\n"
+        twittering-use-icon-storage t
+        twittering-icon-storage-file "~/.emacs.d/user/.twittering-mode-icons.gz"
+        twittering-fill-column 80)
+  (general-define-key
+   :keymaps 'twittering-mode-map
+   "e" 'eww)) ;; open link at cursor with eww
 
+;; reddit
 (use-package md4rd
   :general
   (hs-leader-def
@@ -25,7 +37,6 @@
   (setq md4rd-subs-active '(news politics emacs linux femalefashionadvice sorceryofthespectacle askhistorians historyofideas)))
 
 ;; music
-
 (use-package emms
   :general
   (hs-leader-def
