@@ -36,7 +36,7 @@
     "ggP" 'gist-region-or-buffer-private))
 
 (use-package gitconfig-mode
-  :mode "\\.gitconfig\\'")
+  :mode "\\.git/config\\'")
 
 (use-package git-gutter-fringe
   :init

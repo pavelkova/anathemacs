@@ -14,6 +14,8 @@
   :mode "\\.csv\\'")
 
 ;; SQL
+;; use .dir-locals.el to set (defvar db (emacsql-CONNECTION "/path/to/db"))
+;; Connection types: mysql, pg, psql, sqlite
 (use-package emacsql
   :defer t)
 
@@ -23,8 +25,6 @@
 (use-package ob-sql-mode
   :defer t)
 
-(use-package pg
-  :defer t)
 
 ;; table keymaps
 (hs-leader-def

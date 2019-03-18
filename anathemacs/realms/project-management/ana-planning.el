@@ -26,7 +26,7 @@
   
   (setq org-refile-allow-creating-parent-nodes t
         org-outline-path-complete-in-steps nil
-        org-refile-targets '((nil :maxlevel . 1)
+        org-refile-targets '((nil :maxlevel . 5)
                              (org-agenda-files :maxlevel . 1))
         org-archive-location user-archive-file
         org-agenda-window-setup 'current-window

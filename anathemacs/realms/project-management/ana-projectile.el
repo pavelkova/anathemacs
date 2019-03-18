@@ -59,6 +59,11 @@
 "\n:END:
 %T")))
 
+(use-package persp-projectile
+  :general
+  (ha-leader-def
+    "wS" 'projectile-persp-switch-project))
+
 ;; allow renaming of projects in .dir-locals.el
 (put 'projectile-project-name 'safe-local-variable #'stringp)
 

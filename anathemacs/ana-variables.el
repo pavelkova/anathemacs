@@ -54,6 +54,8 @@
 ;; This top-level heading serves as an inbox for everything that needs to be processed or refiled.  Captures are added as level 2 headings beneath it.
 (setq user-master-inbox-headline "braindump")
 
+(setq user-mu4e-file (concat user-secrets-dir "mu4e.el"))
+
 (setq user-pdf-dir (concat user-org-dir "investigaciones/documentos/"))
 
 ;; System music folder used by EMMS.  Referenced in realms/personal/ana-media.el
