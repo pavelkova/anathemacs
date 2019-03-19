@@ -19,10 +19,12 @@
       mu4e-compose-signature-auto-include nil
       mu4e-attachment-dir "~/Downloads"
       mu4e-get-mail-command "offlineimap"
+      mu4e-hide-index-messages t
       mu4e-maildir "~/.local/mail"
       mu4e-update-interval 300
       mu4e-use-fancy-chars t
       mail-user-agent 'mu4e-user-agent
+      mu4e-view-prefer-html t
       mu4e-view-show-addresses t
       mu4e-view-show-images t
       smtpmail-debug-info t

@@ -30,6 +30,8 @@
     "tt" 'sane-term
     "tn" 'sane-term-create))
 
+(use-package shx)
+
 (use-package sudo-edit
   :general
   (ha-leader-def

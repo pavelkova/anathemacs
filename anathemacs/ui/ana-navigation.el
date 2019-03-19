@@ -23,6 +23,19 @@
       ibuffer-deletion-face 'org-agenda-done
       ibuffer-use-header-line nil)
 
+(use-package imenu
+  :general
+  (ha-leader-def
+    "j"  'counsel-imenu))
+
+(use-package imenu-list
+  :general
+  (ha-leader-def
+    "'" 'imenu-list-smart-toggle)
+  :config
+  (setq imenu-list-focus-auto-resize t))
+
+
 (defun neotree-project-dir ()
     "Open NeoTree using the git root."
     (interactive)
@@ -35,7 +48,6 @@
                 (neotree-dir project-dir)
                 (neotree-find file-name)))
         (message "Could not find git project root."))))
-
 
 (use-package neotree
   :general

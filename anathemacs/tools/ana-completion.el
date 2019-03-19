@@ -15,14 +15,12 @@
         company-tooltip-align-annotations t
         company-tooltip-margin 3))
 
+;; (use-package company-box
+;;   :hook (company-mode . company-box-mode))
+
 (defun set-local-company-backend (backend)
   "Only load backends when needed"
   (set (make-local-variable 'company-backends) '(backend)) (company-mode))
-
-(use-package imenu
-  :general
-  (ha-leader-def
-    "j"  'counsel-imenu))
 
 (use-package counsel
   :general
@@ -44,8 +42,6 @@
   (general-define-key
    "M-X"     'smex
    "H-A"     'smex-major-mode-commands))
-
-(setq enable-recursive-minibuffers t)
 
 (provide 'ana-completion)
 

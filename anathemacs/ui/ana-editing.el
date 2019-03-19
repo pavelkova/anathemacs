@@ -24,6 +24,25 @@
   "c\-" 'comment-line
   "c["  'comment-or-uncomment-region)
 
+(use-package crux
+  :general
+  (ha-leader-def
+    "."  '(:which-key "crux")
+    ".c" 'crux-copy-file-preserve-attributes
+    ".d" 'crux-delete-file-and-buffer
+    ".f" 'crux-recentf-find-file
+    ".r" 'crux-rename-file-and-buffer
+    ".t" 'crux-transpose-windows
+    ".x" 'crux-cleanup-buffer-or-region
+    ".+" 'crux-duplicate-current-line-or-region
+    ".=" 'crux-duplicate-and-comment-current-line-or-region
+    ". DEL" 'crux-kill-other-buffers))
+
+(use-package format-all
+  :general
+  (ha-leader-def
+    "F" 'format-all-buffer))
+
 (use-package multiple-cursors
   :init
   (general-define-key
@@ -45,6 +64,8 @@
   :config
   (smartparens-global-mode))
 
+(use-package undo-propose)
+
 (use-package undo-tree
   :diminish undo-tree-mode
   :general
@@ -59,6 +80,9 @@
         undo-tree-visualizer-relative-timestamps t
         undo-tree-auto-save-history t
         undo-tree-history-directory-alist `((".*" . "~/.cache/emacs/backups/"))))
+
+(use-package ws-butler
+  :hook prog-mode)
 
 (provide 'ana-editing)
 

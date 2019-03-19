@@ -36,15 +36,15 @@
          "** □ %^{tarea} %?
 SCHEDULED: %t
 :PROPERTIES:
-:CREATED: %T
-:campo:
+:campo: %^{campo}p
 :proyecto:
-:END:")
+:END:
+%T")
         
       ;;;; APPOINTMENT
         ("c" "cita" entry
          (file+olp+datetree user-cal-file)
-         "** ▲ %^{cita} %? :appointment:
+         "** ▲ %^{cita} %? :cita:
 SCHEDULED: %T
 :PROPERTIES:
 :location:
@@ -54,27 +54,28 @@ SCHEDULED: %T
       ;;;; EVENT
         ("e" "evento" entry
          (file+olp+datetree user-cal-file)
-         "** ⛥ %^{evento} %? :event:
+         "** ⛥ %^{evento} %? :evento:
 SCHEDULED: %t"
          :tree-type month)
 
       ;;;; NOTE
         ("n" "nota" entry
          (file+headline user-master-file "braindump")
-         "** %^{nota} %? :note:
+         "** %^{nota} %? :nota:
 :PROPERTIES:
-:CREATED: %T
-:campo:
-:END:")
+:campo: %^{campo}p
+:proyecto:
+:END:
+%T")
         
       ;;;; LINK
         ("l" "enlace" entry
          ((file+headline user-master-file "braindump"))
-         "** %(org-cliplink-capture) :website:
+         "** %(org-cliplink-capture) :enlace:
 :PROPERTIES:
-:CREATED: %T
-:campo: %?
-:END:")
+:campo: %^{campo}p
+:END:
+%T")
         
       ;;;; BOOKMARK
         ("m" "marcador" entry
@@ -82,10 +83,10 @@ SCHEDULED: %t"
          "** %?
 %a
 :PROPERTIES:
-:CREATED: %T
-:campo:
+:campo: %^{campo}p
 :proyecto:
-:END:")
+:END:
+%T")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES
       ;;;; ORG-BRAIN
@@ -113,63 +114,58 @@ SCHEDULED: %t"
 
       ;;---PERSONAL
       ;;;; 
-;;         ("i" "IDEA" entry ;; 🗲
-;;          (file+headline user-master-file "braindump")
-;;          "** %(all-the-icons-faicon \"lightbulb-o\" :face 'all-the-icons-lpink) %^{idea} %?
-;; :PROPERTIES:
-;; :CREATED: %T
-;; :END:")
-        
-;;         ("I" "IMPORTANT" entry
-;;          (file+headline user-master-file "braindump")
-;;          ;; %(all-the-icons-faicon \"exclamation\" :face 'all-the-icons-lpink)
-;;          "** ❗ %^{big deal} %? :important:
-;; :PROPERTIES:
-;; :CREATED: %T
-;; :END:")
+        ("1" "idea" entry
+         (file+headline user-master-file "braindump")
+         "** %^{idea} %? :idea:
+:PROPERTIES:
+:campo: %^{campo}p
+:proyecto:
+:END:
+%T")
+        ("2" "fantasía" entry
+         (file+headline user-master-file "braindump")
+         "** ⛅ %^{pipe dream} %? :fantasía:
+:PROPERTIES:
+:campo: %^{campo}p
+:END:
+%T")
 
-;;         ("F" "FANTASY" entry
-;;          (file+headline user-master-file "braindump")
-;;          ;; %(all-the-icons-material \"cloud_queue\" :face 'all-the-icons-lpink)
-;;          "** ⛅ %^{pipe dream} %?
-;; :PROPERTIES:
-;; :CREATED: %T
-;; :END:")
+        ("3" "finanzas" entry
+         (file+headline user-master-file "braindump")
+         "** ＄ %^{dinero} %? :finanzas:
+:PROPERTIES:
+:campo: %^{campo}p
+:proyecto:
+:END:
+%T")
 
-;;         ("f" "FINANCE" entry
-;; orgmode/comments/aeaq9d/anyone_using_org_mode_as_snippet_manager/         (file+headline user-master-file "braindump")
-;;          ;; %(all-the-icons-material \"attach_money\" :face 'all-the-icons-lpink)
-;;          "** ＄ %^{dinero} %? :finance:
-;; :PROPERTIES:
-;; :CREATED: %T
-;; :END:")
+        ("4" "inspiracion" entry
+         (file+headline user-master-file "braindump")
+         "** ♥ %^{inspo} %? :inspiración:
+:PROPERTIES:
+:campo: %^{campo}p
+:proyecto:
+:END:
+%T")
 
-;;         ("P" "INSPIRATION" entry
-;;          (file+headline user-master-file "braindump")
-;;          ;; %(all-the-icons-material \"favorite\" :face 'all-the-icons-lpink)
-;;          "** ♥ %^{inspo} %? :inspiration:
-;; :PROPERTIES:
-;; :CREATED: %T
-;; :END:")
+        ("5" "logro" entry
+         (file+olp+datetree user-cal-file)
+         "** ✓ %t %^{milestone} %? :logro:
+:PROPERTIES:
+:campo: %^{campo}p
+:proyecto:
+:END:
+%T"
+         :time-prompt t
+         :tree-type week)
 
-;;         ("A" "ACCOMPLISHMENT" entry
-;;          (file+olp+datetree user-cal-file)
-;;          ;; %(all-the-icons-faicon \"check\" :face 'all-the-icons-lpink)
-;;          "** ✓ %^{milestone} %? :accomplishment:
-;; :PROPERTIES:
-;; :CREATED: %T
-;; :END:"
-;;          :time-prompt t
-;;          :tree-type week)
-
-;;         ("S" "RESEARCH" entry
-;;          (file+headline user-master-file "braindump")
-;;          ;; %(all-the-icons-faicon \"question\" :face 'all-the-icons-lpink)
-;;          "** ❓ %^{look up} %? :research:
-;; :PROPERTIES:
-;; :CREATED: %T
-;; :END:")
-        ))
+        ("6" "investigar" entry
+         (file+headline user-master-file "braindump")
+         "** ❓ %^{look up} %? :investigar:
+:PROPERTIES:
+:campo: %^{campo}p
+:proyecto:
+:END:")))
 
 (provide 'ana-capture)
 

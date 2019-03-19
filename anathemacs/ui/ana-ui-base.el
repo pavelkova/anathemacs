@@ -28,11 +28,6 @@
    "<home>" 'mwim-beginning-of-line-or-code
    "<end>"  'mwim-end-of-line-or-code))
 
-(use-package format-all
-  :general
-  (ha-leader-def
-    "F" 'format-all-buffer))
-
 (use-package pretty-mode
   :init
   (progn
@@ -67,6 +62,15 @@
   
 ;; get rid of startup warnings
 (setq ad-redefinition-action 'accept)
+
+;; for the love of god please make the minibuffer go away
+
+(defun stop-using-minibuffer ()
+  "kill the minibuffer"
+  (when (and (>= (recursion-depth) 1) (active-minibuffer-window))
+    (abort-recursive-edit)))
+
+(add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
 
 (provide 'ana-ui-base)
 

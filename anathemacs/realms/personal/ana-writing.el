@@ -8,6 +8,10 @@
 ;;
 
 ;;; Code:
+
+(use-package olivetti
+  :hook (text-mode . olivetti-mode))
+
 (use-package org-journal
   :general
   (hs-leader-def
@@ -38,22 +42,6 @@
   (hs-leader-def
     "wg" 'writegood-grade-level
     "we" 'writegood-reading-ease))
-
-(use-package writeroom-mode
-  ;; :mode ("\\[0-9]+.org\\'"
-  ;;        "\\.blank-page.org\\'")
-  :general
-  (hs-leader-def
-    "wf" 'writeroom-mode)
-  :config
-  (setq writeroom-extra-line-spacing 1.0
-        writeroom-global-effects
-        '(writeroom-set-fullscreen
-          writeroom-set-menu-bar-lines
-          writeroom-set-tool-bar-lines
-          writeroom-set-vertical-scroll-bars
-          writeroom-set-bottom-divider-width)
-        writeroom-mode-line '("   " mode-line-modified "   " word-count-modeline)))
 
 (provide 'ana-writing)
 

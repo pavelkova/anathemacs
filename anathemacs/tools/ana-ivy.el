@@ -17,7 +17,7 @@
   (ivy-mode 1)
   :config
   (setq ivy-use-virtual-buffers t
-        ivy-enable-recursive-minibuffers t
+        ivy-enable-recursive-minibuffers nil
         ivy-wrap t))
 
 (use-package ivy-rich

@@ -52,6 +52,11 @@
   :config
   (load-file (concat user-secrets-dir "gitlab.el")))
 
+(use-package git-timemachine
+  :general
+  (ha-leader-def
+    "gt" 'git-timemachine))
+
 (use-package magit
   :general
   (ha-leader-def
