@@ -11,9 +11,9 @@
   :init
   (which-key-mode)
   :config
-  (setq which-key-max-description-length 60
+  (setq which-key-is-verbose t
+        which-key-max-description-length 60
         which-key-show-docstrings t
-        which-key-is-verbose t
         which-key-sort-uppercase-first nil))
 
 ;; Get rid of insert binding ;; whyyyy

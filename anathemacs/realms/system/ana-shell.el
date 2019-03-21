@@ -9,20 +9,15 @@
 
 ;;; Code:
 
-;; (use-package bash-completion)
-
 (use-package emamux
-  :bind-keymap
-  ("H-a x" . emamux:keymap)
+  ;; :bind-keymap
+  ;; ("H-a x" . emamux:keymap)
   :general
   (ha-leader-def
-    "x" '(:ignore t :which-key "tmux")))
-
-;; (use-package fish-completion)
-
-;; (use-package fish-mode)
-
-;; (use-package multi-term)
+    "x" '(:ignore t :which-key "tmux"))
+  (ha-leader-def
+    "tx" 'emamux:send-command
+    "tX" 'emamux:yank-from-list-buffers))
 
 (use-package sane-term
   :general
@@ -32,15 +27,9 @@
 
 (use-package shx)
 
-(use-package sudo-edit
-  :general
-  (ha-leader-def
-    "!" 'sudo-edit))
-
 (use-package with-editor
   :hook ((shell-mode ansi-term fish-mode multi-term tramp-term) . with-editor-export-editor))
 
-;;(use-package xterm-color)
 
 (provide 'ana-shell)
 

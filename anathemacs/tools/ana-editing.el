@@ -28,6 +28,7 @@
   :general
   (ha-leader-def
     "."  '(:which-key "crux")
+    ".!" 'crux-sudo-edit
     ".c" 'crux-copy-file-preserve-attributes
     ".d" 'crux-delete-file-and-buffer
     ".f" 'crux-recentf-find-file
