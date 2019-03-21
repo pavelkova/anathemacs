@@ -60,14 +60,14 @@
 
 (use-package smartparens
   :diminish smartparens-mode
-  :demand t
-  :config
+  :init
   (smartparens-global-mode))
 
 (use-package undo-propose)
 
 (use-package undo-tree
   :diminish undo-tree-mode
+  :hook ((prog-mode text-mode) . (lambda () global-undo-tree-mode))
   :general
   (ha-leader-def
     "<insert>" 'undo-tree-visualize
@@ -75,14 +75,14 @@
     "<right>"  'undo-tree-redo
     "<deletechar>" 'undo-tree-visualize-redo)
   :config
-  (global-undo-tree-mode)
   (setq undo-tree-visualizer-diff t
         undo-tree-visualizer-relative-timestamps t
         undo-tree-auto-save-history t
         undo-tree-history-directory-alist `((".*" . "~/.cache/emacs/backups/"))))
 
 (use-package ws-butler
-  :hook prog-mode)
+  :init
+  (ws-butler-global-mode))
 
 (provide 'ana-editing)
 

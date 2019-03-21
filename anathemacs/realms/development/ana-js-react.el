@@ -41,8 +41,7 @@
     "nr" 'npm-mode-npm-run
     "nv" 'npm-mode-visit-project-file))
 
-(use-package react-snippets
-  :hook web-mode)
+(use-package react-snippets)
 
 (use-package yarn-mode)
 

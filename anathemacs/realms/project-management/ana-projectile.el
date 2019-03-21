@@ -48,7 +48,7 @@
     ".p" 'org-projectile-capture-for-current-project
     ".P" '(org-projectile-project-todo-completing-read :which-key "org-projectile: new task (other project)"))
   :config
-  (setq org-projectile-projects-directory (concat user-org-dir "desarollo/")
+  (setq org-projectile-projects-directory (concat user-org-dir "desarrollo/")
         org-projectile-per-project-filepath (concat (projectile-project-name) ".org")
         org-agenda-files (append org-agenda-files (org-projectile-todo-files))
         org-projectile-capture-template

@@ -112,8 +112,32 @@ SCHEDULED: %t"
 %?
 ** Directions")
 
+      ;;;; ORG-CAPTURE EXTENSION
+        ("p" "protocol" entry
+         (file+headline user-master-file "braindump")
+        "* %^{Title} :referencía:
+:PROPERTIES
+:fuenta: %u, %c
+:campo: %^{campo}p
+:proyecto:
+:END:
+%T
+#+BEGIN_QUOTE
+%i
+#+END_QUOTE
+%?")
+	("L" "protocol link" entry
+         (file+headline user-master-file "braindump")
+        "* %? [[%:link][%:description]] :enlace:
+:PROPERTIES
+:archive_date: %U
+:campo: %^{campo}p
+:proyecto:
+:END:
+%T")
+
       ;;---PERSONAL
-      ;;;; 
+      ;;;; bullet journal entries
         ("1" "idea" entry
          (file+headline user-master-file "braindump")
          "** %^{idea} %? :idea:

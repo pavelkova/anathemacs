@@ -21,18 +21,19 @@
 			      (projectile-mode 1)
 			      (editorconfig-mode 1))))
 
-(use-package tramp-term
-  :general
-  (hs-leader-def
-  "sS" 'tramp-term)
-  :config
-  (setq tramp-default-method "ssh"))
 
 (use-package nginx-mode
   :defer t)
 
 (use-package company-nginx
   :hook (nginx-mode . (set-local-company-backend company-nginx)))
+
+(use-package tramp-term
+  :general
+  (hs-leader-def
+  "sS" 'tramp-term)
+  :config
+  (setq tramp-default-method "ssh"))
 
 (provide 'ana-server)
 

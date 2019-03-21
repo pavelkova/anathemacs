@@ -19,7 +19,8 @@
 
 (use-package ox-pandoc)
 
-(use-package pandoc-mode)
+(use-package pandoc-mode
+  :demand t)
 
 (provide 'ana-exporting)
 

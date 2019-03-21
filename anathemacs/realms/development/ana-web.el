@@ -8,45 +8,54 @@
 ;;
 
 ;;; Code:
+;; Tern
+;; (add-to-list 'load-path "/usr/lib/node_modules/tern/emacs/")
+;; (autoload 'tern-mode "tern.el" nil t)
+;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+
+(use-package tern
+  :load-path "/usr/lib/node_modules/tern/emacs/"
+  :hook (js-mode . tern-mode))
+
+(use-package company-tern
+  :hook (tern-mode . (set-local-company-backend company-tern)))
+
 (use-package company-web
-  :hook (web-mode . (set-local-company-backend company-web)))
+  :general
+  (hd-leader-def
+    "wc" 'company-web-html))
 
 (use-package web-mode
+  :general
+  (hd-leader-def
+    "w" '(:ignore t :which-key "web"
+    "wT" 'web-mode-tag-match))
   :mode (("\\.erb\\'"    . web-mode)
          ("\\.html?\\'"  . web-mode)
          ("\\.js[x]\\'"  . web-mode)
          ("\\.[s]css\\'" . web-mode)
          ("\\.xml\\'"    . web-mode))
   :config
-  (setq web-mode-markup-indent-offset 2
+  (set-local-company-backend company-web-html)
+  (setq web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2
-        web-mode-code-indent-offset 2
+        web-mode-enable-auto-closing t
+        web-mode-enable-block-face t
         web-mode-enable-css-colorization t
-        web-mode-enable-block-face t)
-  (minor-leader-def
-    :keymaps 'web-mode-map
-    "dT" 'web-mode-tag-match))
+        web-mode-markup-indent-offset 2
+        web-mode-tag-auto-close-style 2))
 
-(use-package rainbow-mode
-  :hook css-mode)
-
-(use-package css-mode)
+(use-package rainbow-mode)
 
 (use-package emmet-mode)
 
-(use-package haml-mode)
-
-(use-package less-css-mode)
-
-(use-package pug-mode)
-
-(use-package sass-mode)
-
-(use-package scss-mode)
-
-(use-package tagedit)
-
-(use-package web-beautify)
+(use-package web-beautify
+  :general
+  (hd-leader-def
+    "wb"  '(:ignore t :which-key "beautify")
+    "wbc" 'web-beautify-css
+    "wbh" 'web-beautify-html
+    "wbj" 'web-beautify-js))
 
 (provide 'ana-web)
 

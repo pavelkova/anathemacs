@@ -18,8 +18,7 @@
     "jn" 'ein:notebooklist-new-notebook
     "jg" 'ein:notebooklist-open-notebook-global
     "jp" 'ein:notebooklist-login
-    "jj" 'ein:junk-new
-    ))
+    "jj" 'ein:junk-new))
 
 (provide 'ana-jupyter)
 

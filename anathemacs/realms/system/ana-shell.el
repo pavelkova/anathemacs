@@ -38,7 +38,7 @@
     "!" 'sudo-edit))
 
 (use-package with-editor
-  :hook ((shell-mode ansi-term fish-mode multi-term) . with-editor-export-editor))
+  :hook ((shell-mode ansi-term fish-mode multi-term tramp-term) . with-editor-export-editor))
 
 ;;(use-package xterm-color)
 

@@ -1,4 +1,3 @@
-
 ;;; init.el
 ;; Author: e.g. pavelka
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -75,7 +74,7 @@
 (require 'ana-modeline)
 (require 'ana-navigation)
 (require 'ligature-support)
-;; (require 'rogue-margins)
+(require 'rogue-margins)
 ;; REALMS
 ;; data
 (require 'ana-databases)
@@ -105,7 +104,6 @@
 (require 'ana-writing)
 (require 'org-fit)
 ;; project management
-;;;; (require 'ana-custom-bullets)
 (require 'ana-planning)
 (require 'ana-version-control)
 (require 'ana-dokuwiki)
@@ -128,12 +126,17 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("9a6ea2852bfcca345ecc19c8228dab2ef1fe2518bddd5d25bd526031debee780" default))
- '(org-agenda-files
-   '("/home/gigi/Media/documentos/org/_aprendizaje.org" "/home/gigi/Media/documentos/org/_desarrollo.org" "/home/gigi/Media/documentos/org/_escritura.org" "/home/gigi/Media/documentos/org/_investigaciones.org" "/home/gigi/Media/documentos/org/_trabajo.org" "/home/gigi/Media/documentos/org/_vida.org" "/home/gigi/Media/documentos/org/calendario.org" "/home/gigi/Media/documentos/org/codex.org" "/home/gigi/Media/documentos/org/mobile.org" "/home/gigi/Media/documentos/org/referencia.org" "~/.emacs.d/project.org"))
+ '(org-agenda-files 'nil)
  '(package-selected-packages
-   '(ivy-posframe company-posframe posfrane imenu-list olivetti ws-butler crux git-timemachine company-box mu4e persp-projectile persp-mode yasnippet-snippets yarn-mode writeroom-mode writegood-mode wolfram-mode wiki-summary which-key web-mode web-beautify wc-mode use-package undo-tree uimage twittering-mode tramp-term tagedit sudo-edit sqlformat spaceline smex smartparens scss-mode sass-mode sane-term rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rjsx-mode react-snippets rbenv rainbow-mode pyvenv pytest py-isort pug-mode projectile-rails pretty-mode popwin pony-mode pippel pip-requirements pg pandoc-mode ox-pandoc outline-magic origami org-web-tools org-ref org-projectile org-pomodoro org-noter org-journal org-index org-download org-cliplink org-chef org-bullets org-brain org-board ob-sql-mode npm-mode nlinum nginx-mode neotree mwim multiple-cursors mixed-pitch minitest md4rd markdown-toc markdown-preview-mode magithub magic-latex-buffer live-py-mode latex-pretty-symbols json-mode ivy-yasnippet ivy-rich ivy-omni-org intero hy-mode hindent graphviz-dot-mode google-translate go-projectile gnuplot gitlab gitignore-mode gitconfig-mode git-gutter-fringe gist general format-all foreman-mode flycheck-irony flycheck-haskell eyebrowse exwm-firefox-core ess-smart-equals ess-R-data-view ereader enh-ruby-mode emms emmet-mode emamux emacsql ein ebib dokuwiki-mode dokuwiki djangonaut django-mode django-commands diminish delight define-word dashboard cython-mode csv-mode counsel-tramp counsel-projectile company-web company-php company-nginx company-math company-go company-emacs-eclim company-cabal company-anaconda chruby cdlatex calfw-org calfw bundler better-defaults auto-package-update auctex-latexmk all-the-icons-ivy all-the-icons-dired activity-watch-mode))
+   '(company-tern yasnippet-snippets yarn-mode ws-butler writegood-mode wolfram-mode wiki-summary which-key web-mode web-beautify wc-mode use-package undo-tree undo-propose twittering-mode tramp-term sudo-edit sqlformat spaceline smex smartparens shx sane-term rvm rubocop robe react-snippets rainbow-mode pyvenv pytest py-isort projectile-rails pretty-mode pony-mode pippel pip-requirements persp-projectile persp-mode pandoc-mode ox-pandoc outline-magic origami org-web-tools org-ref org-projectile org-pomodoro org-noter org-journal org-download org-cliplink org-chef org-bullets org-brain org-board olivetti ob-sql-mode npm-mode nginx-mode neotree mwim multiple-cursors mu4e-conversation mixed-pitch md4rd markdown-toc markdown-preview-mode magithub magic-latex-buffer live-py-mode latex-pretty-symbols json-mode ivy-yasnippet ivy-rich ivy-omni-org intero imenu-list hy-mode hindent graphviz-dot-mode google-translate go-projectile gnuplot gitlab gitignore-mode gitconfig-mode git-timemachine git-gutter-fringe gist general format-all foreman-mode flycheck-irony flycheck-haskell eyebrowse ess-smart-equals ess-R-data-view ereader enh-ruby-mode emms emmet-mode emamux emacsql ein ebib dokuwiki-mode dokuwiki djangonaut django-mode diminish delight define-word dashboard cython-mode csv-mode crux counsel-tramp counsel-projectile company-web company-php company-nginx company-math company-go company-emacs-eclim company-cabal company-anaconda cdlatex calfw-org calfw better-defaults auto-package-update auctex-latexmk all-the-icons-ivy activity-watch-mode))
  '(safe-local-variable-values
-   '((python-shell-virtualenv-root . "/home/gigi/Code/Current/dgar/venv/")
+   '((python-shell-virtualenv-root . "/home/gigi/Code/Current/playsette/venv/")
+     (python-shell-extra-pythonpaths "/home/gigi/Code/Current/playsette/api/")
+     (python-shell-process-environment "DJANGO_SETTINGS_MODULE=playsette.settings")
+     (pony-settings
+      (make-pony-project :python "/home/gigi/Code/Current/playsette/venv/bin/python" :pythonpath "/home/gigi/Code/Current/playsette/api/" :settings "local_settings_file" :appsdir "testproject/apps/"))
+     (pyvenv-activate . "/home/gigi/Code/Current/playsette/venv/")
+     (python-shell-virtualenv-root . "/home/gigi/Code/Current/dgar/venv/")
      (python-shell-extra-pythonpaths "/home/gigi/Code/Current/dgar/api/")
      (python-shell-process-environment "DJANGO_SETTINGS_MODULE=api.settings")
      (pyvenv-activate . "/home/gigi/Code/Current/dgar/venv/"))))
