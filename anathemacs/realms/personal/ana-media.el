@@ -30,6 +30,13 @@
       smtpmail-debug-info t
       smtpmail-send-mail-function 'smtpmail-send-it)
 
+(use-package mu4e-alert
+  :init
+  (mu4e-alert-enable-notifications)
+  (mu4e-alert-enable-mode-line-display)
+  :config
+  (setq mu4e-alert-set-default-style 'libnotify))
+
 (use-package mu4e-conversation
   :after mu4e
   :config

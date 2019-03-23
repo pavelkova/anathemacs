@@ -34,15 +34,15 @@
 
 (use-package pippel)
 
-(use-package pip-requirements)
+(use-package pip-requirements
+  :mode "\\requirements.txt\\'")
 
 (use-package py-isort)
 
 (use-package pyvenv
   :hook (python-mode . pyvenv-mode))
 
-(use-package pytest
-  :defer t)
+(use-package pytest)
 
 
 ;; (use-package stickyfunc-enhance)

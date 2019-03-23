@@ -32,6 +32,8 @@
 (use-package magic-latex-buffer
   :hook TeX-mode)
 
+(use-package matlab-mode)
+
 (use-package wolfram-mode
   :defer t)
 

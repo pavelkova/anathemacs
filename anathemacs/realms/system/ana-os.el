@@ -1,4 +1,4 @@
-;;; ana-nixos.el ---
+;;; ana-os.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -9,6 +9,10 @@
 
 ;;; Code:
 
+;; ARCH LINUX
+(use-package systemd)
+
+;; NIXOS
 (use-package company-nixos-options
   :hook (nix-mode . (set-local-company-backend company-nixos-options)))
 
@@ -20,7 +24,17 @@
   (hs-leader-def
     "sN" 'nix-repl))
 
-(provide 'ana-nixos)
+;; WINDOW MANAGERS
+;; (use-package i3wm)
+(use-package fvwm-mode)
+
+;; COMMON
+(use-package symon
+  :general
+  (hs-leader-def
+    "s?" 'symon-mode))
+
+(provide 'ana-os)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-nixos.el ends here
+;;; ana-os.el ends here

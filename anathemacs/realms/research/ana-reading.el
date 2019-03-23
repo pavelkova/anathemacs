@@ -13,6 +13,8 @@
 (use-package ereader
   :mode "\\.epub\\'")
 
+(use-package linguistic)
+
 (use-package pdf-tools)
 
 ;; TODO CALIBRE INTEGRATION

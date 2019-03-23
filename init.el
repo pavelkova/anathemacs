@@ -90,6 +90,8 @@
 (require 'ana-java)
 (require 'ana-js-react)
 (require 'ana-js)
+(require 'ana-lisp)
+(require 'ana-lua)
 (require 'ana-markdown)
 (require 'ana-php)
 (require 'ana-python-django)
@@ -114,7 +116,7 @@
 (require 'ana-reading)
 (require 'ana-reference)
 ;; system
-(require 'ana-nixos)
+(require 'ana-os)
 (require 'ana-server)
 (require 'ana-shell)
 
@@ -129,7 +131,7 @@
    '("9a6ea2852bfcca345ecc19c8228dab2ef1fe2518bddd5d25bd526031debee780" default))
  '(org-agenda-files 'nil)
  '(package-selected-packages
-   '(nix-mode company-nixos-options company-tern yasnippet-snippets yarn-mode ws-butler writegood-mode wolfram-mode wiki-summary which-key web-mode web-beautify wc-mode use-package undo-tree undo-propose twittering-mode tramp-term sudo-edit sqlformat spaceline smex smartparens shx sane-term rvm rubocop robe react-snippets rainbow-mode pyvenv pytest py-isort projectile-rails pretty-mode pony-mode pippel pip-requirements persp-projectile persp-mode pandoc-mode ox-pandoc outline-magic origami org-web-tools org-ref org-projectile org-pomodoro org-noter org-journal org-download org-cliplink org-chef org-bullets org-brain org-board olivetti ob-sql-mode npm-mode nginx-mode neotree mwim multiple-cursors mu4e-conversation mixed-pitch md4rd markdown-toc markdown-preview-mode magithub magic-latex-buffer live-py-mode latex-pretty-symbols json-mode ivy-yasnippet ivy-rich ivy-omni-org intero imenu-list hy-mode hindent graphviz-dot-mode google-translate go-projectile gnuplot gitlab gitignore-mode gitconfig-mode git-timemachine git-gutter-fringe gist general format-all foreman-mode flycheck-irony flycheck-haskell eyebrowse ess-smart-equals ess-R-data-view ereader enh-ruby-mode emms emmet-mode emamux emacsql ein ebib dokuwiki-mode dokuwiki djangonaut django-mode diminish delight define-word dashboard cython-mode csv-mode crux counsel-tramp counsel-projectile company-web company-php company-nginx company-math company-go company-emacs-eclim company-cabal company-anaconda cdlatex calfw-org calfw better-defaults auto-package-update auctex-latexmk all-the-icons-ivy activity-watch-mode))
+   '(systemd symon fvwm-mode systemd-mode mu4e-alert lua-mode nix-mode company-nixos-options company-tern yasnippet-snippets yarn-mode ws-butler writegood-mode wolfram-mode wiki-summary which-key web-mode web-beautify wc-mode use-package undo-tree undo-propose twittering-mode tramp-term sudo-edit sqlformat spaceline smex smartparens shx sane-term rvm rubocop robe react-snippets rainbow-mode pyvenv pytest py-isort projectile-rails pretty-mode pony-mode pippel pip-requirements persp-projectile persp-mode pandoc-mode ox-pandoc outline-magic origami org-web-tools org-ref org-projectile org-pomodoro org-noter org-journal org-download org-cliplink org-chef org-bullets org-brain org-board olivetti ob-sql-mode npm-mode nginx-mode neotree mwim multiple-cursors mu4e-conversation mixed-pitch md4rd markdown-toc markdown-preview-mode magithub magic-latex-buffer live-py-mode latex-pretty-symbols json-mode ivy-yasnippet ivy-rich ivy-omni-org intero imenu-list hy-mode hindent graphviz-dot-mode google-translate go-projectile gnuplot gitlab gitignore-mode gitconfig-mode git-timemachine git-gutter-fringe gist general format-all foreman-mode flycheck-irony flycheck-haskell eyebrowse ess-smart-equals ess-R-data-view ereader enh-ruby-mode emms emmet-mode emamux emacsql ein ebib dokuwiki-mode dokuwiki djangonaut django-mode diminish delight define-word dashboard cython-mode csv-mode crux counsel-tramp counsel-projectile company-web company-php company-nginx company-math company-go company-emacs-eclim company-cabal company-anaconda cdlatex calfw-org calfw better-defaults auto-package-update auctex-latexmk all-the-icons-ivy activity-watch-mode))
  '(safe-local-variable-values
    '((python-shell-virtualenv-root . "/home/gigi/Code/Current/playsette/venv/")
      (python-shell-extra-pythonpaths "/home/gigi/Code/Current/playsette/api/")
