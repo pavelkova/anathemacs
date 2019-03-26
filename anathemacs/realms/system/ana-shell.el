@@ -19,6 +19,9 @@
     "tx" 'emamux:send-command
     "tX" 'emamux:yank-from-list-buffers))
 
+(use-package fish-mode
+  :mode ("\\.fish\\'"))
+
 (use-package sane-term
   :general
   (ha-leader-def
