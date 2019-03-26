@@ -45,7 +45,7 @@
     "F" 'format-all-buffer))
 
 (use-package multiple-cursors
-  :init
+  :general
   (general-define-key
    "C-<" 'mc/edit-beginnings-of-lines
    "C->" 'mc/edit-ends-of-lines

@@ -142,7 +142,8 @@
      (python-shell-virtualenv-root . "/home/gigi/Code/Current/dgar/venv/")
      (python-shell-extra-pythonpaths "/home/gigi/Code/Current/dgar/api/")
      (python-shell-process-environment "DJANGO_SETTINGS_MODULE=api.settings")
-     (pyvenv-activate . "/home/gigi/Code/Current/dgar/venv/"))))
+     (pyvenv-activate . "/home/gigi/Code/Current/dgar/venv/")))
+ '(send-mail-function 'smtpmail-send-it))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
