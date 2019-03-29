@@ -22,8 +22,9 @@
   
   ;; AGENDA
   (hs-leader-def
-    "A" 'org-agenda)
-  
+    "A" 'org-agenda))
+
+
   (setq org-refile-allow-creating-parent-nodes t
         org-outline-path-complete-in-steps nil
         org-refile-targets '((nil :maxlevel . 2)
@@ -44,7 +45,7 @@
              ((org-agenda-entry-types '(:deadline :scheduled :timestamp))
               (org-deadline-warning-days 30)
               (org-agenda-time-grid nil)
-              (org-agenda-overriding-header "próximo"))))))
+              (org-agenda-overriding-header "próximo")))))
 
 ;; BRAIN - mindmapping with org trees
 (use-package org-brain

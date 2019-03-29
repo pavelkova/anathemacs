@@ -14,7 +14,7 @@
   :diminish activity-watch-mode
   :init
   (global-activity-watch-mode t)
-  :config
+  :general
   (hs-leader-def
     "pa" 'global-activity-watch-mode))
 

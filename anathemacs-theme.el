@@ -73,7 +73,7 @@
       ;; fonts
       (base-font    "FiraCode")
       (et-font      "ETBembo")
-      (sans-font    "Lato"))
+      (sans-font    "SourceSansPro"))
 
     (custom-theme-set-faces
      `anathemacs
@@ -195,7 +195,7 @@
      `(counsel-outline-8 ((,class (:inherit nil))))
      
 ;;;;; dashboard
-     `(dashboard-banner-logo-title-face ((,class :family ,sans-font :weight bold)))
+     `(dashboard-banner-logo-title-face ((,class :family ,sans-font :weight normal)))
      ;; `(dashboard-text-banner-face ((,class (:inherit nil))))
      `(dashboard-heading-face ((,class :foreground ,func :family ,sans-font :weight light :height 2.9)))
      `(widget-button ((,class (:weight normal))))
@@ -529,7 +529,7 @@
 
 ;;;;; mode-line
      `(mode-line ((,class (:foreground ,comment :family ,sans-font :background ,bg2 :box nil :height 80))))
-     `(mode-line-buffer-id ((,class (:inherit bold :foreground ,comment :height 80))))
+     `(mode-line-buffer-id ((,class (:inherit mode-line :weight semibold :foreground ,comment :height 80))))
      `(mode-line-emphasis ((,class (:foreground ,highlight :height 80))))
      `(mode-line-highlight ((,class (:style nil :foreground ,highlight-dim :height 80))))
      `(mode-line-inactive  ((,class (:foreground ,comment :family ,sans-font :background ,bg1 :box nil :height 80))))
@@ -551,10 +551,10 @@
      `(notmuch-tag-flagged ((,class (:foreground ,war))))
 
 ;;;;; neotree
-     `(neo-dir-link-face ((,class (:foreground ,base :inherit nil :height 80))))
-     `(neo-expand-btn-face ((,class (:foreground ,magenta-2 :height 80))))
-     `(neo-file-link-face ((,class (:foreground ,base :height 80))))
-     `(neo-root-dir-face ((,class (:foreground ,comment :height 80))))
+     `(neo-dir-link-face ((,class (:foreground ,base :inherit nil :height 90))))
+     `(neo-expand-btn-face ((,class (:foreground ,magenta-2 :height 90))))
+     `(neo-file-link-face ((,class (:foreground ,base :height 90))))
+     `(neo-root-dir-face ((,class (:foreground ,comment :height 110))))
 
 ;;;;; org
      `(org-agenda-clocking ((,class (:background ,highlight :foreground ,bg1))))
@@ -563,7 +563,7 @@
      `(org-agenda-date-weekend ((,class (:foreground ,var))))
      `(org-agenda-diary ((,class (:foreground ,keyword))))
      `(org-agenda-done ((,class (:foreground ,comment :strike-through t))))
-     `(org-agenda-structure ((,class (:foreground ,func :family ,sans-font :weight light :height 2.9))))
+     `(org-agenda-structure ((,class (:foreground ,func :family ,sans-font :weight light :height 290))))
      `(org-block ((,class (:background ,cblk-bg :foreground ,cblk))))
      `(org-block-begin-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :height 90))))
      `(org-block-end-line ((,class (:background ,cblk-bg :foreground ,cblk-ln :height 90))))

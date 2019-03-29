@@ -59,6 +59,10 @@
   (diminish 'page-break-lines-mode)
   (diminish 'which-key-mode)
   (diminish 'visual-line-mode))
+
+;; for some reason my font isn't automatically set from theme in Void Linux
+(add-to-list 'default-frame-alist
+                       '(font . "Fira Code 10"))
   
 ;; get rid of startup warnings
 (setq ad-redefinition-action 'accept)
@@ -66,7 +70,7 @@
 ;; for the love of god please make the minibuffer go away
 
 (defun stop-using-minibuffer ()
-  "kill the minibuffer"
+  "Kill the minibuffer."
   (when (and (>= (recursion-depth) 1) (active-minibuffer-window))
     (abort-recursive-edit)))
 
