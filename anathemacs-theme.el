@@ -73,7 +73,7 @@
       ;; fonts
       (base-font    "FiraCode")
       (et-font      "ETBembo")
-      (sans-font    "SourceSansPro"))
+      (sans-font    "Lato"))
 
     (custom-theme-set-faces
      `anathemacs
@@ -551,10 +551,10 @@
      `(notmuch-tag-flagged ((,class (:foreground ,war))))
 
 ;;;;; neotree
-     `(neo-dir-link-face ((,class (:foreground ,base :inherit nil :height 90))))
-     `(neo-expand-btn-face ((,class (:foreground ,magenta-2 :height 90))))
-     `(neo-file-link-face ((,class (:foreground ,base :height 90))))
-     `(neo-root-dir-face ((,class (:foreground ,comment :height 110))))
+     `(neo-dir-link-face ((,class (:foreground ,base :inherit nil :height 90 :family ,base-font))))
+     `(neo-expand-btn-face ((,class (:foreground ,magenta-2 :height 90 :family ,base-font))))
+     `(neo-file-link-face ((,class (:foreground ,base :height 90 :family ,base-font))))
+     `(neo-root-dir-face ((,class (:foreground ,comment :height 110 :family ,base-font))))
 
 ;;;;; org
      `(org-agenda-clocking ((,class (:background ,highlight :foreground ,bg1))))
@@ -576,7 +576,7 @@
      `(org-document-info ((,class (:slant italic))))
      `(org-document-info-keyword ((,class (:foreground ,meta :height 90))))
      `(org-document-title ((,class (:underline nil :height 230))))
-     `(org-done ((,class (:foreground ,highlight-dim :background nil :strike-through nil ))))
+     `(org-done ((,class (:foreground ,highlight-dim :background nil :strike-through nil :family ,base-font ))))
      `(org-drawer ((,class (:foreground ,meta :height 80))))
      `(org-ellipsis ((,class (:foreground ,comment :underline nil))))
      `(org-footnote  ((,class (:slant italic :foreground ,base-dim))))
@@ -585,7 +585,7 @@
      `(org-indent ((,class (:inherit org-hide))))
      `(org-kbd ((,class (:inherit region :foreground ,base :box (:line-width 1 :style released-button)))))
      `(org-level-1 ((,class (:slant italic :height 180 :foreground ,base))))
-     `(org-level-2 ((,class (:slant italic :height 170 :foreground ,base))))
+     `(org-level-2 ((,class (:height 140 :foreground ,base))))
      `(org-level-3 ((,class (:height 140 :foreground ,base))))
      `(org-level-4 ((,class (:inherit org-level-3))))
      `(org-level-5 ((,class (:inherit org-level-3))))
@@ -606,7 +606,7 @@
      `(org-tag ((,class (:foreground ,comment :height 80 :family ,base-font))))
      `(org-table ((,class (:foreground ,base :background nil :height 80))))
      `(org-time-grid ((,class (:foreground ,comment))))
-     `(org-todo ((,class (:foreground ,highlight :weight bold :background nil :family ,et-font))))
+     `(org-todo ((,class (:foreground ,highlight :background nil :family ,base-font))))
      `(org-verbatim ((,class (:foreground ,keyword :height 100))))
      `(org-verse ((,class (:inherit org-quote :slant italic))))
      `(org-warning ((,class (:foreground ,err))))

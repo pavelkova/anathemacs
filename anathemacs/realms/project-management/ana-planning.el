@@ -22,13 +22,12 @@
   
   ;; AGENDA
   (hs-leader-def
-    "A" 'org-agenda))
-
+    "A" 'org-agenda)
 
   (setq org-refile-allow-creating-parent-nodes t
         org-outline-path-complete-in-steps nil
         org-refile-targets '((nil :maxlevel . 2)
-                             (org-agenda-files :maxlevel . 1))
+                             (org-agenda-files :maxlevel . 2))
         org-archive-location user-archive-file
         org-agenda-window-setup 'current-window
         org-agenda-files (list user-org-dir)
@@ -42,10 +41,10 @@
                     ((org-agenda-overriding-header "tareas")
                      (org-agenda-sorting-strategy '(priority-down))))))
             ("n" "próximo" agenda ""
-             ((org-agenda-entry-types '(:deadline :scheduled :timestamp))
+             (;; (org-agenda-entry-types '(:deadline :scheduled :timestamp))
+              ;; (org-agenda-time-grid nil)
               (org-deadline-warning-days 30)
-              (org-agenda-time-grid nil)
-              (org-agenda-overriding-header "próximo")))))
+              (org-agenda-overriding-header "próximo"))))))
 
 ;; BRAIN - mindmapping with org trees
 (use-package org-brain
