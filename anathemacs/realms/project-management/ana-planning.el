@@ -13,10 +13,10 @@
 (with-eval-after-load 'org
   ;; TODO
   (setq org-todo-keywords
-        '((sequence "□" "◪" "▶" "|" "■" "☒")
-          ;; todo, partially done, postponed | completed, cancelled
-          (sequence "|" "❗" "⛥" "" "✓" "▪" "❓" "⛅" "🗲" "♥" "＄")
-          ;; event, appointment, important, accomplishment, note, research, fantasy, idea, inspiration, finance
+        '((sequence "○" "◑" "▶" "◌" "|" "●" "⮿")
+          ;; todo, partially done, postponed, possible | completed, cancelled
+          (sequence "△" "☆" "❔" "|" "▲" "★" "❓" "💡" "＄" "⛅" "♥" "📎" "👁")
+          ;; appointment, event, research | appointment, event, research, idea, finance, fantasy, inspiration, bookmark, link
           )
         org-hierarchical-todo-statistics nil)
   

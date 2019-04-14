@@ -43,9 +43,21 @@ To understand a piece of software, customize it to within an inch of its life.
 *** C-c
 ** Commands
 * Todo
-** □ Add workout tracker 
+** ○ Add workout tracker
 :PROPERTIES:
 :ADDED: <2019-03-10 Sun 10:56>
 :realm: desarollo
 :project: anathemacs
 :END:
+** ○ Access Calibre library
+#+BEGIN_SRC emacs-lisp :tangle yes
+(directory-files-recursively "~/Media/biblioteca/" ".\\(pdf\\|epub\\)")
+#+END_SRC
+*** Parse OPF metadata files
+** ○ Auto-kill buffer
+buffer-list-update-hook: switching buffers re-orders the buffer list
+and triggers this hook
+
+buffer-modified-p
+
+previous-buffer

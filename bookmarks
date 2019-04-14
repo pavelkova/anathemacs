@@ -9,12 +9,12 @@
  (position . 11))
 ("org-capture-last-stored"
  (filename . "~/Media/documentos/org/codex.org")
- (front-context-string . "**  Using pyenv ")
- (rear-context-string . "to use for jobs\n")
- (position . 8216))
+ (front-context-string . "** ● install nvi")
+ (rear-context-string . " fax in/deliver\n")
+ (position . 5366))
 ("org-refile-last-stored"
  (filename . "~/Media/documentos/org/codex.org")
- (front-context-string . "** ⛥ mom's birth")
- (rear-context-string . "2019-03-29 Fri>\n")
- (position . 11988))
+ (front-context-string . "** 🗲 org-mode st")
+ (rear-context-string . "nathemacs\n:END:\n")
+ (position . 30096))
 )

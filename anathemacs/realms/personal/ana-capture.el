@@ -33,7 +33,7 @@
       ;;;; TODO
          "t" "tarea" entry
          (file+headline user-master-file "braindump")
-         "** □ %^{tarea} %?
+         "** ○ %^{tarea} %?
 SCHEDULED: %t
 :PROPERTIES:
 :campo: %^{campo}p
@@ -44,7 +44,7 @@ SCHEDULED: %t
       ;;;; APPOINTMENT
         ("c" "cita" entry
          (file+olp+datetree user-cal-file)
-         "** ▲ %^{cita} %? :cita:
+         "** △ %^{cita} %? :cita:
 SCHEDULED: %T
 :PROPERTIES:
 :location:
@@ -54,7 +54,7 @@ SCHEDULED: %T
       ;;;; EVENT
         ("e" "evento" entry
          (file+olp+datetree user-cal-file)
-         "** ⛥ %^{evento} %? :evento:
+         "** ☆ %^{evento} %? :evento:
 SCHEDULED: %t"
          :tree-type month)
 
@@ -71,7 +71,7 @@ SCHEDULED: %t"
       ;;;; LINK
         ("l" "enlace" entry
          ((file+headline user-master-file "braindump"))
-         "** %(org-cliplink-capture) :enlace:
+         "** 👁 %(org-cliplink-capture) :enlace:
 :PROPERTIES:
 :campo: %^{campo}p
 :END:
@@ -80,7 +80,7 @@ SCHEDULED: %t"
       ;;;; BOOKMARK
         ("m" "marcador" entry
          (file+headline user-master-file "marcadores")
-         "** %?
+         "** 📎 %?
 %a
 :PROPERTIES:
 :campo: %^{campo}p
@@ -140,7 +140,7 @@ SCHEDULED: %t"
       ;;;; bullet journal entries
         ("1" "idea" entry
          (file+headline user-master-file "braindump")
-         "** %^{idea} %? :idea:
+         "** 💡 %^{idea} %? :idea:
 :PROPERTIES:
 :campo: %^{campo}p
 :proyecto:
@@ -172,20 +172,9 @@ SCHEDULED: %t"
 :END:
 %T")
 
-        ("5" "logro" entry
-         (file+olp+datetree user-cal-file)
-         "** ✓ %t %^{milestone} %? :logro:
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:
-%T"
-         :time-prompt t
-         :tree-type week)
-
-        ("6" "investigar" entry
+        ("5" "investigar" entry
          (file+headline user-master-file "braindump")
-         "** ❓ %^{look up} %? :investigar:
+         "** ❔ %^{look up} %? :investigar:
 :PROPERTIES:
 :campo: %^{campo}p
 :proyecto:
