@@ -91,6 +91,7 @@
      `(header-line              ((,class :background nil :inherit nil)))
      `(highlight                ((,class (:foreground ,bg1 :background ,highlight))))
      `(hl-line                  ((,class (:background ,bg2))))
+     `(italic                   ((,class (:underline nil :slant italic))))
      `(isearch                  ((,class (:foreground ,bg1 :background ,mat))))
      `(lazy-highlight      ((,class (:background ,highlight-dim :foreground ,bg1 :weight normal))))
      `(link                ((,class (:foreground ,keyword :underline t))))

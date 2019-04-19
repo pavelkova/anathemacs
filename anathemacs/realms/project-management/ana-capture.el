@@ -35,10 +35,6 @@
          (file+headline user-master-file "braindump")
          "** ○ %^{tarea} %?
 SCHEDULED: %t
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:
 %T")
         
       ;;;; APPOINTMENT
@@ -62,30 +58,19 @@ SCHEDULED: %t"
         ("n" "nota" entry
          (file+headline user-master-file "braindump")
          "** %^{nota} %? :nota:
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:
 %T")
         
       ;;;; LINK
         ("l" "enlace" entry
          ((file+headline user-master-file "braindump"))
-         "** 👁 %(org-cliplink-capture) :enlace:
-:PROPERTIES:
-:campo: %^{campo}p
-:END:
+         "** %(org-cliplink-capture) :recurso:
 %T")
         
-      ;;;; BOOKMARK
+;;       ;;;; BOOKMARK
         ("m" "marcador" entry
          (file+headline user-master-file "marcadores")
-         "** 📎 %?
+         "** 📎 %? :recurso:
 %a
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:
 %T")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES
@@ -115,11 +100,9 @@ SCHEDULED: %t"
       ;;;; ORG-CAPTURE EXTENSION
         ("p" "protocol" entry
          (file+headline user-master-file "braindump")
-        "* %^{Title} :referencía:
+        "* %^{Title} :recurso:
 :PROPERTIES
 :fuenta: %u, %c
-:campo: %^{campo}p
-:proyecto:
 :END:
 %T
 #+BEGIN_QUOTE
@@ -128,57 +111,26 @@ SCHEDULED: %t"
 %?")
 	("L" "protocol link" entry
          (file+headline user-master-file "braindump")
-        "* %? [[%:link][%:description]] :enlace:
-:PROPERTIES
-:archive_date: %U
-:campo: %^{campo}p
-:proyecto:
-:END:
+        "* %? [[%:link][%:description]] :recurso:
 %T")
 
       ;;---PERSONAL
       ;;;; bullet journal entries
         ("1" "idea" entry
          (file+headline user-master-file "braindump")
-         "** 💡 %^{idea} %? :idea:
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:
-%T")
-        ("2" "fantasía" entry
-         (file+headline user-master-file "braindump")
-         "** ⛅ %^{pipe dream} %? :fantasía:
-:PROPERTIES:
-:campo: %^{campo}p
-:END:
+         "** 💡 %^{idea} %?
 %T")
 
-        ("3" "finanzas" entry
+        ("2" "finanzas" entry
          (file+headline user-master-file "braindump")
-         "** ＄ %^{dinero} %? :finanzas:
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:
+         "** ＄ %^{dinero} %? :finaciero:
 %T")
 
-        ("4" "inspiracion" entry
+        ("3" "pregunta" entry
          (file+headline user-master-file "braindump")
-         "** ♥ %^{inspo} %? :inspiración:
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:
+                  "** ❔ %^{look up} %? :pregunta:
 %T")
-
-        ("5" "investigar" entry
-         (file+headline user-master-file "braindump")
-         "** ❔ %^{look up} %? :investigar:
-:PROPERTIES:
-:campo: %^{campo}p
-:proyecto:
-:END:")))
+        ))
 
 (provide 'ana-capture)
 

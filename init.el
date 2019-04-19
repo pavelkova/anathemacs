@@ -100,12 +100,13 @@
 (require 'ana-ruby)
 (require 'ana-web)
 ;; personal
-(require 'ana-capture)
+(require 'ana-communication)
 (require 'ana-dokuwiki)
 (require 'ana-media)
 (require 'ana-writing)
 (require 'org-fit)
 ;; project management
+(require 'ana-capture)
 (require 'ana-planning)
 (require 'ana-version-control)
 (require 'ana-dokuwiki)
@@ -127,6 +128,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("015756a68e1522b4fe5c6e4892ecf85805f54bcb7ab943a1ca6915b54052977e" default)))
  '(org-agenda-files (quote ("~/Media/documentos/org/")))
  '(package-selected-packages
    (quote

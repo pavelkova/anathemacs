@@ -61,3 +61,4 @@ and triggers this hook
 buffer-modified-p
 
 previous-buffer
+** ○ Use =define-skeleton= function to create templates for research, writing, logs

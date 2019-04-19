@@ -33,7 +33,13 @@
   (hs-leader-def
   "sS" 'tramp-term)
   :config
-  (setq tramp-default-method "ssh"))
+  (setq tramp-default-method "ssh")
+  (add-to-list 'tramp-methods
+                   '("yadm"
+                     (tramp-login-program "yadm")
+                     (tramp-login-args (("enter")))
+                     (tramp-remote-shell "/bin/sh")
+                     (tramp-remote-shell-args ("-c")))))
 
 (provide 'ana-server)
 

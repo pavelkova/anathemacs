@@ -36,9 +36,9 @@
 
 (setq user-caldav-file (concat user-secrets-dir "caldav.el"))
 
-(setq user-cookbook-file (concat user-org-dir "vida/recetas.org"))
+(setq user-cookbook-file (concat user-org-dir "vida/salud/recetas.org"))
 
-(setq user-default-bib-file (concat user-org-dir "investigaciones/referencias.bib"))
+(setq user-default-bib-file (concat user-org-dir "investigación/referencias.bib"))
 
 ;; Contains authentication info for a remote Dokuwiki instance.  Referenced in realms/personal/ana-dokuwiki.el
 (setq user-dokuwiki-file (concat user-secrets-dir "dokuwiki.el"))
@@ -46,7 +46,7 @@
 ;; Where org-download should store images and org-web-mode/org-board should save webpages.  Referenced by tools/ana-archiving.el
 (setq user-download-dir (concat user-org-dir ".descargas/"))
 
-(setq user-journal-dir (concat user-org-dir "diario/"))
+(setq user-journal-dir (concat user-org-dir "escritura/diario/"))
 
 ;; Default file for multiple org-capture templates (tasks, bookmarks, links, etc.). Referenced by realms/personal/ana-capture.el
 (setq user-master-file (concat user-org-dir "codex.org"))
@@ -56,7 +56,7 @@
 
 (setq user-mu4e-file (concat user-secrets-dir "mu4e.el"))
 
-(setq user-pdf-dir (concat user-org-dir "investigaciones/documentos/"))
+(setq user-pdf-dir (concat user-org-dir "investigación/documentos/"))
 
 ;; System music folder used by EMMS.  Referenced in realms/personal/ana-media.el
 (setq user-music-dir "~/Media/música/")
