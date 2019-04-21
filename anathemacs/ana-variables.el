@@ -24,7 +24,7 @@
 
 (setq user-org-dir "~/Media/documentos/org/")
 
-(setq user-archive-file (concat user-org-dir ".archivo.org"))
+(setq user-archive-file (concat user-org-dir "basement.org"))
 
 (setq user-bib-notes-file (concat user-org-dir "investigaciones/notas-de-referencia.org"))
 

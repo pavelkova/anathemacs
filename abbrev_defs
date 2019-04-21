@@ -1,6 +1,8 @@
 ;;-*-coding: utf-8;-*-
 (define-abbrev-table 'Buffer-menu-mode-abbrev-table '())
 
+(define-abbrev-table 'Custom-mode-abbrev-table '())
+
 (define-abbrev-table 'Info-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'Rd-mode-abbrev-table
@@ -37,19 +39,23 @@
     ("`va" "\\value" nil 0)
    ))
 
-(define-abbrev-table 'S+-transcript-mode-abbrev-table '())
-
-(define-abbrev-table 'SAS-listing-mode-abbrev-table '())
-
-(define-abbrev-table 'SAS-log-mode-abbrev-table '())
-
-(define-abbrev-table 'SAS-mode-abbrev-table '())
+(define-abbrev-table 'awk-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'bibtex-mode-abbrev-table '())
 
 (define-abbrev-table 'bookmark-bmenu-mode-abbrev-table '())
 
 (define-abbrev-table 'bookmark-edit-annotation-mode-abbrev-table '())
+
+(define-abbrev-table 'c++-mode-abbrev-table
+  '(
+   ))
+
+(define-abbrev-table 'c-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'calendar-mode-abbrev-table '())
 
@@ -59,9 +65,27 @@
 
 (define-abbrev-table 'diff-mode-abbrev-table '())
 
-(define-abbrev-table 'doctex-mode-abbrev-table '())
-
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
+
+(define-abbrev-table 'eieio-custom-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:inspector-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:ipdb-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:notebook-multilang-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:notebook-plain-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:notebook-python-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:notebooklist-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:pager-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:shared-output-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:traceback-mode-abbrev-table '())
 
 (define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
 
@@ -73,15 +97,7 @@
 
 (define-abbrev-table 'epa-key-mode-abbrev-table '())
 
-(define-abbrev-table 'ess-bugs-mode-abbrev-table '())
-
 (define-abbrev-table 'ess-help-mode-abbrev-table '())
-
-(define-abbrev-table 'ess-jags-mode-abbrev-table '())
-
-(define-abbrev-table 'ess-julia-help-mode-abbrev-table '())
-
-(define-abbrev-table 'ess-julia-mode-abbrev-table '())
 
 (define-abbrev-table 'ess-mode-abbrev-table '())
 
@@ -90,14 +106,6 @@
 (define-abbrev-table 'ess-r-mode-abbrev-table '())
 
 (define-abbrev-table 'ess-r-transcript-mode-abbrev-table '())
-
-(define-abbrev-table 'ess-rdired-mode-abbrev-table '())
-
-(define-abbrev-table 'ess-stata-help-mode-abbrev-table '())
-
-(define-abbrev-table 'ess-stata-mode-abbrev-table '())
-
-(define-abbrev-table 'ess-stata-transcript-mode-abbrev-table '())
 
 (define-abbrev-table 'ess-transcript-mode-abbrev-table '())
 
@@ -111,29 +119,41 @@
 
 (define-abbrev-table 'help-mode-abbrev-table '())
 
-(define-abbrev-table 'inferior-ess-julia-mode-abbrev-table '())
+(define-abbrev-table 'html-mode-abbrev-table '())
+
+(define-abbrev-table 'idl-mode-abbrev-table '())
 
 (define-abbrev-table 'inferior-ess-mode-abbrev-table '())
 
 (define-abbrev-table 'inferior-ess-r-mode-abbrev-table '())
 
-(define-abbrev-table 'inferior-ess-stata-mode-abbrev-table '())
-
-(define-abbrev-table 'inferior-julia-mode-abbrev-table '())
+(define-abbrev-table 'inferior-python-mode-abbrev-table '())
 
 (define-abbrev-table 'ivy-occur-grep-mode-abbrev-table '())
 
 (define-abbrev-table 'ivy-occur-mode-abbrev-table '())
 
-(define-abbrev-table 'julia-mode-abbrev-table '())
+(define-abbrev-table 'java-mode-abbrev-table
+  '(
+   ))
 
-(define-abbrev-table 'latex-mode-abbrev-table '())
+(define-abbrev-table 'js-jsx-mode-abbrev-table '())
+
+(define-abbrev-table 'js-mode-abbrev-table '())
+
+(define-abbrev-table 'js2-jsx-mode-abbrev-table '())
+
+(define-abbrev-table 'js2-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'message-mode-abbrev-table '())
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
+
+(define-abbrev-table 'objc-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
 
@@ -145,15 +165,37 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
+(define-abbrev-table 'pike-mode-abbrev-table
+  '(
+   ))
+
+(define-abbrev-table 'poly-fallback-mode-abbrev-table '())
+
+(define-abbrev-table 'poly-head-tail-mode-abbrev-table '())
+
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
 
-(define-abbrev-table 'sas-dir-mode-abbrev-table '())
+(define-abbrev-table 'python-mode-abbrev-table '())
+
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
+
+(define-abbrev-table 'select-tags-table-mode-abbrev-table '())
+
+(define-abbrev-table 'sgml-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
 
+(define-abbrev-table 'skewer-clients-mode-abbrev-table '())
+
+(define-abbrev-table 'skewer-error-mode-abbrev-table '())
+
 (define-abbrev-table 'special-mode-abbrev-table '())
+
+(define-abbrev-table 'speedbar-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 

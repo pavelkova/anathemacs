@@ -11,26 +11,70 @@
 
 ;; TODO keywords
 (with-eval-after-load 'org
+  (general-define-key
+   "<kp-multiply>" 'org-todo)
   ;; TODO
   (setq org-todo-keywords
-        '((sequence "○" "◑" "▶" "|" "●" "⮿")
-          ;; todo, partially done, postponed, possible | completed, cancelled
-          (sequence "△" "☆" "❔" "|" "▲" "★" "❓" "💡" "＄" "📎")
+        '((sequence "○(t)" "◑(r@)" "▶(p!)" "|" "●(d!)" "⮿(c!)")
+          ;; Todo, paRtially done, postponed | Done, Cancelled
+          (sequence "△(a)" "☆(e)" "❔(q)" "|" "▲(A)" "★(E)" "❓(Q)" "💡(i)" "＄(f)" "📎(b)")
           ;; appointment, event, research | appointment, event, research, idea, finance, bookmark
           )
-        org-hierarchical-todo-statistics nil)
+        org-hierarchical-todo-statistics nil
+        org-tag-alist '((:startgrouptag)
+                        ("campo")
+                        (:grouptags)
+                        ("aprendizaje")
+                        ("desarrollo")
+                        ("escritura")
+                        ("investigaciones")
+                        ("trabajo")
+                        ("vida")
+                        (:endgrouptag)
+                        (:startgrouptag)
+                        ("escritura")
+                        (:grouptags)
+                        ("devblog")
+                        ("carta")
+                        ("diario")
+                        ("ensayo")
+                        ("ficciones")
+                        (:endgrouptag)
+                        (:startgrouptag)
+                        ("vida")
+                        (:grouptags)
+                        ("edificación")
+                        ("limpieza")
+                        ("organización")
+                        ("salud")
+                        ("vanidad")
+                        (:endgrouptag)
+                        ("financiera")
+                        ("idea")
+                        ("media")
+                        ("nota")
+                        ("pregunta")
+                        ("recurso")))
   
   ;; AGENDA
   (hs-leader-def
     "A" 'org-agenda)
 
-  (setq org-refile-allow-creating-parent-nodes t
+  (setq org-log-done 'time
+        org-log-into-drawer t
+        org-archive-location (concat user-archive-file "::datetree/")
+        org-refile-allow-creating-parent-nodes t
         org-outline-path-complete-in-steps nil
         org-refile-targets '((nil :maxlevel . 2)
-                             (org-agenda-files :maxlevel . 2))
-        org-archive-location user-archive-file
+                             (org-agenda-files :maxlevel . 2)
+                             ((concat user-org-dir "investigación/investigación.org" :maxlevel 2)))
+
         org-agenda-window-setup 'current-window
-        org-agenda-files (list user-org-dir)
+        org-agenda-files '((concat user-org-dir "codex.org")
+                           ;; (concat user-org-dir "investigación/CURRENT_PROJECT_FOLDER/CURRENT_PROJECT.org")
+                           ;; (concat user-org-dir "trabajo/trabajo.org")
+                           (concat user-org-dir "mobile.org"))
+        org-agenda-text-search-extra-files '((directory-files-recursively user-org-dir "org"))
         org-agenda-include-diary t
         org-agenda-include-inactive-timestamps t
         org-agenda-custom-commands
@@ -41,10 +85,14 @@
                     ((org-agenda-overriding-header "tareas")
                      (org-agenda-sorting-strategy '(priority-down))))))
             ("n" "próximo" agenda ""
-             (;; (org-agenda-entry-types '(:deadline :scheduled :timestamp))
+             ((org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp))
               ;; (org-agenda-time-grid nil)
               (org-deadline-warning-days 30)
-              (org-agenda-overriding-header "próximo"))))))
+              (org-agenda-overriding-header "próximo")))
+            ("p"  "proyectos")
+            ("pb" "personalbrand" tags-todo "personalbrand")
+            ("pd" "dgar" tags-todo "dgar")
+            ("pp" "playsette" tags-todo "playsette"))))
 
 ;; BRAIN - mindmapping with org trees
 (use-package org-brain
@@ -73,15 +121,6 @@
         org-id-locations-file (concat user-dir ".org-id-locations")
         org-brain-visualize-default-choices 'all
         org-brain-title-max-length 12))
-
-;; ADD ID PROPERTY TO ALL ORG HEADINGS
-(defun org-add-ids-to-headlines ()
-  (interactive)
-  (org-map-entries 'org-id-get-create))
-
-;; (add-hook 'org-mode-hook
-;;           (lambda ()
-;;             (add-hook 'before-save-hook 'org-add-ids-to-headlines nil 'local)))
 
 (provide 'ana-planning)
 

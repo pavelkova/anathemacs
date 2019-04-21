@@ -20,6 +20,7 @@
 
 ;; calendar
 (use-package calfw
+  :demand t
   :general
   (hs-leader-def
     "C" 'cfw:open-org-calendar)
@@ -40,6 +41,7 @@
 
 (use-package calfw-org
   :after calfw
+  :demand t
   :config
   (load-file user-caldav-file)
   (setq org-caldav-inbox user-cal-file

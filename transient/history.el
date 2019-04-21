@@ -1,4 +1,6 @@
-((magit-branch nil)
+(("git-commit" nil)
+ ("git-push" nil)
+ (magit-branch nil)
  (magit-commit nil
                ("--all"))
  (magit-diff
