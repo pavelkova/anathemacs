@@ -8,6 +8,12 @@
 ;;
 
 ;;; Code:
+
+(use-package olivetti
+  :hook (text-mode . olivetti-mode)
+  :config
+  (setq olivetti-body-width 0.8))
+
 (with-eval-after-load 'org
   (setq org-startup-indented t
         org-ellipsis "..."

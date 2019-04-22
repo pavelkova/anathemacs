@@ -52,32 +52,41 @@
                         ("financiera")
                         ("idea")
                         ("media")
-                        ("nota")
+                        ;; ("nota")
                         ("pregunta")
                         ("recurso")))
   
   ;; AGENDA
   (hs-leader-def
     "A" 'org-agenda)
-
-  (setq org-log-done 'time
-        org-log-into-drawer t
-        org-archive-location (concat user-archive-file "::datetree/")
-        org-refile-allow-creating-parent-nodes t
-        org-outline-path-complete-in-steps nil
-        org-refile-targets '((nil :maxlevel . 2)
-                             (org-agenda-files :maxlevel . 2)
-                             ((concat user-org-dir "investigación/investigación.org" :maxlevel 2)))
-
-        org-agenda-window-setup 'current-window
-        org-agenda-files '((concat user-org-dir "codex.org")
-                           ;; (concat user-org-dir "investigación/CURRENT_PROJECT_FOLDER/CURRENT_PROJECT.org")
-                           ;; (concat user-org-dir "trabajo/trabajo.org")
-                           (concat user-org-dir "mobile.org"))
-        org-agenda-text-search-extra-files '((directory-files-recursively user-org-dir "org"))
+  (setq org-agenda-files '((concat user-org-dir "calendario.org")
+                           (concat user-org-dir "codex.org")
+                           (concat user-org-dir "mobile.org")
+                           (directory-files-recursively (concat user-org-dir "investigación/") "org"))
         org-agenda-include-diary t
         org-agenda-include-inactive-timestamps t
-        org-agenda-custom-commands
+        org-agenda-text-search-extra-files '((directory-files-recursively user-org-dir "org"))
+        org-agenda-window-setup 'current-window)
+
+  ;; FILING
+  (hs-leader-def
+    "fc" 'org-copy
+    "fL" 'org-refile-goto-last-stored
+    "fr" 'org-refile)
+
+  (setq org-archive-location (concat user-archive-file "::datetree/")
+        org-log-done 'time
+        org-log-into-drawer t
+        org-outline-path-complete-in-steps nil
+        org-refile-allow-creating-parent-nodes t
+        org-refile-targets '((nil :maxlevel . 4)
+                             (org-agenda-files :maxlevel . 4))
+
+
+        )
+
+  ;; AGENDA VIEWS
+  (setq org-agenda-custom-commands
         '(("a" "agenda"
              ((agenda "")))
             ("t" "tareas"
@@ -92,7 +101,9 @@
             ("p"  "proyectos")
             ("pb" "personalbrand" tags-todo "personalbrand")
             ("pd" "dgar" tags-todo "dgar")
-            ("pp" "playsette" tags-todo "playsette"))))
+            ("pp" "playsette" tags-todo "playsette")))
+
+  )
 
 ;; BRAIN - mindmapping with org trees
 (use-package org-brain

@@ -57,6 +57,7 @@
   "B" '(:ignore t :which-key "/brain/")
   "d" '(:ignore t :which-key "data")
   "D" '(:ignore t :which-key "/dokuwiki/")
+  "f" '(:ignore t :which-key "filing")
   "M" '(:ignore t :which-key "media")
   "p" '(:ignore t :which-key "project management")
   "r" '(:ignore t :which-key "research")

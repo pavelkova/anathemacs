@@ -9,9 +9,6 @@
 
 ;;; Code:
 
-(use-package olivetti
-  :hook (text-mode . olivetti-mode))
-
 (use-package org-journal
   :general
   (hs-leader-def
