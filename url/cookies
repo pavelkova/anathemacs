@@ -2,10 +2,7 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '((".reddit.com"
-  [url-cookie "rseor3" "true" "Mon, 01 Apr 2019 06:08:21 GMT" "/" ".reddit.com" nil]
-  [url-cookie "rabt" "" "Mon, 01 Apr 2019 06:08:21 GMT" "/" ".reddit.com" nil])
- (".twitter.com"
+ '((".twitter.com"
   [url-cookie "guest_id" "v1%3A155282397803031964" "Tue Mar 16 11:59:23 2021 GMT" "/" ".twitter.com" nil]
   [url-cookie "personalization_id" "v1_HsDmam6jmaI/f1yBiEYyEA==" "Tue Mar 16 11:59:23 2021 GMT" "/" ".twitter.com" nil])
  ("t.co"
@@ -20,10 +17,9 @@
 (setq url-cookie-secure-storage
  '(("reddit.com"
   [url-cookie "edgebucket" "UVyT4ZVfdth5IRT4Xk" "Mon Mar 01 06:05:04 2021 GMT" "/" "reddit.com" t])
- ("en.wikipedia.org"
-  [url-cookie "WMF-Last-Access" "17-Mar-2019" "Thu, 18 Apr 2019 00:00:00 GMT" "/" "en.wikipedia.org" t])
- (".wikipedia.org"
-  [url-cookie "WMF-Last-Access-Global" "17-Mar-2019" "Thu, 18 Apr 2019 00:00:00 GMT" "/" ".wikipedia.org" t])
+ ("unfcking.ml"
+  [url-cookie "userSessionID" "l6f4xnJqZUhJORAMjIYHA_WIk_JfwYtct8QP6of_zJ1eebVtkSm9zSUvxpDF4dK847mprG6BVcPVW7zqUepotg==" "Thu, 23 May 2019 00:06:44 GMT" "/rss" "unfcking.ml" t]
+  [url-cookie "sessionID" "kb95Rwb13-DpQkHhQutELRz1bOnAtqJKchZcJY6qw_4=" "Thu, 23 May 2019 00:06:34 GMT" "/rss" "unfcking.ml" t])
  (".reddit.com"
   [url-cookie "loid" "00000000003bubuh4b.2.1551506900681.Z0FBQUFBQmNlaDNVanp1MnBseko3cFE4LVRzcE5tZ2xYWTAyMWVWcEUzc1BTenc3VG93RlRNME9SSk1PSmVoSV9tWWhsWUFhSjNFRHFrTUppX0tlZDlLMjVVSnNHNGFBN0JYVzdqa3JKZU45WDZfYll4UG5tcGx3cG43XzFocnNkbGJsRklqVWlwOFk" "Tue, 02 Mar 2021 06:08:20 GMT" "/" ".reddit.com" t]
   [url-cookie "token" "eyJhY2Nlc3NUb2tlbiI6Ii1JWkM3U3dlSU9fRnh4T1Zfc2JSRmpOakpzMG8iLCJ0b2tlblR5cGUiOiJiZWFyZXIiLCJleHBpcmVzIjoiMjAxOS0wMy0wMlQwNzowODoyMC43MTBaIiwic2NvcGUiOiIqIiwidW5zYWZlTG9nZ2VkT3V0Ijp0cnVlfQ==.2" "Tue, 02 Mar 2021 06:08:20 GMT" "/" ".reddit.com" t]))

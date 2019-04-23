@@ -53,10 +53,10 @@
 
 (hs-leader-def
   "." '(:ignore t :which-key "speed dial")
-  "a" '(:ignore t :which-key "archive")
-  "B" '(:ignore t :which-key "/brain/")
+  "/" '(:ignore t :which-key "web tools")
+  "B" '(:ignore t :which-key "brain")
   "d" '(:ignore t :which-key "data")
-  "D" '(:ignore t :which-key "/dokuwiki/")
+  "D" '(:ignore t :which-key "dokuwiki")
   "f" '(:ignore t :which-key "filing")
   "M" '(:ignore t :which-key "media")
   "p" '(:ignore t :which-key "project management")

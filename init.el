@@ -60,12 +60,12 @@
 (require 'ana-base)
 (require 'ana-org-base)
 ;; tools
-(require 'ana-archiving)
 (require 'ana-completion)
 (require 'ana-exporting)
 (require 'ana-ivy)
 (require 'ana-processors)
 (require 'ana-snippets)
+(require 'ana-web)
 ;; ui
 (require 'ana-ui-base)
 (require 'ana-org-ui-base)

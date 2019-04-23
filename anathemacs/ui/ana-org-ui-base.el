@@ -15,14 +15,16 @@
   (setq olivetti-body-width 0.8))
 
 (with-eval-after-load 'org
-  (setq org-startup-indented t
-        org-ellipsis "..."
+  (setq org-ellipsis "..."
         org-pretty-entities t
         org-hide-emphasis-markers t
         org-agenda-block-separator ""
         org-fontify-whole-heading-line t
         org-fontify-done-headline nil
-        org-fontify-quote-and-verse-blocks t))
+        org-fontify-quote-and-verse-blocks t
+        org-startup-align-all-tables t
+        org-startup-indented t
+        org-startup-with-inline-images t))
   
 (use-package org-bullets
   :init

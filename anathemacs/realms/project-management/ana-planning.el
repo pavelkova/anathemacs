@@ -70,6 +70,7 @@
 
   ;; FILING
   (hs-leader-def
+    "fa" 'org-archive-subtree-default
     "fc" 'org-copy
     "fL" 'org-refile-goto-last-stored
     "fr" 'org-refile)
