@@ -130,14 +130,14 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("967d7f8d5e23226f13cb45ceea65549f7dcd5c14c5c98baf5f5879a464aa792f" "da4ecab1ab8bfe549178f98dfe9269d0fcaa563717062f5fb23c82f122ea8efd" "a9ab6683c4abcc7de6e7857f4cbd3ecd2c47375c24bd38ca922883ad4dcc3a5e" "cbb6865a1468fb7ffb5363ac4e0aca9207ef78692a1a33adc0167a9ea85279d4" "015756a68e1522b4fe5c6e4892ecf85805f54bcb7ab943a1ca6915b54052977e" default)))
- '(org-agenda-files (quote ("~/Media/documentos/org/")))
+    ("0948c29d02c37e9374e520d48f668091fbc7eb4ea9fe609c1abbcd4550ce502a" "a6d43ac50891095ed9eba3c3a3500ddcb689b9a1f2b7db906d6b86ff4ba51adf" "80829101844ca03702ef6f8cb7ca36bd11bbe45b342c089acf680822d2767ecc" "9d107ad2ab0a3785c2f9db3f86ed28ada9ea5ab607c7b3989b034eb546dcb42f")))
+ '(org-agenda-files
+   (quote
+    ("/home/gigi/Media/documentos/org/vida/salud/entrenamientos.org" "/home/gigi/Media/documentos/org/calendario.org" "/home/gigi/Media/documentos/org/codex.org" "/home/gigi/Media/documentos/org/mobile.org")))
  '(org-modules
    (quote
     (org-bibtex org-ctags org-docview org-element org-habit org-id org-info org-inlinetask)))
- '(package-selected-packages
-   (quote
-    (pandoc olivetti emms-player-simple-mpv mu4e-conversation mu4e-alert yasnippet-snippets yarn-mode ws-butler writeroom-mode writegood-mode wolfram-mode wiki-summary which-key web-mode web-beautify wc-mode use-package undo-tree undo-propose twittering-mode tramp-term tagedit systemd symon sudo-edit sqlformat spaceline smex smartparens slime shx scss-mode sass-mode sane-term rvm rubocop robe react-snippets rainbow-mode pyvenv pytest py-isort pug-mode projectile-rails pretty-mode pony-mode pippel pip-requirements pg persp-projectile persp-mode pandoc-mode ox-pandoc outline-magic origami org-web-tools org-ref org-projectile org-pomodoro org-noter org-journal org-index org-download org-cliplink org-chef org-bullets org-brain org-board ob-sql-mode npm-mode nix-mode nginx-mode neotree mwim multiple-cursors mixed-pitch md4rd matlab-mode markdown-toc markdown-preview-mode magithub magic-latex-buffer live-py-mode linguistic latex-pretty-symbols json-mode ivy-yasnippet ivy-rich ivy-omni-org intero imenu-list hy-mode hindent graphviz-dot-mode google-translate go-projectile gnuplot gitlab gitignore-mode gitconfig-mode git-timemachine git-gutter-fringe gist general fvwm-mode format-all foreman-mode flycheck-irony flycheck-haskell fish-mode eyebrowse ess-smart-equals ess-R-data-view ereader enh-ruby-mode emms emmet-mode emamux emacsql ein ebib dokuwiki-mode dokuwiki djangonaut django-mode diminish delight define-word dashboard cython-mode csv-mode crux counsel-tramp counsel-projectile company-web company-tern company-php company-nixos-options company-nginx company-math company-lua company-go company-emacs-eclim company-cabal company-anaconda cdlatex calfw-org calfw better-defaults auto-package-update auctex-latexmk all-the-icons-ivy activity-watch-mode)))
+ '(package-selected-packages nil)
  '(safe-local-variable-values
    (quote
     ((python-shell-virtualenv-root . "/home/gigi/Code/Current/playsette/venv/")

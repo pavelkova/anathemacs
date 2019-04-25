@@ -11,8 +11,8 @@
 
 (use-package olivetti
   :hook (text-mode . olivetti-mode)
-  :config
-  (setq olivetti-body-width 0.8))
+  :init
+  (setq olivetti-body-width 0.85))
 
 (with-eval-after-load 'org
   (setq org-ellipsis "..."

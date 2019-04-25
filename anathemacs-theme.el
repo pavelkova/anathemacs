@@ -538,7 +538,9 @@
 ;;;;; mu4e
      `(mu4e-cited-1-face ((,class (:foreground ,base))))
      `(mu4e-cited-7-face ((,class (:foreground ,base))))
-     `(mu4e-header-key-face ((,class (:foreground ,head1 :inherit bold))))
+     `(mu4e-header-face ((,class (:foreground ,head1 :weight normal))))
+     `(mu4e-header-highlight-face ((,class (:weight normal))))
+     `(mu4e-header-key-face ((,class (:foreground ,head1 :weight normal))))
      `(mu4e-header-marks-face ((,class (:foreground ,comp))))
      `(mu4e-unread-face ((,class (:foreground ,yellow-1 :inherit bold))))
      `(mu4e-view-url-number-face ((,class (:foreground ,comp))))

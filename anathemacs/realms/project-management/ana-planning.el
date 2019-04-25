@@ -59,17 +59,16 @@
   ;; AGENDA
   (hs-leader-def
     "A" 'org-agenda)
-  (setq org-agenda-files '((concat user-org-dir "calendario.org")
-                           (concat user-org-dir "codex.org")
-                           (concat user-org-dir "mobile.org")
-                           (directory-files-recursively (concat user-org-dir "investigación/") "org"))
+  (setq ;; org-agenda-files user-org-agenda-files  ;; manage manually
         org-agenda-include-diary t
         org-agenda-include-inactive-timestamps t
-        org-agenda-text-search-extra-files '((directory-files-recursively user-org-dir "org"))
+        org-agenda-text-search-extra-files '((directory-files-recursively org-directory "org"))
         org-agenda-window-setup 'current-window)
 
   ;; FILING
   (hs-leader-def
+    "f+" 'org-agenda-file-to-front
+    "f-" 'org-remove-file
     "fa" 'org-archive-subtree-default
     "fc" 'org-copy
     "fL" 'org-refile-goto-last-stored
@@ -83,7 +82,6 @@
         org-refile-targets '((nil :maxlevel . 4)
                              (org-agenda-files :maxlevel . 4))
 
-
         )
 
   ;; AGENDA VIEWS
@@ -95,7 +93,7 @@
                     ((org-agenda-overriding-header "tareas")
                      (org-agenda-sorting-strategy '(priority-down))))))
             ("n" "próximo" agenda ""
-             ((org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp))
+             (;; (org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp))
               ;; (org-agenda-time-grid nil)
               (org-deadline-warning-days 30)
               (org-agenda-overriding-header "próximo")))

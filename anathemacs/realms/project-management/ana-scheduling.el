@@ -37,15 +37,16 @@
         cfw:face-item-separator-color nil
         calendar-week-start-day 1))
 
-;;(use-package org-caldav)
+(use-package org-caldav
+  :init
+  (load-file user-caldav-file)
+  (setq org-caldav-inbox user-cal-file
+        org-icalendar-timezone "North_America/New_York"
+        org-caldav-files org-agenda-files))
 
 (use-package calfw-org
   :after calfw
-  :demand t
-  :config
-  (load-file user-caldav-file)
-  (setq org-caldav-inbox user-cal-file
-        org-icalendar-timezone "North_America/New_York)"))
+  :demand t)
 
 ;; (use-package org-context
 ;;   :after org-agenda

@@ -13,12 +13,15 @@
 (require 'mu4e)
 (require 'mu4e-context)
 (require 'smtpmail)
-(load-file user-mu4e-file)
+
+(load-file user-mu4e-file) ;; where contexts are defined
 
 (setq mu4e-completing-read-function 'ivy-completing-read
       mu4e-compose-signature-auto-include nil
       mu4e-attachment-dir "~/Downloads"
-      mu4e-get-mail-command "offlineimap"
+      mu4e-get-mail-command "mbsync -aV"
+      mu4e-headers-include-related t
+      mu4e-headers-skip-duplicates t
       mu4e-hide-index-messages t
       mu4e-maildir "~/.local/mail"
       mu4e-update-interval 300
@@ -27,6 +30,7 @@
       mu4e-view-prefer-html t
       mu4e-view-show-addresses t
       mu4e-view-show-images t
+      mu4e-split-view 'horizontal
       smtpmail-debug-info t
       smtpmail-send-mail-function 'smtpmail-send-it)
 
