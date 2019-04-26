@@ -11,7 +11,7 @@
 
 ;; SETUP
 (hs-leader-def
-  "c" 'org-capture)
+  "C" 'org-capture)
 
 ;; (add-hook 'org-capture-prepare-finalize-hook 'org-id-get-create)
 
@@ -40,18 +40,18 @@ SCHEDULED: %t
       ;;;; APPOINTMENT
         ("c" "cita" entry
          (file+olp+datetree user-cal-file)
-         "** △ %^{cita} %? :cita:
-SCHEDULED: %T
+         "** %^{cita} %? :cita:
 :PROPERTIES:
-:location:
-:END:"
+:LOCATION:
+:END:
+%T"
          :tree-type month)
 
       ;;;; EVENT
         ("e" "evento" entry
          (file+olp+datetree user-cal-file)
-         "** ☆ %^{evento} %? :evento:
-SCHEDULED: %t"
+         "** %^{evento} %? :evento:
+%t"
          :tree-type month)
 
       ;;;; NOTE

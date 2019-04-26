@@ -11,6 +11,10 @@ recent*
 # ignore installed packages
 elpa
 network-security.data
+anaconda-mode
+emms
+transient
+var
 
 # ignore project files
 .projectile
@@ -25,3 +29,10 @@ tramp
 secrets
 .*sync*
 *.db*
+/eww-bookmarks
+/org-caldav-2e61f67.el
+/.dir-locals.el
+/user/.twittering-mode-user-info.gz
+/.last-package-update-day
+/abbrev_defs
+/.org-id-locations

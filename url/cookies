@@ -17,6 +17,9 @@
 (setq url-cookie-secure-storage
  '(("reddit.com"
   [url-cookie "edgebucket" "UVyT4ZVfdth5IRT4Xk" "Mon Mar 01 06:05:04 2021 GMT" "/" "reddit.com" t])
+ ("nextcloud.unfcking.ml"
+  [url-cookie "__Host-nc_sameSiteCookiestrict" "true" "Fri, 31-Dec-2100 23:59:59 GMT" "/" "nextcloud.unfcking.ml" t]
+  [url-cookie "__Host-nc_sameSiteCookielax" "true" "Fri, 31-Dec-2100 23:59:59 GMT" "/" "nextcloud.unfcking.ml" t])
  ("unfcking.ml"
   [url-cookie "userSessionID" "l6f4xnJqZUhJORAMjIYHA_WIk_JfwYtct8QP6of_zJ1eebVtkSm9zSUvxpDF4dK847mprG6BVcPVW7zqUepotg==" "Thu, 23 May 2019 00:06:44 GMT" "/rss" "unfcking.ml" t]
   [url-cookie "sessionID" "kb95Rwb13-DpQkHhQutELRz1bOnAtqJKchZcJY6qw_4=" "Thu, 23 May 2019 00:06:34 GMT" "/rss" "unfcking.ml" t])

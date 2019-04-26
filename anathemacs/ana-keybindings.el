@@ -55,6 +55,7 @@
   "." '(:ignore t :which-key "speed dial")
   "/" '(:ignore t :which-key "web tools")
   "B" '(:ignore t :which-key "brain")
+  "c" '(:ignore t :which-key "calendar")
   "d" '(:ignore t :which-key "data")
   "D" '(:ignore t :which-key "dokuwiki")
   "f" '(:ignore t :which-key "filing")
