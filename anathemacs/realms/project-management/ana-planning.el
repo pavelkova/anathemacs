@@ -17,9 +17,9 @@
   (setq org-todo-keywords
         '((sequence "○(t)" "◑(r@)" "▶(p!)" "|" "●(d!)" "⮿(c!)")
           ;; Todo, paRtially done, postponed | Done, Cancelled
-          (sequence "△(a)" "☆(e)" "❔(q)" "|" "▲(A)" "★(E)" "❓(Q)" "💡(i)" "＄(f)" "📎(b)")
+          ;; (sequence "△(a)" "☆(e)" "❔(q)" "|" "▲(A)" "★(E)" "❓(Q)" "💡(i)" "＄(f)" "📎(b)")
           ;; appointment, event, research | appointment, event, research, idea, finance, bookmark
-          )
+          (sequence "△(a)" "☆(e)" "❔(q)" "|" "▲(A)" "★(E)" "❓(Q)"))
         org-hierarchical-todo-statistics nil
         org-tag-alist '((:startgrouptag)
                         ("campo")
@@ -55,15 +55,6 @@
                         ;; ("nota")
                         ("pregunta")
                         ("recurso")))
-  
-  ;; AGENDA
-  (hs-leader-def
-    "A" 'org-agenda)
-  (setq ;; org-agenda-files user-org-agenda-files  ;; manage manually
-        org-agenda-include-diary t
-        org-agenda-include-inactive-timestamps t
-        org-agenda-text-search-extra-files '((directory-files-recursively org-directory "org"))
-        org-agenda-window-setup 'current-window)
 
   ;; FILING
   (hs-leader-def
@@ -80,29 +71,7 @@
         org-outline-path-complete-in-steps nil
         org-refile-allow-creating-parent-nodes t
         org-refile-targets '((nil :maxlevel . 4)
-                             (org-agenda-files :maxlevel . 4))
-
-        )
-
-  ;; AGENDA VIEWS
-  (setq org-agenda-custom-commands
-        '(("a" "agenda"
-             ((agenda "")))
-            ("t" "tareas"
-             ((todo "tareas"
-                    ((org-agenda-overriding-header "tareas")
-                     (org-agenda-sorting-strategy '(priority-down))))))
-            ("n" "próximo" agenda ""
-             (;; (org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp))
-              ;; (org-agenda-time-grid nil)
-              (org-deadline-warning-days 30)
-              (org-agenda-overriding-header "próximo")))
-            ("p"  "proyectos")
-            ("pb" "personalbrand" tags-todo "personalbrand")
-            ("pd" "dgar" tags-todo "dgar")
-            ("pp" "playsette" tags-todo "playsette")))
-
-  )
+                             (org-agenda-files :maxlevel . 4))))
 
 ;; BRAIN - mindmapping with org trees
 (use-package org-brain

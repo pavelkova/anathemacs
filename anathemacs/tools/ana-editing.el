@@ -14,9 +14,19 @@
 
 (setq display-line-numbers-width-start t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; Visibility
 (ha-leader-def
-  "vl" 'display-line-numbers-mode
-  "vL" 'global-display-line-numbers-mode)
+  ";." 'hs-minor-mode
+  ";]" 'hs-hide-block
+  ";[" 'hs-show-block
+  ";\-" 'hs-toggle-hiding
+  ";a" 'hs-hide-all
+  ";A" 'hs-show-all
+  ";l" 'display-line-numbers-mode
+  ";L" 'global-display-line-numbers-mode)
+
+
 
 ;; comments
 (ha-leader-def
@@ -51,30 +61,21 @@
    "C->" 'mc/edit-ends-of-lines
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
-(use-package origami
-  :general
-  (ha-leader-def
-    "v," 'origami-toggle-node
-    "v;" 'origami-recursively-toggle-node
-    "v-" 'origami-forward-toggle-node
-    "v." 'origami-show-only-node))
-
 (use-package smartparens
   :diminish smartparens-mode
   :init
   (smartparens-global-mode))
 
-(use-package undo-propose)
-
 (use-package undo-tree
   :diminish undo-tree-mode
-  :hook ((prog-mode text-mode) . (lambda () global-undo-tree-mode))
+  :init
+  (global-undo-tree-mode t)
   :general
   (ha-leader-def
-    "<insert>" 'undo-tree-visualize
+    "<kp-0>" 'undo-tree-visualize
     "<left>"   'undo-tree-undo
     "<right>"  'undo-tree-redo
-    "<deletechar>" 'undo-tree-visualize-redo)
+    "<kp-decimal>" 'undo-tree-visualize-redo)
   :config
   (setq undo-tree-visualizer-diff t
         undo-tree-visualizer-relative-timestamps t
@@ -82,6 +83,7 @@
         undo-tree-history-directory-alist `((".*" . "~/.cache/emacs/backups/"))))
 
 (use-package ws-butler
+  :diminish t
   :init
   (ws-butler-global-mode))
 
@@ -89,3 +91,4 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-editing.el ends here
+

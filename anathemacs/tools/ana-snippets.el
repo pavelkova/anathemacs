@@ -8,13 +8,12 @@
 (use-package yasnippet
   :diminish yas-minor-mode
   :init
-  (yas-global-mode 1)
+  (yas-global-mode t)
   (ha-leader-def
     "s." 'yas-minor-mode
     "sf" 'yas-visit-snippet-file
     "si" 'yas-insert-snippet
-    "sn" 'yas-new-snippet)
-  (setq yas-snippet-dirs '(user-snippets-dir)))
+    "sn" 'yas-new-snippet))
 
 (use-package ivy-yasnippet
   :general

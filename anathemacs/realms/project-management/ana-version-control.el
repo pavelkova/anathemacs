@@ -39,6 +39,7 @@
   :mode "\\.git/config\\'")
 
 (use-package git-gutter-fringe
+  :diminish t
   :init
   (global-git-gutter-mode)
   :config

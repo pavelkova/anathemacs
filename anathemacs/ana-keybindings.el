@@ -23,6 +23,7 @@
 (define-key key-translation-map [8711] 'event-apply-hyper-modifier)
 
 (use-package general
+  :demand t
   :init
   (general-create-definer ha-leader-def
     ;; general bindings for mode-agnostic actions: projectile and versioning controls, file management, error handling, editing tools, etc.
@@ -39,6 +40,8 @@
   )
 
 (ha-leader-def
+  ;; "." '(:ignore t :which-key "crux")
+  ";" '(:ignore t :which-key "hide/show")
   "c" '(:ignore t :which-key "comments")
   "e" '(:ignore t :which-key "errors")
   "f" '(:ignore t :which-key "files")
@@ -47,12 +50,11 @@
   "i" '(:ignore t :which-key "insert")
   "p" '(:ignore t :which-key "projects")
   "t" '(:ignore t :which-key "terminal")
-  "v" '(:ignore t :which-key "visibility")
   "W" '(:ignore t :which-key "windows")
   "w" '(:ignore t :which-key "workspaces"))
 
 (hs-leader-def
-  "." '(:ignore t :which-key "speed dial")
+  ;; "." '(:ignore t :which-key "speed dial")
   "/" '(:ignore t :which-key "web tools")
   "B" '(:ignore t :which-key "brain")
   "c" '(:ignore t :which-key "calendar")

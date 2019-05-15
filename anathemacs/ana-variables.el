@@ -18,8 +18,6 @@
 
 (setq user-secrets-dir (concat user-dir "secrets/"))
 
-(setq user-snippets-dir (concat user-dir "snippets/"))
-
 ;; org paths
 
 (setq org-directory "~/Media/documentos/org/") ;; this is used by org-mode

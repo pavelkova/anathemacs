@@ -34,7 +34,8 @@
          "t" "tarea" entry
          (file+headline user-master-file "braindump")
          "** ○ %^{tarea} %?
-SCHEDULED: %t
+:PROPERTIES:
+:END:
 %T")
         
       ;;;; APPOINTMENT
@@ -51,26 +52,21 @@ SCHEDULED: %t
         ("e" "evento" entry
          (file+olp+datetree user-cal-file)
          "** %^{evento} %? :evento:
+:PROPERTIES:
+:END:
 %t"
          :tree-type month)
 
       ;;;; NOTE
         ("n" "nota" entry
          (file+headline user-master-file "braindump")
-         "** %^{nota} %? :nota:
+         "** %^{nota} %?
 %T")
         
       ;;;; LINK
         ("l" "enlace" entry
          ((file+headline user-master-file "braindump"))
          "** %(org-cliplink-capture) :recurso:
-%T")
-        
-;;       ;;;; BOOKMARK
-        ("m" "marcador" entry
-         (file+headline user-master-file "marcadores")
-         "** 📎 %? :recurso:
-%a
 %T")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES
@@ -112,23 +108,6 @@ SCHEDULED: %t
 	("L" "protocol link" entry
          (file+headline user-master-file "braindump")
         "* %? [[%:link][%:description]] :recurso:
-%T")
-
-      ;;---PERSONAL
-      ;;;; bullet journal entries
-        ("1" "idea" entry
-         (file+headline user-master-file "braindump")
-         "** 💡 %^{idea} %?
-%T")
-
-        ("2" "finanzas" entry
-         (file+headline user-master-file "braindump")
-         "** ＄ %^{dinero} %? :finaciero:
-%T")
-
-        ("3" "pregunta" entry
-         (file+headline user-master-file "braindump")
-                  "** ❔ %^{look up} %? :pregunta:
 %T")
         ))
 

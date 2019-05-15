@@ -45,7 +45,9 @@
    "/e" 'org-web-tools-insert-web-page-as-entry
    "/E" 'org-web-tools-convert-links-to-page-entries
    ;; "/l" 'org-web-tools-insert-link-for-url
-   "/r" 'org-web-tools-read-url-as-org))
+   "/r" 'org-web-tools-read-url-as-org)
+  :config
+  (org-web-tools-pandoc-sleep-time 1.0))
 
 (with-eval-after-load 'org-web-tools
   ;; Modify

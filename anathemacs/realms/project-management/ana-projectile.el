@@ -52,7 +52,7 @@
         org-projectile-per-project-filepath (concat (projectile-project-name) ".org")
         org-agenda-files (append org-agenda-files (org-projectile-todo-files))
         org-projectile-capture-template
-(concat "** □ %^{project todo} %? :(projectile-project-name):
+(concat "** ○ %^{project todo} %? :(projectile-project-name):
 %T")))
 
 (use-package persp-projectile

@@ -41,6 +41,9 @@
                      (tramp-remote-shell "/bin/sh")
                      (tramp-remote-shell-args ("-c")))))
 
+(hs-leader-def
+  "sp" 'list-processes)
+
 (provide 'ana-server)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

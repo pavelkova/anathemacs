@@ -9,7 +9,7 @@
 
 ;;; Code:
 ;; spell checking
-;; (use-package auto-dictionary)
+(use-package auto-dictionary)
 
 (use-package define-word
   :general
