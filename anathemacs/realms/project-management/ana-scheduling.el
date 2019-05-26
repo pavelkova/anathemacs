@@ -74,10 +74,8 @@
     "cs" 'org-caldav-sync)
   :config
   (setq org-caldav-inbox user-cal-file
-       ;;org-caldav-inbox (file+headline user-cal-file "Inbox")
         org-caldav-delete-calendar-entries t
-        org-icalendar-timezone "North_America/New_York"
-        org-caldav-files org-agenda-files))
+        org-icalendar-timezone "North_America/New_York"))
 
 (use-package calfw-org
   :after calfw

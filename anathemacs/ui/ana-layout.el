@@ -43,6 +43,10 @@
     "ws"          'persp-switch-to-buffer
     "wt"          'persp-temporarily-display-buffer))
 
+
+;; FRAMES
+(setq iconify-child-frame 'iconify)
+
 (provide 'ana-layout)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

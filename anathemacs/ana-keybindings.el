@@ -37,6 +37,8 @@
   (general-create-definer minor-leader-def
     :prefix "C-c")
   ;; use with ':keymaps <mode>' to add to
+  (general-create-definer major-leader-def
+    :prefix "C-x")
   )
 
 (ha-leader-def
@@ -66,6 +68,13 @@
   "r" '(:ignore t :which-key "research")
   "s" '(:ignore t :which-key "system")
   "w" '(:ignore t :which-key "writing"))
+
+(major-leader-def
+  "4" '(:ignore t :which-key "other window")
+  "5" '(:ignore t :which-key "frames")
+  "8" '(:ignore t :which-key "insert character")
+  "a" '(:ignore t :which-key "abbrevs")
+  "n" '(:ignore t :which-key "narrow"))
 
 (provide 'ana-keybindings)
 
