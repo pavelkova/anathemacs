@@ -18,9 +18,11 @@
         org-journal-find-file 'find-file
         org-journal-file-type 'yearly
         org-journal-enable-agenda-integration t
-        org-journal-date-format "%d %B %Y [%A]"
-        org-journal-file-format "%Y.org")
-  (global-unset-key (kbd "C-c C-j")))
+        org-journal-date-format "%Y-%B-%d"
+        org-journal-time-format "%H:%M"
+        org-journal-file-format "%Y.org"))
+
+(global-unset-key (kbd "C-c C-j"))
 
 (use-package wc-mode
   :delight wc-mode

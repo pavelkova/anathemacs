@@ -73,9 +73,9 @@
   (hs-leader-def
     "cs" 'org-caldav-sync)
   :config
-  (setq org-caldav-inbox user-cal-file
-        org-caldav-delete-calendar-entries t
-        org-icalendar-timezone "North_America/New_York"))
+  (setq org-caldav-delete-calendar-entries t
+        org-icalendar-timezone "North_America/New_York"
+        org-caldav-files '("~/Media/documentos/org/calendario.org")))
 
 (use-package calfw-org
   :after calfw
@@ -116,7 +116,7 @@
   )
 
 (hs-leader-def
-  "cr" 'org-refile-to-datetree)
+  "fd" 'org-refile-to-datetree)
 
 (provide 'ana-scheduling)
 

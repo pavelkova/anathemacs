@@ -22,9 +22,11 @@
 (use-package org-chef
   :defer t)
 
+;; (defun org-journal-find-location ()
+;;   (org-journal-new-entry t)
+;;   (goto-char (point-min)))
 (defun org-journal-find-location ()
-  (org-journal-new-entry t)
-  (goto-char (point-min)))
+  (concat org-journal-dir org-journal-file-format))
 
 ;; TEMPLATES
 (setq org-capture-templates
@@ -34,8 +36,6 @@
          "t" "tarea" entry
          (file+headline user-master-file "braindump")
          "** ○ %^{tarea} %?
-:PROPERTIES:
-:END:
 %T")
         
       ;;;; APPOINTMENT
@@ -46,16 +46,16 @@
 :LOCATION:
 :END:
 %T"
-         :tree-type month)
+         :tree-type month
+         :time-prompt t)
 
       ;;;; EVENT
         ("e" "evento" entry
-         (file+olp+datetree user-cal-file)
+         (function org-journal-find-location)
          "** %^{evento} %? :evento:
-:PROPERTIES:
-:END:
 %t"
-         :tree-type month)
+         :tree-type month
+         :time-prompt t)
 
       ;;;; NOTE
         ("n" "nota" entry
@@ -93,6 +93,16 @@
 %?
 ** Directions")
 
+      ;;;; ORG-JOURNAL
+        ("j" "journal entry" entry (file+olp+datetree (concat org-journal-dir org-journal-file-format))
+                               "* %H:%M :diario:
+:PROPERTIES:
+:word_count:
+:END:
+%T
+%?"
+         :tree-type month)
+
       ;;;; ORG-CAPTURE EXTENSION
         ("p" "protocol" entry
          (file+headline user-master-file "braindump")
@@ -110,7 +120,6 @@
         "* %? [[%:link][%:description]] :recurso:
 %T")
         ))
-
 (provide 'ana-capture)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

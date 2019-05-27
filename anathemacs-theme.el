@@ -589,7 +589,7 @@
      `(org-indent ((,class (:inherit org-hide))))
      `(org-kbd ((,class (:inherit region :foreground ,base :box (:line-width 1 :style released-button)))))
      `(org-level-1 ((,class (:slant italic :height 290 :foreground ,base))))
-     `(org-level-2 ((,class (:height 140 :foreground ,base))))
+     `(org-level-2 ((,class (:height 170 :slant italic :foreground ,base))))
      `(org-level-3 ((,class (:inherit org-level-2))))
      `(org-level-4 ((,class (:inherit org-level-2))))
      `(org-level-5 ((,class (:inherit org-level-2))))
