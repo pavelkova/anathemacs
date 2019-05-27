@@ -34,6 +34,12 @@
   (hs-leader-def
     "s?" 'symon-mode))
 
+(use-package pass)
+
+(require 'auth-source-pass)
+(auth-source-pass-enable)
+(setq auth-sources '(password-store))
+
 (provide 'ana-os)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
