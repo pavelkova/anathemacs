@@ -88,10 +88,13 @@
 ;; development
 (require 'ana-c)
 (require 'ana-elisp)
+(require 'ana-elixir)
+(require 'ana-erlang)
 (require 'ana-go)
 (require 'ana-haskell)
 (require 'ana-java)
 (require 'ana-js-react)
+(require 'ana-js-vue)
 (require 'ana-js)
 (require 'ana-lisp)
 (require 'ana-lua)

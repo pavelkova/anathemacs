@@ -19,32 +19,32 @@
     "pa" 'global-activity-watch-mode))
 
 ;; agenda
-  ;; AGENDA
-  (hs-leader-def
-    "A" 'org-agenda)
-  (setq ;; org-agenda-files user-org-agenda-files  ;; manage manually
-        org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp)
-        org-agenda-include-diary t
-        org-agenda-include-inactive-timestamps t
-        org-agenda-skip-additional-timestamps-same-entry t
-        org-agenda-text-search-extra-files (directory-files-recursively org-directory "org")
-        org-agenda-window-setup 'current-window)
-  ;; AGENDA VIEWS
-  (setq org-agenda-custom-commands
-        '(("a" "agenda"
-             ((agenda "")))
-            ("t" "tareas"
-             ((todo "tareas"
-                    ((org-agenda-overriding-header "tareas")
-                     (org-agenda-sorting-strategy '(priority-down))))))
-            ("n" "próximo" agenda ""
-             ((org-agenda-time-grid nil)
-              (org-deadline-warning-days 30)
-              (org-agenda-overriding-header "próximo")))
-            ("p"  "proyectos")
-            ("pb" "personalbrand" tags-todo "personalbrand")
-            ("pd" "dgar" tags-todo "dgar")
-            ("pp" "playsette" tags-todo "playsette")))
+;; AGENDA
+(hs-leader-def
+  "A" 'org-agenda)
+(setq ;; org-agenda-files user-org-agenda-files  ;; manage manually
+ org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp)
+ org-agenda-include-diary t
+ org-agenda-include-inactive-timestamps t
+ org-agenda-skip-additional-timestamps-same-entry t
+ org-agenda-text-search-extra-files (directory-files-recursively org-directory "org")
+ org-agenda-window-setup 'current-window)
+;; AGENDA VIEWS
+(setq org-agenda-custom-commands
+      '(("a" "agenda"
+         ((agenda "")))
+        ("t" "tareas"
+         ((todo "tareas"
+                ((org-agenda-overriding-header "tareas")
+                 (org-agenda-sorting-strategy '(priority-down))))))
+        ("n" "próximo" agenda ""
+         ((org-agenda-time-grid nil)
+          (org-deadline-warning-days 30)
+          (org-agenda-overriding-header "próximo")))
+        ("p"  "proyectos")
+        ("pb" "personalbrand" tags-todo "personalbrand")
+        ("pd" "dgar" tags-todo "dgar")
+        ("pp" "playsette" tags-todo "playsette")))
 
 ;; calendar
 (use-package calfw
@@ -90,6 +90,10 @@
   :general
   (hs-leader-def
     "pP" 'org-pomodoro))
+
+(use-package org-edna
+  :init
+  (org-edna-load))
 
 ;; use to refile
 (defun org-refile-to-datetree (&optional file)

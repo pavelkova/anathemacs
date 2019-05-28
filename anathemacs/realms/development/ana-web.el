@@ -8,22 +8,17 @@
 ;;
 
 ;;; Code:
-;; Tern
-;; (add-to-list 'load-path "/usr/lib/node_modules/tern/emacs/")
-;; (autoload 'tern-mode "tern.el" nil t)
-;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-
-(use-package tern
-  :load-path "/usr/lib/node_modules/tern/emacs/"
-  :hook (js-mode . tern-mode))
-
-(use-package company-tern
-  :hook (tern-mode . (set-local-company-backend company-tern)))
 
 (use-package company-web
   :general
   (hd-leader-def
     "wc" 'company-web-html))
+
+(use-package json-mode
+  :mode "\\.json\\'"
+  :config
+  (use-package json-reformat)
+  (use-package json-snatcher))
 
 (use-package web-mode
   :general

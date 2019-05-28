@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: README.org
+# key: <readme
+# --
+\#+TITLE: Project name
+* About
+** Description
+** Features
+* Installation
+** Dependencies
+* Usage
+* Development
+** Roadmap
+** Change log
+** Author and acknowledgments
+** License

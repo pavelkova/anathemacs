@@ -8,12 +8,19 @@
 ;;
 
 ;;; Code:
-;; json
-(use-package json-mode
-  :mode "\\.json\\'"
-  :config
-  (use-package json-reformat)
-  (use-package json-snatcher))
+
+(use-package js2-mode
+  :hook (js-mode . js2-minor-mode))
+
+(use-package rjsx-mode
+  :mode ("components\\/.*\\.js\\'" . rjsx-mode))
+
+(use-package tern
+  :load-path "/usr/lib/node_modules/tern/emacs/"
+  :hook (js-mode . tern-mode))
+
+(use-package company-tern
+  :hook (tern-mode . (set-local-company-backend company-tern)))
 
 (provide 'ana-js)
 

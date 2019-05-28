@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: exercise
+# key: <exdb
+# expand-env: ((yas-indent-line 'fixed))
+# --
+** ${1:Exercise name}
+:PROPERTIES:
+:exercise_type: ${2:$$(yas-choose-value '("accessory" "compound" "main"))}
+:muscle_target: ${3:$$(yas-choose-value '("abdominals" "back" "biceps" "calves" "chest" "forearms" "glutes" "hamstrings" "quadriceps" "shoulders" "triceps"))}
+:force: ${4:$$(yas-choose-value '("pull" "push"))}
+:equipment: ${5:$$(yas-choose-value '("barbell" "bench" "bodyweight" "cable" "dumbbell" "kettlebell" "machine" "swiss_ball"))}
+:record_type: ${6:$$(yas-choose-value '("reps" "time"))}
+:END:
+*** Instructions
+**** ${7:First step}
+*** Example

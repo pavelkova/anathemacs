@@ -9,11 +9,24 @@
 
 ;;; Code:
 
-;; TODO keywords
+;; TODO keybindings
 (with-eval-after-load 'org
   (general-define-key
    "<kp-multiply>" 'org-todo)
-  ;; TODO
+
+ (hs-leader-def
+   ".t" 'org-todo-list)
+
+   ;; FILING
+  (hs-leader-def
+    "f+" 'org-agenda-file-to-front
+    "f-" 'org-remove-file
+    "fa" 'org-archive-subtree-default
+    "fc" 'org-copy
+    "fL" 'org-refile-goto-last-stored
+    "fr" 'org-refile)
+
+  ;; TODO keywords
   (setq org-todo-keywords
         '((sequence "○(t)" "◑(r@)" "▶(p!)" "|" "●(d!)" "⮿(c!)")
           ;; Todo, paRtially done, postponed | Done, Cancelled
@@ -56,14 +69,7 @@
                         ("pregunta")
                         ("recurso")))
 
-  ;; FILING
-  (hs-leader-def
-    "f+" 'org-agenda-file-to-front
-    "f-" 'org-remove-file
-    "fa" 'org-archive-subtree-default
-    "fc" 'org-copy
-    "fL" 'org-refile-goto-last-stored
-    "fr" 'org-refile)
+
 
   (setq org-archive-location (concat user-archive-file "::datetree/")
         org-log-done 'time
@@ -100,6 +106,12 @@
         org-id-locations-file (concat user-dir ".org-id-locations")
         org-brain-visualize-default-choices 'all
         org-brain-title-max-length 12))
+
+;; KANBAN
+(use-package org-kanban
+  :general
+  (hs-leader-def
+    "k" 'org-kanban/initialize))
 
 (provide 'ana-planning)
 

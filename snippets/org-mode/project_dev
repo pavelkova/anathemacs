@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: development project
+# key: <dev
+# --
+** $1 [%] - [[file:~/Code/Current/\{${2:enumerate}\}]\\[Project]] / [[file:~/Code/Current/$2/README.org]\\[README]]                          :desarrollo:$2:
+:PROPERTIES:
+:language:
+:framework:
+:database:
+:framework+:
+:END:
+:LOGBOOK:
+:END:
+*** Outline
+*** Tasks [/]
+*** Blog :devblog:
