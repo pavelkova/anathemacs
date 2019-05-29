@@ -16,6 +16,8 @@
 
 (with-eval-after-load 'org
   (setq org-ellipsis "..."
+        org-list-indent-offset 2
+        org-tags-column 0
         org-pretty-entities t
         org-hide-emphasis-markers t
         org-agenda-block-separator ""

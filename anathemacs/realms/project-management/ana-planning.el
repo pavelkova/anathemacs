@@ -12,7 +12,8 @@
 ;; TODO keybindings
 (with-eval-after-load 'org
   (general-define-key
-   "<kp-multiply>" 'org-todo)
+   "<kp-multiply>" 'org-todo
+   "<C-kp-multiply>" 'org-toggle-checkbox)
 
  (hs-leader-def
    ".t" 'org-todo-list)
@@ -32,7 +33,9 @@
           ;; Todo, paRtially done, postponed | Done, Cancelled
           ;; (sequence "△(a)" "☆(e)" "❔(q)" "|" "▲(A)" "★(E)" "❓(Q)" "💡(i)" "＄(f)" "📎(b)")
           ;; appointment, event, research | appointment, event, research, idea, finance, bookmark
-          (sequence "△(a)" "☆(e)" "❔(q)" "|" "▲(A)" "★(E)" "❓(Q)"))
+          ;; (sequence "△(a)" "☆(e)" "❔(q)" "|" "▲(A)" "★(E)" "❓(Q)")
+          )
+        ;; org-list-demote-modify-bullet '(("+" . "-"))
         org-hierarchical-todo-statistics nil
         org-tag-alist '((:startgrouptag)
                         ("campo")

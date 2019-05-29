@@ -64,8 +64,10 @@
     "gs" 'magit-status
     "gc" 'magit-commit
     "gF" 'magit-stage-file
+    "gi" 'magit-ignore
     "gm" 'magit-stage-modified
-    "gp" 'magit-push)
+    "gp" 'magit-push
+    "gu" 'magit-unstage-file)
   :config
   (use-package magit-popup))
 
@@ -73,7 +75,16 @@
   :after magit
   :config
   (magithub-feature-autoinject t)
-  (setq auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc")))
+  (setq auth-sources '("~/.password-store")))
+
+;; integrate with system pass
+
+(use-package pass)
+
+(require 'auth-source-pass)
+(auth-source-pass-enable)
+(setq auth-sources '(password-store))
+
 
 (provide 'ana-version-control)
 

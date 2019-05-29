@@ -41,19 +41,19 @@
         projectile-find-dir-includes-top-level t
         projectile-mode-line-function '(lambda () (format "⧉  %s " (projectile-project-name)))))
 
-(use-package org-projectile
-  :init
-  (org-projectile-per-project)
-  (hs-leader-def
-    ".p" 'org-projectile-capture-for-current-project
-    ".P" '(org-projectile-project-todo-completing-read :which-key "org-projectile: new task (other project)"))
-  :config
-  (setq org-projectile-projects-directory (concat org-directory "desarrollo/")
-        org-projectile-per-project-filepath (concat (projectile-project-name) ".org")
-        org-agenda-files (append org-agenda-files (org-projectile-todo-files))
-        org-projectile-capture-template
-(concat "** ○ %^{project todo} %? :(projectile-project-name):
-%T")))
+;; (use-package org-projectile
+;;   :init
+;;   (org-projectile-per-project)
+;;   (hs-leader-def
+;;     ".p" 'org-projectile-capture-for-current-project
+;;     ".P" '(org-projectile-project-todo-completing-read :which-key "org-projectile: new task (other project)"))
+;;   :config
+;;   (setq org-projectile-projects-directory (concat org-directory "desarrollo/")
+;;         org-projectile-per-project-filepath (concat (projectile-project-name) ".org")
+;;         org-agenda-files (append org-agenda-files (org-projectile-todo-files))
+;;         org-projectile-capture-template
+;; (concat "** ○ %^{project todo} %? :(projectile-project-name):
+;; %T")))
 
 (use-package persp-projectile
   :general

@@ -9,9 +9,11 @@
 
 ;;; Code:
 
-(use-package flycheck-elixir
-  :after flycheck
-  :hook (flycheck-mode . flycheck-elixir-setup))
+;; (use-package flycheck-elixir
+;;   :after flycheck
+;;   :hook (flycheck-mode . flycheck-elixir-setup))
+
+(use-package alchemist)
 
 (use-package elixir-mode
   :config
