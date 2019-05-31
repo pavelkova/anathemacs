@@ -609,6 +609,7 @@
      `(org-scheduled-today ((,class (:foreground ,func))))
      `(org-sexp-date ((,class (:foreground ,base))))
      `(org-special-keyword ((,class (:inherit org-meta-line))))
+     `(org-checkbox-statistics-done ((,class (:inherit org-done :height 100))))
      `(org-checkbox-statistics-todo ((,class (:inherit org-todo :height 100))))
      `(org-tag ((,class (:foreground ,meta :height 90 :family ,base-font))))
      `(org-tag-group ((,class (:inherit org-tag :foreground ,comp))))

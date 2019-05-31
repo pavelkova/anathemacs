@@ -13,7 +13,10 @@
 ;;   :after flycheck
 ;;   :hook (flycheck-mode . flycheck-elixir-setup))
 
-(use-package alchemist)
+(use-package alchemist
+  :config
+  (setq alchemist-mix-command "~/.asdf/installs/elixir/1.8.2/bin/mix"
+        alchemist-key-command-prefix (kbd "H-d l")))
 
 (use-package elixir-mode
   :config

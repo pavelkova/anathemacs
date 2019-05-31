@@ -9,43 +9,23 @@
 
 ;;; Code:
 
-(use-package foreman-mode
-  :general
-  (hd-leader-def
-    "f"  '(:ignore t :which-key "foreman")
-    "f." 'foreman-view-buffer
-    "fc" 'foreman-clear
-    "fd" 'foreman-stop
-    "fe" 'foreman-edit-env
-    "fE" 'foreman-env-save
-    "fk" 'foreman-kill-buffer
-    "fK" 'foreman-kill-proc
-    "fn" 'foreman-next-line
-    "fp" 'foreman-previous-line
-    "fr" 'foreman-restart
-    "fR" 'foreman-restart-proc
-    "ft" 'foreman-tasks
-    "fu" 'foreman-start
-    "fU" 'foreman-start-proc))
-
-(use-package npm-mode
-  :general
-  (hd-leader-def
-    "n"  '(:ignore t :which-key "npm")
-    "nn" 'npm-mode-npm-init
-    "ni" 'npm-mode-npm-install
-    "ns" 'npm-mode-npm-install-save
-    "nd" 'npm-mode-npm-install-save-dev
-    "nu" 'npm-mode-npm-uninstall
-    "nl" 'npm-mode-npm-list
-    "nr" 'npm-mode-npm-run
-    "nv" 'npm-mode-visit-project-file))
 
 (use-package react-snippets)
 
-(use-package rjsx-mode)
+(use-package rjsx-mode
+  :mode ("src\\/.*\\.js\\'" . rjsx-mode))
 
-(use-package yarn-mode)
+(defun activate-tide-mode ()
+  "Use hl-identifier-mode only on js or ts buffers."
+  (when (and (stringp buffer-file-name)
+             (string-match "\\.[tj]sx?\\'" buffer-file-name))
+    (tide-setup)
+    (tide-hl-identifier-mode)))
+
+(use-package tide
+  :hook ((web-mode . activate-tide-mode)
+         (before-save . tide-format-before-save))
+   :ensure t)
 
 (provide 'ana-js-react)
 

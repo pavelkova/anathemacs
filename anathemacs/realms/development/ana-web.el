@@ -32,12 +32,17 @@
          ("\\.xml\\'"    . web-mode))
   :config
   (set-local-company-backend company-web-html)
-  (setq web-mode-code-indent-offset 2
+  (setq web-mode-block-padding 2
+        web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-enable-auto-closing t
+        web-mode-enable-auto-pairing
         web-mode-enable-block-face t
         web-mode-enable-css-colorization t
+        web-mode-enable-current-element-highlight t
         web-mode-markup-indent-offset 2
+        web-mode-script-padding 2
+        web-mode-style-padding 2
         web-mode-tag-auto-close-style 2))
 
 (use-package rainbow-mode)
