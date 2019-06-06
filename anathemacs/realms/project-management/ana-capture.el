@@ -35,13 +35,13 @@
       ;;;; TODO
          "t" "tarea" entry
          (file+headline user-master-file "braindump")
-         "** ○ %^{tarea} %?
+         "** TODO %^{tarea} %?
 %T")
         
       ;;;; APPOINTMENT
         ("c" "cita" entry
          (file+olp+datetree user-cal-file)
-         "** %^{cita} %? :cita:
+         "** APPOINTMENT %^{cita} %? :cita:
 :PROPERTIES:
 :LOCATION:
 :END:
@@ -52,7 +52,7 @@
       ;;;; EVENT
         ("e" "evento" entry
          (function org-journal-find-location)
-         "** %^{evento} %? :evento:
+         "** EVENT %^{evento} %? :evento:
 %t"
          :tree-type month
          :time-prompt t)

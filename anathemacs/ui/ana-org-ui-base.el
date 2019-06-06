@@ -10,7 +10,7 @@
 ;;; Code:
 
 (use-package olivetti
-  :hook (text-mode . olivetti-mode)
+  :hook ((text-mode org-mode) . olivetti-mode)
   :init
   (setq olivetti-body-width 0.85))
 

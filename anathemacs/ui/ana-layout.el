@@ -43,9 +43,15 @@
     "ws"          'persp-switch-to-buffer
     "wt"          'persp-temporarily-display-buffer))
 
+;; DESKTOP
+(setq desktop-restore-in-current-display nil)
+(ha-leader-def
+  "ds" 'desktop-save-in-desktop-dir
+  "dr" 'desktop-read)
 
 ;; FRAMES
-(setq iconify-child-frame 'iconify)
+(ha-leader-def
+  "C-n" 'find-file-other-frame)
 
 (provide 'ana-layout)
 

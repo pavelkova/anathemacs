@@ -105,7 +105,7 @@
      `(shadow              ((,class (:foreground ,base-dim))))
      `(success             ((,class (:foreground ,suc))))
      `(tooltip             ((,class (:background ,ttip-sl :foreground ,base :bold nil :italic nil :underline nil))))
-     `(variable-pitch      ((,class (:family ,et-font :height 170))))
+     `(variable-pitch      ((,class (:family ,et-font :height 150))))
      `(vertical-border     ((,class (:foreground ,border))))
      `(warning             ((,class (:foreground ,war))))
      
@@ -591,7 +591,7 @@
      `(org-indent ((,class (:inherit org-hide))))
      `(org-kbd ((,class (:inherit region :foreground ,base :box (:line-width 1 :style released-button)))))
      `(org-level-1 ((,class (:height 290 :slant italic :foreground ,base))))
-     `(org-level-2 ((,class (:height 190 :foreground ,base))))
+     `(org-level-2 ((,class (:height 160 :foreground ,base))))
      `(org-level-3 ((,class (:inherit org-level-2))))
      `(org-level-4 ((,class (:inherit org-level-2))))
      `(org-level-5 ((,class (:inherit org-level-2))))
@@ -609,8 +609,8 @@
      `(org-scheduled-today ((,class (:foreground ,func))))
      `(org-sexp-date ((,class (:foreground ,base))))
      `(org-special-keyword ((,class (:inherit org-meta-line))))
-     `(org-checkbox-statistics-done ((,class (:inherit org-done :height 100))))
-     `(org-checkbox-statistics-todo ((,class (:inherit org-todo :height 100))))
+     `(org-checkbox-statistics-done ((,class (:inherit org-done :height 110))))
+     `(org-checkbox-statistics-todo ((,class (:inherit org-todo :height 110))))
      `(org-tag ((,class (:foreground ,meta :height 90 :family ,base-font))))
      `(org-tag-group ((,class (:inherit org-tag :foreground ,comp))))
      `(org-table ((,class (:foreground ,base :background nil :height 80))))
@@ -703,6 +703,17 @@
      `(term-color-red ((,class (:foreground ,red-2))))
      `(term-color-white ((,class (:foreground ,base))))
      `(term-color-yellow ((,class (:foreground ,yellow-1))))
+
+
+;;;;; treemacs
+     `(treemacs-directory-face ((,class (:inherit nil :height 90 :bold nil :foreground ,base))))
+     `(treemacs-directory-collapsed-face ((,class (:inherit treemacs-directory-face))))
+     `(treemacs-file-face ((,class (:inherit nil :height 90 :foreground ,base))))
+     `(treemacs-root-remote-face ((,class (:inherit treemacs-root-face))))
+     `(treemacs-root-unreadable-face ((,class (:inherit treemacs-root-face :strike-through t :foreground ,comment))))
+     `(treemacs-root-remote-unreadable-face ((,class (:inherit treemacs-root-unreadable-face))))
+     `(treemacs-root-remote-disconnected-face ((,class (:inherit treemacs-root-face :foreground ,war))))
+
 
 ;;;;; twittering
      `(twittering-timeline-footer-face ((,class (:foreground ,base-dim :bold t))))

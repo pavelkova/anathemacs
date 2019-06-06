@@ -74,8 +74,7 @@
 (use-package magithub
   :after magit
   :config
-  (magithub-feature-autoinject t)
-  (setq auth-sources '("~/.password-store")))
+  (magithub-feature-autoinject t))
 
 ;; integrate with system pass
 
