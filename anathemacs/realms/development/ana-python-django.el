@@ -14,7 +14,6 @@
   :general
   (hd-leader-def
     "d"  '(:ignore t :which-key "djangonaut")
-    "d." 'pythonic-activate
     "da" 'djangonaut-find-admin-class
     "dc" 'djangonaut-find-management-command
     "dd" 'djangonaut-find-drf-permission
@@ -47,37 +46,37 @@
 (use-package pony-mode
   :general
   (hd-leader-def
-    "p" '(:ignore t :which-key "pony")
-    "pF" '(:ignore t :which-key "fabric")
-    "pFf" 'pony-fabric
-    "pFd" 'pony-fabric-deploy
-    "pf" '(:ignore t :which-key "files")
-    "pfs" 'pony-goto-settings
-    "pfc" 'pony-setting
-    "pft" 'pony-goto-template
-    "pfr" 'pony-resolve
-    "pi" '(:ignore t :which-key "interactive")
-    "pid" 'pony-db-shell
-    "pis" 'pony-shell
-    "pm" 'pony-manage
-    "ps" '(:ignore t :which-key "server")
-    "psd" 'pony-stopserver
-    "pso" 'pony-browser
-    "psr" 'pony-restart-server
-    "psu" 'pony-runserver
-    "pst" 'pony-temp-server
-    "pS" '(:ignore t :which-key "south/sync")
-    "pSc" 'pony-south-convert
-    "pSh" 'pony-south-schemamigration
-    "pSi" 'pony-south-initial
-    "pSm" 'pony-south-migrate
-    "pSs" 'pony-syncdb
-    "pt" '(:ignore t :which-key "test")
-    "ptd" 'pony-test-down
-    "pte" 'pony-test-goto-err
-    "pto" 'pony-test-open
-    "ptt" 'pony-test
-    "ptu" 'pony-test-up
+    "o" '(:ignore t :which-key "pony")
+    "oF" '(:ignore t :which-key "fabric")
+    "oFf" 'pony-fabric
+    "oFd" 'pony-fabric-deploy
+    "of" '(:ignore t :which-key "files")
+    "ofs" 'pony-goto-settings
+    "ofc" 'pony-setting
+    "oft" 'pony-goto-template
+    "ofr" 'pony-resolve
+    "oi" '(:ignore t :which-key "interactive")
+    "oid" 'pony-db-shell
+    "ois" 'pony-shell
+    "om" 'pony-manage
+    "os" '(:ignore t :which-key "server")
+    "osd" 'pony-stopserver
+    "oso" 'pony-browser
+    "osr" 'pony-restart-server
+    "osu" 'pony-runserver
+    "ost" 'pony-temp-server
+    "oS" '(:ignore t :which-key "south/sync")
+    "oSc" 'pony-south-convert
+    "oSh" 'pony-south-schemamigration
+    "oSi" 'pony-south-initial
+    "oSm" 'pony-south-migrate
+    "oSs" 'pony-syncdb
+    "ot" '(:ignore t :which-key "test")
+    "otd" 'pony-test-down
+    "ote" 'pony-test-goto-err
+    "oto" 'pony-test-open
+    "ott" 'pony-test
+    "otu" 'pony-test-up
     ))
 
 ;; Configuration options per project are available via .dir-locals.el

@@ -71,7 +71,7 @@
   "s" '(:ignore t :which-key "system")
   "w" '(:ignore t :which-key "writing"))
 
-(major-leader-def
+(major-leader-def                       ; add prefix descriptions to C-x commands
   "4" '(:ignore t :which-key "other window")
   "5" '(:ignore t :which-key "frames")
   "8" '(:ignore t :which-key "insert character")

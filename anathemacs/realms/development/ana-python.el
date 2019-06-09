@@ -8,8 +8,13 @@
 ;;
 
 ;;; Code:
+
+;; Python prefix
+(hd-leader-def
+    "p"  '(:ignore t :which-key "python"))
+
 (use-package anaconda-mode
-  :hook (python-mode . anaconda-mode)
+  :hook (python-mode . (anaconda-mode anaconda-eldoc-mode))
   :general
   (hd-leader-def
    "a"  '(:ignore t :which-key "anaconda")
@@ -21,33 +26,31 @@
    "ar" 'anaconda-mode-find-references
    "aR" 'anaconda-mode-find-references-other-window
    "a?" 'anaconda-mode-show-doc))
-(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
 (use-package company-anaconda
-  :after company)
+  :after company
+  :hook (python-mode . (set-local-company-backend company-anaconda)))
 
 (use-package cython-mode)
 
-(use-package hy-mode)
+;; (use-package live-py-mode)
 
-(use-package live-py-mode)
-
-(use-package pippel)
+(use-package pippel
+  :general
+  (hd-leader-def
+    "pl" 'pippel-list-packages)
 
 (use-package pip-requirements
   :mode "\\requirements.txt\\'")
 
-(use-package py-isort)
-
 (use-package pyvenv
-  :hook (python-mode . pyvenv-mode))
+  :hook (python-mode . pyvenv-mode)
+  :general
+  (hd-leader-def
+    "pa" 'pyvenv-activate))
 
 (use-package pytest)
 
-
-;; (use-package stickyfunc-enhance)
-;; (use-package xcscope)
-;; (use-package yapify)
 
 (provide 'ana-python)
 
