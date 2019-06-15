@@ -9,6 +9,11 @@
 
 ;;; Code:
 
+(use-package mpages
+  :general
+  (hs-leader-def
+    "wt" 'mpages))
+
 (use-package org-journal
   :general
   (hs-leader-def
@@ -18,16 +23,17 @@
         org-journal-find-file 'find-file
         org-journal-file-type 'yearly
         org-journal-enable-agenda-integration t
-        org-journal-date-format "%Y-%B-%d"
+        org-journal-date-prefix "*** "
+        org-journal-date-format "%Y-%b-%d"
         org-journal-time-format "%H:%M"
+        org-journal-time-prefix "**** "
         org-journal-file-format "%Y.org"))
 
 (global-unset-key (kbd "C-c C-j"))
 
 (use-package wc-mode
   :delight wc-mode
-  :mode ("\\[0-9]+.org\\'"
-         "\\.blank-page.org\\'")
+  :hook org-mode
   :general
   (hs-leader-def
     "wc" 'wc-mode

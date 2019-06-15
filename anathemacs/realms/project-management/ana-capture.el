@@ -40,7 +40,6 @@
         
       ;;;; APPOINTMENT
         ("c" "cita" entry
-         (file+olp+datetree user-cal-file)
          "** APPOINTMENT %^{cita} %? :cita:
 :PROPERTIES:
 :LOCATION:
@@ -51,7 +50,7 @@
 
       ;;;; EVENT
         ("e" "evento" entry
-         (function org-journal-find-location)
+         (file+olp+datetree user-cal-file)
          "** EVENT %^{evento} %? :evento:
 %t"
          :tree-type month
@@ -94,12 +93,13 @@
 ** Directions")
 
       ;;;; ORG-JOURNAL
-        ("j" "journal entry" entry (file+olp+datetree (concat org-journal-dir org-journal-file-format))
-                               "* %H:%M :diario:
+        ("j" "journal entry" entry (file+olp+datetree (concat org-journal-dir "2019.org")) ; (function org-journal-find-location)
+                               "
 :PROPERTIES:
 :word_count:
 :END:
-%T
+%u
+**** %H:%M :diario:
 %?"
          :tree-type month)
 

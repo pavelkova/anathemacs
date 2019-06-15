@@ -38,7 +38,7 @@
 (use-package pippel
   :general
   (hd-leader-def
-    "pl" 'pippel-list-packages)
+    "pl" 'pippel-list-packages))
 
 (use-package pip-requirements
   :mode "\\requirements.txt\\'")

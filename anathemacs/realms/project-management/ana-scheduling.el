@@ -93,9 +93,9 @@
         (hs-leader-def
           "pP" 'org-pomodoro))
 
-      ;; (use-package org-edna
-      ;;   :init
-      ;;   (org-edna-load))
+      (use-package org-edna
+        :init
+        (org-edna-load))
 
       ;; use to refile
       (defun org-refile-to-datetree (&optional file)
@@ -123,6 +123,9 @@
 
       (hs-leader-def
         "fd" 'org-refile-to-datetree)
+
+;; ORG-HABIT
+(setq org-habit-graph-column 75)
 
       (provide 'ana-scheduling)
 
