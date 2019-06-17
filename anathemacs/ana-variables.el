@@ -20,7 +20,7 @@
 
 ;; org paths
 
-(setq org-directory "~/Media/documentos/org/") ;; this is used by org-mode
+(setq org-directory "~/Sync/org/") ;; this is used by org-mode
 
 (setq user-archive-file (concat org-directory "basement.org"))
 

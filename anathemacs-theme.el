@@ -718,7 +718,7 @@
 
 
 ;;;;; treemacs
-   `(treemacs-directory-face                ((t :inherit mono-sm foreground ,fg-1)))
+   `(treemacs-directory-face                ((t :inherit mono-xs foreground ,fg-1)))
    `(treemacs-directory-collapsed-face      ((t :inherit treemacs-directory-face)))
    `(treemacs-file-face                     ((t :inherit mono-xs :foreground ,fg-1)))
    `(treemacs-root-remote-face              ((t :inherit treemacs-root-face)))

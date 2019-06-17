@@ -35,6 +35,7 @@
          ((agenda ""
                   ((org-agenda-span 28)
                    (org-agenda-start-day "0d")
+                   (org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp))
                    (org-agenda-include-diary t)
                    (org-agenda-include-inactive-timestamps t)
                    ))
