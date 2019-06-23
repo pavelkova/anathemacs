@@ -37,11 +37,11 @@
    "hf" 'counsel-describe-function
    "hv" 'counsel-describe-variable))
 
-(use-package smex
-  :general
-  (general-define-key
-   "M-X"     'smex
-   "H-A"     'smex-major-mode-commands))
+;; (use-package smex
+;;   :general
+;;   (general-define-key
+;;    "M-X"     'smex
+;;    "H-A"     'smex-major-mode-commands))
 
 (provide 'ana-completion)
 

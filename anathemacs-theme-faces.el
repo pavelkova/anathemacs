@@ -42,11 +42,11 @@
 (defface sans-xl  '((t :family "Lato" :height 180)) "xl sans serif font")
 (defface sans-xxl '((t :family "Lato" :height 290)) "xxl sans serif font")
 
-(defface serif-xs  '((t :family "ETBembo" :height 130)) "xs serif font")
-(defface serif-sm  '((t :family "ETBembo" :height 150)) "sm serif font")
-(defface serif-md  '((t :family "ETBembo" :height 170)) "md serif font")
-(defface serif-lg  '((t :family "ETBembo" :height 240)) "lg serif font")
-(defface serif-xl  '((t :family "ETBembo" :height 290)) "xl serif font")
+(defface serif-xs  '((t :family "ETBembo" :height 100)) "xs serif font")
+(defface serif-sm  '((t :family "ETBembo" :height 125)) "sm serif font")
+(defface serif-md  '((t :family "ETBembo" :height 150)) "md serif font")
+(defface serif-lg  '((t :family "ETBembo" :height 200)) "lg serif font")
+(defface serif-xl  '((t :family "ETBembo" :height 250)) "xl serif font")
 (defface serif-xxl '((t :family "ETBembo" :height 400)) "xxl serif font")
 
 ;; macro with variables style (string), font (string), heights (list)

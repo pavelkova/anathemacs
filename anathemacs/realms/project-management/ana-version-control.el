@@ -71,9 +71,9 @@
   :config
   (use-package magit-popup))
 
-(use-package magit-annex)
+;; (use-package magit-annex)
 
-(use-package git-annex)
+;; (use-package git-annex)
 
 (use-package magithub
   :after magit

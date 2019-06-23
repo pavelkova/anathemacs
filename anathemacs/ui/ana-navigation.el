@@ -75,7 +75,8 @@
   :config
   ;; (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
   (setq treemacs-no-png-images t
-        treemacs-width 30))
+        treemacs-width 30
+        treemacs-follow-after-init t))
 
 (use-package treemacs-magit
   :after treemacs magit)
