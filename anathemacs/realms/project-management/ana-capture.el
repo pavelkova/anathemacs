@@ -40,7 +40,8 @@
         
       ;;;; APPOINTMENT
         ("c" "cita" entry
-         "** APPOINTMENT %^{cita} %? :cita:
+         (file+olp+datetree user-cal-file)
+         "** APPOINTMENT %^{cita} %?
 :PROPERTIES:
 :LOCATION:
 :END:
@@ -51,8 +52,31 @@
       ;;;; EVENT
         ("e" "evento" entry
          (file+olp+datetree user-cal-file)
-         "** EVENT %^{evento} %? :evento:
+         "** EVENT %^{evento} %?
 %t"
+         :tree-type month
+         :time-prompt t)
+
+;;;;; ----- SPECIAL EVENTS
+      ;;;; JVC primary advocate shift
+        ("v" "jvc primary victim advocate shift" entry
+         (file+olp+datetree user-cal-file)
+         "** EVENT A-Primary Victim Advocate
+:PROPERTIES:
+:LOCATION: Julie Valentine - ON CALL
+:END:
+<%<%Y-%m-%d %a 18:00>>--<%<%Y-%m-%d %a 06:00>>"
+         :tree-type month
+         :time-prompt t)
+
+      ;;;; JVC backup advocate shift
+        ("V" "jvc backup victim advocate shift" entry
+         (file+olp+datetree user-cal-file)
+         "** EVENT B-BACKUP Victim Advocate
+:PROPERTIES:
+:LOCATION: Julie Valentine - ON CALL
+:END:
+<%<%Y-%m-%d %a 18:00>>--<%<%Y-%m-%d %a 06:00>>"
          :tree-type month
          :time-prompt t)
 
@@ -65,7 +89,7 @@
       ;;;; LINK
         ("l" "enlace" entry
          ((file+headline user-master-file "braindump"))
-         "** %(org-cliplink-capture) :recurso:
+         "** %(org-cliplink-capture)
 %T")
         
       ;;---THIRD-PARTY PACKAGE CAPTURES
@@ -106,8 +130,8 @@
       ;;;; ORG-CAPTURE EXTENSION
         ("p" "protocol" entry
          (file+headline user-master-file "braindump")
-        "* %^{Title} :recurso:
-:PROPERTIES
+        "* %^{Title}
+:PROPERTIES:
 :fuenta: %u, %c
 :END:
 %T
@@ -117,7 +141,7 @@
 %?")
 	("L" "protocol link" entry
          (file+headline user-master-file "braindump")
-        "* %? [[%:link][%:description]] :recurso:
+        "* %? [[%:link][%:description]]
 %T")
         ))
 (provide 'ana-capture)

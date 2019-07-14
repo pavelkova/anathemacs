@@ -30,8 +30,8 @@
 
   ;; TODO keywords
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "INPROGRESS(i@)" "POSTPONED(p!)" "|" "DONE(d!)" "CANCELLED(c!)")
-          (sequence "APPOINTMENT(a)" "EVENT(e)" "QUESTION(q)" "|" "HAPPENED(A)" "OVER(E)" "ANSWERED(Q)"))
+        '((sequence "TODO(t)" "INPROGRESS(i@)" "POSTPONED(p!)" "|" "DONE(T!)" "CANCELLED(C!)")
+          (sequence "APPOINTMENT(a)" "EVENT(e)" "QUESTION(q)" "|" "APPOINTMENT.(A)" "EVENT.(E)" "ANSWERED(Q)"))
         org-hierarchical-todo-statistics nil)
 
   ;; CHECKLISTS
@@ -44,11 +44,11 @@
    (push '("POSTPONED"   . "▶" ) prettify-symbols-alist)
    (push '("DONE"        . "●" ) prettify-symbols-alist)
    (push '("CANCELLED"   . "⮿" ) prettify-symbols-alist)
-   (push '("APPOINTMENT" . "△" ) prettify-symbols-alist)
+   (push '("APPOINTMENT"        . "△" ) prettify-symbols-alist)
    (push '("EVENT"       . "☆" ) prettify-symbols-alist)
    (push '("QUESTION"    . "❔" ) prettify-symbols-alist)
-   (push '("HAPPENED"    . "▲" ) prettify-symbols-alist)
-   (push '("OVER"        . "★" ) prettify-symbols-alist)
+   (push '("APPOINTMENT."        . "▲" ) prettify-symbols-alist)
+   (push '("EVENT."       . "★" ) prettify-symbols-alist)
    (push '("ANSWERED"    . "❓" ) prettify-symbols-alist)
    (push '("[ ]"  . "◻" ) prettify-symbols-alist)
    (push '("[-]"  . "◪" ) prettify-symbols-alist)

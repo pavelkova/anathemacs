@@ -20,7 +20,7 @@
 
 ;; org paths
 
-(setq org-directory "~/Sync/org/") ;; this is used by org-mode
+(setq org-directory "~/Media/org/") ;; this is used by org-mode
 
 (setq user-archive-file (concat org-directory "basement.org"))
 
@@ -30,8 +30,9 @@
 
 (setq user-brain-dir (concat org-directory ".cerebro/"))
 
+;; Referenced by realms/personal/ana-scheduling.el.
 (setq user-cal-file (concat org-directory "calendario.org"))
-
+(setq user-cal-inbox-file (concat org-directory ".calendario-temp.org"))
 (setq user-caldav-file (concat user-secrets-dir "caldav.el"))
 
 (setq user-cookbook-file (concat org-directory "vida/salud/recetas.org"))

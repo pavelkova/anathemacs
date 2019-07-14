@@ -72,7 +72,9 @@
         :demand t
         :init
         (load-file user-caldav-file)
-        (setq org-caldav-files '("~/Media/documentos/org/calendario.org"))
+        ;; (setq org-caldav-files '(user-cal-file)
+        ;;       org-caldav-inbox user-cal-inbox-file)
+        (setq org-caldav-files nil)
         :general
         (hs-leader-def
           "cs" 'org-caldav-sync)
