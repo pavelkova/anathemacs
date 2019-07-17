@@ -12,7 +12,7 @@
 (use-package company-web
   :general
   (hd-leader-def
-    "wc" 'company-web-html))
+    "/c" 'company-web-html))
 
 (use-package json-mode
   :mode "\\.json\\'"
@@ -23,8 +23,7 @@
 (use-package web-mode
   :general
   (hd-leader-def
-    "w" '(:ignore t :which-key "web"
-    "wT" 'web-mode-tag-match))
+    "/t" 'web-mode-tag-match))
   :mode (("\\.erb\\'"    . web-mode)
          ("\\.html?\\'"  . web-mode)
          ("\\.js[x]\\'"  . web-mode)
@@ -52,10 +51,10 @@
 (use-package web-beautify
   :general
   (hd-leader-def
-    "wb"  '(:ignore t :which-key "beautify")
-    "wbc" 'web-beautify-css
-    "wbh" 'web-beautify-html
-    "wbj" 'web-beautify-js))
+    "/b"  '(:ignore t :which-key "beautify")
+    "/bc" 'web-beautify-css
+    "/bh" 'web-beautify-html
+    "/bj" 'web-beautify-js))
 
 (provide 'ana-web)
 

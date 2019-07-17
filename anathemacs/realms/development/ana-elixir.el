@@ -21,7 +21,6 @@
 (use-package elixir-mode
   :config
   (hd-leader-def
-    "e"  '(:ignore t :which-key "elixir")
     "e." 'elixir-mode
     "eg" 'elixir-mode-open-github))
 

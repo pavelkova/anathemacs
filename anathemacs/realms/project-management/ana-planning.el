@@ -17,7 +17,7 @@
    "<C-kp-multiply>" 'org-toggle-checkbox)
 
  (hs-leader-def
-   ".t" 'org-todo-list)
+   "t." 'org-todo-list)
 
    ;; FILING
   (hs-leader-def
@@ -30,7 +30,7 @@
 
   ;; TODO keywords
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "INPROGRESS(i@)" "POSTPONED(p!)" "|" "DONE(T!)" "CANCELLED(C!)")
+        '((sequence "TODO(t)" "INPROGRESS(i@)" "POSTPONED(p!)" "|" "DONE(d!)" "CANCELLED(c!)")
           (sequence "APPOINTMENT(a)" "EVENT(e)" "QUESTION(q)" "|" "APPOINTMENT.(A)" "EVENT.(E)" "ANSWERED(Q)"))
         org-hierarchical-todo-statistics nil)
 
@@ -67,7 +67,7 @@
 (use-package org-brain
   :general
   (hs-leader-def
-    "B"  'org-brain-agenda)
+    "C-b"  'org-brain-agenda)
   :config
   (setq org-brain-path user-brain-dir
         org-id-track-globally t
@@ -79,7 +79,7 @@
 (use-package org-kanban
   :general
   (hs-leader-def
-    "k" 'org-kanban/initialize))
+    "tk" 'org-kanban/initialize))
 
 (provide 'ana-planning)
 

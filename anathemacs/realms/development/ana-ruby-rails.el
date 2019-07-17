@@ -10,9 +10,6 @@
 ;;; Code:
 
 (use-package projectile-rails
-  :general
-  (hd-leader-def
-    "r" '(:which-key "rails"))
   :bind-keymap
   ("H-d r" . projectile-rails-command-map))
 

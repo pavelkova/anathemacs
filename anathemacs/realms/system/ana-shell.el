@@ -13,9 +13,7 @@
   ;; :bind-keymap
   ;; ("H-a x" . emamux:keymap)
   :general
-  (ha-leader-def
-    "x" '(:ignore t :which-key "tmux"))
-  (ha-leader-def
+  (hd-leader-def
     "tx" 'emamux:send-command
     "tX" 'emamux:yank-from-list-buffers))
 
@@ -24,7 +22,7 @@
 
 (use-package sane-term
   :general
-  (ha-leader-def
+  (hd-leader-def
     "tt" 'sane-term
     "tn" 'sane-term-create))
 

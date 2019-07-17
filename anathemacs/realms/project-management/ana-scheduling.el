@@ -16,12 +16,12 @@
   (global-activity-watch-mode t)
   :general
   (hs-leader-def
-    "pa" 'global-activity-watch-mode))
+    "ta" 'global-activity-watch-mode))
 
 ;; agenda
 ;; AGENDA
 (hs-leader-def
-  "A" 'org-agenda)
+  "a" 'org-agenda)
 (setq ;; org-agenda-files user-org-agenda-files  ;; manage manually
  org-agenda-entry-types '(:deadline :scheduled :sexp :timestamp)
  org-agenda-include-diary t
@@ -94,7 +94,7 @@
       (use-package org-pomodoro
         :general
         (hs-leader-def
-          "pP" 'org-pomodoro))
+          "tp" 'org-pomodoro))
 
       (use-package org-edna
         :init
@@ -106,8 +106,7 @@
         (interactive "f")
         (let* ((datetree-date (or (org-entry-get nil "TIMESTAMP" t)
                                   (org-read-date t nil "now")))
-               (date (org-date-to-gregorian datetree-date))
-               )
+               (date (org-date-to-gregorian datetree-date)))
           (save-excursion
             (with-current-buffer (current-buffer)
               (org-cut-subtree)

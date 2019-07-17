@@ -15,7 +15,6 @@
 (use-package foreman-mode
   :general
   (hd-leader-def
-    "f"  '(:ignore t :which-key "foreman")
     "f." 'foreman-view-buffer
     "fc" 'foreman-clear
     "fd" 'foreman-stop
@@ -37,7 +36,6 @@
 (use-package npm-mode
   :general
   (hd-leader-def
-    "n"  '(:ignore t :which-key "npm")
     "nn" 'npm-mode-npm-init
     "ni" 'npm-mode-npm-install
     "ns" 'npm-mode-npm-install-save

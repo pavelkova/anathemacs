@@ -17,10 +17,10 @@
 (use-package dokuwiki
   :general
   (hs-leader-def
-    "D=" 'load-dokuwiki-secrets
-    "Dl" 'dokuwiki-list-pages
-    "Do" 'dokuwiki-open-page
-    "Ds" 'dokuwiki-save-page))
+    "C-d =" 'load-dokuwiki-secrets
+    "C-d l" 'dokuwiki-list-pages
+    "C-d o" 'dokuwiki-open-page
+    "C-d s" 'dokuwiki-save-page))
 
 (use-package dokuwiki-mode
   :mode "\\.doku\\'")

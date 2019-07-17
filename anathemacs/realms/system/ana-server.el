@@ -11,8 +11,8 @@
 
 (use-package counsel-tramp
   :general
-  (hs-leader-def
-  "ss" 'counsel-tramp)
+  (hd-leader-def
+  "st" 'counsel-tramp)
   :config
   (add-hook 'counsel-tramp-pre-command-hook '(lambda () (global-aggressive-indent-mode 0)
 				     (projectile-mode 0)
@@ -30,18 +30,12 @@
 
 (use-package tramp-term
   :general
-  (hs-leader-def
-  "sS" 'tramp-term)
+  (hd-leader-def
+  "sr" 'tramp-term)
   :config
-  (setq tramp-default-method "ssh")
-  (add-to-list 'tramp-methods
-                   '("yadm"
-                     (tramp-login-program "yadm")
-                     (tramp-login-args (("enter")))
-                     (tramp-remote-shell "/bin/sh")
-                     (tramp-remote-shell-args ("-c")))))
+  (setq tramp-default-method "ssh"))
 
-(hs-leader-def
+(hd-leader-def
   "sp" 'list-processes)
 
 (provide 'ana-server)

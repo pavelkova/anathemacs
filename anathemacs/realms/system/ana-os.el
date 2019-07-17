@@ -21,7 +21,7 @@
 (use-package nix-mode
   :mode "\\.nix\\'"
   :general
-  (hs-leader-def
+  (hd-leader-def
     "sN" 'nix-repl))
 
 ;; WINDOW MANAGERS
@@ -31,7 +31,7 @@
 ;; COMMON
 (use-package symon
   :general
-  (hs-leader-def
+  (hd-leader-def
     "s?" 'symon-mode))
 
 (provide 'ana-os)

@@ -9,15 +9,10 @@
 
 ;;; Code:
 
-;; Python prefix
-(hd-leader-def
-    "p"  '(:ignore t :which-key "python"))
-
 (use-package anaconda-mode
   :hook (python-mode . (anaconda-mode anaconda-eldoc-mode))
   :general
   (hd-leader-def
-   "a"  '(:ignore t :which-key "anaconda")
    "a." 'anaconda-mode-complete
    "aa" 'anaconda-mode-find-assignments
    "aA" 'anaconda-mode-find-assignments-other-window

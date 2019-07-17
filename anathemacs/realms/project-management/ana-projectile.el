@@ -10,27 +10,27 @@
 ;;; Code:
 (use-package counsel-projectile
   :general
-  (ha-leader-def
-    "p SPC" 'counsel-projectile
-    "pb" 'counsel-projectile-switch-to-buffer
-    "pc" 'counsel-projectile-org-capture
-    "pd" 'counsel-projectile-find-dir
-    "pD" 'projectile-current-project-dirs
-    "pf" 'counsel-projectile-find-file
-    "pF" 'projectile-current-project-files
-    "pg" 'counsel-projectile-grep
-    "pi" 'projectile-ibuffer-by-project
-    "pI" 'projectile-ibuffer
-    "pk" 'projectile-kill-buffers
-    "pp" 'counsel-projectile-switch-project)
+  (cmx-leader-def
+    "SPC" 'counsel-projectile
+    "b" 'counsel-projectile-switch-to-buffer
+    "c" 'counsel-projectile-org-capture
+    "d" 'counsel-projectile-find-dir
+    "D" 'projectile-current-project-dirs
+    "f" 'counsel-projectile-find-file
+    "F" 'projectile-current-project-files
+    "g" 'counsel-projectile-grep
+    "i" 'projectile-ibuffer-by-project
+    "I" 'projectile-ibuffer
+    "k" 'projectile-kill-buffers
+    "p" 'counsel-projectile-switch-project)
   :config
   (counsel-projectile-mode))
 
 (use-package projectile
   :diminish t
   :general
-  (ha-leader-def
-   "P" '(:prefix-command projectile-command-map :which-key "projectile"))
+  (cmx-leader-def
+   "." '(:prefix-command projectile-command-map :which-key "(more)"))
   :init
   (projectile-mode)
   :config

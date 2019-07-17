@@ -46,7 +46,6 @@
 (use-package pony-mode
   :general
   (hd-leader-def
-    "o" '(:ignore t :which-key "pony")
     "oF" '(:ignore t :which-key "fabric")
     "oFf" 'pony-fabric
     "oFd" 'pony-fabric-deploy
@@ -76,8 +75,7 @@
     "ote" 'pony-test-goto-err
     "oto" 'pony-test-open
     "ott" 'pony-test
-    "otu" 'pony-test-up
-    ))
+    "otu" 'pony-test-up))
 
 ;; Configuration options per project are available via .dir-locals.el
 

@@ -55,7 +55,7 @@
 (use-package twittering-mode
   :general
   (hs-leader-def
-    "Mt" 'twit)
+    "M-m t" 'twit)
   :config
   (setq twittering-timeline-header "twittering \n\n"
         twittering-use-icon-storage t
@@ -69,7 +69,7 @@
 (use-package md4rd
   :general
   (hs-leader-def
-    "Mr" 'md4rd)
+    "M-m r" 'md4rd)
   :config
   (setq md4rd-subs-active '(news politics emacs linux femalefashionadvice sorceryofthespectacle askhistorians historyofideas)))
 
