@@ -38,6 +38,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (eval-when-compile
   (require 'package)
 
@@ -104,6 +106,7 @@
 (require 'ana-ruby-rails)
 (require 'ana-ruby)
 (require 'ana-web)
+(require 'ana-lsp)
 ;; personal
 (require 'ana-communication)
 (require 'ana-dokuwiki)

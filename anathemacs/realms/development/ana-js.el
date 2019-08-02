@@ -9,9 +9,6 @@
 
 ;;; Code:
 
-;; (use-package company-tern
-;;   :hook (tern-mode . (set-local-company-backend company-tern)))
-
 (use-package foreman-mode
   :general
   (hd-leader-def
@@ -44,10 +41,6 @@
     "nl" 'npm-mode-npm-list
     "nr" 'npm-mode-npm-run
     "nv" 'npm-mode-visit-project-file))
-
-;; (use-package tern
-;;   :load-path "~/.asdf/shims/tern"
-;;   :hook (js-mode . tern-mode))
 
 (use-package yarn-mode)
 
