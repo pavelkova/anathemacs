@@ -9,19 +9,19 @@
 
 ;;; Code:
 
-(use-package php-mode
-  :mode "\\.php\\'"
-  :config
-  (eval-after-load 'php-mode
-  '(require 'php-ext)))
+;; (use-package php-mode
+;;   :mode "\\.php\\'"
+;;   :config
+;;   (eval-after-load 'php-mode
+;;   '(require 'php-ext)))
 
-(use-package company-php
-  :hook (php-mode . (lambda ()
-             (require 'company-php)
-             (company-mode t)
-             (ac-php-core-eldoc-setup) ;; enable eldoc
-             (make-local-variable 'company-backends)
-             (add-to-list 'company-backends 'company-ac-php-backend))))
+;; (use-package company-php
+;;   :hook (php-mode . (lambda ()
+;;              (require 'company-php)
+;;              (company-mode t)
+;;              (ac-php-core-eldoc-setup) ;; enable eldoc
+;;              (make-local-variable 'company-backends)
+;;              (add-to-list 'company-backends 'company-ac-php-backend))))
 
 (provide 'ana-php)
 

@@ -11,10 +11,8 @@
 (use-package company-cabal
   :hook (haskell-cabal-mode . (set-local-company-backend company-cabal)))
 
-(use-package flycheck-haskell
-  :hook (flycheck-haskell-setup . haskell-mode-hook))
-
-;; (use-package haskell-emacs) ;; TODO - use haskell to write emacs extensions
+;; (use-package flycheck-haskell
+;;   :hook (flycheck-haskell-setup . haskell-mode-hook))
 
 (use-package haskell-mode
   :mode "\\.hs\\'")

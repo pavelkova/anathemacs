@@ -323,6 +323,11 @@
        (:underline (:style line :color ,war)))
       (,class (:foreground ,fg-1 :background ,war :weight bold :underline t))))
 
+;;;;; flymake
+   `(flymake-error          ((t :underline (:style wave :color ,err))))
+   `(flymake-note           ((t :underline (:style line :color ,comment))))
+   `(flymake-warning        ((t :underline (:style wave :color ,war))))
+
 ;;;;; git-gutter
    `(git-gutter:added       ((t :foreground ,suc :weight bold)))
    `(git-gutter:deleted     ((t :foreground ,err :weight bold)))

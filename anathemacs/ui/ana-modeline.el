@@ -16,11 +16,23 @@
 (require 'spaceline-config)
 (spaceline-emacs-theme)
 
-;; (use-package spaceline-all-the-icons
-;;   :after spaceline
-;;   :config
-;;   (spaceline-all-the-icons-theme)
-;;   (spaceline-all-the-icons--setup-neotree))
+;; minor mode appearance in modeline
+(use-package delight
+  :demand t)
+
+(use-package diminish
+  :demand t
+  :init
+  (diminish 'auto-fill-function)
+  (diminish 'auto-revert-mode)
+  (diminish 'buffer-face-mode)
+  (diminish 'display-line-numbers-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'flymake-mode)
+  (diminish 'git-gutter-mode)
+  (diminish 'page-break-lines-mode)
+  (diminish 'which-key-mode)
+  (diminish 'visual-line-mode))
 
 (provide 'ana-modeline)
 

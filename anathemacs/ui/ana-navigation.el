@@ -11,6 +11,21 @@
 ;; (use-package all-the-icons-dired
 ;;   :hook dired-mode)
 
+;; (use-package centaur-tabs
+;;   :config
+;;   (centaur-tabs-group-by-projectile-project)
+;;   (centaur-tabs-headline-match)
+;;   (centaur-tabs-mode t)
+;;   (setq centaur-tabs-style "alternate"
+;;         centaur-tabs-height 32
+;;         centaur-tabs--set-icons t
+;;         centaur-tabs-gray-out-icons 'buffer
+;;         centaur-tabs-set-bar 'over
+;;         centaur-tabs-close-button nil
+;;         centaur-tabs-set-modified-marker t)
+;;   :hook
+;;   ((dired-mode treemacs-mode) . centaur-tabs-local-mode))
+
 ;; ibuffer
 (setq ibuffer-expert t
       ibuffer-show-empty-filter-groups nil

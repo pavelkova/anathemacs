@@ -23,23 +23,11 @@
 ;; GIT
 ;; (use-package browse-at-remote)
 
-;; (use-package gist
-;;   :general
-;;   ;; (load-file (concat user-secrets-dir "gist.el"))
-;;   (ha-leader-def
-;;     "ggl" 'gist-list    ; Lists your gists in a new buffer
-;;     "ggb" 'gist-buffer  ; Copies gist URL into the kill ring
-;;     "ggB" 'gist-buffer-private
-;;     "ggr" 'gist-region
-;;     "ggR" 'gist-region-private
-;;     "ggp" 'gist-region-or-buffer
-;;     "ggP" 'gist-region-or-buffer-private))
-
 (use-package gitconfig-mode
   :mode "\\.git/config\\'")
 
 (use-package git-gutter-fringe
-  :diminish t
+  :diminish git-gutter-mode
   :init
   (global-git-gutter-mode)
   :config
@@ -70,10 +58,6 @@
     "gu" 'magit-unstage-file)
   :config
   (use-package magit-popup))
-
-;; (use-package magit-annex)
-
-;; (use-package git-annex)
 
 (use-package magithub
   :after magit

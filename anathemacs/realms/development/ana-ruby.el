@@ -23,6 +23,12 @@
 (use-package rvm :defer t)
 ;; (use-package rake :defer t)
 
+;; RAILS
+
+(use-package projectile-rails
+  :bind-keymap
+  ("H-d r" . projectile-rails-command-map))
+
 (provide 'ana-ruby)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

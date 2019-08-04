@@ -44,6 +44,33 @@
 
 (use-package yarn-mode)
 
+;; REACT
+
+;; (use-package react-snippets)
+
+;; (use-package rjsx-mode
+  ;; :mode ("src\\/.*\\.js\\'" . rjsx-mode))
+
+;; (defun activate-tide-mode ()
+;;   "Use hl-identifier-mode only on js or ts buffers."
+;;   (when (and (stringp buffer-file-name)
+;;              (string-match "\\.[tj]sx?\\'" buffer-file-name))
+;;     (tide-setup)
+;;     (tide-hl-identifier-mode)))
+
+;; (use-package tide
+;;   :hook ((web-mode . activate-tide-mode)
+;;          (before-save . tide-format-before-save))
+;;   :config
+;;   (setq tide-format-options '()))
+
+
+;; VUE
+
+;; (use-package vue-mode)
+
+;; (use-package vue-html-mode)
+
 (provide 'ana-js)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

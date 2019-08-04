@@ -9,64 +9,82 @@
 
 ;;; Code:
 
-;; (use-package anaconda-mode
-;;   :hook (python-mode . (anaconda-mode anaconda-eldoc-mode))
-;;   :general
-;;   (hd-leader-def
-;;    "a." 'anaconda-mode-complete
-;;    "aa" 'anaconda-mode-find-assignments
-;;    "aA" 'anaconda-mode-find-assignments-other-window
-;;    "ad" 'anaconda-mode-find-definitions
-;;    "aD" 'anaconda-mode-find-definitions-other-window
-;;    "ar" 'anaconda-mode-find-references
-;;    "aR" 'anaconda-mode-find-references-other-window
-;;    "a?" 'anaconda-mode-show-doc))
+;; (use-package company-jedi
+;;     :init
+;;     (defun enable-jedi()
+;;       (setq-local company-backends
+;;                   (append '(company-jedi) company-backends)))
+;;     (with-eval-after-load 'company
+;;       (add-hook 'python-mode-hook 'enable-jedi)))
 
-;; (use-package company-anaconda
-;;   :after company
-;;   :hook (python-mode . (set-local-company-backend company-anaconda)))
+;; (use-package elpy
+;;   :hook python-mode
+;;   :config
+;;   (elpy-enable)
+;;   (setq elpy-rpc-backend "jedi"))
 
-;; (use-package cython-mode)
+(use-package pippel
+  :general
+  (hd-leader-def
+    "pl" 'pippel-list-packages))
 
-;; ;; (use-package live-py-mode)
+(use-package pip-requirements
+  :mode "\\requirements.txt\\'")
 
-;; (use-package pippel
-;;   :general
-;;   (hd-leader-def
-;;     "pl" 'pippel-list-packages))
+(use-package pyvenv
+  :general
+  (hd-leader-def
+    "v"  '(:ignore t :which-key "pyvenv")
+    "va" 'pyvenv-activate
+    "vc" 'pyvenv-create
+    "vd" 'pyvenv-deactivate
+    "vh" 'pyvenv-workon-history
+    "vs" 'pyvenv-exec-shell
+    "vw" 'pyvenv-workon))
 
-;; (use-package pip-requirements
-;;   :mode "\\requirements.txt\\'")
+;; in .dir-locals.el
+;; ((python-mode . ((pyvenv-workon . "~/PATH/venv")
+;;                  (subdirs . nil))))
 
-;; (use-package pyvenv
-;;   :hook (python-mode . pyvenv-mode)
-;;   :general
-;;   (hd-leader-def
-;;     "pa" 'pyvenv-activate))
+;; DJANGO
+;;(use-package django-commands)
 
-;; (use-package pytest)
+;; in .dir-locals.el
+;; ((nil . ((django-commands-python-executable . "~/.virtualenvs/virtualenvname/bin/python")
+;;          (django-commands-settings-module . "settings.module.name"))))
 
-(use-package company-jedi
-    :init
-    (defun enable-jedi()
-      (setq-local company-backends
-                  (append '(company-jedi) company-backends)))
-    (with-eval-after-load 'company
-      (add-hook 'python-mode-hook 'enable-jedi)))
-
-(use-package elpy
-  :init
-  (elpy-enable)
-  (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
-  :custom
-  (elpy-rpc-backend "jedi"))
-
-(use-package python
-  :ensure nil
-  :mode ("\\.py" . python-mode)
+(use-package djangonaut
+  :general
+  (hd-leader-def
+    "d"  '(:ignore t :which-key "djangonaut")
+    "da" 'djangonaut-find-admin-class
+    "dc" 'djangonaut-find-management-command
+    "dd" 'djangonaut-find-drf-permission
+    "dD" 'djangonaut-find-drf-serializer
+    "df" 'djangonaut-find-static-file
+    "dg" 'djangonaut-find-migration
+    "di" 'djangonaut-dired-installed-apps
+    "dm" 'djangonaut-find-model
+    "dM" 'djangonaut-find-model-manager
+    "do" 'djangonaut-find-form
+    "dp" 'djangonaut-find-template
+    "dq" 'djangonaut-find-sql-function
+    "dr" 'djangonaut-find-signal-receiver
+    "ds" 'djangonaut-find-settings-module
+    "dt" 'djangonaut-find-template-filter
+    "dT" 'djangonaut-find-template-tag
+    "du" 'djangonaut-find-url-module
+    "dv" 'djangonaut-find-view
+    "dw" 'djangonaut-find-middleware
+    "dW" 'djangonaut-find-widget)
   :config
-  (setq python-indent-offset 4)
-  (elpy-enable))
+  (global-djangonaut-mode))
+
+;; In .dir-locals.el:
+;; ((nil
+  ;; (python-shell-process-environment . ("DJANGO_SETTINGS_MODULE=project.settings"))
+  ;; (python-shell-extra-pythonpaths . ("/path/to/the/project/"))
+  ;; (python-shell-virtualenv-root . "/path/to/your/venv/")))
 
 (provide 'ana-python)
 
