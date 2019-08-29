@@ -34,20 +34,27 @@
 (use-package pyvenv
   :general
   (hd-leader-def
-    "v"  '(:ignore t :which-key "pyvenv")
-    "va" 'pyvenv-activate
-    "vc" 'pyvenv-create
-    "vd" 'pyvenv-deactivate
-    "vh" 'pyvenv-workon-history
-    "vs" 'pyvenv-exec-shell
-    "vw" 'pyvenv-workon))
+    "pa" 'pyvenv-activate
+    "pc" 'pyvenv-create
+    "pd" 'pyvenv-deactivate
+    "ph" 'pyvenv-workon-history
+    "ps" 'pyvenv-exec-shell
+    "pw" 'pyvenv-workon))
 
 ;; in .dir-locals.el
 ;; ((python-mode . ((pyvenv-workon . "~/PATH/venv")
 ;;                  (subdirs . nil))))
 
+
 ;; DJANGO
-;;(use-package django-commands)
+
+(use-package django-commands
+  :general
+  (hd-leader-def
+    "d>" 'django-commands-shell
+    "d." 'django-commands-server
+    "d<" 'django-commands-test
+    "d," 'django-commands-restart))
 
 ;; in .dir-locals.el
 ;; ((nil . ((django-commands-python-executable . "~/.virtualenvs/virtualenvname/bin/python")
@@ -56,7 +63,6 @@
 (use-package djangonaut
   :general
   (hd-leader-def
-    "d"  '(:ignore t :which-key "djangonaut")
     "da" 'djangonaut-find-admin-class
     "dc" 'djangonaut-find-management-command
     "dd" 'djangonaut-find-drf-permission
@@ -82,9 +88,9 @@
 
 ;; In .dir-locals.el:
 ;; ((nil
-  ;; (python-shell-process-environment . ("DJANGO_SETTINGS_MODULE=project.settings"))
-  ;; (python-shell-extra-pythonpaths . ("/path/to/the/project/"))
-  ;; (python-shell-virtualenv-root . "/path/to/your/venv/")))
+;; (python-shell-process-environment . ("DJANGO_SETTINGS_MODULE=project.settings"))
+;; (python-shell-extra-pythonpaths . ("/path/to/the/project/"))
+;; (python-shell-virtualenv-root . "/path/to/your/venv/")))
 
 (provide 'ana-python)
 

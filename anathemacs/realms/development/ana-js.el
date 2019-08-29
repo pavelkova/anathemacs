@@ -27,8 +27,8 @@
     "fu" 'foreman-start
     "fU" 'foreman-start-proc))
 
-(use-package js2-mode
-  :hook (js-mode . js2-minor-mode))
+;; (use-package js2-mode
+;;   :hook (js-mode . js2-minor-mode))
 
 (use-package npm-mode
   :general

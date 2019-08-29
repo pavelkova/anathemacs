@@ -64,14 +64,14 @@
   "w" '(:ignore t :which-key "workspaces"))
 
 (hd-leader-def
+  "."  '(:ignore t :which-key "LSP")
   "/"  '(:ignore t :which-key "webdev")
   "a"  '(:ignore t :which-key "anaconda")
   "e"  '(:ignore t :which-key "elixir")
-  "d"  '(:ignore t :which-key "djangonaut")
+  "d"  '(:ignore t :which-key "django")
   "f"  '(:ignore t :which-key "foreman")
   "l"  '(:ignore t :which-key "alchemist")
   "n"  '(:ignore t :which-key "npm")
-  "o"  '(:ignore t :which-key "pony")
   "p"  '(:ignore t :which-key "python")
   "r"  '(:ignore t :which-key "rails")
   "s"  '(:ignore t :which-key "server & system")

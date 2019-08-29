@@ -25,10 +25,31 @@
   :diminish lsp-mode
   :general
   (hd-leader-def
-    "l"  '(:ignore t :which-key "LSP")
-    "le" 'lsp-treemacs-errors-list
-    "lf" 'lsp-format-buffer
-    "ls" 'lsp-treemacs-symbols)
+    ".b"  'lsp-format-buffer
+    ".B"  'lsp-format-region
+    ".d"  'lsp-describe-thing-at-point
+    ".D"  'lsp-describe-session
+    ".e"  'lsp-treemacs-errors-list
+    ".f"  'lsp-find-definition
+    ".F"  'lsp-find-references
+    ".g"  'lsp-goto-type-definition
+    ".G"  'lsp-goto-implementation
+    ".h"  'lsp-symbol-highlight
+    ".l"  '(:ignore t :which-key "lens")
+    ".lh" 'lsp-lens-hide
+    ".lm" 'lsp-lens-mode
+    ".ls" 'lsp-lens-show
+    ".o"  'lsp-organize-imports
+    ".r"  'lsp-rename
+    ".s"  'lsp-treemacs-symbols
+    ".w"  '(:ignore t :which-key "workspace")
+    ".w," 'lsp-restart-workspace
+    ".wa" 'lsp-workspace-folders-add
+    ".wo" 'lsp-workspace-folders-open
+    ".wr" 'lsp-workspace-folders-remove
+    ".ws" 'lsp-workspace-folders-switch
+    ".x"  'lsp-execute-code-action
+    ".X"  'lsp-disconnect)
   :config
   (setq lsp-prefer-flymake nil
         lsp-enable-indentation t
