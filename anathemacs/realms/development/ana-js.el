@@ -48,8 +48,12 @@
 
 ;; (use-package react-snippets)
 
-;; (use-package rjsx-mode
-  ;; :mode ("src\\/.*\\.js\\'" . rjsx-mode))
+(use-package rjsx-mode
+  :mode ("\\.jsx?$" . rjsx-mode)
+  :config (setq js-indent-level 2
+                js2-strict-missing-semi-warning nil))
+
+
 
 ;; (defun activate-tide-mode ()
 ;;   "Use hl-identifier-mode only on js or ts buffers."

@@ -74,7 +74,7 @@
       (keyword       ana-cyan-2)
 
       ;; fonts
-      (mono-font     "FiraCode")
+      (mono-font     "FiraMono")
       (serif-font    "ETBembo")
       ;; (serif-font "Century Schoolbook Monospace")
       (sans-font     "Lato"))

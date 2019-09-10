@@ -78,7 +78,7 @@
 (require 'ana-layout)
 (require 'ana-modeline)
 (require 'ana-navigation)
-(require 'ligature-support)
+; (require 'ligature-support)
 ;; REALMS
 ;; data
 (require 'ana-databases)

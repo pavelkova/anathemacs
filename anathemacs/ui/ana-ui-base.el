@@ -45,7 +45,7 @@
 
 ;; for some reason my font isn't automatically set from theme in Void Linux
 (add-to-list 'default-frame-alist
-                       '(font . "Fira Code 10"))
+                       '(font . "Fira Mono 10"))
   
 ;; get rid of startup warnings
 (setq ad-redefinition-action 'accept)

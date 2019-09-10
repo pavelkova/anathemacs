@@ -5,7 +5,7 @@
 
 ;; FACES: maintain consistency and ease customization across various screen resolutions and font families
 
-;; (setq mono-font  "FiraCode"
+;; (setq mono-font  "FiraMono"
 ;;       sans-font  "Lato"
 ;;       serif-font "ETBembo")
 
@@ -29,22 +29,22 @@
 ;; (defface serif-xl  '((t :family ,serif-font :height 290)) "xl serif font")
 ;; (defface serif-xxl '((t :family ,serif-font :height 400)) "xxl serif font")
 
-(defface mono-xs '((t :family "FiraCode" :height 120)) "xs monospace font")
-(defface mono-sm '((t :family "FiraCode" :height 130)) "sm monospace font")
-(defface mono-md '((t :family "FiraCode" :height 140)) "md monospace font")
-(defface mono-lg '((t :family "FiraCode" :height 150)) "lg monospace font")
-(defface mono-xl '((t :family "FiraCode" :height 160)) "xl monospace font")
+(defface mono-xs '((t :family "FiraMono" :height 100)) "xs monospace font")
+(defface mono-sm '((t :family "FiraMono" :height 110)) "sm monospace font")
+(defface mono-md '((t :family "FiraMono" :height 120)) "md monospace font")
+(defface mono-lg '((t :family "FiraMono" :height 130)) "lg monospace font")
+(defface mono-xl '((t :family "FiraMono" :height 140)) "xl monospace font")
 
-(defface sans-xs  '((t :family "Lato" :height 130)) "xs sans serif font")
-(defface sans-sm  '((t :family "Lato" :height 150)) "sm sans serif font")
-(defface sans-md  '((t :family "Lato" :height 170)) "md sans serif font")
-(defface sans-lg  '((t :family "Lato" :height 190)) "lg sans serif font")
-(defface sans-xl  '((t :family "Lato" :height 300)) "xl sans serif font")
-(defface sans-xxl '((t :family "Lato" :height 320)) "xxl sans serif font")
+(defface sans-xs  '((t :family "Lato" :height 110)) "xs sans serif font")
+(defface sans-sm  '((t :family "Lato" :height 130)) "sm sans serif font")
+(defface sans-md  '((t :family "Lato" :height 150)) "md sans serif font")
+(defface sans-lg  '((t :family "Lato" :height 170)) "lg sans serif font")
+(defface sans-xl  '((t :family "Lato" :height 180)) "xl sans serif font")
+(defface sans-xxl '((t :family "Lato" :height 300)) "xxl sans serif font")
 
-(defface serif-xs  '((t :family "ETBembo" :height 135)) "xs serif font")
-(defface serif-sm  '((t :family "ETBembo" :height 160)) "sm serif font")
-(defface serif-md  '((t :family "ETBembo" :height 185)) "md serif font")
+(defface serif-xs  '((t :family "ETBembo" :height 130)) "xs serif font")
+(defface serif-sm  '((t :family "ETBembo" :height 150)) "sm serif font")
+(defface serif-md  '((t :family "ETBembo" :height 170)) "md serif font")
 (defface serif-lg  '((t :family "ETBembo" :height 235)) "lg serif font")
 (defface serif-xl  '((t :family "ETBembo" :height 285)) "xl serif font")
 (defface serif-xxl '((t :family "ETBembo" :height 435)) "xxl serif font")
@@ -54,8 +54,8 @@
 ;;;; loop through list of size abbrevs with index
 ;;;;;;
 
-; '(mono FiraCode (90 110 130 150 170))
-; '(mono FiraCode (("xs" . 90) ("sm" . 110)))
+; '(mono FiraMono (90 110 130 150 170))
+; '(mono FiraMono (("xs" . 90) ("sm" . 110)))
 
 ;; (defmacro anathemacs-def-face (style font heights)
 ;;   "STYLE is the type of face, e.g. monospace, serif, sans serif, etc.
@@ -67,7 +67,7 @@
 ;;                     '((t (:family ,font :height ,(elt heights i))))
 ;;                     ,(concat (elt sizes i) " size of " style " face"))))))
 
-;; (let ((anathemacs-faces '((mono FiraCode (90 110 130 150 170))
+;; (let ((anathemacs-faces '((mono FiraMono (90 110 130 150 170))
 ;;                           (sans Lato (100 120 140 180 290))
 ;;                           (serif ETBembo (110 130 150 190 400)))))
 ;;   (loop for anaface in anathemacs-faces
