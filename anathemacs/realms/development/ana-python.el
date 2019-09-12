@@ -32,6 +32,7 @@
   :mode "\\requirements.txt\\'")
 
 (use-package pyvenv
+  :hook (python-mode . pyvenv-tracking-mode)
   :general
   (hd-leader-def
     "pa" 'pyvenv-activate

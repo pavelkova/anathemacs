@@ -88,7 +88,6 @@
 (require 'ana-visualization)
 ;; development
 (require 'ana-c)
-;; (require 'ana-eglot)
 (require 'ana-elisp)
 (require 'ana-elixir)
 (require 'ana-erlang)

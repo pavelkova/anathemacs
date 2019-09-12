@@ -14,16 +14,37 @@
   (hd-leader-def
     "/c" 'company-web-html))
 
+(use-package emmet-mode
+  :hook web-mode
+  :config
+  (setq ennet-move-cursor-between-quotes t))
+
+(use-package graphql)
+
+(use-package graphql-mode
+  :mode "\\.graphql\\")
+
 (use-package json-mode
   :mode "\\.json\\'"
   :config
   (use-package json-reformat)
   (use-package json-snatcher))
 
+(use-package rainbow-mode)
+
+(use-package web-beautify
+  :general
+  (hd-leader-def
+    "/b"  '(:ignore t :which-key "beautify")
+    "/bc" 'web-beautify-css
+    "/bh" 'web-beautify-html
+    "/bj" 'web-beautify-js))
+
+
 (use-package web-mode
   :general
   (hd-leader-def
-    "/t" 'web-mode-tag-match))
+    "/t" 'web-mode-tag-match)
   :mode (("\\.erb\\'"    . web-mode)
          ("\\.html?\\'"  . web-mode)
          ("\\.js[x]\\'"  . web-mode)
@@ -43,18 +64,6 @@
         web-mode-script-padding 2
         web-mode-style-padding 2
         web-mode-tag-auto-close-style 2))
-
-(use-package rainbow-mode)
-
-(use-package emmet-mode)
-
-(use-package web-beautify
-  :general
-  (hd-leader-def
-    "/b"  '(:ignore t :which-key "beautify")
-    "/bc" 'web-beautify-css
-    "/bh" 'web-beautify-html
-    "/bj" 'web-beautify-js))
 
 (provide 'ana-web)
 

@@ -51,6 +51,9 @@
 
 ;; social media
 
+;; telegram
+;; (use-package telega)
+
 ;; twitter
 (use-package twittering-mode
   :general
