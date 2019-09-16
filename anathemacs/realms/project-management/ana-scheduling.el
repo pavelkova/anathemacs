@@ -10,13 +10,14 @@
 ;;; Code:
 
 ;; time tracking
-(use-package activity-watch-mode
-  :diminish activity-watch-mode
-  :init
+; (use-package activity-watch-mode
+;  :diminish activity-watch-mode
+;  :init
+  (require 'activity-watch-mode)
   (global-activity-watch-mode t)
-  :general
+;  :general
   (hs-leader-def
-    "ta" 'global-activity-watch-mode))
+    "ta" 'global-activity-watch-mode) ; )
 
 ;; agenda
 ;; AGENDA

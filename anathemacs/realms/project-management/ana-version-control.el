@@ -41,10 +41,15 @@
   :config
   (load-file (concat user-secrets-dir "gitlab.el")))
 
+(use-package git-link
+  :general
+  (ha-leader-def
+    "g/" 'git-link))
+
 (use-package git-timemachine
   :general
   (ha-leader-def
-    "gt" 'git-timemachine))
+    "g?" 'git-timemachine))
 
 (use-package magit
   :general
@@ -63,6 +68,11 @@
   :after magit
   :config
   (magithub-feature-autoinject t))
+
+(use-package magit-todos
+  :general
+  (ha-leader-def
+    "g:" 'magit-todos-list))
 
 ;; integrate with system pass
 

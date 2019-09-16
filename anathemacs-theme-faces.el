@@ -29,11 +29,11 @@
 ;; (defface serif-xl  '((t :family ,serif-font :height 290)) "xl serif font")
 ;; (defface serif-xxl '((t :family ,serif-font :height 400)) "xxl serif font")
 
-(defface mono-xs '((t :family "FiraMono" :height 100)) "xs monospace font")
-(defface mono-sm '((t :family "FiraMono" :height 110)) "sm monospace font")
-(defface mono-md '((t :family "FiraMono" :height 120)) "md monospace font")
-(defface mono-lg '((t :family "FiraMono" :height 130)) "lg monospace font")
-(defface mono-xl '((t :family "FiraMono" :height 140)) "xl monospace font")
+(defface mono-xs '((t :family "Hasklig" :height 110)) "xs monospace font")
+(defface mono-sm '((t :family "Hasklig" :height 130)) "sm monospace font")
+(defface mono-md '((t :family "Hasklig" :height 150)) "md monospace font")
+(defface mono-lg '((t :family "Hasklig" :height 170)) "lg monospace font")
+(defface mono-xl '((t :family "Hasklig" :height 190)) "xl monospace font")
 
 (defface sans-xs  '((t :family "Lato" :height 110)) "xs sans serif font")
 (defface sans-sm  '((t :family "Lato" :height 130)) "sm sans serif font")

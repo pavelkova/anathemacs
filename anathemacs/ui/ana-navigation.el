@@ -8,25 +8,13 @@
 ;;
 
 ;;; Code:
-;; (use-package all-the-icons-dired
-;;   :hook dired-mode)
 
-;; (use-package centaur-tabs
-;;   :config
-;;   (centaur-tabs-group-by-projectile-project)
-;;   (centaur-tabs-headline-match)
-;;   (centaur-tabs-mode t)
-;;   (setq centaur-tabs-style "alternate"
-;;         centaur-tabs-height 32
-;;         centaur-tabs--set-icons t
-;;         centaur-tabs-gray-out-icons 'buffer
-;;         centaur-tabs-set-bar 'over
-;;         centaur-tabs-close-button nil
-;;         centaur-tabs-set-modified-marker t)
-;;   :hook
-;;   ((dired-mode treemacs-mode) . centaur-tabs-local-mode))
 
-;; ibuffer
+(use-package hyperspace
+  :general
+  (general-define-key
+   "H-s" 'hyperspace))
+
 (setq ibuffer-expert t
       ibuffer-show-empty-filter-groups nil
       ibuffer-filter-group-name-face 'org-level-1
@@ -49,38 +37,6 @@
     "'" 'imenu-list-smart-toggle)
   :config
   (setq imenu-list-focus-auto-resize t))
-
-
-;; (defun neotree-project-dir ()
-;;     "Open NeoTree using the git root."
-;;     (interactive)
-;;     (let ((project-dir (projectile-project-root))
-;;           (file-name (buffer-file-name)))
-;;       (neotree-toggle)
-;;       (if project-dir
-;;           (if (neo-global--window-exists-p)
-;;               (progn
-;;                 (neotree-dir project-dir)
-;;                 (neotree-find file-name)))
-;;         (message "Could not find git project root."))))
-
-;; (use-package neotree
-;;   :general
-;;   (general-define-key
-;;    "<f8>" 'neotree-toggle
-;;    "H-a p d" 'neotree-project-dir)
-;;   :config
-;;   (setq neo-window-width 32
-;;         neo-theme 'icons
-;;         neo-create-file-auto-open nil
-;;         neo-show-updir-line nil
-;;         neo-mode-line-type nil
-;;         neo-smart-open t
-;;         neo-persist-show nil
-;;         neo-show-hidden-files t
-;;         neo-auto-indent-point t
-;;         neo-modern-sidebar t
-;;         projectile-switch-project-action 'neotree-projectile-action))
 
 ;; REPLACE NEOTREE WITH TREEMACS TO UTILIZE PER-FRAME BUFFERS.
 (use-package treemacs

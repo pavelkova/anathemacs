@@ -81,6 +81,12 @@
   (hs-leader-def
     "tk" 'org-kanban/initialize))
 
+(use-package side-notes
+  :general
+  (hs-leader-def
+    "n" 'side-notes-toggle-notes)
+  :config
+  (setq side-notes-file "notes.org"))
 (provide 'ana-planning)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
