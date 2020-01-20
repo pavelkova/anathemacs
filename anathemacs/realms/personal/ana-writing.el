@@ -9,6 +9,9 @@
 
 ;;; Code:
 
+(use-package litanize
+ :config (defalias 'insert-litany #'litanize-at-point))
+
 (use-package mpages
   :general
   (hs-leader-def

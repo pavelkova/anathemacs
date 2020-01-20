@@ -55,6 +55,12 @@
 
 (setq user-mu4e-file (concat user-secrets-dir "mu4e.el"))
 
+;; habitica.com login tokens
+(setq user-habitica-file (concat user-secrets-dir "habitica.el"))
+
+;; todoist settings
+(setq user-todoist-file (concat user-secrets-dir "todoist.el"))
+
 ;; Keep list of agenda files in separate file.  Referenced by realms/project-management/ana-planning.el
 ;; (setq user-org-agenda-files (concat user-dir "agenda_files"))
 

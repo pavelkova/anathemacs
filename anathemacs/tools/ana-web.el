@@ -47,7 +47,7 @@
    ;; "/l" 'org-web-tools-insert-link-for-url
    "/r" 'org-web-tools-read-url-as-org)
   :config
-  (setq org-web-tools-pandoc-sleep-time 1.0))
+  (setq org-web-tools-pandoc-sleep-time 20.0))
 
 ;; (with-eval-after-load 'org-web-tools
 ;;   ;; Modify

@@ -24,7 +24,7 @@
            ("\\.gv\\'"        . graphviz-dot-mode))
   :config
   (hs-leader-def
-    :keymaps graphviz-dot-mode-keymap
+    ; :keymaps graphviz-dot-mode-keymap
     "d=" 'graphviz-dot-indent-graph
     "dc" 'compile))
 

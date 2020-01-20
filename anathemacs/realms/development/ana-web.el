@@ -17,7 +17,7 @@
 (use-package emmet-mode
   :hook web-mode
   :config
-  (setq ennet-move-cursor-between-quotes t))
+  (setq emmet-move-cursor-between-quotes t))
 
 (use-package graphql)
 

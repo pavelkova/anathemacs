@@ -89,5 +89,17 @@
   (setq side-notes-file "notes.org"))
 (provide 'ana-planning)
 
+(use-package todoist
+  :mode
+  (("\\todoist.org\\'" . todoist-mode))
+  :general
+  (hs-leader-def
+    "2" 'todoist)
+  :config
+  (load-file user-todoist-file)
+  ;; (setq todist-token "XXXXXXXXXXXX"
+  ;;       todoist-backing-buffer "path/to/file")
+  (setq todoist-show-all nil))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-planning.el ends here

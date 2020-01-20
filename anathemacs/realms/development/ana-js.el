@@ -27,9 +27,6 @@
     "fu" 'foreman-start
     "fU" 'foreman-start-proc))
 
-;; (use-package js2-mode
-;;   :hook (js-mode . js2-minor-mode))
-
 (use-package npm-mode
   :general
   (hd-leader-def
@@ -48,13 +45,22 @@
 
 ;; (use-package react-snippets)
 
+(use-package js-react-redux-yasnippets
+  :config
+  (setq js-react-redux-yasnippets-want-semicolon nil))
+
+;; DON'T NEED IN EMACS 27
+
+;; (use-package js2-mode
+;;   :hook (js-mode . js2-minor-mode))
+
 (use-package rjsx-mode
   :mode ("\\.jsx?$" . rjsx-mode)
   :config (setq js-indent-level 2
                 js2-strict-missing-semi-warning nil))
 
 
-
+;; TYPESCRIPT
 ;; (defun activate-tide-mode ()
 ;;   "Use hl-identifier-mode only on js or ts buffers."
 ;;   (when (and (stringp buffer-file-name)
