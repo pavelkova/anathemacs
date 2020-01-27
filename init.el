@@ -34,6 +34,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (load-theme 'anathemacs t)
+(set-face-font 'default "Fira Code-10")
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)

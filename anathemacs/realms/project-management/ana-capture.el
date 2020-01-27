@@ -117,7 +117,7 @@
 ** Directions")
 
       ;;;; ORG-JOURNAL
-        ("j" "journal entry" entry (file+olp+datetree (concat org-journal-dir "2019.org")) ; (function org-journal-find-location)
+        ("j" "journal entry" entry (file+olp+datetree (concat org-journal-dir "%Y.org")) ; (function org-journal-find-location)
                                "
 :PROPERTIES:
 :word_count:

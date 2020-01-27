@@ -9,12 +9,6 @@
 
 ;;; Code:
 
-
-(use-package hyperspace
-  :general
-  (general-define-key
-   "H-s" 'hyperspace))
-
 (setq ibuffer-expert t
       ibuffer-show-empty-filter-groups nil
       ibuffer-filter-group-name-face 'org-level-1
@@ -46,7 +40,7 @@
   :config
   ;; (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
   (setq treemacs-no-png-images t
-        treemacs-width 30
+        treemacs-width 20
         treemacs-follow-after-init t))
 
 (use-package treemacs-magit
@@ -54,6 +48,19 @@
 
 (use-package treemacs-projectile
   :after treemacs projectile)
+
+;; tab bar
+(general-define-key
+ "<f9>" 'tab-bar-mode)
+
+;; code folding
+(use-package yafolding
+  :hook (prog-mode . yafolding-mode)
+  :general
+  (general-define-key
+    "H-/"   'yafolding-toggle-element
+    "H-M-/" 'yafolding-hide-parent-element
+    "H-C-/" 'yafolding-toggle-all))
 
 (provide 'ana-navigation)
 

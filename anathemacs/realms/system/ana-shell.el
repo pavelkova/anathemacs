@@ -10,26 +10,29 @@
 ;;; Code:
 
 (use-package emamux
-  ;; :bind-keymap
-  ;; ("H-a x" . emamux:keymap)
+  :bind-keymap
+  ("H-d x" . emamux:keymap))
+
+(use-package equake
   :general
-  (hd-leader-def
-    "tx" 'emamux:send-command
-    "tX" 'emamux:yank-from-list-buffers))
+  (general-define-key
+   "C-x C-c" 'equake-check-if-in-equake-frame-before-closing) ; prevent accidental frame-closure
+  :config
+  (setq equake-size-width 0.99)
+  (set-face-attribute 'equake-buffer-face 'nil :inherit 'default :background nil :foreground "white"))
 
 (use-package fish-mode
   :mode ("\\.fish\\'"))
 
-(use-package sane-term
-  :general
-  (hd-leader-def
-    "tt" 'sane-term
-    "tn" 'sane-term-create))
+(use-package vterm)
 
-(use-package shx)
+(use-package vterm-toggle
+  :general
+  (ha-leader-def
+    "C-t" 'vterm-toggle-cd))
 
 (use-package with-editor
-  :hook ((shell-mode ansi-term fish-mode multi-term tramp-term) . with-editor-export-editor))
+  :hook ((shell-mode ansi-term fish-mode vterm tramp-term) . with-editor-export-editor))
 
 
 (provide 'ana-shell)

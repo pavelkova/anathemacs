@@ -32,6 +32,10 @@
 ;; shorten responses
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; fix max depth error
+(setq max-specpdl-size 13000
+      max-lisp-eval-depth 8000)
+
 (provide 'ana-base)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

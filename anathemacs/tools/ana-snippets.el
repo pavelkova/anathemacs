@@ -12,13 +12,13 @@
   (ha-leader-def
     "s." 'yas-minor-mode
     "sf" 'yas-visit-snippet-file
-    "si" 'yas-insert-snippet
+    ;; "si" 'yas-insert-snippet
     "sn" 'yas-new-snippet))
 
 (use-package ivy-yasnippet
   :general
   (ha-leader-def
-    "I" 'ivy-yasnippet))
+    "si" 'ivy-yasnippet))
 
 (use-package yasnippet-snippets
   :init

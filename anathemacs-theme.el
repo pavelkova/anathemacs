@@ -11,9 +11,9 @@
 
 (let ((class '((class color) (min-colors 89)))
       ;; background
-      (bg-1           ana-bg-1)
+      (bg-1          ana-bg-1)
       ;; alt background
-      (bg-2           ana-bg-2)
+      (bg-2          ana-bg-2)
       (cblk-bg       ana-bg-2)
       (ttip-bg       ana-bg-2)
       (comment-bg    ana-bg-2)
@@ -87,7 +87,7 @@
 ;;;;; basics
    `(cursor                   ((t :background ,cursor)))
    `(custom-button            ((t :background ,bg-2 :foreground ,fg-1 :box (:line-width 2 :style released-button))))
-   `(default                  ((t :inherit fixed-pitch :background ,bg-1 :foreground ,fg-1 :height 130)))
+   `(default                  ((t :inherit fixed-pitch :background ,bg-1 :foreground ,fg-1)))
    `(default-italic           ((t :inherit default :slant italic)))
    `(error                    ((t :foreground ,err)))
    `(eval-sexp-fu-flash       ((t :background ,suc :foreground ,bg-1)))
@@ -192,14 +192,19 @@
    `(company-tooltip-selection        ((t :background ,ttip-sl :foreground ,fg-1)))
 
 ;;;;; counsel
-   `(counsel-outline-1 ((t :inherit nil)))
-   `(counsel-outline-2 ((t :inherit nil)))
-   `(counsel-outline-3 ((t :inherit nil)))
-   `(counsel-outline-4 ((t :inherit nil)))
-   `(counsel-outline-5 ((t :inherit nil)))
-   `(counsel-outline-6 ((t :inherit nil)))
-   `(counsel-outline-7 ((t :inherit nil)))
-   `(counsel-outline-8 ((t :inherit nil)))
+   `(counsel-mark-ring-highlight    ((t :inherit ivy-current-match)))
+   `(counsel-active-mode            ((t :foreground ,suc)))
+   `(counsel-application-name       ((t :foreground ,func)))
+   `(counsel-key-binding            ((t :inherit mono-xs :foreground ,keyword)))
+   `(counsel-variable-documentation ((t :inherit mono-xs :foreground ,ttip)))
+   `(counsel-outline-1              ((t :inherit counsel-outline-default :weight bold)))
+   `(counsel-outline-2              ((t :inherit counsel-outline-default)))
+   `(counsel-outline-3              ((t :inherit counsel-outline-default)))
+   `(counsel-outline-4              ((t :inherit counsel-outline-default)))
+   `(counsel-outline-5              ((t :inherit counsel-outline-default)))
+   `(counsel-outline-6              ((t :inherit counsel-outline-default)))
+   `(counsel-outline-7              ((t :inherit counsel-outline-default)))
+   `(counsel-outline-8              ((t :inherit counsel-outline-default)))
 
 ;;;;; dashboard
    `(dashboard-banner-logo-title     ((t :inherit sans-md :weight normal)))
@@ -435,13 +440,24 @@
    `(info-title-4        ((t :inherit mono-md)))
 
 ;;;;; ivy
-   `(ivy-current-match           ((t :inherit mono-xs :foreground ,bg-1 :background ,highlight)))
-   `(ivy-minibuffer-match-face-1 ((t :inherit mono-xs)))
-   `(ivy-minibuffer-match-face-2 ((t :inherit ivy-minibuffer-match-face-1 :foreground ,head1 :underline t)))
-   `(ivy-minibuffer-match-face-3 ((t :inherint ivy-minibuffer-match-face-2)))
-   `(ivy-minibuffer-match-face-4 ((t :inherit ivy-minibuffer-match-face-2)))
-   `(ivy-org                     ((t :inherit ivy-minibuffer-match-face-1)))
-   `(ivy-remote                  ((t :foreground ,yellow-1)))
+   `(ivy-current-match              ((t :foreground ,bg-1 :background ,highlight)))
+   `(ivy-grep-info                  ((t :foreground ,comment)))
+   `(ivy-grep-line-number           ((t :foreground ,func)))
+   `(ivy-highlight-face             ((t :inherit ivy-current-match)))
+   `(ivy-match-required-face        ((t :foreground ,err :weight bold)))
+   `(ivy-minibuffer-match-highlight ((t :inherit ivy-current-match)))
+   `(ivy-minibuffer-match-face-1    ((t)))
+   `(ivy-minibuffer-match-face-2    ((t :inherit ivy-minibuffer-match-face-1 :foreground ,head1 :underline t)))
+   `(ivy-minibuffer-match-face-3    ((t :inherit ivy-minibuffer-match-face-2)))
+   `(ivy-minibuffer-match-face-4    ((t :inherit ivy-minibuffer-match-face-2)))
+   `(ivy-modified-buffer            ((t :foreground ,war)))
+   `(ivy-modified-outside-buffer    ((t :foreground ,err)))
+   `(ivy-org                        ((t :foreground ,fg-2)))
+   `(ivy-remote                     ((t :foreground ,yellow-1)))
+   `(ivy-separator                  ((t :weight bold)))
+   `(ivy-subdir                     ((t :weight bold)))
+   `(ivy-virtual                    ((t :foreground ,comment)))
+   `(ivy-yanked-word                ((t :inherit ivy-current-match)))
 
 ;;;;; latex
    `(font-latex-bold-face                ((t :foreground ,comp)))
@@ -536,7 +552,6 @@
    `(markdown-metadata-key-face     ((t :inherit font-lock-keyword-face :foreground nil)))
    `(markdown-pre-face              ((t :inherit org-block :foreground nil)))
    `(markdown-url-face              ((t :inherit org-link :foreground nil)))
-
 
 ;;;;; mode-line
    `(mode-line           ((t :inherit sans-xs :foreground ,comment :background ,bg-2 :box nil)))
@@ -695,20 +710,27 @@
    `(spaceline-python-venv      ((t :foreground ,comp)))
 
 ;;;;; swiper
-   `(swiper-line-face    ((t :background ,highlight :weight bold)))
-   `(swiper-match-face-1 ((t :weight bold)))
-   `(swiper-match-face-2 ((t :foreground ,head1 :underline t)))
-   `(swiper-match-face-3 ((t :foreground ,head1 :underline t)))
-   `(swiper-match-face-4 ((t :foreground ,head1 :underline t)))
+   `(swiper-background-match-face-1 ((t :inherit ivy-minibuffer-match-face-1)))
+   `(swiper-background-match-face-2 ((t :inherit ivy-minibuffer-match-face-2)))
+   `(swiper-background-match-face-3 ((t :inherit ivy-minibuffer-match-face-3)))
+   `(swiper-background-match-face-4 ((t :inherit ivy-minibuffer-match-face-4)))
+   `(swiper-match-face-1            ((t :inherit ivy-minibuffer-match-face-1)))
+   `(swiper-match-face-2            ((t :inherit ivy-minibuffer-match-face-2)))
+   `(swiper-match-face-3            ((t :inherit ivy-minibuffer-match-face-3)))
+   `(swiper-match-face-4            ((t :inherit ivy-minibuffer-match-face-4)))
+   `(swiper-line-face               ((t :inherit ivy-current-match)))
 
 ;;;;; tabbar
-   `(tabbar-button           ((t :inherit tabbar-default)))
-   `(tabbar-button-highlight ((t :inherit tabbar-default)))
-   `(tabbar-default          ((t :inhherit mono-sm :background ,bg-1 :foreground ,head1)))
-   `(tabbar-highlight        ((t :underline t)))
-   `(tabbar-selected         ((t :inherit tabbar-default :foreground ,red-1 :weight bold)))
-   `(tabbar-separator        ((t :inherit tabbar-default)))
-   `(tabbar-unselected       ((t :inherit tabbar-default :background ,bg-1 :slant italic :weight light)))
+   `(tab-bar               ((t :inherit mono-xs :background ,bg-2 :foreground ,fg-1)))
+   `(tab-bar-tab           ((t :inherit mono-xs :background ,bg-1 :foreground ,fg-1)))
+   `(tab-bar-tab-inactive  ((t :inherit mono-xs :background ,bg-2 :foreground ,fg-2)))
+   ;; `(tabbar-button           ((t :inherit tabbar-default)))
+   ;; `(tabbar-button-highlight ((t :inherit tabbar-default)))
+   ;; `(tabbar-default          ((t :inhherit mono-sm :background ,bg-1 :foreground ,head1)))
+   ;; `(tabbar-highlight        ((t :underline t)))
+   ;; `(tabbar-selected         ((t :inherit tabbar-default :foreground ,red-1 :weight bold)))
+   ;; `(tabbar-separator        ((t :inherit tabbar-default)))
+   ;; `(tabbar-unselected       ((t :inherit tabbar-default :background ,bg-1 :slant italic :weight light)))
 
 ;;;;; term
    `(term              ((t :foreground ,fg-1 :background ,bg-1)))

@@ -9,31 +9,26 @@
 
 ;;; Code:
 
+(use-package auto-sudoedit
+  :diminish t
+  :init
+  (auto-sudoedit-mode 1))
+
 (use-package counsel-tramp
   :general
-  (hd-leader-def
-  "st" 'counsel-tramp)
+  (ha-leader-def
+  "C-r" 'counsel-tramp)
   :config
-  (add-hook 'counsel-tramp-pre-command-hook '(lambda () (global-aggressive-indent-mode 0)
-				     (projectile-mode 0)
-				     (editorconfig-mode 0)))
-  (add-hook 'counsel-tramp-quit-hook '(lambda () (global-aggressive-indent-mode 1)
-			      (projectile-mode 1)
-			      (editorconfig-mode 1))))
+  (setq tramp-default-method "ssh"))
 
-
-(use-package nginx-mode
-  :defer t)
+(use-package nginx-mode)
 
 (use-package company-nginx
   :hook (nginx-mode . (set-local-company-backend company-nginx)))
 
-(use-package tramp-term
-  :general
-  (hd-leader-def
-  "sr" 'tramp-term)
-  :config
-  (setq tramp-default-method "ssh"))
+(use-package ssh-config-mode)
+
+(use-package tramp-term)
 
 (hd-leader-def
   "sp" 'list-processes)

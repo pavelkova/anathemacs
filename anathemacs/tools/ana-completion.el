@@ -15,9 +15,6 @@
         company-tooltip-align-annotations t
         company-tooltip-margin 3))
 
-;; (use-package company-box
-;;   :hook (company-mode . company-box-mode))
-
 (defun set-local-company-backend (backend)
   "Only load backends when needed"
   (set (make-local-variable 'company-backends) '(backend)) (company-mode))

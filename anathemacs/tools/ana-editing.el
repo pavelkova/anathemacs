@@ -15,29 +15,15 @@
 (setq display-line-numbers-width-start t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-;; Visibility
-(ha-leader-def
-  ";."  'hs-minor-mode
-  ";]"  'hs-hide-block
-  ";["  'hs-show-block
-  ";\-" 'hs-toggle-hiding
-  ";a"  'hs-hide-all
-  ";A"  'hs-show-all
-  ";l"  'display-line-numbers-mode
-  ";L"  'global-display-line-numbers-mode)
-
-
-
 ;; comments
-(ha-leader-def
-  "c]"  'comment-dwim ;; add to end of line
-  "c\-" 'comment-line
-  "c["  'comment-or-uncomment-region)
+(general-define-key
+  "H-]"  'comment-dwim ;; add to end of line
+  "H-\-" 'comment-line
+  "H-["  'comment-or-uncomment-region)
 
 (use-package crux
   :general
   (ha-leader-def
-    "."     '(:which-key "crux")
     ".!"    'crux-sudo-edit
     ".@ "   'crux-recompile-init
     ".c"    'crux-copy-file-preserve-attributes
@@ -72,11 +58,13 @@
   :init
   (global-undo-tree-mode t)
   :general
-  (ha-leader-def
-    "<kp-0>"       'undo-tree-visualize
-    "<left>"       'undo-tree-undo
-    "<right>"      'undo-tree-redo
-    "<kp-decimal>" 'undo-tree-visualize-redo)
+  (general-define-key
+    "H-<kp-0>"       'undo-tree-visualize
+    "H-<kp-insert>"  'undo-tree-visualize
+    "H-<left>"       'undo-tree-undo
+    "H-<right>"      'undo-tree-redo
+    "H-<kp-decimal>" 'undo-tree-visualize-redo
+    "H-<kp-delete>"  'undo-tree-visualize-redo)
   :config
   (setq undo-tree-visualizer-diff t
         undo-tree-visualizer-relative-timestamps t
@@ -92,4 +80,3 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-editing.el ends here
-

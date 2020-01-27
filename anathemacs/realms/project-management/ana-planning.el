@@ -64,16 +64,16 @@
                              (org-agenda-files :maxlevel . 4))))
 
 ;; BRAIN - mindmapping with org trees
-(use-package org-brain
-  :general
-  (hs-leader-def
-    "C-b"  'org-brain-agenda)
-  :config
-  (setq org-brain-path user-brain-dir
-        org-id-track-globally t
-        org-id-locations-file (concat user-dir ".org-id-locations")
-        org-brain-visualize-default-choices 'all
-        org-brain-title-max-length 12))
+;;(use-package org-brain
+;;  :general
+;;  (hs-leader-def
+;;    "C-b"  'org-brain-agenda)
+;;  :config
+;;  (setq org-brain-path user-brain-dir
+;;        org-id-track-globally t
+;;        org-id-locations-file (concat user-dir ".org-id-locations")
+;;        org-brain-visualize-default-choices 'all
+;;        org-brain-title-max-length 12))
 
 ;; KANBAN
 (use-package org-kanban

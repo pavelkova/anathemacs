@@ -31,8 +31,8 @@
         org-journal-time-format "%H:%M"
         org-journal-time-prefix "**** "
         org-journal-file-format "%Y.org"))
-
-(global-unset-key (kbd "C-c C-j"))
+;; Remove default keybindings
+(local-unset-key (kbd "C-c C-j"))
 
 (use-package wc-mode
   :delight wc-mode
