@@ -9,11 +9,10 @@
 
 ;;; Code:
 (use-package ein
-  :defer t
   :general
   (hd-leader-def
     "j"  '(:ignore t :which-key "jupyter")
-    "j+" 'ein:jupyter-server-start
+    "j." 'ein:jupyter-server-start
     "jl" 'ein:notebooklist-open
     "jn" 'ein:notebooklist-new-notebook
     "jg" 'ein:notebooklist-open-notebook-global

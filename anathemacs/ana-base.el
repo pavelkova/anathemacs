@@ -11,7 +11,7 @@
   :config
   (add-to-list 'dashboard-items '(agenda) t)
   (setq dashboard-banner-logo-title ""
-        dashboard-startup-banner "~/.emacs.d/user/logo.svg"
+        dashboard-startup-banner "~/.config/emacs/user/logo.svg"
         show-week-agenda-p t
         dashboard-center-content t
         dashboard-items '((recents        . 5)

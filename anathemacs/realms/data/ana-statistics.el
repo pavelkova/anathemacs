@@ -11,11 +11,9 @@
 (use-package ess
   :hook (set-local-company-backend company-ess))
 
-(use-package ess-R-data-view
-  :defer t)
+(use-package ess-view)
 
 (use-package ess-smart-equals
-  :defer t
   :init
   (progn
     (add-hook 'ess-mode-hook 'ess-smart-equals-mode)

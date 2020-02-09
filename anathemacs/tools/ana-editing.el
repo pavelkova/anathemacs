@@ -49,12 +49,12 @@
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
 
 (use-package smartparens
-  :diminish smartparens-mode
+  :delight smartparens-mode
   :init
   (smartparens-global-mode))
 
 (use-package undo-tree
-  :diminish undo-tree-mode
+  :delight undo-tree-mode
   :init
   (global-undo-tree-mode t)
   :general
@@ -72,7 +72,7 @@
         undo-tree-history-directory-alist `((".*" . "~/.cache/emacs/backups/"))))
 
 (use-package ws-butler
-  :diminish ws-butler-mode
+  :delight ws-butler-mode
   :init
   (ws-butler-global-mode))
 

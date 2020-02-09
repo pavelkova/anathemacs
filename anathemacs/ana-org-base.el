@@ -75,11 +75,15 @@
 
 
 (use-package ivy-omni-org
+  :after ivy
   :general
   (hs-leader-def
-    "i" 'ivy-omni-org)
+    "o" 'ivy-omni-org)
   :config
   (setq ivy-omni-org-file-sources '(org-agenda-files)))
+
+(use-package helm-org-rifle
+  :after helm)
 
 (provide 'ana-org-base)
 

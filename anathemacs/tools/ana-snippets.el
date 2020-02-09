@@ -6,7 +6,7 @@
 
 ;;; Code:
 (use-package yasnippet
-  :diminish yas-minor-mode
+  :delight yas-minor-mode
   :init
   (yas-global-mode t)
   (ha-leader-def
@@ -14,11 +14,6 @@
     "sf" 'yas-visit-snippet-file
     ;; "si" 'yas-insert-snippet
     "sn" 'yas-new-snippet))
-
-(use-package ivy-yasnippet
-  :general
-  (ha-leader-def
-    "si" 'ivy-yasnippet))
 
 (use-package yasnippet-snippets
   :init

@@ -11,7 +11,7 @@
 
 ;; time tracking
 (use-package activity-watch-mode
- :diminish activity-watch-mode
+ :delight activity-watch-mode
  :init
   (global-activity-watch-mode t)
  :general
@@ -129,16 +129,6 @@
 ;; ORG-HABIT
 (setq org-habit-graph-column 75)
 
-;; HABITICA
-;; (use-package habitica
-;;   :general
-;;   (hs-leader-def
-;;     "th" 'habitica-tasks)
-;;   :config
-;;   (load-file user-habitica-file)
-;;   (setq habitica-turn-on-highlighting t
-;;         habitica-show-completed-todo t
-;;         habitica-show-streak t))
 
 (provide 'ana-scheduling)
 

@@ -9,7 +9,8 @@
 
 ;;; Code:
 
-
+(use-package elisp-slime-nav
+  :hook ((emacs-lisp-mode ielm-mode) . elisp-slime-nav-mode))
 
 (provide 'ana-elisp)
 

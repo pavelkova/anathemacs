@@ -42,10 +42,6 @@
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'visual-line-mode)
-
-;; for some reason my font isn't automatically set from theme in Void Linux
-;; (add-to-list 'default-frame-alist
-;;                        '(font . "Fira Code-11"))
   
 ;; get rid of startup warnings
 (setq ad-redefinition-action 'accept)

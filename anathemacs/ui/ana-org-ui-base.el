@@ -10,6 +10,7 @@
 ;;; Code:
 
 (use-package olivetti
+  :delight olivetti-mode
   :hook ((text-mode org-mode) . olivetti-mode)
   :init
   (setq olivetti-body-width 0.85))
@@ -34,19 +35,11 @@
   :config
   (setq org-bullets-bullet-list '("⋅")))
 
-;; (use-package mixed-pitch
-;;   :diminish mixed-pitch-mode
-;;   :hook (org-mode . mixed-pitch-mode)
-;;   :config
-;;   (add-to-list 'mixed-pitch-fixed-pitch-faces 'org-special-keyword 'org-link))
-
 (use-package org-variable-pitch
-  :diminish org-variable-pitch-minor-mode
+  :delight org-variable-pitch-minor-mode
   :hook (org-mode . org-variable-pitch-minor-mode)
   :config
   (add-to-list 'org-variable-pitch-fixed-faces 'org-special-keyword 'org-link))
-
-(diminish 'org-indent-mode)
 
 
 (provide 'ana-org-ui-base)

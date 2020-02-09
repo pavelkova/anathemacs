@@ -50,6 +50,8 @@
          ("\\.js[x]\\'"  . web-mode)
          ("\\.[s]css\\'" . web-mode)
          ("\\.xml\\'"    . web-mode))
+  :bind (:map web-mode-map
+              ("RET" . newline-and-indent))
   :config
   (set-local-company-backend company-web-html)
   (setq web-mode-block-padding 2
@@ -59,6 +61,7 @@
         web-mode-enable-auto-pairing
         web-mode-enable-block-face t
         web-mode-enable-css-colorization t
+        web-mode-enable-current-column-highlight t
         web-mode-enable-current-element-highlight t
         web-mode-markup-indent-offset 2
         web-mode-script-padding 2

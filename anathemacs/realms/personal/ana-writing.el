@@ -32,17 +32,16 @@
         org-journal-time-prefix "**** "
         org-journal-file-format "%Y.org"))
 ;; Remove default keybindings
-(local-unset-key (kbd "C-c C-j"))
+(global-unset-key (kbd "C-c C-j"))
 
 (use-package wc-mode
-  :delight wc-mode
   :hook org-mode
   :general
   (hs-leader-def
     "wc" 'wc-mode
     "wC" 'wc-set-word-goal)
   :config
-  (setq wc-modeline-format "written %tw of %gw words"
+  (setq wc-modeline-format "%tw / %gw words"
         wc-word-goal 750))
 
 (use-package writegood-mode

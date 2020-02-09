@@ -13,14 +13,6 @@
   :bind-keymap
   ("H-d x" . emamux:keymap))
 
-(use-package equake
-  :general
-  (general-define-key
-   "C-x C-c" 'equake-check-if-in-equake-frame-before-closing) ; prevent accidental frame-closure
-  :config
-  (setq equake-size-width 0.99)
-  (set-face-attribute 'equake-buffer-face 'nil :inherit 'default :background nil :foreground "white"))
-
 (use-package fish-mode
   :mode ("\\.fish\\'"))
 

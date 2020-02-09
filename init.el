@@ -29,14 +29,14 @@
 
 (push (expand-file-name "anathemacs" user-emacs-directory) load-path)
 
-(let ((default-directory  "~/.emacs.d/anathemacs"))
+(let ((default-directory  "~/.config/emacs/anathemacs"))
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
 
 (load-theme 'anathemacs t)
 (set-face-font 'default "Fira Code-10")
 
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file "~/.config/emacs/custom.el")
 (load custom-file)
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
@@ -56,6 +56,7 @@
     (package-refresh-contents)
     (package-install 'use-package))
   (require 'use-package)
+  (require 'delight)
   (setq use-package-always-ensure t
         use-package-always-defer t
         use-package-verbose t))
@@ -66,9 +67,9 @@
 (require 'ana-base)
 (require 'ana-org-base)
 ;; tools
-(require 'ana-completion)
 (require 'ana-exporting)
-(require 'ana-ivy)
+(require 'ana-helm)
+;; (require 'ana-ivy)
 (require 'ana-processors)
 (require 'ana-snippets)
 (require 'ana-web)

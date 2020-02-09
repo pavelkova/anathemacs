@@ -10,14 +10,23 @@
 ;;; Code:
 
 (use-package auto-sudoedit
-  :diminish t
+  :delight
   :init
   (auto-sudoedit-mode 1))
 
 (use-package counsel-tramp
+  :after (counsel ivy)
   :general
   (ha-leader-def
   "C-r" 'counsel-tramp)
+  :config
+  (setq tramp-default-method "ssh"))
+
+(use-package counsel-tramp
+  :after helm
+  :general
+  (ha-leader-def
+  "C-r" 'helm-tramp)
   :config
   (setq tramp-default-method "ssh"))
 
@@ -29,9 +38,6 @@
 (use-package ssh-config-mode)
 
 (use-package tramp-term)
-
-(hd-leader-def
-  "sp" 'list-processes)
 
 (provide 'ana-server)
 

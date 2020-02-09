@@ -34,8 +34,7 @@
 
 (use-package matlab-mode)
 
-(use-package wolfram-mode
-  :defer t)
+(use-package wolfram-mode)
 
 ;; LaTeX in org-mode
 (setq org-format-latex-options

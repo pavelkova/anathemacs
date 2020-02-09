@@ -6,8 +6,8 @@
 ;; THEME
 (deftheme anathemacs)
 
-(load-file "~/.emacs.d/anathemacs-theme-faces.el")
-(load-file "~/.emacs.d/anathemacs-theme-colors.el")
+(load-file "~/.config/emacs/anathemacs-theme-faces.el")
+(load-file "~/.config/emacs/anathemacs-theme-colors.el")
 
 (let ((class '((class color) (min-colors 89)))
       ;; background
@@ -653,7 +653,9 @@
    `(org-warning                   ((t :foreground ,err)))
 
 ;;;;; perspective
-   `(persp-selected-face ((t :inherit bold :foreground ,func)))
+   `(persp-face-lighter-buffer-not-in-persp ((t :inherit sans-xs :weight bold :background nil :foreground ,err)))
+   `(persp-face-lighter ((t :inherit sans-xs :background nil :foreground ,highlight)))
+   `(persp-face-lighter-nil-persp ((t :inherit sans-xs :background nil :foreground ,highlight-dim)))
 
 ;;;;; popup
    `(popup-enu-selection-face         ((t :background ,ttip-sl :foreground ,fg-1)))

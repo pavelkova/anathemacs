@@ -11,6 +11,9 @@
 ;; spell checking
 (use-package auto-dictionary)
 
+(use-package helm-dictionary
+  :after helm)
+
 (use-package define-word
   :general
   (hs-leader-def
@@ -22,12 +25,28 @@
     "wT" 'google-translate-smooth-translate)
   :init
   (setq google-translate-translation-directions-alist
-      '(("es" . "en") ("en" . "es") ("en" . "fr") ("fr" . "en"))))
+        '(("es" . "en") ("en" . "es") ("en" . "fr") ("fr" . "en"))))
+
+                                        ; completion
+(use-package company
+  :delight company-mode
+  :init
+  (global-company-mode)
+  :config
+  (company-tng-configure-default)
+  (setq company-show-numbers t
+        company-tooltip-align-annotations t
+        company-tooltip-margin 3))
+
+(defun set-local-company-backend (backend)
+  "Only load backends when needed"
+  (set (make-local-variable 'company-backends) '(backend)) (company-mode))
+
 
 ; errors and linting
 
 (use-package flycheck
-  :diminish flycheck-mode
+  :delight flycheck-mode
   :init
   (global-flycheck-mode)
   (define-key flycheck-mode-map flycheck-keymap-prefix nil)

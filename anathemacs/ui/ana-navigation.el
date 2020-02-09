@@ -20,10 +20,7 @@
       ibuffer-deletion-face 'org-agenda-done
       ibuffer-use-header-line nil)
 
-(use-package imenu
-  :general
-  (ha-leader-def
-    "j"  'counsel-imenu))
+(use-package imenu)
 
 (use-package imenu-list
   :general
@@ -48,10 +45,6 @@
 
 (use-package treemacs-projectile
   :after treemacs projectile)
-
-;; tab bar
-(general-define-key
- "<f9>" 'tab-bar-mode)
 
 ;; code folding
 (use-package yafolding

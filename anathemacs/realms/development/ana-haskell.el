@@ -18,10 +18,10 @@
   :mode "\\.hs\\'")
 
 (use-package hindent
-  :hook haskell-mode-hook)
+  :hook haskell-mode)
 
 (use-package intero
-  :hook haskell-mode-hook)
+  :hook haskell-mode)
 
 (provide 'ana-haskell)
 

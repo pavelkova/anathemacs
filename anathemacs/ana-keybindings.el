@@ -7,7 +7,7 @@
 
 ;;; Code:
 (use-package which-key
-  :diminish t
+  :delight which-key-mode
   :init
   (which-key-mode)
   :config
@@ -43,17 +43,19 @@
     :prefix "H-SPC")
   ;; BUILT IN
   ;; globally available commands organized by
-  (general-create-definer minor-leader-def
+  (general-create-definer cc-leader-def
     :prefix "C-c")
   ;; use with ':keymaps <mode>' to add to
-  (general-create-definer major-leader-def
+  (general-create-definer cx-leader-def
     :prefix "C-x"))
+  ;; other: H-s bound to projectile-mode-map
 
 (ha-leader-def
   "." '(:ignore t :which-key "crux")
   "?" '(:ignore t :which-key "system & processes")
   "e" '(:ignore t :which-key "errors")
   "f" '(:ignore t :which-key "files")
+  "p" '(:ignore t :which-key "persp")
   "g" '(:ignore t :which-key "git & version control")
   "s" '(:ignore t :which-key "snippets"))
 
@@ -72,15 +74,15 @@
 (hs-leader-def
   "/"   '(:ignore t :which-key "web tools")
   "c"   '(:ignore t :which-key "calendar")
+  "e"   '(:ignore t :which-key "media"))
   "f"   '(:ignore t :which-key "filing")
   "r"   '(:ignore t :which-key "research")
   "t"   '(:ignore t :which-key "tasks & timing")
   "w"   '(:ignore t :which-key "writing")
   "C-b" '(:ignore t :which-key "brain")
   "C-d" '(:ignore t :which-key "dokuwiki")
-  "M-m" '(:ignore t :which-key "media"))
 
-(major-leader-def ; add prefix descriptions to built in C-x commands
+(cx-leader-def ; add prefix descriptions to built in C-x commands
   "4" '(:ignore t :which-key "other window")
   "5" '(:ignore t :which-key "frames")
   "8" '(:ignore t :which-key "insert character")

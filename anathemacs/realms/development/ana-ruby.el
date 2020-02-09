@@ -8,26 +8,39 @@
 ;;
 
 ;;; Code:
-;; (use-package bundler :defer t)
-;; (use-package chruby :defer t)
-(use-package enh-ruby-mode :defer t)
-;; (use-package minitest :defer t)
-;; (use-package popwin :defer t)
-;; (use-package rbenv :defer t)
-(use-package robe :defer t)
-;; (use-package rspec-mode :defer t)
-(use-package rubocop :defer t)
-;; (use-package ruby-mode :defer t)
-;; (use-package ruby-test-mode :defer t)
-;; (use-package ruby-tools :defer t)
-(use-package rvm :defer t)
-;; (use-package rake :defer t)
+(use-package inf-ruby
+  :hook (enh-ruby-mode . inf-ruby-minor-mode)
+  :general
+  (hd-leader-def
+    "rc" 'inf-ruby
+    "rC" 'inf-ruby-console-auto
+    "rs" 'ruby-switch-to-inf
+    "rd" 'ruby-send-definition
+    "rD" 'ruby-send-definition-and-go
+    "rr" 'ruby-send-region
+    "rR" 'ruby-send-region-and-go))
+
+(use-package enh-ruby-mode
+  :hook robe-mode
+  :config
+  (remove-hook 'enh-ruby-mode-hook 'erm-define-faces))
+
+(use-package robe
+  :hook (ruby-mode . robe-mode)
+  :config
+  (eval-after-load 'company
+  '(push 'company-robe company-backends)))
+
+(use-package rspec-mode
+  :config
+  (eval-after-load 'rspec-mode
+    '(rspec-install-snippets)))
 
 ;; RAILS
 
 (use-package projectile-rails
   :bind-keymap
-  ("H-d r" . projectile-rails-command-map))
+  ("H-d R" . projectile-rails-command-map))
 
 (provide 'ana-ruby)
 

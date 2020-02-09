@@ -10,7 +10,7 @@
 ;;; Code:
 
 ;; dotemacs paths
-(setq user-dir "~/.emacs.d/user/")
+(setq user-dir "~/.config/emacs/user/")
 
 (setq user-logo (concat user-dir "logo.svg"))
 
@@ -24,11 +24,11 @@
 
 (setq user-archive-file (concat org-directory "basement.org"))
 
-(setq user-bib-notes-file (concat org-directory "investigaciones/notas-de-referencia.org"))
+(setq user-bib-notes-file (concat org-directory "proyectos/investigación/referencia.org"))
 
 (setq user-bookmarks-file (concat org-directory "marcardores.org"))
 
-(setq user-brain-dir (concat org-directory ".cerebro/"))
+(setq user-brain-dir (concat org-directory ".data/cerebro/"))
 
 ;; Referenced by realms/personal/ana-scheduling.el.
 (setq user-cal-file (concat org-directory "calendario.org"))
@@ -37,15 +37,15 @@
 
 (setq user-cookbook-file (concat org-directory "vida/salud/recetas.org"))
 
-(setq user-default-bib-file (concat org-directory "investigación/referencias.bib"))
+(setq user-default-bib-file (concat org-directory "proyectos/investigación/referencia.bib"))
 
 ;; Contains authentication info for a remote Dokuwiki instance.  Referenced in realms/personal/ana-dokuwiki.el
 (setq user-dokuwiki-file (concat user-secrets-dir "dokuwiki.el"))
 
 ;; Where org-download should store images and org-web-mode/org-board should save webpages.  Referenced by tools/ana-archiving.el
-(setq user-download-dir (concat org-directory ".descargas/"))
+(setq user-download-dir (concat org-directory ".data/descargas/"))
 
-(setq user-journal-dir (concat org-directory "escritura/diario/"))
+(setq user-journal-dir (concat org-directory "personal/diario/"))
 
 ;; Default file for multiple org-capture templates (tasks, bookmarks, links, etc.). Referenced by realms/personal/ana-capture.el
 (setq user-master-file (concat org-directory "codex.org"))
@@ -64,7 +64,7 @@
 ;; Keep list of agenda files in separate file.  Referenced by realms/project-management/ana-planning.el
 ;; (setq user-org-agenda-files (concat user-dir "agenda_files"))
 
-(setq user-pdf-dir (concat org-directory "investigación/documentos/"))
+(setq user-pdf-dir (concat org-directory "proyectos/investigación/documentos/"))
 
 ;; System music folder used by EMMS.  Referenced in realms/personal/ana-media.el
 (setq user-music-dir "~/Media/música/")
