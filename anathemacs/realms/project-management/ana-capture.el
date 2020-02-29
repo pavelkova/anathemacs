@@ -13,8 +13,6 @@
 (hs-leader-def
   "C" 'org-capture)
 
-;; (add-hook 'org-capture-prepare-finalize-hook 'org-id-get-create)
-
 ;; properties
 ;; (setq org-tempo-keywords-alist '())
 
@@ -22,9 +20,6 @@
 (use-package org-chef
   :defer t)
 
-;; (defun org-journal-find-location ()
-;;   (org-journal-new-entry t)
-;;   (goto-char (point-min)))
 (defun org-journal-find-location ()
   (concat org-journal-dir org-journal-file-format))
 
@@ -58,8 +53,9 @@
          :time-prompt t)
 
 ;;;;; ----- SPECIAL EVENTS
+        ("v" "jvc")
       ;;;; JVC primary advocate shift
-        ("v" "jvc primary victim advocate shift" entry
+        ("va" "jvc primary victim advocate shift" entry
          (file+olp+datetree user-cal-file)
          "** EVENT A-Primary Victim Advocate
 :PROPERTIES:
@@ -70,7 +66,7 @@
          :time-prompt t)
 
       ;;;; JVC backup advocate shift
-        ("V" "jvc backup victim advocate shift" entry
+        ("vb" "jvc backup victim advocate shift" entry
          (file+olp+datetree user-cal-file)
          "** EVENT B-BACKUP Victim Advocate
 :PROPERTIES:

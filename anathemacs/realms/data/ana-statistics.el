@@ -20,6 +20,11 @@
     (add-hook 'inferior-ess-mode-hook 'ess-smart-equals-mode)))
 
 
+(defun ess-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("R")))
+
+(add-hook 'ess-mode-hook 'ess-doc)
 
 (provide 'ana-statistics)
 

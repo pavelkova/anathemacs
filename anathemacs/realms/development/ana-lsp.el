@@ -57,13 +57,27 @@
 
 (use-package lsp-ui
   :commands lsp-ui-mode
-  :hook (lsp-mode . lsp-ui-mode))
+  :hook (lsp . lsp-ui-mode)
+  :general
+  (hd-leader-def
+    "l:" 'lsp-ui-sideline
+    "lp" 'lsp-ui-peek
+    "lm" 'lsp-ui-imenu
+    "ld" 'lsp-ui-doc)
+  :config
+  (setq lsp-ui-sideline-ignore-duplicate t))
 
-(use-package lsp-ivy
-  :commands lsp-ivy-workspace-symbol)
 
 (use-package lsp-treemacs
-  :commands lsp-treemacs-errors-list)
+  :config
+  (lsp-treemacs-sync-mode 1)
+  :general
+  (hd-leader-def
+    "le" 'lsp-treemacs-errors-list
+    "lf" 'lsp-treemacs-quick-fix
+    "ls" 'lsp-treemacs-symbols-list
+    "lr" 'lsp-treemacs-references
+    "li" 'lsp-treemacs-implementations))
 
 ;; language-specific
 

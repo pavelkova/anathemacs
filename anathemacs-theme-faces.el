@@ -29,11 +29,11 @@
 ;; (defface serif-xl  '((t :family ,serif-font :height 290)) "xl serif font")
 ;; (defface serif-xxl '((t :family ,serif-font :height 400)) "xxl serif font")
 
-(defface mono-xs '((t :family "FiraCode" :height 100)) "xs monospace font")
-(defface mono-sm '((t :family "FiraCode" :height 110)) "sm monospace font")
-(defface mono-md '((t :family "FiraCode" :height 120)) "md monospace font")
-(defface mono-lg '((t :family "FiraCode" :height 130)) "lg monospace font")
-(defface mono-xl '((t :family "FiraCode" :height 150)) "xl monospace font")
+(defface mono-xs '((t :family "FiraCode" :height 90)) "xs monospace font")
+(defface mono-sm '((t :family "FiraCode" :height 100)) "sm monospace font")
+(defface mono-md '((t :family "FiraCode" :height 110)) "md monospace font")
+(defface mono-lg '((t :family "FiraCode" :height 120)) "lg monospace font")
+(defface mono-xl '((t :family "FiraCode" :height 140)) "xl monospace font")
 
 (defface sans-xs  '((t :family "Lato" :height 100)) "xs sans serif font")
 (defface sans-sm  '((t :family "Lato" :height 120)) "sm sans serif font")

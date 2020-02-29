@@ -52,6 +52,7 @@
   :init
   (persp-mode-projectile-bridge-mode 1)
   :config
+  (setq persp-mode-projectile-bridge-persp-name-prefix "⧉")
   (with-eval-after-load "persp-mode-projectile-bridge-autoloads"
     (add-hook 'persp-mode-projectile-bridge-mode-hook
               #'(lambda ()

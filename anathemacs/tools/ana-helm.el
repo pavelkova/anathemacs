@@ -7,30 +7,39 @@
 ;;; Code:
 
 (use-package ace-isearch
-  :init
+  :delight ace-isearch-mode
+  :bind ("C-." . ace-jump-mode)
+  :config
   (global-ace-isearch-mode +1))
 
 (use-package helm
-  :init
-  (helm-mode 1)
-  (global-unset-key (kbd "C-x c"))
+  :delight helm-mode
   :general
   (general-define-key
-   "M-x" 'helm-M-x
-   "M-y" 'helm-show-kill-ring)
+   "M-x"     'helm-M-x
+   "M-y"     'helm-show-kill-ring
+   "<f10>"   'helm-buffers-list
+   "S-<f10>" 'helm-recentf)
   (ha-leader-def
     "b" 'helm-mini
-    "h" 'helm-command-prefix
+    ;; "h" 'helm-command-prefix
     "j" 'helm-semantic-or-imenu)
   (cx-leader-def
-   "C-f" 'helm-find-files)
+    "C-f" 'helm-find-files)
   :config
-  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
-  (setq helm-autoresize-mode t
+  (helm-mode 1)
+  (setq helm-reuse-last-window-split-state t
+        helm-always-two-windows t
+        helm-split-window-inside-p t
+        helm-autoresize-mode t
+        helm-autoresize-max-height 50
+        helm-autoresize-min-height 5
+        helm-left-margin-width 2
         helm-buffers-fuzzy-matching t
         helm-recentf-fuzzy-match t
         helm-semantic-fuzzy-match t
-        helm-imenu-fuzzy-match t))
+        helm-imenu-fuzzy-match t)
+  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages))
 
 (use-package helm-company
   :after company
@@ -41,6 +50,9 @@
         (("C-:" . helm-company))))
 
 (use-package helm-descbinds
+  :general
+  (ha-leader-def
+    "K" 'helm-descbinds)
   :config
   (helm-descbinds-mode))
 
@@ -59,14 +71,14 @@
   (ha-leader-def
     "C-d" 'helm-browse-project))
 
-(use-package helm-lsp)
+(use-package helm-lsp
+  :general
+  (hd-leader-def
+    "l@"    'helm-lsp-workspace-symbol
+    "l M-@" 'helm-lsp-global-workspace-symbol
+    "la"    'helm-lsp-code-actions))
 
 (use-package helm-mode-manager)
-
-(use-package helm-org-rifle
-  :general
-  (hs-leader-def
-    "o" 'helm-org-rifle))
 
 (use-package helm-swoop
   :general
@@ -80,6 +92,33 @@
    "H-A"     'helm-smex-major-mode-commands))
 
 ;; ADDITIONAL PACKAGES
+(use-package helm-bibtex)
+
+(use-package helm-dash
+  :general
+  (general-define-key
+    "H-_" 'helm-dash)
+  :config
+  (setq helm-dash-browser-func 'eww))
+
+(use-package helm-lines
+  :commands (helm-lines)
+  :general
+  (cc-leader-def
+    "L" 'helm-lines))
+
+(use-package helm-org
+  :after org-ql
+  :general
+  (ha-leader-def
+    "o" 'helm-org-ql))
+
+(use-package helm-org-rifle
+  :general
+  (hs-leader-def
+    "o" 'helm-org-rifle)
+  :config
+  (setq helm-org-rifle-fontify-headings nil))
 
 ;; realms/project-management/projectile.el
 (use-package helm-projectile
@@ -94,6 +133,26 @@
     "y" 'helm-yas-complete)
   :config
   (setq helm-yas-space-match-any-greedy t))
+
+(use-package helm-tramp
+  :after helm
+  :general
+  (ha-leader-def
+  "C-r" 'helm-tramp)
+  :config
+  (setq tramp-default-method "ssh"))
+
+(use-package helm-proc
+  :general
+  (ha-leader-def
+    "/p" 'helm-proc))
+
+(use-package helm-systemd
+  :general
+  (ha-leader-def
+    "/d" 'helm-systemd)
+  :config
+  (setq helm-systemd-list-all t))
 
 (provide 'ana-helm)
 

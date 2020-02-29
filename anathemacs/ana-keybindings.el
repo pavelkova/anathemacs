@@ -49,10 +49,11 @@
   (general-create-definer cx-leader-def
     :prefix "C-x"))
   ;; other: H-s bound to projectile-mode-map
+  ;;        H-l bound to lsp-mode-map
 
 (ha-leader-def
   "." '(:ignore t :which-key "crux")
-  "?" '(:ignore t :which-key "system & processes")
+  "/" '(:ignore t :which-key "system & processes")
   "e" '(:ignore t :which-key "errors")
   "f" '(:ignore t :which-key "files")
   "p" '(:ignore t :which-key "persp")
@@ -60,27 +61,29 @@
   "s" '(:ignore t :which-key "snippets"))
 
 (hd-leader-def
-  "."  '(:ignore t :which-key "LSP")
+  ;; "."  '(:ignore t :which-key "helm-dash")
   "/"  '(:ignore t :which-key "webdev")
   "a"  '(:ignore t :which-key "anaconda")
+  "c"  '(:ignore t :which-key "alchemist")
   "e"  '(:ignore t :which-key "elixir")
   "d"  '(:ignore t :which-key "django")
   "f"  '(:ignore t :which-key "foreman")
-  "l"  '(:ignore t :which-key "alchemist")
+  "l"  '(:ignore t :which-key "LSP")
   "n"  '(:ignore t :which-key "npm")
   "p"  '(:ignore t :which-key "python")
-  "r"  '(:ignore t :which-key "rails"))
+  "r"  '(:ignore t :which-key "rails")
+  "x"  '(:ignore t :which-key "emamux"))
 
 (hs-leader-def
   "/"   '(:ignore t :which-key "web tools")
   "c"   '(:ignore t :which-key "calendar")
-  "e"   '(:ignore t :which-key "media"))
+  "e"   '(:ignore t :which-key "media")
   "f"   '(:ignore t :which-key "filing")
   "r"   '(:ignore t :which-key "research")
   "t"   '(:ignore t :which-key "tasks & timing")
   "w"   '(:ignore t :which-key "writing")
   "C-b" '(:ignore t :which-key "brain")
-  "C-d" '(:ignore t :which-key "dokuwiki")
+  "C-d" '(:ignore t :which-key "dokuwiki"))
 
 (cx-leader-def ; add prefix descriptions to built in C-x commands
   "4" '(:ignore t :which-key "other window")

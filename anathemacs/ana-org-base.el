@@ -16,74 +16,64 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((C          . nil)
+ '((C          . t)
    (calc       . t)
    (emacs-lisp . t)
-   ;; (eshell     . t)
+   (eshell     . t)
    (gnuplot    . t)
    (haskell    . t)
    (js         . t)
    (latex      . t)
    (lisp       . t)
    (lua        . t)
-   (makefile   . nil)
+   (makefile   . t)
    (matlab     . t)
    (octave     . t)
    (python     . t)
    (R          . t)
    (ruby       . t)
    (sass       . t)
-   ;; (sh         . t)
+;;   (sh         . t)
    (shell      . t)
    (sql        . t)
    (table      . t)
-   (translate  . nil)
    ))
 
-;; modules
-(customize-set-variable 'org-modules
-                        '(org-bibtex
-                          ;; org-crypt
-                          org-ctags
-                          org-docview
-                          org-element
-                          org-habit
-                          org-id
-                          org-info
-                          org-inlinetask
-                          ;; org-tempo
-                          ;; org-annotate-file
-                          ;; org-bookmark
-                          ;; org-checklist
-                          ;; org-choose
-                          ;; org-collector
-                          ;; org-depend
-                          ;; org-notmuch
-                          ;; org-panel
-                          ;; org-registry
-                          ;; org-toc
-                          ;; org-wikinodes
-                          ))
+(use-package ob-graphql
+  :config
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               (append org-babel-load-languages
+                                       '(( graphql . t)))))
+
+(use-package ob-http
+  :config
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               (append org-babel-load-languages
+                                       '(( http . t)))))
+
+(use-package org-bookmark-heading)
+
+
+(use-package toc-org
+  :hook (org-mode . toc-org-mode))
 
 ;; load
 (with-eval-after-load 'org
   (setq org-clock-idle-time 5
-        spaceline-org-clock-p t))
+        spaceline-org-clock-p t
+        org-modules (append org-modules '(ol-bookmark
+                                          ol-man
+                                          org-annotate-file
+                                          org-checklist
+                                          org-choose
+                                          org-collector
+                                          org-ctags
+                                          org-habit
+                                          org-id
+                                          org-inlinetask
+                                          org-notify
+                                          org-toc))))
 
-;; (setq org-wikinodes-scope 'directory
-;;       abbrev-file-name (concat user-dir "abbrev_defs"))
-
-
-(use-package ivy-omni-org
-  :after ivy
-  :general
-  (hs-leader-def
-    "o" 'ivy-omni-org)
-  :config
-  (setq ivy-omni-org-file-sources '(org-agenda-files)))
-
-(use-package helm-org-rifle
-  :after helm)
 
 (provide 'ana-org-base)
 

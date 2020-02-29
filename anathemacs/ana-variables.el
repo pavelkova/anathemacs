@@ -45,7 +45,7 @@
 ;; Where org-download should store images and org-web-mode/org-board should save webpages.  Referenced by tools/ana-archiving.el
 (setq user-download-dir (concat org-directory ".data/descargas/"))
 
-(setq user-journal-dir (concat org-directory "personal/diario/"))
+(setq user-journal-dir (concat org-directory "vidal/diario/"))
 
 ;; Default file for multiple org-capture templates (tasks, bookmarks, links, etc.). Referenced by realms/personal/ana-capture.el
 (setq user-master-file (concat org-directory "codex.org"))

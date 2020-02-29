@@ -12,7 +12,7 @@
 ;; TODO keybindings
 (with-eval-after-load 'org
   (general-define-key
-   "<kp-multiply>" 'org-todo
+   "<kp-multiply>"   'org-todo
    "<M-kp-multiply>" 'org-todo-yesterday
    "<C-kp-multiply>" 'org-toggle-checkbox)
 
@@ -81,13 +81,14 @@
   (hs-leader-def
     "tk" 'org-kanban/initialize))
 
+(use-package org-ql)
+
 (use-package side-notes
   :general
   (hs-leader-def
     "n" 'side-notes-toggle-notes)
   :config
-  (setq side-notes-file "notes.org"))
-(provide 'ana-planning)
+  (setq side-notes-file "index.org"))
 
 (use-package todoist
   :mode
@@ -101,5 +102,6 @@
   ;;       todoist-backing-buffer "path/to/file")
   (setq todoist-show-all nil))
 
+(provide 'ana-planning)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-planning.el ends here

@@ -14,23 +14,13 @@
   :init
   (auto-sudoedit-mode 1))
 
-(use-package counsel-tramp
-  :after (counsel ivy)
-  :general
-  (ha-leader-def
-  "C-r" 'counsel-tramp)
-  :config
-  (setq tramp-default-method "ssh"))
-
-(use-package counsel-tramp
-  :after helm
-  :general
-  (ha-leader-def
-  "C-r" 'helm-tramp)
-  :config
-  (setq tramp-default-method "ssh"))
-
 (use-package nginx-mode)
+
+(defun nginx-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Nginx")))
+
+(add-hook 'nginx-mode-hook 'nginx-doc)
 
 (use-package company-nginx
   :hook (nginx-mode . (set-local-company-backend company-nginx)))

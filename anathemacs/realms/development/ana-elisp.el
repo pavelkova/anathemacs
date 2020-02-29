@@ -10,7 +10,14 @@
 ;;; Code:
 
 (use-package elisp-slime-nav
+  :delight
   :hook ((emacs-lisp-mode ielm-mode) . elisp-slime-nav-mode))
+
+(defun elisp-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Emacs Lisp")))
+
+(add-hook 'emacs-lisp-mode-hook 'elisp-doc)
 
 (provide 'ana-elisp)
 

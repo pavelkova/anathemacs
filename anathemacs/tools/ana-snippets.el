@@ -12,7 +12,7 @@
   (ha-leader-def
     "s." 'yas-minor-mode
     "sf" 'yas-visit-snippet-file
-    ;; "si" 'yas-insert-snippet
+    "si" 'yas-insert-snippet
     "sn" 'yas-new-snippet))
 
 (use-package yasnippet-snippets

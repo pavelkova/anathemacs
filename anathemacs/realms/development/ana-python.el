@@ -9,20 +9,6 @@
 
 ;;; Code:
 
-;; (use-package company-jedi
-;;     :init
-;;     (defun enable-jedi()
-;;       (setq-local company-backends
-;;                   (append '(company-jedi) company-backends)))
-;;     (with-eval-after-load 'company
-;;       (add-hook 'python-mode-hook 'enable-jedi)))
-
-;; (use-package elpy
-;;   :hook python-mode
-;;   :config
-;;   (elpy-enable)
-;;   (setq elpy-rpc-backend "jedi"))
-
 (use-package pippel
   :general
   (hd-leader-def
@@ -31,24 +17,32 @@
 (use-package pip-requirements
   :mode "\\requirements.txt\\'")
 
-;; (use-package pyvenv
-;;   :hook (python-mode . pyvenv-tracking-mode)
-;;   :general
-;;   (hd-leader-def
-;;     "pa" 'pyvenv-activate
-;;     "pc" 'pyvenv-create
-;;     "pd" 'pyvenv-deactivate
-;;     "ph" 'pyvenv-workon-history
-;;     "ps" 'pyvenv-exec-shell
-;;     "pw" 'pyvenv-workon))
+(use-package pyvenv
+  ;; :hook (python-mode . pyvenv-tracking-mode)
+  :general
+  (hd-leader-def
+    "pa" 'pyvenv-activate
+    "pc" 'pyvenv-create
+    "pd" 'pyvenv-deactivate
+    "ph" 'pyvenv-workon-history
+    "ps" 'pyvenv-exec-shell
+    "pw" 'pyvenv-workon))
 
 ;; in .dir-locals.el
 ;; ((python-mode . ((pyvenv-workon . "~/PATH/venv")
 ;;                  (subdirs . nil))))
 
-(use-package direnv
-  :config
-  (direnv-mode))
+(defun python-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Django"
+                                  "Flask"
+                                  "NumPy"
+                                  "SciPy"
+                                  "SQLAlchemy"
+                                  "Pandas"
+                                  "Python 3")))
+
+(add-hook 'python-mode-hook 'python-doc)
 
 ;; DJANGO
 

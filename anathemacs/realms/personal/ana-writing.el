@@ -9,13 +9,15 @@
 
 ;;; Code:
 
+(use-package fountain-mode)
+
 (use-package litanize
  :config (defalias 'insert-litany #'litanize-at-point))
 
 (use-package mpages
   :general
   (hs-leader-def
-    "wt" 'mpages))
+    "w7" 'mpages))
 
 (use-package org-journal
   :general
@@ -35,14 +37,23 @@
 (global-unset-key (kbd "C-c C-j"))
 
 (use-package wc-mode
-  :hook org-mode
+  :hook (fountain-mode mpages org-journal writeroom-mode)
   :general
   (hs-leader-def
-    "wc" 'wc-mode
-    "wC" 'wc-set-word-goal)
+    "w#" 'wc-mode
+    "w>" 'wc-set-word-goal)
   :config
   (setq wc-modeline-format "%tw / %gw words"
-        wc-word-goal 750))
+        wc-word-goal 750)
+  (global-unset-key (kbd "C-c C-w w"))
+  (global-unset-key (kbd "C-c C-w l"))
+  (global-unset-key (kbd "C-c C-w a"))
+  (global-unset-key (kbd "C-c C-w c")))
+
+(use-package writeroom-mode
+  :general
+  (hs-leader-def
+    "w!" 'writeroom-mode))
 
 (use-package writegood-mode
   :general

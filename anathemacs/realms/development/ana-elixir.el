@@ -9,9 +9,9 @@
 
 ;;; Code:
 
-;; (use-package flycheck-elixir
-;;   :after flycheck
-;;   :hook (flycheck-mode . flycheck-elixir-setup))
+(use-package flycheck-elixir
+  :after flycheck
+  :hook (elixir-mode . flycheck-elixir-setup))
 
 (use-package alchemist
   :config
@@ -27,6 +27,12 @@
     "eh" 'elixir-mode-open-elixir-home
     "ed" 'elixir-mode-open-docs-master
     "eD" 'elixir-mode-open-docs-stable))
+
+(defun elixir-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Elixir")))
+
+(add-hook 'elixir-mode-hook 'elixir-doc)
 
 (provide 'ana-elixir)
 

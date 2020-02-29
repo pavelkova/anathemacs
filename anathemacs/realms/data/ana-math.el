@@ -34,6 +34,12 @@
 
 (use-package matlab-mode)
 
+(defun matlab-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("MATLAB")))
+
+(add-hook 'matlab-mode-hook 'matlab-doc)
+
 (use-package wolfram-mode)
 
 ;; LaTeX in org-mode

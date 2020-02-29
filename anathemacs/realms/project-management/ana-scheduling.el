@@ -50,81 +50,78 @@
           (org-agenda-overriding-header "próximo")))))
 
       ;; calendar
-      (use-package calfw
-        :demand t
-        :general
-        (hs-leader-def
-          "co" 'cfw:open-org-calendar)
-        :config
-        (setq cfw:fchar-junction ?┼
-              cfw:fchar-vertical-line ?│
-              cfw:fchar-horizontal-line ?─
-              cfw:fchar-left-junction ?├
-              cfw:fchar-right-junction ?┤
-              cfw:fchar-top-junction ?┬
-              cfw:fchar-top-left-corner ?┌
-              cfw:fchar-top-right-corner ?┐
-              cfw:render-line-breaker 'cfw:render-line-breaker-none
-              cfw:face-item-separator-color nil
-              calendar-week-start-day 1))
+(use-package calfw
+  :demand t
+  :general
+  (hs-leader-def
+    "co" 'cfw:open-org-calendar)
+  :config
+  (setq cfw:fchar-junction ?┼
+        cfw:fchar-vertical-line ?│
+        cfw:fchar-horizontal-line ?─
+        cfw:fchar-left-junction ?├
+        cfw:fchar-right-junction ?┤
+        cfw:fchar-top-junction ?┬
+        cfw:fchar-top-left-corner ?┌
+        cfw:fchar-top-right-corner ?┐
+        cfw:render-line-breaker 'cfw:render-line-breaker-none
+        cfw:face-item-separator-color nil
+        calendar-week-start-day 1))
 
-      (use-package org-caldav
-        :demand t
-        :init
-        (load-file user-caldav-file)
-        ;; (setq org-caldav-files '(user-cal-file)
-        ;;       org-caldav-inbox user-cal-inbox-file)
-        (setq org-caldav-files nil)
-        :general
-        (hs-leader-def
-          "cs" 'org-caldav-sync)
-        :config
-        (setq org-caldav-delete-calendar-entries t
-              org-icalendar-timezone "North_America/New_York"))
+(use-package org-caldav
+ :demand t
+ :init
+ (load-file user-caldav-file)
+ ;; (setq org-caldav-files '(user-cal-file)
+ ;;       org-caldav-inbox user-cal-inbox-file)
+ (setq org-caldav-files nil)
+ :general
+ (hs-leader-def
+   "cs" 'org-caldav-sync)
+ :config
+ (setq org-caldav-delete-calendar-entries t
+       org-icalendar-timezone "North_America/New_York"))
 
-      (use-package calfw-org
-        :after calfw
-        :demand t)
+(use-package calfw-org
+  :after calfw
+  :demand t)
 
-      ;; (use-package org-context
-      ;;   :after org-agenda
-      ;;   :init
-      ;;   (org-context-activate))
+(use-package org-pomodoro
+  :general
+  (hs-leader-def
+    "tp" 'org-pomodoro)
+  :config
+  (setq org-pomodoro-length 25
+        org-pomodoro-short-break-length 5
+        org-pomodoro-long-break-length 20
+        org-pomodoro-manual-break t))
 
-      (use-package org-pomodoro
-        :general
-        (hs-leader-def
-          "tp" 'org-pomodoro))
+(use-package org-edna
+  :config
+  (org-edna--load))
 
-      (use-package org-edna
-        :init
-        (org-edna-load))
+;; use to refile
+(defun org-refile-to-datetree (&optional file)
+  "Refile a subtree to a datetree corresponding to its timestamp in FILE."
+  (interactive "f")
+  (let* ((datetree-date (or (org-entry-get nil "TIMESTAMP" t)
+                            (org-read-date t nil "now")))
+         (date (org-date-to-gregorian datetree-date)))
+    (save-excursion
+      (with-current-buffer (current-buffer)
+        (org-cut-subtree)
+        (if file (find-file file))
+        (org-datetree-find-date-create date)
+        (org-narrow-to-subtree)
+        (show-subtree)
+        (org-end-of-subtree t)
+        (newline)
+        (goto-char (point-max))
+        (org-paste-subtree 4)
+        (widen) ))))
 
-      ;; use to refile
-      (defun org-refile-to-datetree (&optional file)
-        "Refile a subtree to a datetree corresponding to its timestamp in FILE."
-        (interactive "f")
-        (let* ((datetree-date (or (org-entry-get nil "TIMESTAMP" t)
-                                  (org-read-date t nil "now")))
-               (date (org-date-to-gregorian datetree-date)))
-          (save-excursion
-            (with-current-buffer (current-buffer)
-              (org-cut-subtree)
-              (if file (find-file file))
-              (org-datetree-find-date-create date)
-              (org-narrow-to-subtree)
-              (show-subtree)
-              (org-end-of-subtree t)
-              (newline)
-              (goto-char (point-max))
-              (org-paste-subtree 4)
-              (widen)
-              ))
-          )
-        )
-
-      (hs-leader-def
-        "fd" 'org-refile-to-datetree)
+(hs-leader-def
+  "fd" 'org-refile-to-datetree)
 
 ;; ORG-HABIT
 (setq org-habit-graph-column 75)

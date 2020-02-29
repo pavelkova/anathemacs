@@ -14,6 +14,12 @@
 (use-package lua-mode
   :mode "\\.lua\\'")
 
+(defun lua-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Lua")))
+
+(add-hook 'lua-mode-hook 'lua-doc)
+
 (provide 'ana-lua)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

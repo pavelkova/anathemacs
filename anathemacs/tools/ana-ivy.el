@@ -45,9 +45,14 @@
    "M-X"     'smex
    "H-A"     'smex-major-mode-commands))
 
-
-
 ;; ADDITIONAL PACKAGES
+(use-package counsel-tramp
+  :general
+  (ha-leader-def
+  "C-r" 'counsel-tramp)
+  :config
+  (setq tramp-default-method "ssh"))
+
 
 ;; realms/project-management/ana-projectile.el
 (use-package counsel-projectile
@@ -63,6 +68,15 @@
   (ha-leader-def
     "si" 'ivy-yasnippet))
 
+(use-package ivy-omni-org
+  :general
+  (hs-leader-def
+    "o" 'ivy-omni-org)
+  :config
+  (setq ivy-omni-org-file-sources '(org-agenda-files)))
+
+(use-package lsp-ivy
+  :commands lsp-ivy-workspace-symbol)
 
 (provide 'ana-ivy)
 

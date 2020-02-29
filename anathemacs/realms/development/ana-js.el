@@ -41,6 +41,16 @@
   :config (setq js-indent-level 2
                 js2-strict-missing-semi-warning nil))
 
+(defun js-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("JavaScript"
+                                  "jQuery"
+                                  "NodeJS"
+                                  "React"
+                                  "TypeScript"
+                                  "VueJS")))
+
+(add-hook 'rjsx-mode-hook 'js-doc)
 
 ;; VUE
 

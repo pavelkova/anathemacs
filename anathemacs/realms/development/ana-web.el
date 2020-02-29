@@ -68,6 +68,16 @@
         web-mode-style-padding 2
         web-mode-tag-auto-close-style 2))
 
+(defun web-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Bootstrap 4"
+                                  "CSS"
+                                  "HTML"
+                                  "JavaScript"
+                                  "jQuery")))
+
+(add-hook 'web-mode-hook 'web-doc)
+
 (provide 'ana-web)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

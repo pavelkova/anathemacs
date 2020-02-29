@@ -9,13 +9,19 @@
 
 ;;; Code:
 
-;; (use-package flycheck-irony
-;;   :after flycheck
-;;   :hook (flycheck-mode . flycheck-irony-setup))
+(use-package flycheck-irony
+  :after flycheck
+  :hook (flycheck-mode . flycheck-irony-setup))
 
 (use-package irony
   :hook (((c++-mode c-mode objc-mode) . irony-mode)
          (irony-mode . irony-cdb-autosetup-compile-options)))
+
+(defun c++-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("C++")))
+
+(add-hook 'c++-mode-hook 'c++-doc)
 
 (provide 'ana-c)
 

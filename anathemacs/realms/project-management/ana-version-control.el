@@ -82,6 +82,10 @@
 (auth-source-pass-enable)
 (setq auth-sources '(password-store))
 
+;; manage env with direnv
+(use-package direnv
+ :config
+ (direnv-mode))
 
 (provide 'ana-version-control)
 

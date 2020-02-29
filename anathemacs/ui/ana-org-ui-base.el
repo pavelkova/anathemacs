@@ -9,14 +9,8 @@
 
 ;;; Code:
 
-(use-package olivetti
-  :delight olivetti-mode
-  :hook ((text-mode org-mode) . olivetti-mode)
-  :init
-  (setq olivetti-body-width 0.85))
-
 (with-eval-after-load 'org
-  (setq org-ellipsis "..."
+  (setq org-ellipsis "→"
         org-list-indent-offset 2
         org-tags-column 0
         org-pretty-entities t
@@ -27,13 +21,26 @@
         org-fontify-quote-and-verse-blocks t
         org-startup-align-all-tables t
         org-startup-indented t
-        org-startup-with-inline-images t))
-  
+        org-startup-with-inline-images t)
+  (progn
+    (load-file "~/.config/emacs/anathemacs-theme-colors.el")
+    (add-to-list 'org-tag-faces '("@.*" . (:foreground ana-cyan-1)))
+    (add-to-list 'org-tag-faces '("#.*" . (:foreground ana-yellow-1)))))
+
+(use-package olivetti
+  :delight olivetti-mode
+  :hook ((text-mode org-mode) . olivetti-mode)
+  :init
+  (setq olivetti-body-width 0.85))
+
 (use-package org-bullets
   :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :config
   (setq org-bullets-bullet-list '("⋅")))
+
+(use-package org-sticky-header
+  :hook (org-mode . org-sticky-header-mode))
 
 (use-package org-variable-pitch
   :delight org-variable-pitch-minor-mode
@@ -46,4 +53,3 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-org-ui-base.el ends here
-

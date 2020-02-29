@@ -11,14 +11,17 @@
 (use-package company-go
   :hook (go-mode . (set-local-company-backend company-go)))
 
-(use-package go-eldoc
-  :defer t)
-
 (use-package go-mode
   :mode "\\.go\\'")
 
 (use-package go-projectile
   :defer t)
+
+(defun go-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Go")))
+
+(add-hook 'go-mode-hook 'go-doc)
 
 (provide 'ana-go)
 

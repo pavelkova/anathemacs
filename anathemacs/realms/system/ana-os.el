@@ -34,10 +34,15 @@
 (use-package symon
   :general
   (ha-leader-def
-    "?s" 'symon-mode))
+    "/s" 'symon-mode))
+
+(use-package daemons
+  :general
+  (ha-leader-def
+    "/e" 'daemons))
 
 (ha-leader-def
-  "?p" 'list-processes)
+  "/l" 'list-processes)
 
 (provide 'ana-os)
 

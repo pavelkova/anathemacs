@@ -63,9 +63,9 @@
 
 ;; init
 (require 'ana-variables)
-(require 'ana-keybindings)
 (require 'ana-base)
 (require 'ana-org-base)
+(require 'ana-keybindings)
 ;; tools
 (require 'ana-exporting)
 (require 'ana-helm)
@@ -89,13 +89,12 @@
 (require 'ana-statistics)
 (require 'ana-visualization)
 ;; development
+(require 'ana-env)
 (require 'ana-c)
 (require 'ana-elisp)
 (require 'ana-elixir)
-(require 'ana-erlang)
 (require 'ana-go)
 (require 'ana-haskell)
-(require 'ana-java)
 (require 'ana-js)
 (require 'ana-lisp)
 (require 'ana-lua)
@@ -116,7 +115,7 @@
 (require 'ana-planning)
 (require 'ana-version-control)
 (require 'ana-dokuwiki)
-(require 'ana-projectile)
+(require 'ana-projects)
 (require 'ana-scheduling)
 ;; research
 (require 'ana-annotation)

@@ -13,7 +13,7 @@
 (use-package emms
   :general
   (hs-leader-def
-    "M-m b" 'emms-browser)
+    "eb" 'emms-browser)
   :config
   (require 'emms-setup)
   (require 'emms-player-simple)

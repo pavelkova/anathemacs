@@ -12,23 +12,20 @@
   :general
   (hd-leader-def
     "j"  '(:ignore t :which-key "jupyter")
-    "j." 'ein:jupyter-server-start
-    "jl" 'ein:notebooklist-open
-    "jn" 'ein:notebooklist-new-notebook
-    "jg" 'ein:notebooklist-open-notebook-global
-    "jp" 'ein:notebooklist-login
-    "jj" 'ein:junk-new))
+    "jl" 'ein:login
+    "jr" 'ein:run))
 
-;; ELPY config for .dir-locals.el
-;; jupyter
-;; (setq python-shell-interpreter "jupyter"
-;;       python-shell-interpreter-args "console --simple-prompt"
-;;       python-shell-prompt-detect-failure-warning nil)
-;; (add-to-list 'python-shell-completion-native-disabled-interpreters
-;;              "jupyter")
-;; ipython
-;; (setq python-shell-interpreter "ipython"
-;;       python-shell-interpreter-args "-i --simple-prompt")
+(defun ein-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Matplotlib"
+                                  "NumPy"
+                                  "Pandas"
+                                  "Python 3"
+                                  "SciPy"
+                                  "SQLAlchemy")))
+
+(add-hook 'ein:ipynb-mode-hook 'ein-doc)
+
 
 (provide 'ana-jupyter)
 

@@ -47,7 +47,7 @@
 
 (use-package flycheck
   :delight flycheck-mode
-  :init
+  :config
   (global-flycheck-mode)
   (define-key flycheck-mode-map flycheck-keymap-prefix nil)
   (setq flycheck-keymap-prefix (kbd "H-a e"))
