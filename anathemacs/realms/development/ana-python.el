@@ -17,16 +17,16 @@
 (use-package pip-requirements
   :mode "\\requirements.txt\\'")
 
-(use-package pyvenv
-  ;; :hook (python-mode . pyvenv-tracking-mode)
-  :general
-  (hd-leader-def
-    "pa" 'pyvenv-activate
-    "pc" 'pyvenv-create
-    "pd" 'pyvenv-deactivate
-    "ph" 'pyvenv-workon-history
-    "ps" 'pyvenv-exec-shell
-    "pw" 'pyvenv-workon))
+;; (use-package pyvenv
+;;   ;; :hook (python-mode . pyvenv-tracking-mode)
+;;   :general
+;;   (hd-leader-def
+;;     "pa" 'pyvenv-activate
+;;     "pc" 'pyvenv-create
+;;     "pd" 'pyvenv-deactivate
+;;     "ph" 'pyvenv-workon-history
+;;     "ps" 'pyvenv-exec-shell
+;;     "pw" 'pyvenv-workon))
 
 ;; in .dir-locals.el
 ;; ((python-mode . ((pyvenv-workon . "~/PATH/venv")
@@ -40,7 +40,8 @@
                                   "SciPy"
                                   "SQLAlchemy"
                                   "Pandas"
-                                  "Python 3")))
+                                  ;; "Python 3"
+                                  )))
 
 (add-hook 'python-mode-hook 'python-doc)
 

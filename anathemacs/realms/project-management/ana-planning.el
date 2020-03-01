@@ -1,4 +1,4 @@
-;;; ana-planning.el ---
+;;; ana-planning.el --- Tools for org agenda and tasks
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs

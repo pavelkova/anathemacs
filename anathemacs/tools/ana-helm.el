@@ -41,6 +41,22 @@
         helm-imenu-fuzzy-match t)
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages))
 
+(use-package helm-ag
+  :general
+  (ha-leader-def
+    "ag" 'helm-ag
+    "af" 'helm-ag-this-file
+    "aG" 'helm-do-ag
+    "aF" 'helm-do-ag-this-file
+    "ap" 'helm-ag-project-root
+    "aP" 'helm-do-ag-project-root
+    "ab" 'helm-ag-buffers
+    "aB" 'helm-do-ag-buffers
+    "ap" 'helm-ag-pop-stack
+    "aq" 'helm-ag-clear-stack)
+  :config
+  (setq helm-ag-fuzzy-match t))
+
 (use-package helm-company
   :after company
   :bind
@@ -101,6 +117,8 @@
   :config
   (setq helm-dash-browser-func 'eww))
 
+;; (use-package helm-gtags)
+
 (use-package helm-lines
   :commands (helm-lines)
   :general
@@ -124,6 +142,7 @@
 (use-package helm-projectile
   :after projectile
   :config
+  (helm-projectile-on)
   (setq projectile-completion-system 'helm))
 
 ;; tools/ana-snippets.el

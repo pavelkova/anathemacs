@@ -20,6 +20,8 @@
       ibuffer-deletion-face 'org-agenda-done
       ibuffer-use-header-line nil)
 
+(use-package ag)
+
 (use-package imenu)
 
 (use-package imenu-list

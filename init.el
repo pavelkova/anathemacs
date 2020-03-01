@@ -1,4 +1,4 @@
-;;; init.el
+;;; init.el --- custom init file
 ;; Author: e.g. pavelka
 ;; URL: https://github.com/egpavelka/anathemacs
 ;; Version: 0.1.0
@@ -39,7 +39,7 @@
 (setq custom-file "~/.config/emacs/custom.el")
 (load custom-file)
 
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+(defvar gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (eval-when-compile
   (require 'package)

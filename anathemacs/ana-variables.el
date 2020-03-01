@@ -1,4 +1,4 @@
-;;; ana-variables.el ---
+;;; ana-variables.el --- Custom paths used in configuration
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -9,65 +9,92 @@
 
 ;;; Code:
 
-;; dotemacs paths
-(setq user-dir "~/.config/emacs/user/")
+;; EMACS configuration paths
 
-(setq user-logo (concat user-dir "logo.svg"))
+(defvar user-dir
+  (concat user-emacs-directory "user/")
+  "Path to directory containing user secrets files.")
 
-(setq user-backups-dir "~/.cache/emacs/backups/")
+(defvar user-logo
+  (concat user-dir "logo.svg")
+  "Path to logo used by dashboard.")
 
-(setq user-secrets-dir (concat user-dir "secrets/"))
+(defvar user-backups-dir
+  "~/.cache/emacs/backups/"
+  "Path to directory in which Emacs should create backup files.")
 
-;; org paths
+(defvar user-secrets-dir
+  (concat user-dir "secrets/")
+  "Path to directory containing user secrets files.")
 
-(setq org-directory "~/Media/org/") ;; this is used by org-mode
+;; ORG paths
 
-(setq user-archive-file (concat org-directory "basement.org"))
+(defvar org-directory
+  "~/Media/org/"
+  "Base directory for org files.")
 
-(setq user-bib-notes-file (concat org-directory "proyectos/investigación/referencia.org"))
+(defvar user-archive-file
+  (concat org-directory "basement.org"))
 
-(setq user-bookmarks-file (concat org-directory "marcardores.org"))
+(defvar user-bib-notes-file
+  (concat org-directory "proyectos/investigación/referencia.org"))
 
-(setq user-brain-dir (concat org-directory ".data/cerebro/"))
+(defvar user-bookmarks-file
+      (concat org-directory "marcardores.org"))
 
-;; Referenced by realms/personal/ana-scheduling.el.
-(setq user-cal-file (concat org-directory "calendario.org"))
-(setq user-cal-inbox-file (concat org-directory ".calendario-temp.org"))
-(setq user-caldav-file (concat user-secrets-dir "caldav.el"))
+(defvar user-brain-dir
+  (concat org-directory ".data/cerebro/"))
 
-(setq user-cookbook-file (concat org-directory "vida/salud/recetas.org"))
+(defvar user-cal-file
+  (concat org-directory "calendario.org"))
 
-(setq user-default-bib-file (concat org-directory "proyectos/investigación/referencia.bib"))
+(defvar user-cal-inbox-file
+  (concat org-directory ".calendario-temp.org"))
+
+(defvar user-caldav-file
+  (concat user-secrets-dir "caldav.el"))
+
+(defvar user-cookbook-file
+  (concat org-directory "vida/salud/recetas.org"))
+
+(defvar user-default-bib-file
+  (concat org-directory "proyectos/investigación/referencia.bib"))
 
 ;; Contains authentication info for a remote Dokuwiki instance.  Referenced in realms/personal/ana-dokuwiki.el
-(setq user-dokuwiki-file (concat user-secrets-dir "dokuwiki.el"))
+(defvar user-dokuwiki-file
+  (concat user-secrets-dir "dokuwiki.el"))
 
 ;; Where org-download should store images and org-web-mode/org-board should save webpages.  Referenced by tools/ana-archiving.el
-(setq user-download-dir (concat org-directory ".data/descargas/"))
+(defvar user-download-dir
+  (concat org-directory ".data/descargas/"))
 
-(setq user-journal-dir (concat org-directory "vidal/diario/"))
+(defvar user-journal-dir
+  (concat org-directory "vidal/diario/"))
 
 ;; Default file for multiple org-capture templates (tasks, bookmarks, links, etc.). Referenced by realms/personal/ana-capture.el
-(setq user-master-file (concat org-directory "codex.org"))
+(defvar user-master-file
+  (concat org-directory "codex.org"))
 
 ;; This top-level heading serves as an inbox for everything that needs to be processed or refiled.  Captures are added as level 2 headings beneath it.
-(setq user-master-inbox-headline "braindump")
+(defvar user-master-inbox-headline
+  "braindump")
 
-(setq user-mu4e-file (concat user-secrets-dir "mu4e.el"))
-
-;; habitica.com login tokens
-(setq user-habitica-file (concat user-secrets-dir "habitica.el"))
+(defvar user-mu4e-file
+  (concat user-secrets-dir "mu4e.el"))
 
 ;; todoist settings
-(setq user-todoist-file (concat user-secrets-dir "todoist.el"))
+(defvar user-todoist-file
+  (concat user-secrets-dir "todoist.el"))
 
 ;; Keep list of agenda files in separate file.  Referenced by realms/project-management/ana-planning.el
 ;; (setq user-org-agenda-files (concat user-dir "agenda_files"))
 
-(setq user-pdf-dir (concat org-directory "proyectos/investigación/documentos/"))
+(defvar user-pdf-dir
+  (concat org-directory "proyectos/investigación/documentos/"))
 
 ;; System music folder used by EMMS.  Referenced in realms/personal/ana-media.el
-(setq user-music-dir "~/Media/música/")
+(defvar user-music-dir
+  "~/Media/música/")
 
 (provide 'ana-variables)
 

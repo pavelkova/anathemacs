@@ -10,10 +10,7 @@
 ;;; Code:
 
 (use-package php-mode
-  :mode "\\.php\\'"
-  :config
-  (eval-after-load 'php-mode
-  '(require 'php-ext)))
+  :mode "\\.php\\'")
 
 (use-package company-php
   :after company

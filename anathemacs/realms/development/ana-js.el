@@ -33,6 +33,7 @@
 ;; REACT
 
 (use-package js-react-redux-yasnippets
+  :after (rjsx-mode)
   :config
   (setq js-react-redux-yasnippets-want-semicolon nil))
 

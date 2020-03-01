@@ -14,32 +14,41 @@
 
 ;; Define custom doom-modeline
 (doom-modeline-def-modeline 'ana-modeline
-  '(bar lsp modals buffer-info buffer-position word-count matches selection-info)
-  '(objed-state misc-info checker debug remote-host persp-name process grip github vcs mu4e minor-modes major-mode battery))
+    '(bar lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count "     " checker debug selection-info)
+    '(misc-info objed-state "     " persp-name "" mu4e " " battery " " minor-modes github vcs remote-host))
+ ;; '(objed-state misc-info checker debug remote-host persp-name process grip github vcs mu4e minor-modes major-mode battery))
 
 ;;; Code:
 (use-package doom-modeline
+  :after minions
   :init
-  (doom-modeline-set-modeline 'ana-modeline 'default)
-  :config
   (doom-modeline-mode 1)
+  (doom-modeline-set-modeline 'ana-modeline 'default)
+  (display-battery-mode)
+  :config
   (setq doom-modeline-continuous-word-count-modes '(markdown-mode org-mode fountain-mode)
-        doom-modeline-modal-icon nil
+        doom-modeline-icon t
+        doom-modeline-modal-icon t
         doom-modeline-mu4e t
         doom-modeline-gnus nil
         doom-modeline-irc nil
         doom-modeline-buffer-file-name-style 'truncate-with-project
-        doom-modeline-buffer-state-icon t
+        ;; doom-modeline-buffer-state-icon nil
+        doom-modeline-display-default-persp-name t
         doom-modeline-buffer-modification-icon nil
         doom-modeline-minor-modes t
         doom-modeline-checker-simple-format nil
         doom-modeline-buffer-encoding nil
         doom-modeline-number-limit 999
+        doom-modeline-bar-width 4
+        doom-modeline-height 30
+        doom-modeline-display-default-persp-name nil
         doom-modeline-window-width-limit fill-column
-        doom-modeline-major-mode-color-icon nil))
+        doom-modeline-major-mode-color-icon t))
 
 (use-package minions
-  :config (minions-mode 1))
+  :init
+  (minions-mode 1))
 
 (provide 'ana-modeline)
 

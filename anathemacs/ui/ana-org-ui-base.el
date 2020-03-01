@@ -10,7 +10,7 @@
 ;;; Code:
 
 (with-eval-after-load 'org
-  (setq org-ellipsis "→"
+  (setq org-ellipsis " ⬎"
         org-list-indent-offset 2
         org-tags-column 0
         org-pretty-entities t
@@ -21,11 +21,7 @@
         org-fontify-quote-and-verse-blocks t
         org-startup-align-all-tables t
         org-startup-indented t
-        org-startup-with-inline-images t)
-  (progn
-    (load-file "~/.config/emacs/anathemacs-theme-colors.el")
-    (add-to-list 'org-tag-faces '("@.*" . (:foreground ana-cyan-1)))
-    (add-to-list 'org-tag-faces '("#.*" . (:foreground ana-yellow-1)))))
+        org-startup-with-inline-images t))
 
 (use-package olivetti
   :delight olivetti-mode
@@ -39,8 +35,8 @@
   :config
   (setq org-bullets-bullet-list '("⋅")))
 
-(use-package org-sticky-header
-  :hook (org-mode . org-sticky-header-mode))
+;; (use-package org-sticky-header
+;;   :hook (org-mode . org-sticky-header-mode))
 
 (use-package org-variable-pitch
   :delight org-variable-pitch-minor-mode

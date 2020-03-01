@@ -35,12 +35,12 @@
 (defface mono-lg '((t :family "FiraCode" :height 120)) "lg monospace font")
 (defface mono-xl '((t :family "FiraCode" :height 140)) "xl monospace font")
 
-(defface sans-xs  '((t :family "Lato" :height 100)) "xs sans serif font")
-(defface sans-sm  '((t :family "Lato" :height 120)) "sm sans serif font")
-(defface sans-md  '((t :family "Lato" :height 130)) "md sans serif font")
-(defface sans-lg  '((t :family "Lato" :height 150)) "lg sans serif font")
-(defface sans-xl  '((t :family "Lato" :height 160)) "xl sans serif font")
-(defface sans-xxl '((t :family "Lato" :height 300)) "xxl sans serif font")
+(defface sans-xs  '((t :family "FiraSans" :height 100)) "xs sans serif font")
+(defface sans-sm  '((t :family "FiraSans" :height 120)) "sm sans serif font")
+(defface sans-md  '((t :family "FiraSans" :height 130)) "md sans serif font")
+(defface sans-lg  '((t :family "FiraSans" :height 150)) "lg sans serif font")
+(defface sans-xl  '((t :family "FiraSans" :height 160)) "xl sans serif font")
+(defface sans-xxl '((t :family "FiraSans" :height 300)) "xxl sans serif font")
 
 (defface serif-xs  '((t :family "ETBembo" :height 110)) "xs serif font")
 (defface serif-sm  '((t :family "ETBembo" :height 130)) "sm serif font")

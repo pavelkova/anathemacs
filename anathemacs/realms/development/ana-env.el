@@ -16,14 +16,14 @@
                                    ;; "CSS"
                                    ;; "Django"
                                    ;; "Elixir"
-                                   "Emacs Lisp"
+                                   ;; "Emacs Lisp"
                                    ;; "Erlang"
                                    ;; "Flask"
                                    "Font_Awesome"
                                    ;; "Go"
-                                   "Haskell"
+                                   ;; "Haskell"
                                    ;; "HTML"
-                                   "JavaScript"
+                                   ;; "JavaScript"
                                    ;; "jQuery"
                                    "LaTeX"
                                    ;; "Lua"
@@ -51,8 +51,7 @@
   :config
   (direnv-mode))
 
-
-
+;; (use-package ggtags)
 
 (provide 'ana-env)
 

@@ -11,12 +11,12 @@
 
 ;; time tracking
 (use-package activity-watch-mode
- :delight activity-watch-mode
- :init
-  (global-activity-watch-mode t)
+ :delight
  :general
   (hs-leader-def
-    "ta" 'global-activity-watch-mode))
+    "ta" 'global-activity-watch-mode)
+ :config
+  (global-activity-watch-mode t))
 
 ;; agenda
 ;; AGENDA
@@ -51,7 +51,6 @@
 
       ;; calendar
 (use-package calfw
-  :demand t
   :general
   (hs-leader-def
     "co" 'cfw:open-org-calendar)
@@ -69,22 +68,19 @@
         calendar-week-start-day 1))
 
 (use-package org-caldav
- :demand t
- :init
- (load-file user-caldav-file)
- ;; (setq org-caldav-files '(user-cal-file)
- ;;       org-caldav-inbox user-cal-inbox-file)
- (setq org-caldav-files nil)
  :general
  (hs-leader-def
    "cs" 'org-caldav-sync)
  :config
- (setq org-caldav-delete-calendar-entries t
+ (load-file user-caldav-file)
+ ;; (setq org-caldav-files '(user-cal-file)
+ ;;       org-caldav-inbox user-cal-inbox-file)
+ (setq org-caldav-files nil
+       org-caldav-delete-calendar-entries t
        org-icalendar-timezone "North_America/New_York"))
 
 (use-package calfw-org
-  :after calfw
-  :demand t)
+  :after calfw)
 
 (use-package org-pomodoro
   :general

@@ -60,19 +60,18 @@
 ;; load
 (with-eval-after-load 'org
   (setq org-clock-idle-time 5
-        spaceline-org-clock-p t
-        org-modules (append org-modules '(ol-bookmark
-                                          ol-man
-                                          org-annotate-file
-                                          org-checklist
-                                          org-choose
-                                          org-collector
+        org-modules (append org-modules '(;; ol-bookmark
+                                          ;; ol-man
+                                          ;; org-annotate-file
+                                          ;; org-checklist
+                                          ;; org-choose
+                                          ;; org-collector
                                           org-ctags
                                           org-habit
                                           org-id
                                           org-inlinetask
-                                          org-notify
-                                          org-toc))))
+                                          ;; org-notify
+                                          ))))
 
 
 (provide 'ana-org-base)
