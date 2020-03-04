@@ -6,8 +6,8 @@
 ;; THEME
 (deftheme anathemacs)
 
-(load-file "~/.config/emacs/anathemacs-theme-faces.el")
-(load-file "~/.config/emacs/anathemacs-theme-colors.el")
+(load-file (concat user-emacs-directory "anathemacs-theme-faces.el"))
+(load-file (concat user-emacs-directory "anathemacs-theme-colors.el"))
 
 (let ((class '((class color) (min-colors 89)))
       ;; background

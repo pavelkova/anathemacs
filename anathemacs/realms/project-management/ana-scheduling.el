@@ -49,7 +49,10 @@
           (org-deadline-warning-days 30)
           (org-agenda-overriding-header "próximo")))))
 
-      ;; calendar
+(use-package org-super-agenda
+  :hook org-agenda)
+
+;; calendar
 (use-package calfw
   :general
   (hs-leader-def

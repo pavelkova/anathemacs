@@ -141,8 +141,9 @@
 ;; realms/project-management/projectile.el
 (use-package helm-projectile
   :after projectile
-  :config
+  :init
   (helm-projectile-on)
+  :config
   (setq projectile-completion-system 'helm))
 
 ;; tools/ana-snippets.el
@@ -152,6 +153,14 @@
     "y" 'helm-yas-complete)
   :config
   (setq helm-yas-space-match-any-greedy t))
+
+(use-package helm-recoll
+  :general
+  (hs-leader-def
+    "rr" 'helm-recoll)
+  :init
+  (setq helm-recoll-directories
+        '(("library" . "~/.recoll"))))
 
 (use-package helm-tramp
   :after helm

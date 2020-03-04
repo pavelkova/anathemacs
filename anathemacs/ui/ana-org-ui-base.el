@@ -8,6 +8,31 @@
 ;;
 
 ;;; Code:
+(load-file (concat user-emacs-directory "anathemacs-theme-colors.el"))
+
+;; (defface org-at-tag
+;;   '((nil :inherit org-tag :foreground ana-yellow-1 ))
+;;   "org at tag face")
+
+;; (defface org-hashtag
+;;   '((nil :inherit org-tag :foreground ana-magenta-1 ))
+;;   "org hashtag face")
+
+;; (font-lock-add-keywords
+;;  'org-mode
+;;  '((":\\(@[^\:]+\\):" (1 'org-tag-face))))
+
+;; (add-to-list 'org-tag-faces '("@.*" . (:foreground ana-yellow-1)))
+
+;; (defun org-get-tag-face (kwd)
+;;   "Get the right face for a TODO keyword KWD.
+;; If KWD is a number, get the corresponding match group."
+;;   (if (numberp kwd) (setq kwd (match-string kwd)))
+;;   (let ((special-tag-face (or (cdr (assoc kwd org-tag-faces))
+;;                               (and (string-match "^@.*" kwd)
+;;                                    (cdr (assoc "@.*" org-tag-faces))))))
+;;     (or (org-face-from-face-or-color 'tag 'org-tag special-tag-face)
+;;         'org-tag)))
 
 (with-eval-after-load 'org
   (setq org-ellipsis " ⬎"
@@ -44,6 +69,13 @@
   :config
   (add-to-list 'org-variable-pitch-fixed-faces 'org-special-keyword 'org-link))
 
+(use-package idle-org-agenda
+  ;; :after org-agenda
+  :general
+  (ha-leader-def
+    "z" 'idle-org-agenda-mode)
+  :config
+  (idle-org-agenda-mode))
 
 (provide 'ana-org-ui-base)
 

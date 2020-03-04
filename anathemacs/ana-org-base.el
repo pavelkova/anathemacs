@@ -67,7 +67,7 @@
                                           ;; org-choose
                                           ;; org-collector
                                           org-ctags
-                                          org-habit
+                                          ;; org-habit
                                           org-id
                                           org-inlinetask
                                           ;; org-notify

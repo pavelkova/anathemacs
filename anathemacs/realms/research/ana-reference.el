@@ -19,7 +19,6 @@
     "re" 'ebib))
 
 (use-package org-ref
-  :defer t
   :config
   (setq org-ref-bibliography-notes 'user-bib-notes-file
         org-ref-default-bibliography 'user-default-bib-file

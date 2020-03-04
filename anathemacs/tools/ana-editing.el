@@ -29,6 +29,7 @@
     ".c"    'crux-copy-file-preserve-attributes
     ".d"    'crux-delete-file-and-buffer
     ".f"    'crux-recentf-find-file
+    ".o"    'crux-reopen-as-root
     ".r"    'crux-rename-file-and-buffer
     ".t"    'crux-transpose-windows
     ".x"    'crux-cleanup-buffer-or-region

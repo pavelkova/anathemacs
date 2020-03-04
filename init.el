@@ -117,6 +117,7 @@
 (require 'ana-dokuwiki)
 (require 'ana-projects)
 (require 'ana-scheduling)
+(require 'ana-tracking)
 ;; research
 (require 'ana-annotation)
 (require 'ana-reading)

@@ -5,9 +5,11 @@
 ;;
 
 ;;; Code:
+
 (use-package dashboard
-  :init
-  (dashboard-setup-startup-hook)
+  :defer t
+  ;; :init
+  ;; (dashboard-setup-startup-hook)
   :config
   (add-to-list 'dashboard-items '(agenda) t)
   (setq dashboard-banner-logo-title ""

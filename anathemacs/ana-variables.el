@@ -69,7 +69,7 @@
   (concat org-directory ".data/descargas/"))
 
 (defvar user-journal-dir
-  (concat org-directory "vidal/diario/"))
+  (concat org-directory "vida/diario/"))
 
 ;; Default file for multiple org-capture templates (tasks, bookmarks, links, etc.). Referenced by realms/personal/ana-capture.el
 (defvar user-master-file
