@@ -692,6 +692,10 @@
    `(org-verse                     ((t :inherit org-quote :slant italic)))
    `(org-warning                   ((t :foreground ,err)))
 
+;;;;; org-noter
+   `(org-noter-notes-exist-face    ((t :inherit mode-line :foreground ,suc)))
+   `(org-noter-no-notes-exist-face ((t :inherit mode-line)))
+
 ;;;;; perspective
    `(persp-face-lighter-buffer-not-in-persp ((t :inherit sans-xs :weight bold :background nil :foreground ,err)))
    `(persp-face-lighter ((t :inherit sans-xs :background nil :foreground ,highlight)))

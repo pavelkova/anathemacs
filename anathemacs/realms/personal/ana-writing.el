@@ -11,6 +11,9 @@
 
 (use-package fountain-mode)
 
+(use-package binder
+  :load-path "anathemacs/lib/binder")
+
 (use-package litanize
  :config (defalias 'insert-litany #'litanize-at-point))
 

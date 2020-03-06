@@ -11,7 +11,7 @@
 
 ;; SETUP
 (hs-leader-def
-  "C" 'org-capture)
+  "SPC" 'org-capture)
 
 ;; properties
 ;; (setq org-tempo-keywords-alist '())

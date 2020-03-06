@@ -88,7 +88,7 @@
 (use-package org-pomodoro
   :general
   (hs-leader-def
-    "tp" 'org-pomodoro)
+    "p" 'org-pomodoro)
   :config
   (setq org-pomodoro-length 25
         org-pomodoro-short-break-length 5

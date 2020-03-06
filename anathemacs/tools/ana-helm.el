@@ -44,6 +44,7 @@
 (use-package helm-ag
   :general
   (ha-leader-def
+    "a"  '(:ignore t :which-key "helm-ag")
     "ag" 'helm-ag
     "af" 'helm-ag-this-file
     "aG" 'helm-do-ag
@@ -160,7 +161,7 @@
     "rr" 'helm-recoll)
   :init
   (setq helm-recoll-directories
-        '(("library" . "~/.recoll"))))
+        '(("biblioteca" . "~/.recoll"))))
 
 (use-package helm-tramp
   :after helm

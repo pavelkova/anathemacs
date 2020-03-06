@@ -95,7 +95,7 @@
   (("\\todoist.org\\'" . todoist-mode))
   :general
   (hs-leader-def
-    "2" 'todoist)
+    "C-t" 'todoist)
   :config
   (load-file user-todoist-file)
   ;; (setq todist-token "XXXXXXXXXXXX"

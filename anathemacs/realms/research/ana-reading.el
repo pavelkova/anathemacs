@@ -9,16 +9,14 @@
 
 ;;; Code:
 
-;; epub reader & referencer - TODO integrate with bibtex, pdf, kindle clippings
-(use-package ereader
-  :mode "\\.epub\\'")
+(use-package nov
+  :mode ("\\.epub\\'" . nov-mode))
 
 (use-package linguistic)
 
-(use-package pdf-tools)
-
-;; TODO CALIBRE INTEGRATION
-;; calibre-library-dir -- search two folders down for book file, cover.jpg, and metadata.opf; parse metadata.opf as xml for metadata
+(use-package pdf-tools
+  :config
+  (pdf-tools-install))
 
 (use-package wiki-summary
   :general

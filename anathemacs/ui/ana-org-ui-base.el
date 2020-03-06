@@ -50,7 +50,7 @@
 
 (use-package olivetti
   :delight olivetti-mode
-  :hook ((text-mode org-mode) . olivetti-mode)
+  :hook ((text-mode nov-mode org-mode) . olivetti-mode)
   :init
   (setq olivetti-body-width 0.85))
 

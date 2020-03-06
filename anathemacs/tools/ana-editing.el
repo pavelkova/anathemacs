@@ -25,7 +25,6 @@
   :general
   (ha-leader-def
     ".!"    'crux-sudo-edit
-    ".@ "   'crux-recompile-init
     ".c"    'crux-copy-file-preserve-attributes
     ".d"    'crux-delete-file-and-buffer
     ".f"    'crux-recentf-find-file

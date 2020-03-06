@@ -90,7 +90,10 @@
 ;; (setq user-org-agenda-files (concat user-dir "agenda_files"))
 
 (defvar user-pdf-dir
-  (concat org-directory "proyectos/investigación/documentos/"))
+  "~/Media/biblioteca/")
+
+(defvar user-noter-notes-dir
+  (concat org-directory "proyectos/lectura/notas/"))
 
 ;; System music folder used by EMMS.  Referenced in realms/personal/ana-media.el
 (defvar user-music-dir
