@@ -56,12 +56,17 @@
    (prettify-symbols-mode)))
 
   (setq org-archive-location (concat user-archive-file "::datetree/")
-        org-log-done 'time
+        org-log-done 'note
+        org-log-done-with-time t
         org-log-into-drawer t
+        org-log-redeadline t
+        org-log-refile t
+        org-log-repeat t
+        org-log-reschedule t
         org-outline-path-complete-in-steps nil
         org-refile-allow-creating-parent-nodes t
-        org-refile-targets '((nil :maxlevel . 4)
-                             (org-agenda-files :maxlevel . 4))))
+        org-refile-targets '((nil :maxlevel . 10)
+                             (org-agenda-files :maxlevel . 10))))
 
 ;; BRAIN - mindmapping with org trees
 ;;(use-package org-brain

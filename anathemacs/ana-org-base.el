@@ -51,6 +51,11 @@
                                (append org-babel-load-languages
                                        '(( http . t)))))
 
+(use-package ob-typescript
+  :config
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               (append org-babel-load-languages
+                                       '(( typescript . t)))))
 (use-package org-bookmark-heading)
 
 
@@ -59,7 +64,7 @@
 
 ;; load
 (with-eval-after-load 'org
-  (setq org-clock-idle-time 5
+  (setq org-open-directory-means-index-dot-org t
         org-modules (append org-modules '(;; ol-bookmark
                                           ;; ol-man
                                           ;; org-annotate-file
@@ -67,11 +72,12 @@
                                           ;; org-choose
                                           ;; org-collector
                                           org-ctags
-                                          ;; org-habit
+                                          org-habit
                                           org-id
                                           org-inlinetask
                                           ;; org-notify
                                           ))))
+
 
 
 (provide 'ana-org-base)

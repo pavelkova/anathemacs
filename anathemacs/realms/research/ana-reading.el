@@ -15,6 +15,7 @@
 (use-package linguistic)
 
 (use-package pdf-tools
+  :mode ("\\.pdf\\'" . pdf-tools-enable-minor-modes)
   :config
   (pdf-tools-install))
 

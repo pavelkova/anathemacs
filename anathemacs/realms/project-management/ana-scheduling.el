@@ -18,6 +18,14 @@
  :config
   (global-activity-watch-mode t))
 
+;; org clock and logs
+(with-eval-after-load 'org
+  (setq org-clock-idle-time 5
+        org-clock-display-default-range 'untilnow
+        org-clock-in-switch-to-state "INPROGRESS"
+        org-clock-persist t
+        org-extend-today-until 7))
+
 ;; agenda
 ;; AGENDA
 (hs-leader-def
@@ -93,7 +101,8 @@
   (setq org-pomodoro-length 25
         org-pomodoro-short-break-length 5
         org-pomodoro-long-break-length 20
-        org-pomodoro-manual-break t))
+        org-pomodoro-manual-break t
+        org-pomodoro-keep-killed-pomodoro-time t))
 
 (use-package org-edna
   :config

@@ -35,7 +35,9 @@
 ;;         'org-tag)))
 
 (with-eval-after-load 'org
-  (setq org-ellipsis " ⬎"
+  (setq org-allow-promoting-top-level-subtree t
+        org-cycle-level-faces nil
+        org-ellipsis " ⬎"
         org-list-indent-offset 2
         org-tags-column 0
         org-pretty-entities t
@@ -44,6 +46,8 @@
         org-fontify-whole-heading-line t
         org-fontify-done-headline nil
         org-fontify-quote-and-verse-blocks t
+        org-footnote-auto-adjust t
+        org-footnote-define-inline t
         org-startup-align-all-tables t
         org-startup-indented t
         org-startup-with-inline-images t))
