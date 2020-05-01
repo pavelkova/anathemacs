@@ -9,28 +9,36 @@
 
 ;;; Code:
 
+(use-package live-py-mode
+  :general
+  (hd-leader-def
+    "pl" 'py-live-mode))
+
 (use-package pippel
   :general
   (hd-leader-def
-    "pl" 'pippel-list-packages))
+    "pL" 'pippel-list-packages))
 
 (use-package pip-requirements
   :mode "\\requirements.txt\\'")
 
-;; (use-package pyvenv
-;;   ;; :hook (python-mode . pyvenv-tracking-mode)
-;;   :general
-;;   (hd-leader-def
-;;     "pa" 'pyvenv-activate
-;;     "pc" 'pyvenv-create
-;;     "pd" 'pyvenv-deactivate
-;;     "ph" 'pyvenv-workon-history
-;;     "ps" 'pyvenv-exec-shell
-;;     "pw" 'pyvenv-workon))
+(use-package python-black
+  :after python)
 
-;; in .dir-locals.el
-;; ((python-mode . ((pyvenv-workon . "~/PATH/venv")
-;;                  (subdirs . nil))))
+(use-package python-mode)
+
+(use-package pytest
+  :general
+  (hd-leader-def
+    "pt"  '(:ignore t :which-key "pytest")
+    "pta" 'pytest-all
+    "pta" 'pytest-module
+    "pta" 'pytest-one
+    "ptc" 'pytest-again
+    "ptd" 'pytest-directory
+    "ptA" 'pytest-pdb-all
+    "ptM" 'pytest-pdb-module
+    "pt!" 'pytest-pdb-one))
 
 (defun python-doc ()
   (interactive)
@@ -85,11 +93,6 @@
   :config
   (global-djangonaut-mode))
 
-;; In .dir-locals.el:
-;; ((nil
-;; (python-shell-process-environment . ("DJANGO_SETTINGS_MODULE=project.settings"))
-;; (python-shell-extra-pythonpaths . ("/path/to/the/project/"))
-;; (python-shell-virtualenv-root . "/path/to/your/venv/")))
 
 (provide 'ana-python)
 

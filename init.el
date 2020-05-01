@@ -112,6 +112,7 @@
 (require 'org-fit)
 ;; project management
 (require 'ana-capture)
+(require 'ana-organizing)
 (require 'ana-planning)
 (require 'ana-version-control)
 (require 'ana-dokuwiki)
