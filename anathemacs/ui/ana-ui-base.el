@@ -55,6 +55,9 @@
 
 (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
 
+;; move tooltips to echo area
+(setq tooltip-use-echo-area t
+      tooltip-resize-echo-area t)
 
 (provide 'ana-ui-base)
 

@@ -801,6 +801,7 @@
    `(treemacs-git-remamed-face              ((t :inherit mono-xs :foreground ,war)))
    `(treemacs-git-unmodified-face           ((t :inherit mono-xs :foreground ,fg-1)))
    `(treemacs-git-untracked-face            ((t :inherit mono-xs :foreground ,fg-2)))
+   `(treemacs-root-face                     ((t :inherit sans-md :foreground ,keyword)))
    `(treemacs-root-remote-face              ((t :inherit treemacs-root-face)))
    `(treemacs-root-unreadable-face          ((t :inherit treemacs-root-face :strike-through t :foreground ,comment)))
    `(treemacs-root-remote-unreadable-face   ((t :inherit treemacs-root-unreadable-face)))
