@@ -24,24 +24,24 @@
 
 (use-package org-ql)
 
-(use-package org-roam
-  :init
-  (org-roam-mode)
+;; (use-package org-roam
+;;   :init
+;;   (org-roam-mode)
 
-  :general
-  (hs-leader-def
-    "."  '(:ignore t :which-key "org-roam")
-    ".." 'org-roam
-    ".f" 'org-roam-find-file
-    ".g" 'org-roam-show-graph
-    ".i" 'org-roam-insert))
+;;   :general
+;;   (hs-leader-def
+;;     "."  '(:ignore t :which-key "org-roam")
+;;     ".." 'org-roam
+;;     ".f" 'org-roam-find-file
+;;     ".g" 'org-roam-show-graph
+;;     ".i" 'org-roam-insert))
 
-(use-package org-roam-bibtex
-  :hook (org-roam-mode . org-roam-bibtex-mode))
+;; (use-package org-roam-bibtex
+;;   :hook (org-roam-mode . org-roam-bibtex-mode))
 
-(use-package company-org-roam
-  :config
-  (push 'company-org-roam company-backends))
+;; (use-package company-org-roam
+;;   :config
+;;   (push 'company-org-roam company-backends))
 
 (use-package side-notes
   :general

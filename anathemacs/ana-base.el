@@ -48,6 +48,10 @@
 ;; shorten responses
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;;; When opening a file that is a symbolic link, don't ask whether I
+;;; want to follow the link. Just do it
+(setq find-file-visit-truename t)
+
 ;; fix max depth error
 (setq max-specpdl-size 13000
       max-lisp-eval-depth 8000)

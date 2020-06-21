@@ -4,6 +4,7 @@
 ;;; Code:
 
 ;; THEME
+
 (deftheme anathemacs)
 
 (load-file (concat user-emacs-directory "anathemacs-theme-faces.el"))
@@ -71,13 +72,7 @@
       (mat           ana-cyan-1)
       ;; lt cyan
       (cyan-2        ana-cyan-2)
-      (keyword       ana-cyan-2)
-
-      ;; fonts
-      (mono-font     "FiraMono")
-      (serif-font    "ETBembo")
-      ;; (serif-font "Century Schoolbook Monospace")
-      (sans-font     "Lato"))
+      (keyword       ana-cyan-2))
 
 
 
@@ -87,7 +82,7 @@
 ;;;;; basics
    `(cursor                   ((t :background ,cursor)))
    `(custom-button            ((t :background ,bg-2 :foreground ,fg-1 :box (:line-width 2 :style released-button))))
-   `(default                  ((t :inherit fixed-pitch :background ,bg-1 :foreground ,fg-1)))
+   `(default                  ((t :inherit mono-md :background ,bg-1 :foreground ,fg-1)))
    `(default-italic           ((t :inherit default :slant italic)))
    `(error                    ((t :foreground ,err)))
    `(eval-sexp-fu-flash       ((t :background ,suc :foreground ,bg-1)))

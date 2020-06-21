@@ -34,7 +34,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (load-theme 'anathemacs t)
-(set-face-font 'default "Fira Code-10")
+(set-face-font 'default "Cascadia Code-10")
 
 (setq custom-file "~/.config/emacs/custom.el")
 (load custom-file)
@@ -52,9 +52,11 @@
     (add-to-list 'package-archives '("org" . "https://elpa.gnu.org/packages/") t))
 
   (package-initialize)
+  
   (unless (package-installed-p 'use-package)
-    (package-refresh-contents)
+   (package-refresh-contents)
     (package-install 'use-package))
+  
   (require 'use-package)
   (require 'delight)
   (setq use-package-always-ensure t
@@ -69,7 +71,6 @@
 ;; tools
 (require 'ana-exporting)
 (require 'ana-helm)
-;; (require 'ana-ivy)
 (require 'ana-processors)
 (require 'ana-snippets)
 (require 'ana-web)
