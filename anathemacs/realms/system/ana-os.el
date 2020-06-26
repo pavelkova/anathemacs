@@ -13,20 +13,23 @@
 (use-package systemd)
 
 ;; NIXOS
-;; (use-package company-nixos-options
-;;   :hook (nix-mode . (set-local-company-backend company-nixos-options)))
+(use-package company-nixos-options
+  :hook (nix-mode . (set-local-company-backend company-nixos-options)))
 
-;; (use-package nixos-options)
+(use-package nixos-options)
 
-;; (use-package nix-mode
-;;   :mode "\\.nix\\'"
-;;   :general
-;;   (hd-leader-def
-;;     "sN" 'nix-repl))
+(use-package helm-nixos-options
+  :general
+  (hd-leader-def
+    "sN" 'helm-nixos-options))
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
+
+(use-package nix-haskell-mode
+  :hook (haskell-mode . nix-haskell-mode))
 
 ;; WINDOW MANAGERS
-;; (use-package i3wm)
-(use-package fvwm-mode)
 
 ;; COMMON
 (use-package logview)

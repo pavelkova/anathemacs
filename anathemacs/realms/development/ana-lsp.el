@@ -33,7 +33,8 @@
         lsp-enable-completion-at-point t
         lsp-enable-semantic-highlighting t
         lsp-enable-imenu t
-        lsp-enable-text-document-color t)
+        lsp-enable-text-document-color t
+        lsp-clients-emmy-lua-jar-path "~/.config/emacs/EmmyLua-LS-all.jar")
   :hook
   ((css-mode
     django-mode
