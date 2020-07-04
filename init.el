@@ -110,7 +110,6 @@
 (require 'ana-dokuwiki)
 (require 'ana-media)
 (require 'ana-writing)
-(require 'org-fit)
 ;; project management
 (require 'ana-capture)
 (require 'ana-organizing)

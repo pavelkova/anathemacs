@@ -35,7 +35,7 @@
 (use-package treemacs
   :general
   (general-define-key
-   "<f8>" 'treemacs)
+   "<f7>" 'treemacs)
   :config
   ;; (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
   (setq treemacs-no-png-images t

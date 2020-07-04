@@ -19,11 +19,6 @@
   :config
   (pdf-tools-install))
 
-(use-package wiki-summary
-  :general
-  (hs-leader-def
-    "r?" 'wiki-summary))
-
 (provide 'ana-reading)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

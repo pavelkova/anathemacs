@@ -31,6 +31,14 @@
 
 ;; WINDOW MANAGERS
 
+(use-package nix-mode
+  :mode "\\.nix\\'")
+
+(use-package nix-haskell-mode
+  :hook (haskell-mode . nix-haskell-mode))
+
+;; WINDOW MANAGERS
+
 ;; COMMON
 (use-package logview)
 
