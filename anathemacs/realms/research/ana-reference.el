@@ -29,6 +29,11 @@
       reftex-default-bibliography 'user-default-bib-file
       reftex-plug-into-AUCTeX t)
 
+(use-package wiki-summary
+  :general
+  (hs-leader-def
+    "r?" 'wiki-summary))
+
 (use-package zotxt
   :general
   (hs-leader-def

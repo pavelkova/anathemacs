@@ -19,8 +19,8 @@
         calibredb-root-dir "~/Media/biblioteca"
         calibre-db-dir (expand-file-name "metadata.db" calibredb-root-dir)
         calibredb-program "/usr/bin/calibredb"
-        calibre-db-format-all-the-icons t)
-  )
+        calibre-db-format-all-the-icons t))
+
 (use-package nov
   :mode ("\\.epub\\'" . nov-mode))
 
@@ -30,11 +30,6 @@
   :mode ("\\.pdf\\'" . pdf-tools-enable-minor-modes)
   :config
   (pdf-tools-install))
-
-(use-package wiki-summary
-  :general
-  (hs-leader-def
-    "r?" 'wiki-summary))
 
 (provide 'ana-reading)
 
