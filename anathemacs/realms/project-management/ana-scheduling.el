@@ -134,6 +134,11 @@
 ;; ORG-HABIT
 (setq org-habit-graph-column 75)
 
+(setq org-time-budgets '((:title "vida" :tags "+vida" :budget "30:00" :block workweek)
+                         (:title "creatividad" :tags "+escritorio" :budget "14:00" :block week)
+                         (:title "trabajo" :tags "+code" :budget "2:55" :block week)
+                         (:title "ejercicio" :tags "+ejercicio+yoga" :budget "5:15" :block week)
+                         (:title "aprendizaje" :tags "+aprendizaje" :budget "5:15" :block week)))
 
 (provide 'ana-scheduling)
 

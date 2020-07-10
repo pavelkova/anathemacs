@@ -16,9 +16,6 @@
 ;; properties
 ;; (setq org-tempo-keywords-alist '())
 
-;; PACKAGES
-(use-package org-chef
-  :defer t)
 
 (defun org-journal-find-location ()
   (concat org-journal-dir org-journal-file-format))
@@ -31,6 +28,17 @@
          "t" "tarea" entry
          (file+headline user-master-file "braindump")
          "** TODO %^{tarea} %?
+%T")
+      ;;;; NOTE
+        ("n" "nota" entry
+         (file+headline user-master-file "braindump")
+         "** %^{nota} %?
+%T")
+
+      ;;;; LINK
+        ("l" "enlace" entry
+         ((file+headline user-master-file "braindump"))
+         "** %(org-cliplink-capture)
 %T")
         
       ;;;; APPOINTMENT
@@ -75,53 +83,6 @@
 <%<%Y-%m-%d %a 18:00>>--<%<%Y-%m-%d %a 06:00>>"
          :tree-type month
          :time-prompt t)
-
-      ;;;; NOTE
-        ("n" "nota" entry
-         (file+headline user-master-file "braindump")
-         "** %^{nota} %?
-%T")
-        
-      ;;;; LINK
-        ("l" "enlace" entry
-         ((file+headline user-master-file "braindump"))
-         "** %(org-cliplink-capture)
-%T")
-        
-      ;;---THIRD-PARTY PACKAGE CAPTURES
-      ;;;; ORG-BRAIN
-        ("C" "cerebro" plain
-         (function org-brain-goto-end)
-         "* %i%?")
-        
-      ;;;; ORG-CHEF
-        ("r" "receta" entry
-         (file user-cookbook-file)
-         "%(org-chef-get-recipe-from-url)")
-        ("R" "receta [manual]" entry
-         (file user-cookbook-file)
-         "* %^{Recipe title: }
-:PROPERTIES:
-:source-url:
-:servings:
-:prep-time:
-:cook-time:
-:ready-in:
-:END:
-** Ingredients
-%?
-** Directions")
-
-      ;;;; ORG-JOURNAL
-        ("j" "journal entry" entry (file+olp+datetree (concat org-journal-dir "%Y.org")) ; (function org-journal-find-location)
-                               "
-:PROPERTIES:
-:word_count:
-:END:
-%u
-**** %H:%M :diario:
-%?"
-         :tree-type month)
 
       ;;;; ORG-CAPTURE EXTENSION
         ("p" "protocol" entry

@@ -10,7 +10,7 @@
 ;;; Code:
 (use-package org-noter
   :general
-  (hs-leader-def
+  (hr-leader-def
     "rn" 'org-noter)
   :config
   (setq org-noter-auto-save-last-location t

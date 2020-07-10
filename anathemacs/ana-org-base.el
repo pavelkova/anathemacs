@@ -78,7 +78,10 @@
                                           ;; org-notify
                                           ))))
 
-
+; add keybindings for inserting subheadings
+(general-define-key
+ "C-M-<Return>"   'org-insert-subheading
+ "C-M-S-<Return>" 'org-insert-todo-subheading)
 
 (provide 'ana-org-base)
 

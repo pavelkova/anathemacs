@@ -41,6 +41,9 @@
     ;; prefix for personal management (via org, mu4e, dokuwiki)
     ;; and natural language processing (word count, translation, dictionary)
     :prefix "H-SPC")
+  (general-create-definer hr-leader-def
+    ;; reading, wRiting, research, roam
+    :prefix "H-r")
   ;; BUILT IN
   ;; globally available commands organized by
   (general-create-definer cc-leader-def
@@ -81,9 +84,13 @@
   "f"   '(:ignore t :which-key "filing")
   "r"   '(:ignore t :which-key "research")
   "t"   '(:ignore t :which-key "tasks & timing")
-  "w"   '(:ignore t :which-key "writing")
   "C-b" '(:ignore t :which-key "brain")
   "C-d" '(:ignore t :which-key "dokuwiki"))
+
+(hr-leader-def
+ "c"   '(:ignore t :which-key "calibre")
+ "r"   '(:ignore t :which-key "roam")
+ "w"   '(:ignore t :which-key "writing"))
 
 (cx-leader-def ; add prefix descriptions to built in C-x commands
   "4" '(:ignore t :which-key "other window")

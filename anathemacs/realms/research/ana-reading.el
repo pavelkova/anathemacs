@@ -9,6 +9,18 @@
 
 ;;; Code:
 
+(use-package calibredb
+  :general
+  (hr-leader-def
+   "cs" 'calibredb-find-helm
+   "cl" 'calibredb-list)
+  :config
+  (setq sql-sqlite-program "/usr/bin/sqlite3"
+        calibredb-root-dir "~/Media/biblioteca"
+        calibre-db-dir (expand-file-name "metadata.db" calibredb-root-dir)
+        calibredb-program "/usr/bin/calibredb"
+        calibre-db-format-all-the-icons t)
+  )
 (use-package nov
   :mode ("\\.epub\\'" . nov-mode))
 

@@ -19,12 +19,12 @@
 
 (use-package mpages
   :general
-  (hs-leader-def
+  (hr-leader-def
     "w7" 'mpages))
 
 (use-package org-journal
   :general
-  (hs-leader-def
+  (hr-leader-def
     "wj" 'org-journal-new-entry)
   :config
   (setq org-journal-dir user-journal-dir
@@ -39,10 +39,17 @@
 ;; Remove default keybindings
 (global-unset-key (kbd "C-c C-j"))
 
+(use-package org-journal-list
+  :general
+  (hs-leader-def
+    "wJ" 'org-journal-list)
+  :config
+  (setq org-journal-default-directory user-journal-dir))
+
 (use-package wc-mode
   :hook (fountain-mode mpages org-journal writeroom-mode)
   :general
-  (hs-leader-def
+  (hr-leader-def
     "w#" 'wc-mode
     "w>" 'wc-set-word-goal)
   :config
@@ -55,12 +62,12 @@
 
 (use-package writeroom-mode
   :general
-  (hs-leader-def
+  (hr-leader-def
     "w!" 'writeroom-mode))
 
 (use-package writegood-mode
   :general
-  (hs-leader-def
+  (hr-leader-def
     "wg" 'writegood-grade-level
     "we" 'writegood-reading-ease))
 

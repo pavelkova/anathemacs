@@ -1,7 +1,7 @@
 ;;; anathemacs-theme-colors.el --- 
 
 ;;; Code:
-  (setq ana-bg-1      "#050404"  ;; black / o
+  (setq ana-bg-1      "#000000"  ;; black / o
         ana-bg-2      "#211919"  ;; black / 8
         ana-base-1    "#fdfdfc" ;; white / 15
         ana-base-2    "#d7d7d5"  ;; white / 7
