@@ -9,40 +9,41 @@
 
 ;;; Code:
 
-;; BRAIN - mindmapping with org trees
-(use-package org-brain
- :general
- (hs-leader-def
-   "C-b"  'org-brain-agenda)
- :config
- (setq org-brain-path user-brain-dir
-       org-id-track-globally t
-       org-id-locations-file (concat user-dir ".org-id-locations")
-       org-brain-visualize-default-choices 'all
-       org-brain-title-max-length 12))
 
+(use-package org-bookmark-heading)
+
+(use-package toc-org
+  :hook (org-mode . toc-org-mode))
 
 (use-package org-ql)
 
+(use-package helm-org
+  :after org-ql
+  :general
+  (hs-leader-def
+    "?" 'helm-org-ql))
+
+(use-package helm-org-rifle
+  :general
+  (hs-leader-def
+    ":" 'helm-org-rifle)
+  :config
+  (setq helm-org-rifle-fontify-headings nil))
+
+;; ROAM
 (use-package org-roam
   :init
   (org-roam-mode)
   :general
   (hr-leader-def
-    "H-r" 'org-roam
-    "rf"  'org-roam-find-file
-    "rg"  'org-roam-graph-show
-    "ri"  'org-roam-insert
-    "rI"  'org-roam-insert-immediate)
+    "<right>" 'org-roam
+    "f"  'org-roam-find-file
+    "g"  'org-roam-graph-show
+    "i"  'org-roam-insert
+    "I"  'org-roam-insert-immediate)
   :config
-  (setq org-roam-directory org-roam-dir
-        org-roam-db-location (concat org-roam-dir "org-roam.db")))
-
-(use-package org-roam-bibtex
-  :after org-roam
-  :hook (org-roam-mode . org-roam-bibtex-mode)
-  :bind (:map org-mode-map
-         (("C-c n a" . orb-note-actions))))
+  (setq org-roam-directory org-directory
+        org-roam-db-location (concat org-directory "org-roam.db")))
 
 (use-package company-org-roam
   :config
@@ -61,6 +62,7 @@
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20)
   (org-roam-server-mode))
+
 
 (use-package side-notes
   :general

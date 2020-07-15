@@ -51,8 +51,8 @@
   ;; use with ':keymaps <mode>' to add to
   (general-create-definer cx-leader-def
     :prefix "C-x"))
-  ;; other: H-s bound to projectile-mode-map
-  ;;        H-l bound to lsp-mode-map
+;; other: H-s bound to projectile-mode-map
+;;        H-l bound to lsp-mode-map
 
 (ha-leader-def
   "." '(:ignore t :which-key "crux")
@@ -64,10 +64,7 @@
   "s" '(:ignore t :which-key "snippets"))
 
 (hd-leader-def
-  ;; "."  '(:ignore t :which-key "helm-dash")
   "/"  '(:ignore t :which-key "webdev")
-  "a"  '(:ignore t :which-key "anaconda")
-  "c"  '(:ignore t :which-key "alchemist")
   "e"  '(:ignore t :which-key "elixir")
   "d"  '(:ignore t :which-key "django")
   "f"  '(:ignore t :which-key "foreman")
@@ -82,15 +79,11 @@
   "c"   '(:ignore t :which-key "calendar")
   "e"   '(:ignore t :which-key "media")
   "f"   '(:ignore t :which-key "filing")
-  "r"   '(:ignore t :which-key "research")
-  "t"   '(:ignore t :which-key "tasks & timing")
-  "C-b" '(:ignore t :which-key "brain")
-  "C-d" '(:ignore t :which-key "dokuwiki"))
+  "w"   '(:ignore t :which-key "writing"))
 
 (hr-leader-def
- "c"   '(:ignore t :which-key "calibre")
- "r"   '(:ignore t :which-key "roam")
- "w"   '(:ignore t :which-key "writing"))
+  "b"   '(:ignore t :which-key "bibtex")
+  "c"   '(:ignore t :which-key "calibre"))
 
 (cx-leader-def ; add prefix descriptions to built in C-x commands
   "4" '(:ignore t :which-key "other window")

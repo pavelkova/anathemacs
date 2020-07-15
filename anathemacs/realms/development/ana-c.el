@@ -9,13 +9,13 @@
 
 ;;; Code:
 
-(use-package flycheck-irony
-  :after flycheck
-  :hook (flycheck-mode . flycheck-irony-setup))
-
 (use-package irony
   :hook (((c++-mode c-mode objc-mode) . irony-mode)
          (irony-mode . irony-cdb-autosetup-compile-options)))
+
+(use-package flycheck-irony
+  :after flycheck
+  :hook (flycheck-mode . flycheck-irony-setup))
 
 (defun c++-doc ()
   (interactive)

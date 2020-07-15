@@ -1,12 +1,10 @@
-;;; ana-env.el ---
+;;; ana-docs.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
 
 ;;; Commentary:
 ;;
-;;
-
 ;;; Code:
 
 (use-package dash-docs
@@ -47,13 +45,8 @@
                                    ;; "VueJS"
                                    )))
 
-(use-package direnv
-  :config
-  (direnv-mode))
 
-;; (use-package ggtags)
-
-(provide 'ana-env)
+(provide 'ana-docs)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-env.el ends here
+;;; ana-docs.el ends here

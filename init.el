@@ -69,8 +69,6 @@
 (require 'ana-org-base)
 (require 'ana-keybindings)
 ;; tools
-(require 'ana-exporting)
-(require 'ana-helm)
 (require 'ana-processors)
 (require 'ana-snippets)
 (require 'ana-web)
@@ -79,7 +77,6 @@
 (require 'ana-org-ui-base)
 (require 'ana-editing)
 (require 'ana-layout)
-(require 'ana-modeline)
 (require 'ana-navigation)
 (require 'ligature-support)
 ;; REALMS
@@ -90,7 +87,7 @@
 (require 'ana-statistics)
 (require 'ana-visualization)
 ;; development
-(require 'ana-env)
+(require 'ana-docs)
 (require 'ana-c)
 (require 'ana-elisp)
 (require 'ana-elixir)
@@ -108,7 +105,6 @@
 ;; personal
 (require 'ana-communication)
 (require 'ana-dokuwiki)
-(require 'ana-media)
 (require 'ana-writing)
 ;; project management
 (require 'ana-capture)
@@ -118,7 +114,6 @@
 (require 'ana-dokuwiki)
 (require 'ana-projects)
 (require 'ana-scheduling)
-(require 'ana-tracking)
 ;; research
 (require 'ana-annotation)
 (require 'ana-reading)

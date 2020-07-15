@@ -29,6 +29,14 @@
 
 (use-package tramp-term)
 
+(use-package helm-tramp
+  :after helm
+  :general
+  (ha-leader-def
+  "C-r" 'helm-tramp)
+  :config
+  (setq tramp-default-method "ssh"))
+
 (provide 'ana-server)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

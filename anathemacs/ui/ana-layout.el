@@ -9,69 +9,89 @@
 
 ;;; Code:
 
-(use-package persp-mode
-  :init
-  (persp-mode 1)
-  :bind-keymap
-  ("H-a p" . persp-key-map)
+;; SUBLIMITY
+(use-package sublimity
+  :general
+  (ha-leader-def
+    "!" 'sublimity-mode)
   :config
-  (setq persp-autokill-buffer-on-remove 'kill-weak
-        persp-nil-name "default"
-        persp-nil-hidden t)
-  ;; Integrate IVY
-  ;; (with-eval-after-load "ivy"
-  ;;   (add-hook 'ivy-ignore-buffers
-  ;;             #'(lambda (b)
-  ;;                 (when persp-mode
-  ;;                   (let ((persp (get-current-persp)))
-  ;;                     (if persp
-  ;;                         (not (persp-contain-buffer-p b persp))
-  ;;                       nil)))))
+  ;; (sublimity-mode 1)
+  (setq sublimity-map-size 20
+        sublimity-map-fraction 0.3
+        sublimity-map-text-scale -7
+        sublimity-scroll-weight 5
+        sublimity-scroll-drift-length 10
+        sublimity-attractive-centering-width 110))
 
-  ;;   (setq ivy-sort-functions-alist
-  ;;         (append ivy-sort-functions-alist
-  ;;                 '((persp-kill-buffer   . nil)
-  ;;                   (persp-remove-buffer . nil)
-  ;;                   (persp-add-buffer    . nil)
-  ;;                   (persp-switch        . nil)
-  ;;                   (persp-window-switch . nil)
-  ;;                   (persp-frame-switch  . nil)))))
-  ;; Integrate bs-show
-  (global-set-key (kbd "C-x b") #'(lambda (arg)
-                                  (interactive "P")
-                                  (with-persp-buffer-list () (bs-show arg))))
-  ;; Integrate ibuffer
-  (global-set-key (kbd "C-x C-b") #'(lambda (arg)
-                                      (interactive "P")
-                                      (with-persp-buffer-list () (ibuffer arg))))
-  )
-
-(use-package persp-mode-projectile-bridge
-  :after (persp-mode projectile)
-  :hook ((persp-mode projectile-mode) . persp-mode-projectile-bridge-mode)
-  :init
-  (persp-mode-projectile-bridge-mode 1)
+;; SIDEBAR
+(use-package treemacs
+  :general
+  (general-define-key
+   "<f7>" 'treemacs)
   :config
-  (setq persp-mode-projectile-bridge-persp-name-prefix "⧉ ")
-  ;; (setq persp-mode-projectile-bridge-persp-name-prefix "[p]")
-  (with-eval-after-load "persp-mode-projectile-bridge-autoloads"
-    (add-hook 'persp-mode-projectile-bridge-mode-hook
-              #'(lambda ()
-                  (if persp-mode-projectile-bridge-mode
-                      (persp-mode-projectile-bridge-find-perspectives-for-all-buffers)
-                    (persp-mode-projectile-bridge-kill-perspectives))))
-    (add-hook 'after-init-hook
-              #'(lambda ()
-                  (persp-mode-projectile-bridge-mode 1))
-              t)))
+  (setq treemacs-no-png-images t
+        treemacs-width 20
+        treemacs-follow-after-init t))
+
+(use-package treemacs-magit
+  :after treemacs magit)
+
+(use-package treemacs-projectile
+  :after treemacs projectile)
 
 (use-package treemacs-persp
   :after treemacs persp-mode
   :config (treemacs-set-scope-type 'Perspectives))
 
-;; tab bar
+(use-package dired-sidebar
+  :general
+  (general-define-key
+   "<f6>" 'dired-sidebar-toggle-sidebar))
+
+;; TAB BAR
 (general-define-key
  "<f9>" 'tab-bar-mode)
+
+;; MODELINE
+(use-package doom-modeline
+  :after minions
+  :init
+  (doom-modeline-mode 1)
+  (display-battery-mode)
+  :config
+  (progn
+    (doom-modeline-def-modeline 'ana-modeline
+      '(bar lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count "     " checker debug selection-info)
+      '(misc-info objed-state "     " persp-name "" mu4e " " battery " " minor-modes github vcs remote-host))
+    (doom-modeline-set-modeline 'ana-modeline 'default))
+  (setq doom-modeline-continuous-word-count-modes '(markdown-mode org-mode fountain-mode)
+        doom-modeline-icon t
+        doom-modeline-modal-icon t
+        doom-modeline-mu4e t
+        doom-modeline-gnus nil
+        doom-modeline-irc nil
+        doom-modeline-buffer-file-name-style 'truncate-with-project
+        ;; doom-modeline-buffer-state-icon nil
+        doom-modeline-display-default-persp-name t
+        doom-modeline-buffer-modification-icon nil
+        doom-modeline-minor-modes t
+        doom-modeline-checker-simple-format nil
+        doom-modeline-buffer-encoding nil
+        doom-modeline-number-limit 999
+        doom-modeline-bar-width 4
+        doom-modeline-height 30
+        doom-modeline-display-default-persp-name nil
+        doom-modeline-window-width-limit fill-column
+        doom-modeline-major-mode-color-icon t))
+
+;; default modeline
+;; (doom-modeline-def-modeline 'main
+;;   '(bar workspace-name window-number modals matches buffer-info remote-host buffer-position word-count parrot selection-info)
+;;   '(objed-state misc-info persp-name battery grip irc mu4e gnus github debug lsp minor-modes input-method indent-info buffer-encoding major-mode process vcs checker))
+
+(use-package minions
+  :init
+  (minions-mode 1))
 
 (provide 'ana-layout)
 

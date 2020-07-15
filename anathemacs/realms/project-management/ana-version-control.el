@@ -19,7 +19,7 @@
       version-control t)
 
 (setq create-lockfiles nil)
-      
+
 ;; GIT
 ;; (use-package browse-at-remote)
 
@@ -74,18 +74,15 @@
   (ha-leader-def
     "g:" 'magit-todos-list))
 
-;; integrate with system pass
+(use-package helm-gitignore
+  :general
+  (ha-leader-def
+    "gI" 'helm-gitignore))
 
-(use-package pass)
-
-(require 'auth-source-pass)
-(auth-source-pass-enable)
-(setq auth-sources '(password-store))
-
-;; manage env with direnv
-(use-package direnv
- :config
- (direnv-mode))
+(use-package helm-ls-git
+  :general
+  (ha-leader-def
+    "C-d" 'helm-browse-project))
 
 (provide 'ana-version-control)
 

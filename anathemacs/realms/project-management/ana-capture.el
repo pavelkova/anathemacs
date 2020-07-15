@@ -10,8 +10,6 @@
 ;;; Code:
 
 ;; SETUP
-(hs-leader-def
-  "SPC" 'org-capture)
 
 ;; properties
 ;; (setq org-tempo-keywords-alist '())
@@ -85,7 +83,7 @@
          :time-prompt t)
 
       ;;;; ORG-CAPTURE EXTENSION
-        ("p" "protocol" entry
+        ("P" "protocol" entry
          (file+headline user-master-file "braindump")
         "* %^{Title}
 :PROPERTIES:

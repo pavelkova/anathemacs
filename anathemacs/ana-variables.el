@@ -33,9 +33,6 @@
   "~/Media/org/"
   "Base directory for org files.")
 
-(defvar org-roam-dir
-  (concat org-directory "org-roam"))
-
 (defvar user-archive-file
   (concat org-directory "basement.org"))
 
@@ -43,7 +40,7 @@
   (concat org-directory "proyectos/investigación/referencia.org"))
 
 (defvar user-bookmarks-file
-      (concat org-directory "marcardores.org"))
+  (concat org-directory "marcardores.org"))
 
 (defvar user-brain-dir
   (concat org-directory ".data/cerebro/"))
@@ -71,9 +68,6 @@
 (defvar user-download-dir
   (concat org-directory ".data/descargas/"))
 
-(defvar user-journal-dir
-  (concat org-directory "vida/diario/"))
-
 ;; Default file for multiple org-capture templates (tasks, bookmarks, links, etc.). Referenced by realms/personal/ana-capture.el
 (defvar user-master-file
   (concat org-directory "codex.org"))
@@ -97,10 +91,6 @@
 
 (defvar user-noter-notes-dir
   (concat org-directory "proyectos/lectura/notas/"))
-
-;; System music folder used by EMMS.  Referenced in realms/personal/ana-media.el
-(defvar user-music-dir
-  "~/Media/música/")
 
 (provide 'ana-variables)
 

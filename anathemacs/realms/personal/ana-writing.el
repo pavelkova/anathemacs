@@ -15,41 +15,41 @@
   :load-path "anathemacs/lib/binder")
 
 (use-package litanize
- :config (defalias 'insert-litany #'litanize-at-point))
+  :config (defalias 'insert-litany #'litanize-at-point))
 
 (use-package mpages
   :general
-  (hr-leader-def
-    "w7" 'mpages))
+  (hs-leader-def
+    "7" 'mpages))
 
 (use-package org-journal
   :general
-  (hr-leader-def
-    "wj" 'org-journal-new-entry)
+  (hs-leader-def
+    "j" 'org-journal-new-entry)
   :config
-  (setq org-journal-dir user-journal-dir
+  (setq org-journal-dir org-directory
         org-journal-find-file 'find-file
-        org-journal-file-type 'yearly
+        org-journal-file-type 'daily
         org-journal-enable-agenda-integration t
-        org-journal-date-prefix "*** "
-        org-journal-date-format "%Y-%b-%d"
+        ;; org-journal-date-prefix "*** "
+        ;; org-journal-date-format "%Y-%b-%d"
         org-journal-time-format "%H:%M"
-        org-journal-time-prefix "**** "
-        org-journal-file-format "%Y.org"))
+        org-journal-time-prefix "* (diario) "
+        org-journal-file-format "%Y-%b-%d.org"))
 ;; Remove default keybindings
 (global-unset-key (kbd "C-c C-j"))
 
 (use-package org-journal-list
   :general
   (hs-leader-def
-    "wJ" 'org-journal-list)
+    "J" 'org-journal-list)
   :config
-  (setq org-journal-default-directory user-journal-dir))
+  (setq org-journal-default-directory org-directory))
 
 (use-package wc-mode
   :hook (fountain-mode mpages org-journal writeroom-mode)
   :general
-  (hr-leader-def
+  (hs-leader-def
     "w#" 'wc-mode
     "w>" 'wc-set-word-goal)
   :config
@@ -62,18 +62,34 @@
 
 (use-package writeroom-mode
   :general
-  (hr-leader-def
+  (hs-leader-def
     "w!" 'writeroom-mode))
 
 (use-package writegood-mode
   :general
-  (hr-leader-def
+  (hs-leader-def
     "wg" 'writegood-grade-level
     "we" 'writegood-reading-ease))
+
+(use-package auto-dictionary)
+
+(use-package helm-dictionary
+  :after helm)
+
+(use-package define-word
+  :general
+  (hs-leader-def
+    "D" 'define-word))
+
+(use-package google-translate
+  :general
+  (hs-leader-def
+    "T" 'google-translate-smooth-translate)
+  :init
+  (setq google-translate-translation-directions-alist
+        '(("es" . "en") ("en" . "es") ("en" . "fr") ("fr" . "en"))))
 
 (provide 'ana-writing)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-writing.el ends here
-
-

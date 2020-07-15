@@ -10,7 +10,6 @@
 ;;; Code:
 
 ;; ARCH LINUX
-(use-package systemd)
 
 ;; NIXOS
 (use-package company-nixos-options
@@ -29,8 +28,6 @@
 (use-package nix-haskell-mode
   :hook (haskell-mode . nix-haskell-mode))
 
-;; WINDOW MANAGERS
-
 (use-package nix-mode
   :mode "\\.nix\\'")
 
@@ -42,18 +39,42 @@
 ;; COMMON
 (use-package logview)
 
+;; system resources
 (use-package symon
   :general
   (ha-leader-def
     "/s" 'symon-mode))
+
+;; emacs processes
+(ha-leader-def
+  "/l" 'list-processes)
+
+(use-package helm-proc
+  :general
+  (ha-leader-def
+    "/p" 'helm-proc))
+
+;; systemd
+(use-package systemd)
 
 (use-package daemons
   :general
   (ha-leader-def
     "/e" 'daemons))
 
-(ha-leader-def
-  "/l" 'list-processes)
+(use-package helm-systemd
+  :general
+  (ha-leader-def
+    "/d" 'helm-systemd)
+  :config
+  (setq helm-systemd-list-all t))
+
+;; integrate with system pass
+(use-package pass)
+
+(require 'auth-source-pass)
+(auth-source-pass-enable)
+(setq auth-sources '(password-store))
 
 (provide 'ana-os)
 

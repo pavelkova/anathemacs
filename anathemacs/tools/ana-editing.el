@@ -8,9 +8,6 @@
 ;;
 
 ;;; Code:
-(use-package dash)
-(use-package ht)
-(use-package s)
 
 (setq display-line-numbers-width-start t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)

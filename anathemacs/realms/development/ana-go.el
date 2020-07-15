@@ -14,8 +14,7 @@
 (use-package go-mode
   :mode "\\.go\\'")
 
-(use-package go-projectile
-  :defer t)
+(use-package go-projectile)
 
 (defun go-doc ()
   (interactive)

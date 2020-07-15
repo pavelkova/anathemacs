@@ -1,23 +1,23 @@
 ;;; anathemacs-theme-colors.el --- 
 
 ;;; Code:
-  (setq ana-bg-1      "#101010"  ;; black / o
-        ana-bg-2      "#454545"  ;; black / 8
-        ana-base-1    "#c0c0c0" ;; white / 15
-        ana-base-2    "#808080"  ;; white / 7
-        ana-base-dim  "#c0c0c0"   ;; --
-        ana-red-1     "#efa6a2"  ;; red / 1
-        ana-red-2     "#e0af85"  ;; red / 9
-        ana-green-1   "#80c990"  ;; green / 2
-        ana-green-2   "#5accaf" ;; green / 10
-        ana-yellow-1  "#a69460"  ;; yellow / 3
-        ana-yellow-2  "#c8c874" ;; yellow / 11
-        ana-blue-1    "#a3b8ef"  ;; blue / 4
-        ana-blue-2    "#ccaced" ;; blue / 12
-        ana-magenta-1 "#e6a3dc"  ;; magenta / 5
-        ana-magenta-2 "#f2a1c2" ;; magenta / 13
-        ana-cyan-1    "#50cacd"  ;; cyan / 6
-        ana-cyan-2    "#74c3e4" ;; cyan / 14
+  (setq ana-bg-1      "#1a261d"  ;; black / o
+        ana-bg-2      "#2c4742"  ;; black / 8
+        ana-base-1    "#a0b8a1" ;; white / 15
+        ana-base-2    "#a6a48b"  ;; white / 7
+        ana-base-dim  "#a0b8a1"   ;; --
+        ana-red-1     "#a6896c"  ;; red / 1
+        ana-red-2     "#a6966c"  ;; red / 9
+        ana-green-1   "#89a66c"  ;; green / 2
+        ana-green-2   "#7ba66c" ;; green / 10
+        ana-yellow-1  "#a6a66c"  ;; yellow / 3
+        ana-yellow-2  "#96a66c" ;; yellow / 11
+        ana-blue-1    "#6ca689"  ;; blue / 4
+        ana-blue-2    "#6ca696" ;; blue / 12
+        ana-magenta-1 "#6ca6a6"  ;; magenta / 5
+        ana-magenta-2 "#6c96a6" ;; magenta / 13
+        ana-cyan-1    "#6ca66c"  ;; cyan / 6
+        ana-cyan-2    "#6ca67b" ;; cyan / 14
       )
 
   

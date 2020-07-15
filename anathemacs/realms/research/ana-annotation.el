@@ -11,7 +11,7 @@
 (use-package org-noter
   :general
   (hr-leader-def
-    "rn" 'org-noter)
+    "n" 'org-noter)
   :config
   (setq org-noter-auto-save-last-location t
         org-noter-insert-selected-text-inside-note t
@@ -21,19 +21,13 @@
         org-noter-notes-search-path '("~/Media/org/proyectos/lectura/notas/")))
 
 (use-package org-pdftools
-  :load-path "anathemacs/lib/org-pdftools"
-  :config (setq org-pdftools-root-dir user-pdf-dir)
-  (with-eval-after-load 'org
-    (org-link-set-parameters "pdftools"
-                             :follow #'org-pdftools-open
-                             :complete #'org-pdftools-complete-link
-                             :store #'org-pdftools-store-link
-                             :export #'org-pdftools-export)
-    (add-hook 'org-store-link-functions 'org-pdftools-store-link)))
+  :hook (org-load . org-pdftools-setup-link))
 
 (use-package org-noter-pdftools
-  :after (org-noter)
-  :load-path "anathemacs/lib/org-pdftools")
+  :after org-noter
+  :config
+  (with-eval-after-load 'pdf-annot
+    (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
 
 (provide 'ana-annotation)
 

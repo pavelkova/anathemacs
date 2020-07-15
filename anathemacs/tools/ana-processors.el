@@ -8,26 +8,9 @@
 ;;
 
 ;;; Code:
-;; spell checking
-(use-package auto-dictionary)
-
-(use-package helm-dictionary
-  :after helm)
-
-(use-package define-word
-  :general
-  (hs-leader-def
-    "wD" 'define-word))
-
-(use-package google-translate
-  :general
-  (hs-leader-def
-    "wT" 'google-translate-smooth-translate)
-  :init
-  (setq google-translate-translation-directions-alist
-        '(("es" . "en") ("en" . "es") ("en" . "fr") ("fr" . "en"))))
 
                                         ; completion
+
 (use-package company
   :delight company-mode
   :init
@@ -42,8 +25,15 @@
   "Only load backends when needed"
   (set (make-local-variable 'company-backends) '(backend)) (company-mode))
 
+(use-package helm-company
+  :after company
+  :bind
+  (:map company-mode-map
+        ("C-:" . helm-company)
+        :map company-active-map
+        (("C-:" . helm-company))))
 
-; errors and linting
+                                        ; errors and linting
 
 (use-package flycheck
   :delight flycheck-mode
@@ -53,6 +43,12 @@
   (setq flycheck-keymap-prefix (kbd "H-a e"))
   (define-key flycheck-mode-map flycheck-keymap-prefix
     flycheck-command-map))
+
+;; conversion
+(use-package ox-pandoc)
+
+(use-package pandoc-mode
+  :demand t)
 
 (provide 'ana-processors)
 

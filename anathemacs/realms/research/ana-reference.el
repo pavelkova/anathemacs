@@ -8,15 +8,25 @@
 ;;
 
 ;;; Code:
+
+;; BIBLIOGRAPHY
 (use-package biblio
   :general
-  (hs-leader-def
-    "rl" 'biblio-lookup))
+  (hr-leader-def
+    "bl" 'biblio-lookup))
 
 (use-package ebib
   :general
-  (hs-leader-def
-    "re" 'ebib))
+  (hr-leader-def
+    "be" 'ebib))
+
+(use-package helm-bibtex)
+
+(use-package org-roam-bibtex
+  :after org-roam
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :bind (:map org-mode-map
+              (("C-c n a" . orb-note-actions))))
 
 (use-package org-ref
   :config
@@ -29,20 +39,31 @@
       reftex-default-bibliography 'user-default-bib-file
       reftex-plug-into-AUCTeX t)
 
+;; FULL TEXT SEARCH
+(use-package helm-recoll
+  :general
+  (hs-leader-def
+    "rr" 'helm-recoll)
+  :init
+  (setq helm-recoll-directories
+        '(("biblioteca" . "~/.recoll"))))
+
+;; WIKIPEDIA LOOKUP
 (use-package wiki-summary
   :general
-  (hs-leader-def
-    "r?" 'wiki-summary))
+  (hr-leader-def
+    "?" 'wiki-summary))
 
+;; ZOTERO
 (use-package zotxt
   :general
-  (hs-leader-def
-    "rz"  '(:ignore t :which-key "zotxt")
-    "rz." 'org-zotxt-mode
-    "rzi" 'org-zotxt-insert-reference-link
-    "rzo" 'org-zotxt-open-attachment
-    "rzu" 'org-zotxt-update-reference-link-at-point
-    "rzn" 'org-zotxt-noter))
+  (hr-leader-def
+    "z"  '(:ignore t :which-key "zotxt")
+    "z." 'org-zotxt-mode
+    "zi" 'org-zotxt-insert-reference-link
+    "zo" 'org-zotxt-open-attachment
+    "zu" 'org-zotxt-update-reference-link-at-point
+    "zn" 'org-zotxt-noter))
 
 (provide 'ana-reference)
 

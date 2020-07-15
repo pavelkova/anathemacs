@@ -80,12 +80,17 @@
     "lr" 'lsp-treemacs-references
     "li" 'lsp-treemacs-implementations))
 
+
+(use-package helm-lsp
+  :general
+  (hd-leader-def
+    "l@"    'helm-lsp-workspace-symbol
+    "l M-@" 'helm-lsp-global-workspace-symbol
+    "la"    'helm-lsp-code-actions))
+
 ;; language-specific
 
 ;; (use-package lsp-ccls)
-
-(use-package lsp-haskell
-  :after lsp-mode)
 
 (use-package lsp-java
   :after lsp-mode)

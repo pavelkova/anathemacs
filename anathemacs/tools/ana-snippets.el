@@ -20,6 +20,12 @@
   (ha-leader-def
     "sd" 'yas-describe-tables))
 
+(use-package helm-c-yasnippet
+  :general
+  (cc-leader-def
+    "y" 'helm-yas-complete)
+  :config
+  (setq helm-yas-space-match-any-greedy t))
 (provide 'ana-snippets)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

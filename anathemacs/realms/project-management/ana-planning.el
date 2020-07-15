@@ -16,10 +16,10 @@
    "<M-kp-multiply>" 'org-todo-yesterday
    "<C-kp-multiply>" 'org-toggle-checkbox)
 
- (hs-leader-def
-   "t." 'org-todo-list)
+  (hs-leader-def
+    "t." 'org-todo-list)
 
-   ;; FILING
+  ;; FILING
   (hs-leader-def
     "f+" 'org-agenda-file-to-front
     "f-" 'org-remove-file
@@ -38,22 +38,22 @@
   (setq org-list-demote-modify-bullet '(("+" . "-")))
 
   (add-hook 'org-mode-hook (lambda ()
-   "Replace todo keywords and checkboxes with symbols"
-   (push '("TODO"         . "○") prettify-symbols-alist)
-   (push '("INPROGRESS"   . "◑" ) prettify-symbols-alist)
-   (push '("POSTPONED"    . "▶" ) prettify-symbols-alist)
-   (push '("DONE"         . "●" ) prettify-symbols-alist)
-   (push '("CANCELLED"    . "⮿" ) prettify-symbols-alist)
-   (push '("APPOINTMENT"  . "△" ) prettify-symbols-alist)
-   (push '("EVENT"        . "☆" ) prettify-symbols-alist)
-   (push '("QUESTION"     . "❔" ) prettify-symbols-alist)
-   (push '("APPOINTMENT." . "▲" ) prettify-symbols-alist)
-   (push '("EVENT."       . "★" ) prettify-symbols-alist)
-   (push '("ANSWERED"     . "❓" ) prettify-symbols-alist)
-   (push '("[ ]"          . "◻" ) prettify-symbols-alist)
-   (push '("[-]"          . "◪" ) prettify-symbols-alist)
-   (push '("[X]"          . "◼" ) prettify-symbols-alist)
-   (prettify-symbols-mode)))
+                             "Replace todo keywords and checkboxes with symbols"
+                             (push '("TODO"         . "○") prettify-symbols-alist)
+                             (push '("INPROGRESS"   . "◑" ) prettify-symbols-alist)
+                             (push '("POSTPONED"    . "▶" ) prettify-symbols-alist)
+                             (push '("DONE"         . "●" ) prettify-symbols-alist)
+                             (push '("CANCELLED"    . "⮿" ) prettify-symbols-alist)
+                             (push '("APPOINTMENT"  . "△" ) prettify-symbols-alist)
+                             (push '("EVENT"        . "☆" ) prettify-symbols-alist)
+                             (push '("QUESTION"     . "❔" ) prettify-symbols-alist)
+                             (push '("APPOINTMENT." . "▲" ) prettify-symbols-alist)
+                             (push '("EVENT."       . "★" ) prettify-symbols-alist)
+                             (push '("ANSWERED"     . "❓" ) prettify-symbols-alist)
+                             (push '("[ ]"          . "◻" ) prettify-symbols-alist)
+                             (push '("[-]"          . "◪" ) prettify-symbols-alist)
+                             (push '("[X]"          . "◼" ) prettify-symbols-alist)
+                             (prettify-symbols-mode)))
 
   (setq org-archive-location (concat user-archive-file "::datetree/")
         org-log-done 'note
@@ -72,8 +72,9 @@
 (use-package org-kanban
   :general
   (hs-leader-def
-    "tk" 'org-kanban/initialize))
+    "k" 'org-kanban/initialize))
 
+;; TODOIST INTEGRATION
 (use-package todoist
   :mode
   (("\\todoist.org\\'" . todoist-mode))
@@ -85,6 +86,15 @@
   ;; (setq todist-token "XXXXXXXXXXXX"
   ;;       todoist-backing-buffer "path/to/file")
   (setq todoist-show-all nil))
+
+;; LEDGER (finances)
+(use-package ledger-mode
+  :mode ("\\.dat\\'"
+         "\\.ledger\\'")
+  :custom (ledger-clear-whole-transactions t))
+
+(use-package flycheck-ledger
+  :after ledger-mode)
 
 (provide 'ana-planning)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

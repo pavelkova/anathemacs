@@ -9,6 +9,11 @@
 
 ;;; Code:
 
+                                        ; add keybindings for inserting subheadings
+(general-define-key
+ "C-M-<Return>"   'org-insert-subheading
+ "C-M-<Shift>-<Return>" 'org-insert-todo-subheading)
+
 ;; babel - language support
 (setq org-confirm-babel-evaluate nil
       org-src-fontify-natively t
@@ -33,7 +38,7 @@
    (R          . t)
    (ruby       . t)
    (sass       . t)
-;;   (sh         . t)
+   ;;   (sh         . t)
    (shell      . t)
    (sql        . t)
    (table      . t)
@@ -56,11 +61,12 @@
   (org-babel-do-load-languages 'org-babel-load-languages
                                (append org-babel-load-languages
                                        '(( typescript . t)))))
-(use-package org-bookmark-heading)
 
 
-(use-package toc-org
-  :hook (org-mode . toc-org-mode))
+
+(use-package org-special-block-extras
+  :hook (org-mode . org-special-block-extras-mode))
+
 
 ;; load
 (with-eval-after-load 'org
@@ -77,11 +83,6 @@
                                           org-inlinetask
                                           ;; org-notify
                                           ))))
-
-; add keybindings for inserting subheadings
-(general-define-key
- "C-M-<Return>"   'org-insert-subheading
- "C-M-S-<Return>" 'org-insert-todo-subheading)
 
 (provide 'ana-org-base)
 
