@@ -89,7 +89,6 @@
 ;; development
 (require 'ana-docs)
 (require 'ana-c)
-(require 'ana-elisp)
 (require 'ana-elixir)
 (require 'ana-go)
 (require 'ana-haskell)

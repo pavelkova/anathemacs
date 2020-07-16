@@ -42,8 +42,8 @@
     "i"  'org-roam-insert
     "I"  'org-roam-insert-immediate)
   :config
-  (setq org-roam-directory org-directory
-        org-roam-db-location (concat org-directory "org-roam.db")))
+  (setq org-roam-directory user-org-roam-directory
+        org-roam-db-location (concat user-org-roam-directory "org-roam.db")))
 
 (use-package company-org-roam
   :config

@@ -14,7 +14,7 @@
  :delight
  :general
   (hs-leader-def
-    "ta" 'global-activity-watch-mode)
+    "C-a" 'global-activity-watch-mode)
  :config
   (global-activity-watch-mode t))
 

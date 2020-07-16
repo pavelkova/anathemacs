@@ -33,6 +33,10 @@
   "~/Media/org/"
   "Base directory for org files.")
 
+(defvar user-org-roam-directory
+  (concat org-directory "org-roam/")
+  "Path to directory containing user secrets files.")
+
 (defvar user-archive-file
   (concat org-directory "basement.org"))
 
