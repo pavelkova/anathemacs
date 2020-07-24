@@ -59,18 +59,18 @@
 ;;   :commands (telega))
 
 ;; twitter
-(use-package twittering-mode
-  :general
-  (hs-leader-def
-    "et" 'twit)
-  :config
-  (setq twittering-timeline-header "twittering \n\n"
-        twittering-use-icon-storage t
-        twittering-icon-storage-file "~/.config/emacs/user/.twittering-mode-icons.gz"
-        twittering-fill-column 80)
-  (general-define-key
-   :keymaps 'twittering-mode-map
-   "e" 'eww)) ;; open link at cursor with eww
+;; (use-package twittering-mode
+;;   :general
+;;   (hs-leader-def
+;;     "et" 'twit)
+;;   :config
+;;   (setq twittering-timeline-header "twittering \n\n"
+;;         twittering-use-icon-storage t
+;;         twittering-icon-storage-file "~/.config/emacs/user/.twittering-mode-icons.gz"
+;;         twittering-fill-column 80)
+;;   (general-define-key
+;;    :keymaps 'twittering-mode-map
+;;    "e" 'eww)) ;; open link at cursor with eww
 
 ;; reddit
 ;; (use-package md4rd
@@ -82,12 +82,12 @@
 
  ;; GNUS
 
-(use-package nnreddit
-  :general
-  (hs-leader-def
-    "eg" 'gnus)
-  :config
-  (custom-set-variables '(gnus-select-method (quote (nnreddit "")))))
+;; (use-package nnreddit
+;;   :general
+;;    (hs-leader-def
+;;      "eg" 'gnus)
+;;    :config
+;;    (custom-set-variables '(gnus-select-method (quote (nnreddit "")))))
 
 (use-package all-the-icons-gnus
   :config
