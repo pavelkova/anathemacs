@@ -24,20 +24,20 @@
       ;;---BASIC CAPTURES
       ;;;; TODO
          "t" "tarea" entry
-         (file+headline user-master-file "braindump")
+         (file+headline org-journal-file-format "tareas")
          "** TODO %^{tarea} %?
-%T")
+%U")
       ;;;; NOTE
         ("n" "nota" entry
-         (file+headline user-master-file "braindump")
+         (file+headline org-journal-file-format "braindump")
          "** %^{nota} %?
-%T")
+%U")
 
       ;;;; LINK
         ("l" "enlace" entry
-         ((file+headline user-master-file "braindump"))
+         ((file+headline org-journal-file-format "braindump"))
          "** %(org-cliplink-capture)
-%T")
+%U")
         
       ;;;; APPOINTMENT
         ("c" "cita" entry
@@ -84,18 +84,18 @@
 
       ;;;; ORG-CAPTURE EXTENSION
         ("P" "protocol" entry
-         (file+headline user-master-file "braindump")
-        "* %^{Title}
+         (file+headline org-journal-file-format "braindump")
+        "** %^{Title}
 :PROPERTIES:
 :fuenta: %u, %c
 :END:
-%T
+%U
 #+BEGIN_QUOTE
 %i
 #+END_QUOTE
 %?")
 	("L" "protocol link" entry
-         (file+headline user-master-file "braindump")
+         (file+headline org-journal-file-format "braindump")
         "* %? [[%:link][%:description]]
 %T")
         ))

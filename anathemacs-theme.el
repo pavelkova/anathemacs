@@ -593,6 +593,18 @@
    `(doom-modeline-urgent                    (( t :inherit mode-line :foreground ,err)))
    `(doom-modeline-warning                   (( t :inherit mode-line :foreground ,war)))
 
+   `(lsp-modeline-code-actions-face          (( t :inherit mono-xs :foreground ,func)))
+   `(lsp-ui-doc-background                   (( t :background ,bg-2)))
+   `(lsp-ui-doc-border                       (( t :background ,comment)))
+   `(lsp-ui-doc-header                       (( t :inherit sans-md :foreground ,keyword)))
+   `(lsp-ui-peek-filename                    (( t :foreground ,fg-1)))
+   `(lsp-ui-peek-footer                      (( t :background nil)))
+   `(lsp-ui-peek-header                      (( t :background nil)))
+   `(lsp-ui-peek-highlight                   (( t :background nil)))
+   `(lsp-ui-peek-list                        (( t :background ,bg-2)))
+   `(lsp-ui-peek-peek                        (( t :background nil)))
+   `(lsp-ui-sideline-code-action             (( t :inherit lsp-modeline-code-actions-face)))
+
 ;;;;; mu4e
    `(mu4e-cited-1-face          ((t :foreground ,fg-1)))
    `(mu4e-cited-7-face          ((t :foreground ,fg-1)))

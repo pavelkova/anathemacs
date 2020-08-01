@@ -25,7 +25,12 @@
 (use-package python-black
   :after python)
 
-(use-package python-mode)
+(use-package python-mode
+  :config
+  (setq indent-tabs-mode nil
+        py-indent-tabs-mode nil
+        python-indent-offset 4
+        tab-width 4))
 
 (use-package pytest
   :general

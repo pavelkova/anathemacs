@@ -23,7 +23,9 @@
 
 
 (use-package lsp-haskell
-  :after lsp-mode)
+  :after lsp-mode
+  :config
+  (setq lsp-haskell-process-path-hie "hie-wrapper"))
 
 (defun haskell-doc ()
   (interactive)

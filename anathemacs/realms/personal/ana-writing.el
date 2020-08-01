@@ -27,14 +27,14 @@
   (hs-leader-def
     "j" 'org-journal-new-entry)
   :config
-  (setq org-journal-dir user-org-roam-directory
+  (setq org-journal-dir org-directory
         org-journal-find-file 'find-file
         org-journal-file-type 'daily
         org-journal-enable-agenda-integration t
-        org-journal-date-prefix "* "
-        org-journal-date-format "%H:%M :diario:"
+        ;; org-journal-date-prefix "* "
+        ;; org-journal-date-format "%H:%M :diario:"
         org-journal-time-format "%H:%M"
-        org-journal-time-prefix "** "
+        org-journal-time-prefix "* "
         org-journal-file-format "%Y-%m-%d.org"))
 ;; Remove default keybindings
 (global-unset-key (kbd "C-c C-j"))
