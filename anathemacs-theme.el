@@ -693,7 +693,7 @@
    `(org-checkbox-statistics-todo  ((t :inherit org-todo)))
    `(org-tag                       ((t :inherit mono-xs :foreground ,meta)))
    `(org-tag-group                 ((t :inherit org-tag :foreground ,comp)))
-   `(org-table                     ((t :inherit sans-md :background nil :foreground ,fg-1)))
+   `(org-table                     ((t :inherit mono-sm :background nil :foreground ,fg-1)))
    `(org-time-grid                 ((t :foreground ,comment)))
    `(org-todo                      ((t :inherit mono-md :background nil :foreground ,highlight)))
    `(org-verbatim                  ((t :inherit org-block)))

@@ -16,10 +16,12 @@
         which-key-max-description-length 40
         which-key-max-display-columns nil
         which-key-show-docstrings t
-        which-key-sort-uppercase-first nil))
-
-;; Get rid of insert binding ;; whyyyy
-(setq help-char 0)
+        which-key-popup-type 'side-window
+        which-key-sort-uppercase-first nil
+        which-key-paging-prefixes '("C-c" "C-x" "H-a" "H-d" "H-r" "H-s" "H-SPC")
+        ; which-key-paging-key "H-k"
+        ; help-char "H-k"
+        ))
 
 ;; Use caps key as hyper
 (define-key key-translation-map [8711] 'event-apply-hyper-modifier)
