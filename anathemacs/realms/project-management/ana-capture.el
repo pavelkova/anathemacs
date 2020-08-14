@@ -14,28 +14,29 @@
 ;; properties
 ;; (setq org-tempo-keywords-alist '())
 
-
 (defun org-journal-find-location ()
-  (concat org-journal-dir org-journal-file-format))
+  ;; Open today's journal, but specify a non-nil prefix argument in order to
+  ;; inhibit inserting the heading; org-capture will insert the heading.
+  (org-journal-new-entry t)
+  ;; Position point on the journal's top-level heading so that org-capture
+  ;; will add the new entry as a child entry.
+  (goto-char (point-min)))
 
 ;; TEMPLATES
 (setq org-capture-templates
       '((
       ;;---BASIC CAPTURES
       ;;;; TODO
-         "t" "tarea" entry
-         (file+headline org-journal-file-format "tareas")
+         "t" "tarea" entry (function org-journal-find-location)
          "** TODO %^{tarea} %?
 %U")
       ;;;; NOTE
-        ("n" "nota" entry
-         (file+headline org-journal-file-format "braindump")
+        ("n" "nota" entry (function org-journal-find-location)
          "** %^{nota} %?
 %U")
 
       ;;;; LINK
-        ("l" "enlace" entry
-         ((file+headline org-journal-file-format "braindump"))
+        ("l" "enlace" entry (function org-journal-find-location)
          "** %(org-cliplink-capture)
 %U")
         
@@ -83,8 +84,7 @@
          :time-prompt t)
 
       ;;;; ORG-CAPTURE EXTENSION
-        ("P" "protocol" entry
-         (file+headline org-journal-file-format "braindump")
+        ("P" "protocol" entry (function org-journal-find-location)
         "** %^{Title}
 :PROPERTIES:
 :fuenta: %u, %c
@@ -94,8 +94,7 @@
 %i
 #+END_QUOTE
 %?")
-	("L" "protocol link" entry
-         (file+headline org-journal-file-format "braindump")
+	("L" "protocol link" entry (function org-journal-find-location)
         "* %? [[%:link][%:description]]
 %T")
         ))

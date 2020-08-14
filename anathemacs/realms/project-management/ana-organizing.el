@@ -30,6 +30,10 @@
   :config
   (setq helm-org-rifle-fontify-headings nil))
 
+(use-package deft
+  :config
+  (setq deft-directory org-directory))
+
 ;; ROAM
 (use-package org-roam
   :init
@@ -42,7 +46,8 @@
     "i"  'org-roam-insert
     "I"  'org-roam-insert-immediate)
   :config
-  (setq org-roam-directory org-directory
+  (setq org-roam-directory user-org-roam-directory
+        org-roam-index-file user-org-roam-index-file
         org-roam-db-location (concat org-directory "org-roam.db")))
 
 (use-package company-org-roam
@@ -62,14 +67,6 @@
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20)
   (org-roam-server-mode))
-
-
-(use-package side-notes
-  :general
-  (hs-leader-def
-    "n" 'side-notes-toggle-notes)
-  :config
-  (setq side-notes-file "index.org"))
 
 (provide 'ana-organizing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

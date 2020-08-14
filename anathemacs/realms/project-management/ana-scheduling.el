@@ -20,7 +20,7 @@
 
 ;; org clock and logs
 (with-eval-after-load 'org
-  (setq org-clock-idle-time 5
+  (setq org-clock-idle-time 10
         org-clock-display-default-range 'untilnow
         org-clock-in-switch-to-state "INPROGRESS"
         org-clock-persist t

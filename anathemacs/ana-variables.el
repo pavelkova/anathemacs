@@ -33,9 +33,11 @@
   "~/Media/org/"
   "Base directory for org files.")
 
-(defvar user-org-roam-directory
-  (concat org-directory "org-roam/")
-  "Path to directory containing user secrets files.")
+(defvar user-org-roam-directory org-directory
+  "Path to directory for org-roam files.")
+
+(defvar user-org-roam-index-file "codex.org"
+  "Index file, relative to org-roam-directory.")
 
 (defvar user-archive-file
   (concat org-directory "basement.org"))

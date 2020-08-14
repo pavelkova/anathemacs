@@ -31,10 +31,12 @@
         org-journal-find-file 'find-file
         org-journal-file-type 'daily
         org-journal-enable-agenda-integration t
-        ;; org-journal-date-prefix "* "
-        ;; org-journal-date-format "%H:%M :diario:"
-        org-journal-time-format "%H:%M"
-        org-journal-time-prefix "* "
+        org-agenda-enable-cache t
+        org-journal-date-prefix "#+title: "
+        org-journal-date-format "%Y-%m-%d"
+        org-journal-time-format "%H:%M :diario:"
+        ;; org-journal-time-prefix "* "
+        ;; org-journal-carryover-items "TODO=\"TODO\""
         org-journal-file-format "%Y-%m-%d.org"))
 ;; Remove default keybindings
 (global-unset-key (kbd "C-c C-j"))
