@@ -36,7 +36,7 @@
 (defvar user-org-roam-directory org-directory
   "Path to directory for org-roam files.")
 
-(defvar user-org-roam-index-file "codex.org"
+(defvar user-org-roam-index-file "index.org"
   "Index file, relative to org-roam-directory.")
 
 (defvar user-archive-file
@@ -47,9 +47,6 @@
 
 (defvar user-bookmarks-file
   (concat org-directory "marcardores.org"))
-
-(defvar user-brain-dir
-  (concat org-directory ".data/cerebro/"))
 
 (defvar user-cal-file
   (concat org-directory "calendario.org"))

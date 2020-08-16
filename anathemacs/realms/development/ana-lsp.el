@@ -66,7 +66,13 @@
     "lm" 'lsp-ui-imenu
     "ld" 'lsp-ui-doc)
   :config
-  (setq lsp-ui-sideline-ignore-duplicate t))
+  (setq lsp-ui-sideline-ignore-duplicate t
+        lsp-ui-sideline-show-diagnostics t
+        lsp-ui-sideline-show-hover t
+        lsp-ui-sideline-show-code-actions t
+        lsp-ui-sideline-delay 2
+        lsp-ui-doc-enable t
+        lsp-ui-doc-delay 2))
 
 
 (use-package lsp-treemacs
@@ -87,6 +93,10 @@
     "l@"    'helm-lsp-workspace-symbol
     "l M-@" 'helm-lsp-global-workspace-symbol
     "la"    'helm-lsp-code-actions))
+
+(use-package lsp-origami
+  :config
+  (add-hook 'lsp-after-open-hook #'lsp-origami-try-enable))
 
 ;; language-specific
 

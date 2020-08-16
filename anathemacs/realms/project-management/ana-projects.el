@@ -48,7 +48,7 @@
   :after org-projectile
   :general
   (hs-leader-def
-    "<SPACE>" 'org-projectile-helm-template-or-project))
+    "<SPC>" 'org-projectile-helm-template-or-project))
 
 (use-package helm-projectile
   :after projectile

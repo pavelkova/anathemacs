@@ -31,20 +31,25 @@
   (setq helm-org-rifle-fontify-headings nil))
 
 (use-package deft
+  :general
+  (hs-leader-def
+    "d" 'deft)
   :config
-  (setq deft-directory org-directory))
+  (setq deft-directory org-directory
+        deft-recursive t))
 
 ;; ROAM
 (use-package org-roam
+  :after md-roam
   :init
   (org-roam-mode)
   :general
   (hr-leader-def
     "<right>" 'org-roam
-    "f"  'org-roam-find-file
-    "g"  'org-roam-graph-show
-    "i"  'org-roam-insert
-    "I"  'org-roam-insert-immediate)
+    "f"       'org-roam-find-file
+    "g"       'org-roam-graph-show
+    "i"       'org-roam-insert
+    "I"       'org-roam-insert-immediate)
   :config
   (setq org-roam-directory user-org-roam-directory
         org-roam-index-file user-org-roam-index-file
@@ -68,6 +73,12 @@
         org-roam-server-network-label-wrap-length 20)
   (org-roam-server-mode))
 
+(use-package md-roam
+  :load-path "anathemacs/lib/md-roam"
+  :config
+  (setq md-roam-file-extension-single "md"
+        org-roam-file-extensions '("org" "md")
+        org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
 (provide 'ana-organizing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-organizing.el ends here

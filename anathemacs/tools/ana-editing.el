@@ -18,6 +18,18 @@
   "H-\-" 'comment-line
   "H-["  'comment-or-uncomment-region)
 
+(use-package origami
+  :config
+  (global-origami-mode)
+  :general
+  (general-define-key
+   "H-/"   'origami-recursively-toggle-node
+   "H-M-/" 'origami-show-only-node
+   "H-C-/" 'origami-toggle-all-nodes)
+  (ha-leader-def
+    "f <Right>" 'origami-next-fold
+    "f <Left>"  'origami-previous-fold))
+
 (use-package crux
   :general
   (ha-leader-def

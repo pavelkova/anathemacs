@@ -107,26 +107,11 @@
   (general-define-key
    "M-i" 'helm-swoop))
 
-(use-package helm-smex
-  :general
-  (general-define-key
-   "M-X"     'helm-smex
-   "H-A"     'helm-smex-major-mode-commands))
-
 (use-package helm-lines
   :commands (helm-lines)
   :general
   (cc-leader-def
     "L" 'helm-lines))
-
-;; code folding
-(use-package yafolding
-  :hook (prog-mode . yafolding-mode)
-  :general
-  (general-define-key
-    "H-/"   'yafolding-toggle-element
-    "H-M-/" 'yafolding-hide-parent-element
-    "H-C-/" 'yafolding-toggle-all))
 
 (provide 'ana-navigation)
 

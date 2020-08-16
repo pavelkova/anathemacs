@@ -18,6 +18,7 @@
   :config (defalias 'insert-litany #'litanize-at-point))
 
 (use-package mpages
+  :load-path "anathemacs/lib/mpages"
   :general
   (hs-leader-def
     "7" 'mpages))

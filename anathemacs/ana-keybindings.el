@@ -60,7 +60,7 @@
   "." '(:ignore t :which-key "crux")
   "/" '(:ignore t :which-key "system & processes")
   "e" '(:ignore t :which-key "errors")
-  "f" '(:ignore t :which-key "files")
+  "f" '(:ignore t :which-key "folding")
   "p" '(:ignore t :which-key "persp")
   "g" '(:ignore t :which-key "git & version control")
   "s" '(:ignore t :which-key "snippets"))

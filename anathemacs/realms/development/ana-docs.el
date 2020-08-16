@@ -46,6 +46,14 @@
                                    )))
 
 
+(use-package helm-dash
+  :after dash-docs
+  :general
+  (hd-leader-def
+    "-" 'helm-dash
+    "_" 'helm-dash-at-point)
+  :config
+  (setq helm-dash-common-docsets dash-docs-common-docsets))
 (provide 'ana-docs)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
