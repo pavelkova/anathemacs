@@ -62,24 +62,19 @@
   :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :config
-  (setq org-bullets-bullet-list '("⋅")))
+  ;;   (setq org-bullets-bullet-list '("⋅"))
+  (setq org-bullets-bullet-list '(""))
+)
 
-;; (use-package org-sticky-header
-;;   :hook (org-mode . org-sticky-header-mode))
+;; (use-package org-starless
+;;   :load-path "anathemacs/lib/org-starless"
+;;   :hook (org-mode . org-starless-mode))
 
 (use-package org-variable-pitch
   :delight org-variable-pitch-minor-mode
   :hook (org-mode . org-variable-pitch-minor-mode)
   :config
   (add-to-list 'org-variable-pitch-fixed-faces 'org-special-keyword 'org-link))
-
-(use-package idle-org-agenda
-  ;; :after org-agenda
-  :general
-  (ha-leader-def
-    "z" 'idle-org-agenda-mode)
-  :config
-  (idle-org-agenda-mode))
 
 (provide 'ana-org-ui-base)
 

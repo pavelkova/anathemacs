@@ -40,7 +40,7 @@
     (pretty-activate-groups
      '(:greek :arithmetic-nary))))
 
-(add-hook 'text-mode-hook 'auto-fill-mode)
+; wrap lines to window without adding hard breaks
 (add-hook 'text-mode-hook 'visual-line-mode)
   
 ;; get rid of startup warnings

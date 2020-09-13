@@ -40,20 +40,18 @@
 
 ;; ROAM
 (use-package org-roam
-  :after md-roam
   :init
   (org-roam-mode)
+  (setq org-roam-directory org-directory ; user-org-roam-directory
+        org-roam-index-file user-org-roam-index-file
+        org-roam-db-location (concat org-directory "org-roam.db"))
   :general
   (hr-leader-def
     "<right>" 'org-roam
     "f"       'org-roam-find-file
     "g"       'org-roam-graph-show
     "i"       'org-roam-insert
-    "I"       'org-roam-insert-immediate)
-  :config
-  (setq org-roam-directory user-org-roam-directory
-        org-roam-index-file user-org-roam-index-file
-        org-roam-db-location (concat org-directory "org-roam.db")))
+    "I"       'org-roam-insert-immediate))
 
 (use-package company-org-roam
   :config

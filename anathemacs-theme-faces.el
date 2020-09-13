@@ -18,11 +18,11 @@
 (defface sans-xl  '((t :family "Cantarell" :height 160)) "xl sans serif font")
 (defface sans-xxl '((t :family "Cantarell" :height 300)) "xxl sans serif font")
 
-(defface serif-xs  '((t :family "ETBookOT" :height 110)) "xs serif font")
-(defface serif-sm  '((t :family "ETBookOT" :height 130)) "sm serif font")
-(defface serif-md  '((t :family "ETBookOT" :height 150)) "md serif font")
-(defface serif-lg  '((t :family "ETBookOT" :height 235)) "lg serif font")
-(defface serif-xl  '((t :family "ETBookOT" :height 285)) "xl serif font")
-(defface serif-xxl '((t :family "ETBookOT" :height 435)) "xxl serif font")
+(defface serif-xs  '((t :family "ETBembo" :height 100)) "xs serif font")
+(defface serif-sm  '((t :family "ETBembo" :height 115)) "sm serif font")
+(defface serif-md  '((t :family "ETBembo" :height 130)) "md serif font")
+(defface serif-lg  '((t :family "ETBembo" :height 185)) "lg serif font")
+(defface serif-xl  '((t :family "ETBembo" :height 285)) "xl serif font")
+(defface serif-xxl '((t :family "ETBembo" :height 435)) "xxl serif font")
 
 ;;; anathemacs-theme-faces.el ends here
