@@ -669,7 +669,7 @@
    `(org-indent                    ((t :inherit org-hide)))
    `(org-kbd                       ((t :inherit region :foreground ,fg-1 :box (:line-width 1 :style released-button))))
    `(org-level-1                   ((t :inherit serif-xl :foreground ,fg-1 :slant italic)))
-   `(org-level-2                   ((t :inherit serif-md)))
+   `(org-level-2                   ((t :inherit serif-lg)))
    `(org-level-3                   ((t :inherit org-level-2)))
    `(org-level-4                   ((t :inherit org-level-2)))
    `(org-level-5                   ((t :inherit org-level-2)))

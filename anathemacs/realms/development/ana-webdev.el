@@ -1,4 +1,4 @@
-;;; ana-web.el --- Package configurations for web development.
+;;; ana-webdev.el --- Package configurations for web development.
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -14,21 +14,15 @@
   (hd-leader-def
     "/c" 'company-web-html))
 
-(use-package emmet-mode
-  :hook web-mode
-  :config
-  (setq emmet-move-cursor-between-quotes t))
+;; (use-package emmet-mode
+;;   :hook web-mode
+;;   :config
+;;   (setq emmet-move-cursor-between-quotes t))
 
 (use-package graphql)
 
-(use-package graphql-mode
-  :mode "\\.graphql\\")
-
-(use-package json-mode
-  :mode "\\.json\\'"
-  :config
-  (use-package json-reformat)
-  (use-package json-snatcher))
+;; (use-package graphql-mode
+;;   :mode "\\.graphql\\")
 
 (use-package rainbow-mode)
 
@@ -45,11 +39,11 @@
   :general
   (hd-leader-def
     "/t" 'web-mode-tag-match)
-  :mode (("\\.erb\\'"    . web-mode)
-         ("\\.html?\\'"  . web-mode)
-         ("\\.js[x]\\'"  . web-mode)
-         ("\\.[s]css\\'" . web-mode)
-         ("\\.xml\\'"    . web-mode))
+  :mode (("\\.html?\\'" . web-mode)
+         ("\\.[s]css\\'"   . web-mode)
+         ("\\.jsx?\\'"  . web-mode)
+         ("\\.tsx?\\'"  . web-mode)
+         ("\\.json\\'"  . web-mode))
   :bind (:map web-mode-map
               ("RET" . newline-and-indent))
   :config
@@ -66,7 +60,8 @@
         web-mode-markup-indent-offset 2
         web-mode-script-padding 2
         web-mode-style-padding 2
-        web-mode-tag-auto-close-style 2))
+        web-mode-tag-auto-close-style 2
+        web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
 
 (defun web-doc ()
   (interactive)
@@ -78,7 +73,7 @@
 
 (add-hook 'web-mode-hook 'web-doc)
 
-(provide 'ana-web)
+(provide 'ana-webdev)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-web.el ends here
+;;; ana-webdev.el ends here

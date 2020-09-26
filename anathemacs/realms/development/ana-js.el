@@ -33,14 +33,9 @@
 ;; REACT
 
 (use-package js-react-redux-yasnippets
-  :after (rjsx-mode)
+  :after (web-mode)
   :config
   (setq js-react-redux-yasnippets-want-semicolon nil))
-
-(use-package rjsx-mode
-  :mode ("\\.jsx?$" . rjsx-mode)
-  :config (setq js-indent-level 2
-                js2-strict-missing-semi-warning nil))
 
 (defun js-doc ()
   (interactive)
@@ -51,7 +46,7 @@
                                   "TypeScript"
                                   "VueJS")))
 
-(add-hook 'rjsx-mode-hook 'js-doc)
+(add-hook 'web-mode-hook 'js-doc)
 
 ;; VUE
 

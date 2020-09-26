@@ -100,7 +100,7 @@
 (require 'ana-php)
 (require 'ana-python)
 (require 'ana-ruby)
-(require 'ana-web)
+(require 'ana-webdev)
 ;; personal
 (require 'ana-communication)
 (require 'ana-dokuwiki)

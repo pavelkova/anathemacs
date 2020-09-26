@@ -57,7 +57,6 @@
   :after minions
   :init
   (doom-modeline-mode 1)
-  (display-battery-mode)
   :config
   (progn
     (doom-modeline-def-modeline 'ana-modeline
@@ -65,7 +64,6 @@
       '(misc-info objed-state "     " persp-name "" mu4e " " battery " " minor-modes github vcs remote-host))
     (doom-modeline-set-modeline 'ana-modeline 'default))
   (setq doom-modeline-continuous-word-count-modes '(markdown-mode org-mode fountain-mode)
-        doom-modeline-icon t
         doom-modeline-modal-icon t
         doom-modeline-mu4e t
         doom-modeline-gnus nil
@@ -80,9 +78,9 @@
         doom-modeline-number-limit 999
         doom-modeline-bar-width 4
         doom-modeline-height 30
-        doom-modeline-display-default-persp-name nil
         doom-modeline-window-width-limit fill-column
         doom-modeline-major-mode-color-icon t))
+
 
 ;; default modeline
 ;; (doom-modeline-def-modeline 'main
