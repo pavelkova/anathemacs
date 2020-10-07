@@ -11,11 +11,7 @@
 
 (use-package fountain-mode)
 
-(use-package binder
-  :load-path "anathemacs/lib/binder")
-
-(use-package litanize
-  :config (defalias 'insert-litany #'litanize-at-point))
+(use-package binder)
 
 (use-package mpages
   :load-path "anathemacs/lib/mpages"
@@ -67,12 +63,6 @@
   :general
   (hs-leader-def
     "w!" 'writeroom-mode))
-
-(use-package writegood-mode
-  :general
-  (hs-leader-def
-    "wg" 'writegood-grade-level
-    "we" 'writegood-reading-ease))
 
 (use-package auto-dictionary)
 

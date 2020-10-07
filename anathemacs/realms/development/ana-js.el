@@ -27,6 +27,12 @@
     "fu" 'foreman-start
     "fU" 'foreman-start-proc))
 
+(use-package js2-mode
+  :mode (("\\.jsx?\\'" . js2-minor-mode)))
+
+;; (use-package rjsx-mode
+;; :mode (("\\.jsx?\\'" . rjsx-mode))
+;; )
 
 (use-package yarn-mode)
 
