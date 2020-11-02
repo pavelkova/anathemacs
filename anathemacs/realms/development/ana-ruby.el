@@ -10,15 +10,18 @@
 ;;; Code:
 (use-package inf-ruby
   :hook (enh-ruby-mode . inf-ruby-minor-mode)
-  :general
-  (hd-leader-def
-    "rc" 'inf-ruby
-    "rC" 'inf-ruby-console-auto
-    "rs" 'ruby-switch-to-inf
-    "rd" 'ruby-send-definition
-    "rD" 'ruby-send-definition-and-go
-    "rr" 'ruby-send-region
-    "rR" 'ruby-send-region-and-go))
+  ;; none of the ruby modes have maps?
+  ;; :general
+  ;; (:keymaps 'ruby-mode
+  ;;           (hd-leader-def
+  ;;             ":" 'inf-ruby
+  ;;             "C" 'inf-ruby-console-auto
+  ;;             "s" 'ruby-switch-to-inf
+  ;;             "d" 'ruby-send-definition
+  ;;             "D" 'ruby-send-definition-and-go
+  ;;             "r" 'ruby-send-region
+  ;;             "R" 'ruby-send-region-and-go))
+  )
 
 (use-package enh-ruby-mode
   :hook robe-mode
@@ -29,7 +32,7 @@
   :hook (ruby-mode . robe-mode)
   :config
   (eval-after-load 'company
-  '(push 'company-robe company-backends)))
+    '(push 'company-robe company-backends)))
 
 (use-package rspec-mode
   :config
@@ -45,9 +48,9 @@
 
 ;; RAILS
 
-(use-package projectile-rails
-  :bind-keymap
-  ("H-d R" . projectile-rails-command-map))
+;; (use-package projectile-rails
+;;   :bind-keymap
+;;   ("H-d R" . projectile-rails-command-map))
 
 (provide 'ana-ruby)
 

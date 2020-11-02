@@ -9,40 +9,80 @@
 
 ;;; Code:
 
-(use-package foreman-mode
-  :general
-  (hd-leader-def
-    "f." 'foreman-view-buffer
-    "fc" 'foreman-clear
-    "fd" 'foreman-stop
-    "fe" 'foreman-edit-env
-    "fE" 'foreman-env-save
-    "fk" 'foreman-kill-buffer
-    "fK" 'foreman-kill-proc
-    "fn" 'foreman-next-line
-    "fp" 'foreman-previous-line
-    "fr" 'foreman-restart
-    "fR" 'foreman-restart-proc
-    "ft" 'foreman-tasks
-    "fu" 'foreman-start
-    "fU" 'foreman-start-proc))
-
 (use-package js2-mode
-  :mode (("\\.jsx?\\'" . js2-minor-mode)))
+  :general
+  (:keymaps 'js2-mode-map
+            (general-define-key
+             "M-." nil))
+  :commands js2-line-break
+  :config
+  (setq js-chain-indent t
+        js2-highlight-level 3
+        js2-highlight-external-variables t
+        js2-idle-timer-delay 0.1
+        js2-missing-semi-one-line-override t
+        js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil
+        js2-skip-preprocessor-directives t
+        js2-strict-missing-semi-warning nil
+        js2-strict-trailing-comma-warning nil))
 
-;; (use-package rjsx-mode
-;; :mode (("\\.jsx?\\'" . rjsx-mode))
-;; )
+(use-package rjsx-mode)
+
+(use-package nodejs-repl
+  :general
+  (:keymaps 'web-mode-map
+            (hd-leader-def
+              "E" 'nodejs-repl-send-last-expression
+              "L" 'nodejs-repl-send-line
+              "R" 'nodejs-repl-send-region
+              "B" 'nodejs-repl-send-buffer
+              "F" 'nodejs-repl-load-file
+              ":" 'nodejs-repl-switch-to-repl)))
+
+;; (use-package xref-js2
+;;   :hook (js2-mode . (lambda ()
+;;                       (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
 
 (use-package yarn-mode)
 
 ;; REACT
 
 (use-package js-react-redux-yasnippets
-  :after (web-mode)
   :config
   (setq js-react-redux-yasnippets-want-semicolon nil))
 
+(use-package tide
+  :mode (("\\.jsx?\\'" . tide-setup)
+         ("\\.jsx?\\'" . tide-hl-identifier-mode)
+         ("\\.tsx?\\'" . tide-setup)
+         ("\\.tsx?\\'" . tide-hl-identifier-mode))
+  ;; :hook (before-save . tide-format-before-save)
+       ;((js-mode typescript-mode) . tide-setup)
+       ;((js-mode typescript-mode) . tide-hl-identifier-mode)
+  :general
+  (hd-leader-def
+    :keymaps 'tide-mode-map
+    "t"  '(:ignore t :which-key "tide")
+    "tR" 'tide-restart-server
+    "tf" 'tide-format
+    "t@" 'tide-rename-symbol
+    "to" 'tide-organize-imports)
+  :config
+  (setq tide-always-show-documentation t
+        tide-completion-detailed t
+        tide-completion-enable-autoimport-suggestions t
+        tide-enable-xref t
+        tide-format-options '(:indentSize 4
+                              :placeOpenBraceOnNewLineForFunctions nil)
+        tide-user-preferences '(:includeCompletionsForModuleExports t))
+  (flycheck-add-mode 'javascript-eslint
+                     'web-mode)
+  (flycheck-add-next-checker 'javascript-eslint
+                             'jsx-tide
+                             'append))
+
+;; DOCSETS
 (defun js-doc ()
   (interactive)
   (setq-local dash-docs-docsets '("JavaScript"
@@ -53,12 +93,6 @@
                                   "VueJS")))
 
 (add-hook 'web-mode-hook 'js-doc)
-
-;; VUE
-
-;; (use-package vue-mode)
-
-;; (use-package vue-html-mode)
 
 (provide 'ana-js)
 

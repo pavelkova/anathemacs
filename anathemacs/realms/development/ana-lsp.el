@@ -26,14 +26,15 @@
   :init
   (setq lsp-keymap-prefix "H-l")
   :config
-  (setq lsp-prefer-flymake nil
-        lsp-enable-indentation t
-        lsp-enable-snippet t
+  (setq lsp-auto-configure t
         lsp-auto-guess-root t
         lsp-enable-completion-at-point t
-        lsp-enable-semantic-highlighting t
         lsp-enable-imenu t
+        lsp-enable-indentation t
+        lsp-enable-semantic-highlighting t
+        lsp-enable-snippet t
         lsp-enable-text-document-color t
+        lsp-prefer-flymake nil
         lsp-clients-emmy-lua-jar-path "~/.config/emacs/EmmyLua-LS-all.jar")
   :hook
   ((css-mode
@@ -50,7 +51,6 @@
     lua-mode
     php-mode
     python-mode
-    rjsx-mode
     ruby-mode
     web-mode
     yaml-mode) . lsp)
@@ -59,40 +59,45 @@
 (use-package lsp-ui
   :commands lsp-ui-mode
   :hook (lsp . lsp-ui-mode)
-  :general
-  (hd-leader-def
-    "l:" 'lsp-ui-sideline
-    "lp" 'lsp-ui-peek
-    "lm" 'lsp-ui-imenu
-    "ld" 'lsp-ui-doc)
+  ;; :general
+  ;; (hl-leader-def
+  ;;   ":" 'lsp-ui-sideline
+  ;;   "p" 'lsp-ui-peek
+  ;;   "m" 'lsp-ui-imenu
+  ;;   "d" 'lsp-ui-doc)
   :config
-  (setq lsp-ui-sideline-ignore-duplicate t
+  (setq lsp-ui-doc-enable t
+        lsp-ui-doc-delay 1
+        lsp-ui-doc-use-webkit t
+        lsp-ui-peek-enable t
+        lsp-ui-peek-show-directory t
+        lsp-ui-sideline-ignore-duplicate t
         lsp-ui-sideline-show-diagnostics t
         lsp-ui-sideline-show-hover t
         lsp-ui-sideline-show-code-actions t
-        lsp-ui-sideline-delay 2
-        lsp-ui-doc-enable t
-        lsp-ui-doc-delay 2))
+        lsp-ui-sideline-delay 1))
 
 
 (use-package lsp-treemacs
+  ;; :general
+  ;; (hl-leader-def
+  ;;   "e" 'lsp-treemacs-errors-list
+  ;;   "f" 'lsp-treemacs-quick-fix
+  ;;   "s" 'lsp-treemacs-symbols-list
+  ;;   "r" 'lsp-treemacs-references
+  ;;   "i" 'lsp-treemacs-implementations)
   :config
-  (lsp-treemacs-sync-mode 1)
-  :general
-  (hd-leader-def
-    "le" 'lsp-treemacs-errors-list
-    "lf" 'lsp-treemacs-quick-fix
-    "ls" 'lsp-treemacs-symbols-list
-    "lr" 'lsp-treemacs-references
-    "li" 'lsp-treemacs-implementations))
+  (lsp-treemacs-sync-mode 1))
 
 
 (use-package helm-lsp
-  :general
-  (hd-leader-def
-    "l@"    'helm-lsp-workspace-symbol
-    "l M-@" 'helm-lsp-global-workspace-symbol
-    "la"    'helm-lsp-code-actions))
+  ;; :general
+  ;; (hl-leader-def
+  ;;   "@"    'helm-lsp-workspace-symbol
+  ;;   "M-@" 'helm-lsp-global-workspace-symbol
+  ;;   "a"    'helm-lsp-code-actions)
+  :config
+  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 
 (use-package lsp-origami
   :config
@@ -102,8 +107,8 @@
 
 ;; (use-package lsp-ccls)
 
-(use-package lsp-java
-  :after lsp-mode)
+;; (use-package lsp-java
+;;   :after lsp-mode)
 
 (provide 'ana-lsp)
 

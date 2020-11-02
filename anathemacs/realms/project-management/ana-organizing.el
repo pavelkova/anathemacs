@@ -57,19 +57,19 @@
   :config
   (push 'company-org-roam company-backends))
 
-(use-package org-roam-server
-  :after org-roam
-  :init
-  (setq org-roam-server-host "127.0.0.1"
-        org-roam-server-port 9091
-        org-roam-server-export-inline-images t
-        org-roam-server-authenticate nil
-        org-roam-server-network-poll t
-        org-roam-server-network-arrows nil
-        org-roam-server-network-label-truncate t
-        org-roam-server-network-label-truncate-length 60
-        org-roam-server-network-label-wrap-length 20)
-  (org-roam-server-mode))
+;; (use-package org-roam-server
+;;   :after org-roam
+;;   :init
+;;   (setq org-roam-server-host "127.0.0.1"
+;;         org-roam-server-port 9091
+;;         org-roam-server-export-inline-images t
+;;         org-roam-server-authenticate nil
+;;         org-roam-server-network-poll t
+;;         org-roam-server-network-arrows nil
+;;         org-roam-server-network-label-truncate t
+;;         org-roam-server-network-label-truncate-length 60
+;;         org-roam-server-network-label-wrap-length 20)
+;;   (org-roam-server-mode))
 
 (use-package md-roam
   :load-path "anathemacs/lib/md-roam"
@@ -77,6 +77,11 @@
   (setq md-roam-file-extension-single "md"
         org-roam-file-extensions '("org" "md")
         org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
+
+(use-package neuron-mode
+  :config
+  (setq neuron-default-zettelkasten-directory "~/org/neuron"))
+
 (provide 'ana-organizing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ana-organizing.el ends here

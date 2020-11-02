@@ -16,14 +16,14 @@
   (setq flycheck-elixir-credo-strict t))
 
 (use-package elixir-mode
-  :general
-  (hd-leader-def
-    "e." 'elixir-mode
-    "eg" 'elixir-mode-open-github
-    "eF" 'elixir-format
-    "eh" 'elixir-mode-open-elixir-home
-    "ed" 'elixir-mode-open-docs-master
-    "eD" 'elixir-mode-open-docs-stable)
+  ;; :general
+  ;; (hd-leader-def
+  ;;   "e." 'elixir-mode
+  ;;   "eg" 'elixir-mode-open-github
+  ;;   "eF" 'elixir-format
+  ;;   "eh" 'elixir-mode-open-elixir-home
+  ;;   "ed" 'elixir-mode-open-docs-master
+  ;;   "eD" 'elixir-mode-open-docs-stable)
   :config
   (setq lsp-clients-elixir-server-executable "~/.config/emacs/lsp/elixir-ls/release/debugger.sh"))
 

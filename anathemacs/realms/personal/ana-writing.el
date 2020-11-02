@@ -30,20 +30,17 @@
         org-journal-enable-agenda-integration t
         org-agenda-enable-cache t
         org-journal-date-prefix "#+title: "
-        org-journal-date-format "%Y-%m-%d"
-        org-journal-time-format "%H:%M :diario:"
-        ;; org-journal-time-prefix "* "
+        org-journal-date-format "%Y-%m-%d
+* diario
+:PROPERTIES:
+:CREATED: %Y%m%d
+:END:"
+        org-journal-time-format "%H:%M"
+        org-journal-time-prefix "** "
         ;; org-journal-carryover-items "TODO=\"TODO\""
         org-journal-file-format "%Y-%m-%d.org"))
 ;; Remove default keybindings
 (global-unset-key (kbd "C-c C-j"))
-
-(use-package org-journal-list
-  :general
-  (hs-leader-def
-    "J" 'org-journal-list)
-  :config
-  (setq org-journal-default-directory org-directory))
 
 (use-package wc-mode
   :hook (fountain-mode mpages org-journal writeroom-mode)

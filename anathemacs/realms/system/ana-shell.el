@@ -16,6 +16,14 @@
 (use-package fish-mode
   :mode ("\\.fish\\'"))
 
+(use-package terminal-here
+  :general
+  (general-define-key
+   "C-M-h"   'terminal-here-launch
+   "C-M-S-h" 'terminal-here-project-launch)
+  :config
+  (setq terminal-here-terminal-command '("alacritty")))
+
 (use-package vterm)
 
 (use-package vterm-toggle

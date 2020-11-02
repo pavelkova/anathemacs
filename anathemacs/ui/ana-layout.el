@@ -10,18 +10,18 @@
 ;;; Code:
 
 ;; SUBLIMITY
-(use-package sublimity
-  :general
-  (ha-leader-def
-    "!" 'sublimity-mode)
-  :config
-  ;; (sublimity-mode 1)
-  (setq sublimity-map-size 20
-        sublimity-map-fraction 0.3
-        sublimity-map-text-scale -7
-        sublimity-scroll-weight 5
-        sublimity-scroll-drift-length 10
-        sublimity-attractive-centering-width 110))
+;; (use-package sublimity
+;;   :general
+;;   (ha-leader-def
+;;     "!" 'sublimity-mode)
+;;   :config
+;;   ;; (sublimity-mode 1)
+;;   (setq sublimity-map-size 20
+;;         sublimity-map-fraction 0.3
+;;         sublimity-map-text-scale -7
+;;         sublimity-scroll-weight 5
+;;         sublimity-scroll-drift-length 10
+;;         sublimity-attractive-centering-width 110))
 
 ;; SIDEBAR
 (use-package treemacs
@@ -49,8 +49,25 @@
    "<f6>" 'dired-sidebar-toggle-sidebar))
 
 ;; TAB BAR
-(general-define-key
- "<f9>" 'tab-bar-mode)
+(use-package centaur-tabs
+  :general
+  (general-define-key
+   "<f9>"      'centaur-tabs-mode
+   "C-<prior>" 'centaur-tabs-backward
+   "C-<next>"  'centaur-tabs-forward)
+  :config
+  (centaur-tabs-mode t)
+  (centaur-tabs-headline-match)
+  (centaur-tabs-change-fonts "Cantarell" 80)
+  (setq centaur-tabs-style "alternate"
+        centaur-tabs-height 20
+        centaur-tabs-set-icons t
+        centaur-tabs-plain-icons t
+        centaur-tabs-gray-out-icons 'buffer
+        centaur-tabs-set-bar 'over
+        centaur-tabs-set-modified-marker t)
+  :hook
+  ((dired-mode treemacs-mode) . centaur-tabs-local-mode))
 
 ;; MODELINE
 (use-package doom-modeline

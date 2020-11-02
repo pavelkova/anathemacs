@@ -17,10 +17,10 @@
 
 (use-package nixos-options)
 
-(use-package helm-nixos-options
-  :general
-  (hd-leader-def
-    "sN" 'helm-nixos-options))
+;; (use-package helm-nixos-options
+;;   :general
+;;   (hd-leader-def
+;;     "sN" 'helm-nixos-options))
 
 (use-package nix-mode
   :mode "\\.nix\\'")

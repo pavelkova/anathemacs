@@ -9,26 +9,11 @@
 
 ;;; Code:
 
-(setq display-line-numbers-width-start t)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-
 ;; comments
 (general-define-key
   "H-]"  'comment-dwim ;; add to end of line
   "H-\-" 'comment-line
   "H-["  'comment-or-uncomment-region)
-
-(use-package origami
-  :config
-  (global-origami-mode)
-  :general
-  (general-define-key
-   "H-/"   'origami-recursively-toggle-node
-   "H-M-/" 'origami-show-only-node
-   "H-C-/" 'origami-toggle-all-nodes)
-  (ha-leader-def
-    "f <Right>" 'origami-next-fold
-    "f <Left>"  'origami-previous-fold))
 
 (use-package crux
   :general
@@ -51,12 +36,29 @@
   (ha-leader-def
     "F" 'format-all-buffer))
 
+(use-package goto-chg
+  :general
+  (ha-leader-def
+    "*" 'goto-chg))
+
 (use-package multiple-cursors
   :general
   (general-define-key
    "C-<"           'mc/edit-beginnings-of-lines
    "C->"           'mc/edit-ends-of-lines
    "C-M-<mouse-1>" 'mc/add-cursor-on-click))
+
+(use-package origami
+  :config
+  (global-origami-mode)
+  :general
+  (general-define-key
+   "H-/"   'origami-recursively-toggle-node
+   "H-M-/" 'origami-show-only-node
+   "H-C-/" 'origami-toggle-all-nodes)
+  (ha-leader-def
+    "f <Right>" 'origami-next-fold
+    "f <Left>"  'origami-previous-fold))
 
 (use-package smartparens
   :delight smartparens-mode

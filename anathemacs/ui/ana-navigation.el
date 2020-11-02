@@ -37,7 +37,8 @@
         helm-recentf-fuzzy-match t
         helm-semantic-fuzzy-match t
         helm-imenu-fuzzy-match t)
-  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages))
+  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
+  (add-to-list 'helm-sources 'helm-source-centaur-tabs-group))
 
 (use-package helm-descbinds
   :general
@@ -51,7 +52,12 @@
   (helm-file-preview-mode 1)
   (setq helm-file-preview-preview-only t))
 
-(use-package helm-mode-manager)
+(use-package helm-mode-manager
+  :general
+  (ha-leader-def
+    "mm" 'helm-switch-major-mode
+    "me" 'helm-enable-minor-mode
+    "md" 'helm-disable-minor-mode))
 
 ;; IBUFFER & IMENU
 (setq ibuffer-expert t
@@ -77,11 +83,11 @@
 
 ;; SEARCH
 
-(use-package ace-isearch
-  :delight ace-isearch-mode
-  :bind ("C-." . ace-jump-mode)
-  :config
-  (global-ace-isearch-mode +1))
+;; (use-package ace-isearch
+;;   :delight ace-isearch-mode
+;;   :bind ("C-." . ace-jump-mode)
+;;   :config
+;;   (global-ace-isearch-mode +1))
 
 (use-package ag)
 

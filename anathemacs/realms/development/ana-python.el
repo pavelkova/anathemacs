@@ -8,23 +8,6 @@
 ;;
 
 ;;; Code:
-
-(use-package live-py-mode
-  :general
-  (hd-leader-def
-    "pl" 'py-live-mode))
-
-(use-package pippel
-  :general
-  (hd-leader-def
-    "pL" 'pippel-list-packages))
-
-(use-package pip-requirements
-  :mode "\\requirements.txt\\'")
-
-(use-package python-black
-  :after python)
-
 (use-package python-mode
   :config
   (setq indent-tabs-mode nil
@@ -32,18 +15,37 @@
         python-indent-offset 4
         tab-width 4))
 
+(use-package live-py-mode
+  :general
+  (:keymaps 'python-mode-map
+            (hd-leader-def
+              "pl" 'py-live-mode)))
+
+(use-package pippel
+  :general
+  (:keymaps 'python-mode-map
+            (hd-leader-def
+              "pL" 'pippel-list-packages)))
+
+(use-package pip-requirements
+  :mode "\\requirements.txt\\'")
+
+(use-package python-black
+  :after python)
+
 (use-package pytest
   :general
   (hd-leader-def
-    "pt"  '(:ignore t :which-key "pytest")
-    "pta" 'pytest-all
-    "pta" 'pytest-module
-    "pta" 'pytest-one
-    "ptc" 'pytest-again
-    "ptd" 'pytest-directory
-    "ptA" 'pytest-pdb-all
-    "ptM" 'pytest-pdb-module
-    "pt!" 'pytest-pdb-one))
+    :keymaps 'python-mode-map
+    "t"  '(:ignore t :which-key "pytest")
+    "ta" 'pytest-all
+    "ta" 'pytest-module
+    "ta" 'pytest-one
+    "tc" 'pytest-again
+    "td" 'pytest-directory
+    "tA" 'pytest-pdb-all
+    "tM" 'pytest-pdb-module
+    "t!" 'pytest-pdb-one))
 
 (defun python-doc ()
   (interactive)
@@ -63,9 +65,10 @@
 (use-package django-commands
   :general
   (hd-leader-def
-    "d>" 'django-commands-shell
+    :keymaps 'python-mode-map
+    "d:" 'django-commands-shell
     "d." 'django-commands-server
-    "d<" 'django-commands-test
+    "d?" 'django-commands-test
     "d," 'django-commands-restart))
 
 ;; in .dir-locals.el
@@ -75,6 +78,7 @@
 (use-package djangonaut
   :general
   (hd-leader-def
+    :keymaps 'python-mode-map
     "da" 'djangonaut-find-admin-class
     "dc" 'djangonaut-find-management-command
     "dd" 'djangonaut-find-drf-permission

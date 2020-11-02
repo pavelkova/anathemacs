@@ -140,8 +140,11 @@
    `(avy-lead-face-1 ((t :background ,blue-2 :foreground ,red-1)))
    `(avy-lead-face-2 ((t :background ,blue-2 :foreground ,blue-1)))
 
+;;;;; centaur tabs
+   `(centaur-tabs-active-bar-face ((t :background ,highlight)))
+
 ;;;;; calfw
-   `(cfw:face-title              ((t :inerit mono-lg :foreground ,fg-2 :weight bold)))
+   `(cfw:face-title              ((t :inherit mono-lg :foreground ,fg-2 :weight bold)))
    `(cfw:face-header             ((t :foreground ,fg-2 :weight bold)))
    `(cfw:face-saturday           ((t :background nil :foreground ,fg-2 :weight bold)))
    `(cfw:face-sunday             ((t :inherit cfw:face-saturday)))
@@ -604,6 +607,8 @@
    `(lsp-ui-peek-list                        (( t :background ,bg-2)))
    `(lsp-ui-peek-peek                        (( t :background nil)))
    `(lsp-ui-sideline-code-action             (( t :inherit lsp-modeline-code-actions-face)))
+   `(lsp-ui-sideline-global                  (( t :inherit mono-xs :background ,bg-2 :foreground ,fg-2)))
+
 
 ;;;;; mu4e
    `(mu4e-cited-1-face          ((t :foreground ,fg-1)))
@@ -639,8 +644,8 @@
    `(org-agenda-done               ((t :foreground ,comment :strike-through t)))
    `(org-agenda-structure          ((t :inherit sans-xxl :foreground ,func :weight light)))
    `(org-block                     ((t :inherit mono-sm :background ,cblk-bg :foreground ,cblk)))
-   `(org-block-begin-line          ((t :inherit mono-xs :background ,cblk-bg :foreground ,cblk-ln)))
-   `(org-block-end-line            ((t :inherit mono-xs :background ,cblk-bg :foreground ,cblk-ln)))
+   `(org-block-begin-line          ((t :inherit mono-xs :background nil :foreground ,cblk-ln)))
+   `(org-block-end-line            ((t :inherit mono-xs :background nil :foreground ,cblk-ln)))
    `(org-clock-overlay             ((t :foreground ,comp)))
    `(org-checkbox                  ((t :inherit org-todo)))
    `(org-code                      ((t :inherit mono-sm :foreground ,fg-2)))

@@ -39,13 +39,16 @@
     ;; and system/OS integration (tmux, sane-term, tramp)
     :prefix "H-d")
   ;; CUSTOM - by package / purpose
-  (general-create-definer hs-leader-def
-    ;; prefix for personal management (via org, mu4e, dokuwiki)
-    ;; and natural language processing (word count, translation, dictionary)
-    :prefix "H-SPC")
+  (general-create-definer hl-leader-def
+    ;; language server protocol
+    :prefix "H-l")
   (general-create-definer hr-leader-def
     ;; reading, wRiting, research, roam
     :prefix "H-r")
+(general-create-definer hs-leader-def
+    ;; prefix for personal management (via org, mu4e, dokuwiki)
+  ;; and natural language processing (word count, translation, dictionary)
+  :prefix "H-SPC")
   ;; BUILT IN
   ;; globally available commands organized by
   (general-create-definer cc-leader-def
@@ -56,24 +59,20 @@
 ;; other: H-s bound to projectile-mode-map
 ;;        H-l bound to lsp-mode-map
 
+(general-unbind 'insert
+  "C-z")
+
 (ha-leader-def
   "." '(:ignore t :which-key "crux")
   "/" '(:ignore t :which-key "system & processes")
   "e" '(:ignore t :which-key "errors")
   "f" '(:ignore t :which-key "folding")
+  "m" '(:ignore t :which-key "mode management")
   "p" '(:ignore t :which-key "persp")
   "g" '(:ignore t :which-key "git & version control")
   "s" '(:ignore t :which-key "snippets"))
 
 (hd-leader-def
-  "/"  '(:ignore t :which-key "webdev")
-  "e"  '(:ignore t :which-key "elixir")
-  "d"  '(:ignore t :which-key "django")
-  "f"  '(:ignore t :which-key "foreman")
-  "l"  '(:ignore t :which-key "LSP")
-  "n"  '(:ignore t :which-key "npm")
-  "p"  '(:ignore t :which-key "python")
-  "r"  '(:ignore t :which-key "rails")
   "x"  '(:ignore t :which-key "emamux"))
 
 (hs-leader-def

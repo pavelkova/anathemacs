@@ -8,45 +8,52 @@
 ;;
 
 ;;; Code:
-
-(use-package company-web
+(use-package foreman-mode
   :general
   (hd-leader-def
-    "/c" 'company-web-html))
+    :keymaps 'web-mode-map
+    "f." 'foreman-view-buffer
+    "fc" 'foreman-clear
+    "fd" 'foreman-stop
+    "fe" 'foreman-edit-env
+    "fE" 'foreman-env-save
+    "fk" 'foreman-kill-buffer
+    "fK" 'foreman-kill-proc
+    "fn" 'foreman-next-line
+    "fp" 'foreman-previous-line
+    "fr" 'foreman-restart
+    "fR" 'foreman-restart-proc
+    "ft" 'foreman-tasks
+    "fu" 'foreman-start
+    "fU" 'foreman-start-proc))
 
 (use-package graphql)
 
 (use-package rainbow-mode)
 
-(use-package web-beautify
-  :general
-  (hd-leader-def
-    "/b"  '(:ignore t :which-key "beautify")
-    "/bc" 'web-beautify-css
-    "/bh" 'web-beautify-html
-    "/bj" 'web-beautify-js))
-
 (use-package web-mode
   :general
   (hd-leader-def
-    "/t" 'web-mode-tag-match)
+    :keymaps 'web-mode-map
+    "/" 'web-mode-tag-match)
   :mode (("\\.html?\\'"  . web-mode)
          ("\\.[s]css\\'" . web-mode)
          ("\\.jsx?\\'"   . web-mode)
          ("\\.tsx?\\'"   . web-mode)
          ("\\.json\\'"   . web-mode))
-  :bind (:map web-mode-map
-              ("RET" . newline-and-indent))
   :config
   (setq web-mode-block-padding 2
         web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-enable-auto-closing t
+        web-mode-auto-close-style 3
+        web-mode-enable-auto-opening t
         web-mode-enable-auto-pairing t
         web-mode-enable-block-face t
         web-mode-enable-css-colorization t
         web-mode-enable-current-column-highlight t
         web-mode-enable-current-element-highlight t
+        web-mode-enable-sql-detection t
         web-mode-markup-indent-offset 2
         web-mode-script-padding 2
         web-mode-style-padding 2

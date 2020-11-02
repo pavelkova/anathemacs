@@ -63,13 +63,8 @@
   :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :config
-  ;;   (setq org-bullets-bullet-list '("⋅"))
-  (setq org-bullets-bullet-list '(""))
+    (setq org-bullets-bullet-list '("⋅"))
 )
-
-;; (use-package org-starless
-;;   :load-path "anathemacs/lib/org-starless"
-;;   :hook (org-mode . org-starless-mode))
 
 (use-package org-variable-pitch
   :delight org-variable-pitch-minor-mode

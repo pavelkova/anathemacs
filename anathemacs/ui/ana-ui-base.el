@@ -59,6 +59,10 @@
 (setq tooltip-use-echo-area t
       tooltip-resize-echo-area t)
 
+;; line numbers
+(setq display-line-numbers-width-start t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
 (provide 'ana-ui-base)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
