@@ -34,7 +34,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (load-theme 'anathemacs t)
-(set-face-font 'default "Cascadia Code-10")
+(set-face-font 'default "Victor Mono Medium-10")
 
 (setq custom-file "~/.config/emacs/custom.el")
 (load custom-file)
@@ -78,7 +78,9 @@
 (require 'ana-editing)
 (require 'ana-layout)
 (require 'ana-navigation)
-(require 'ligature-support)
+;; (require 'ligature-support)
+;; lib
+(require 'cogent-pragmata)
 ;; REALMS
 ;; data
 (require 'ana-databases)

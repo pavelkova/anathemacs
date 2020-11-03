@@ -5,18 +5,18 @@
 
 ;; FACES: maintain consistency and ease customization across various screen resolutions and font families
 
-(defface mono-xs '((t :family "Cascadia Code" :height 80)) "xs monospace font")
-(defface mono-sm '((t :family "Cascadia Code" :height 90)) "sm monospace font")
-(defface mono-md '((t :family "Cascadia Code" :height 100)) "md monospace font")
-(defface mono-lg '((t :family "Cascadia Code" :height 125)) "lg monospace font")
-(defface mono-xl '((t :family "Cascadia Code" :height 150)) "xl monospace font")
+(defface mono-xs '((t :family "Victor Mono Medium" :height 80)) "xs monospace font")
+(defface mono-sm '((t :family "Victor Mono Medium" :height 90)) "sm monospace font")
+(defface mono-md '((t :family "Victor Mono Medium" :height 100)) "md monospace font")
+(defface mono-lg '((t :family "Victor Mono Medium" :height 125)) "lg monospace font")
+(defface mono-xl '((t :family "Victor Mono Medium" :height 150)) "xl monospace font")
 
-(defface sans-xs  '((t :family "Cantarell" :height 80)) "xs sans serif font")
-(defface sans-sm  '((t :family "Cantarell" :height 100)) "sm sans serif font")
-(defface sans-md  '((t :family "Cantarell" :height 120)) "md sans serif font")
-(defface sans-lg  '((t :family "Cantarell" :height 160)) "lg sans serif font")
-(defface sans-xl  '((t :family "Cantarell" :height 220)) "xl sans serif font")
-(defface sans-xxl '((t :family "Cantarell" :height 300)) "xxl sans serif font")
+(defface sans-xs  '((t :family "Niveau Grotesk Regular" :height 80)) "xs sans serif font")
+(defface sans-sm  '((t :family "Niveau Grotesk Regular" :height 100)) "sm sans serif font")
+(defface sans-md  '((t :family "Niveau Grotesk Regular" :height 120)) "md sans serif font")
+(defface sans-lg  '((t :family "Niveau Grotesk Regular" :height 160)) "lg sans serif font")
+(defface sans-xl  '((t :family "Niveau Grotesk Regular" :height 220)) "xl sans serif font")
+(defface sans-xxl '((t :family "Niveau Grotesk Regular" :height 300)) "xxl sans serif font")
 
 (defface serif-xs  '((t :family "ETBembo" :height 100)) "xs serif font")
 (defface serif-sm  '((t :family "ETBembo" :height 120)) "sm serif font")
