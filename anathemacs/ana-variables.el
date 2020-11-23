@@ -58,7 +58,7 @@
   (concat user-secrets-dir "caldav.el"))
 
 (defvar user-cookbook-file
-  (concat org-directory "vida/salud/recetas.org"))
+  (concat org-directory "recetas.org"))
 
 (defvar user-default-bib-file
   (concat org-directory "proyectos/investigación/referencia.bib"))

@@ -58,8 +58,8 @@
   :config
   (centaur-tabs-mode t)
   (centaur-tabs-headline-match)
-  (centaur-tabs-change-fonts "Cantarell" 80)
-  (setq centaur-tabs-style "alternate"
+  (centaur-tabs-change-fonts "Niveau Grotesk Regular" 85)
+  (setq centaur-tabs-style "chamfer"
         centaur-tabs-height 20
         centaur-tabs-set-icons t
         centaur-tabs-plain-icons t
@@ -94,7 +94,7 @@
         doom-modeline-buffer-encoding nil
         doom-modeline-number-limit 999
         doom-modeline-bar-width 4
-        doom-modeline-height 30
+        doom-modeline-height 20
         doom-modeline-window-width-limit fill-column
         doom-modeline-major-mode-color-icon t))
 

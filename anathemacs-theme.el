@@ -141,7 +141,14 @@
    `(avy-lead-face-2 ((t :background ,blue-2 :foreground ,blue-1)))
 
 ;;;;; centaur tabs
-   `(centaur-tabs-active-bar-face ((t :background ,highlight)))
+   `(centaur-tabs-default                    ((t :inherit mode-line)))
+   `(centaur-tabs-selected                   ((t :inherit mode-line :foreground ,fg-1 :background ,bg-1)))
+   `(centaur-tabs-selected-modified          ((t :inherit mode-line :foreground ,highlight :background ,bg-1 :slant italic)))
+   `(centaur-tabs-modified-marker-selected   ((t :inherit centaur-tabs-selected-modified :background ,bg-1)))
+   `(centaur-tabs-unselected                 ((t :inherit mode-line :background ,bg-2)))
+   `(centaur-tabs-unselected-modified        ((t :inherit mode-line :slant italic :background ,bg-2)))
+   `(centaur-tabs-modified-marker-unselected ((t :inherit centuar-tabs-unselected-modified :background ,bg-2)))
+   `(centaur-tabs-active-bar-face            ((t :background ,highlight)))
 
 ;;;;; calfw
    `(cfw:face-title              ((t :inherit mono-lg :foreground ,fg-2 :weight bold)))
@@ -554,7 +561,7 @@
    `(markdown-url-face              ((t :inherit org-link :foreground nil)))
 
 ;;;;; mode-line
-   `(mode-line           ((t :inherit sans-xs :foreground ,comment :background ,bg-2 :box nil)))
+   `(mode-line           ((t :inherit sans-xs :foreground ,fg-2 :background ,bg-2 :box nil)))
    `(mode-line-buffer-id ((t :inherit mode-line :foreground ,comment :weight semibold)))
    `(mode-line-emphasis  ((t :inherit mono-xs :foreground ,highlight)))
    `(mode-line-highlight ((t :inherit mono-xs :foreground ,highlight-dim :style nil)))
@@ -596,7 +603,7 @@
    `(doom-modeline-urgent                    (( t :inherit mode-line :foreground ,err)))
    `(doom-modeline-warning                   (( t :inherit mode-line :foreground ,war)))
 
-   `(lsp-modeline-code-actions-face          (( t :inherit mono-xs :foreground ,func)))
+   `(lsp-modeline-code-action                (( t :inherit mono-xs :foreground ,func)))
    `(lsp-ui-doc-background                   (( t :background ,bg-2)))
    `(lsp-ui-doc-border                       (( t :background ,comment)))
    `(lsp-ui-doc-header                       (( t :inherit sans-md :foreground ,keyword)))
@@ -606,9 +613,11 @@
    `(lsp-ui-peek-highlight                   (( t :background nil)))
    `(lsp-ui-peek-list                        (( t :background ,bg-2)))
    `(lsp-ui-peek-peek                        (( t :background nil)))
-   `(lsp-ui-sideline-code-action             (( t :inherit lsp-modeline-code-actions-face)))
-   `(lsp-ui-sideline-global                  (( t :inherit mono-xs :background ,bg-2 :foreground ,fg-2)))
-
+   `(lsp-ui-sideline-code-action             (( t :inherit sans-xs :foreground ,act2 :height 0.8)))
+   `(lsp-ui-sideline-symbol-info             (( t :inherit sans-xs :foreground ,comment :height 0.8)))
+   `(lsp-ui-sideline-symbol                  (( t :inherit mono-xs :foreground ,mat :slant italic)))
+   `(lsp-ui-sideline-current-symbol          (( t :inherit lsp-ui-sideline-symbol :foreground ,keyword :weight bold )))
+   ;; `(lsp-ui-sideline-global                  (( t :inherit sans-xs :background nil :foreground ,fg-2 :weight normal :slant normal)))
 
 ;;;;; mu4e
    `(mu4e-cited-1-face          ((t :foreground ,fg-1)))
@@ -675,12 +684,12 @@
    `(org-kbd                       ((t :inherit region :foreground ,fg-1 :box (:line-width 1 :style released-button))))
    `(org-level-1                   ((t :inherit serif-xl :foreground ,fg-1 :slant italic)))
    `(org-level-2                   ((t :inherit serif-lg)))
-   `(org-level-3                   ((t :inherit org-level-2)))
-   `(org-level-4                   ((t :inherit org-level-2)))
-   `(org-level-5                   ((t :inherit org-level-2)))
-   `(org-level-6                   ((t :inherit org-level-2)))
-   `(org-level-7                   ((t :inherit org-level-2)))
-   `(org-level-8                   ((t :inherit org-level-2)))
+   `(org-level-3                   ((t :inherit serif-md)))
+   `(org-level-4                   ((t :inherit serif-sm)))
+   `(org-level-5                   ((t :inherit org-level-4)))
+   `(org-level-6                   ((t :inherit org-level-4)))
+   `(org-level-7                   ((t :inherit org-level-4)))
+   `(org-level-8                   ((t :inherit org-level-4)))
    `(org-link                      ((t :foreground ,meta :underline t)))
    `(org-meta-line                 ((t :inherit mono-xs :foreground ,comment)))
    `(org-mode-line-clock-overrun   ((t :inherit mono-xs :foreground ,err)))

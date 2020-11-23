@@ -40,6 +40,12 @@
     (pretty-activate-groups
      '(:greek :arithmetic-nary))))
 
+(use-package pragmatapro-lib
+  :load-path "anathemacs/lib/pragmatapro-lig"
+  ;; :init
+  ;; (pragmatapro-lig-global-mode)
+  )
+
 ; wrap lines to window without adding hard breaks
 (add-hook 'text-mode-hook 'visual-line-mode)
   

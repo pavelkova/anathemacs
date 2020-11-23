@@ -11,12 +11,12 @@
 
 ;; time tracking
 ;; (use-package activity-watch-mode
- ;; :delight
- ;; :general
-  ;; (hs-leader-def
-    ;; "C-a" 'global-activity-watch-mode)
- ;; :config
-  ;; (global-activity-watch-mode t))
+;;  :delight
+;;  :general
+;;   (hs-leader-def
+;;     "C-a" 'global-activity-watch-mode)
+;;  :config
+;;   (global-activity-watch-mode t))
 
 ;; org clock and logs
 (with-eval-after-load 'org

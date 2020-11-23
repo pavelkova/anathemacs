@@ -42,17 +42,20 @@
          ("\\.tsx?\\'"   . web-mode)
          ("\\.json\\'"   . web-mode))
   :config
-  (setq web-mode-block-padding 2
+  (setq web-mode-auto-close-style 3
+        web-mode-auto-quote-style 3
+        web-mode-block-padding 2
         web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-enable-auto-closing t
-        web-mode-auto-close-style 3
         web-mode-enable-auto-opening t
         web-mode-enable-auto-pairing t
         web-mode-enable-block-face t
         web-mode-enable-css-colorization t
         web-mode-enable-current-column-highlight t
         web-mode-enable-current-element-highlight t
+        web-mode-enable-engine-detection t
+        web-mode-enable-html-entities-fontification t
         web-mode-enable-sql-detection t
         web-mode-markup-indent-offset 2
         web-mode-script-padding 2

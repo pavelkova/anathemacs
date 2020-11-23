@@ -72,7 +72,8 @@
 (use-package magit-todos
   :general
   (ha-leader-def
-    "g:" 'magit-todos-list))
+    "gl" 'magit-todos-list
+    "gh" 'helm-magit-todos))
 
 (use-package helm-gitignore
   :general

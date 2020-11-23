@@ -43,6 +43,7 @@
   :init
   (org-roam-mode)
   (setq org-roam-directory org-directory ; user-org-roam-directory
+        org-roam-dailies-directory "diario/"
         org-roam-index-file user-org-roam-index-file
         org-roam-db-location (concat org-directory "org-roam.db"))
   :general

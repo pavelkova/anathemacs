@@ -38,8 +38,8 @@
   (setq org-allow-promoting-top-level-subtree t
         org-cycle-level-faces nil
         org-ellipsis " ⬎"
-        org-list-indent-offset 1
-        org-indent-indentation-per-level 1
+        org-list-indent-offset 2
+        org-indent-indentation-per-level 2
         org-tags-column 0
         org-pretty-entities t
         org-hide-emphasis-markers t
