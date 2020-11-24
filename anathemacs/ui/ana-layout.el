@@ -58,7 +58,7 @@
   :config
   (centaur-tabs-mode t)
   (centaur-tabs-headline-match)
-  (centaur-tabs-change-fonts "Niveau Grotesk Regular" 85)
+  (centaur-tabs-change-fonts "Helvetica" 85)
   (setq centaur-tabs-style "chamfer"
         centaur-tabs-height 20
         centaur-tabs-set-icons t
@@ -75,28 +75,32 @@
   :init
   (doom-modeline-mode 1)
   :config
-  (progn
-    (doom-modeline-def-modeline 'ana-modeline
-      '(bar lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count "     " checker debug selection-info)
-      '(misc-info objed-state "     " persp-name "" mu4e " " battery " " minor-modes github vcs remote-host))
-    (doom-modeline-set-modeline 'ana-modeline 'default))
-  (setq doom-modeline-continuous-word-count-modes '(markdown-mode org-mode fountain-mode)
+  ;; (progn
+  ;;   (doom-modeline-def-modeline 'ana-modeline
+  ;;     '(bar lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count "     " checker debug selection-info)
+  ;;     '("     " persp-name "" mu4e " " minor-modes github vcs remote-host))
+  ;;   (doom-modeline-set-modeline 'ana-modeline 'default))
+  (setq doom-modeline-bar-width 4
+        doom-modeline-buffer-encoding nil
+        doom-modeline-buffer-file-name-style 'truncate-with-project
+        doom-modeline-buffer-modification-icon nil
+        ;; doom-modeline-buffer-state-icon nil
+        doom-modeline-checker-simple-format nil
+        doom-modeline-continuous-word-count-modes '(markdown-mode org-mode fountain-mode)
+        doom-modeline-display-default-persp-name t
+        doom-modeline-gnus nil
+        doom-modeline-height 20
+        doom-modeline-icon t
+        doom-modeline-irc nil
+        doom-modeline-major-mode-color-icon t
+        doom-modeline-minor-modes t
         doom-modeline-modal-icon t
         doom-modeline-mu4e t
-        doom-modeline-gnus nil
-        doom-modeline-irc nil
-        doom-modeline-buffer-file-name-style 'truncate-with-project
-        ;; doom-modeline-buffer-state-icon nil
-        doom-modeline-display-default-persp-name t
-        doom-modeline-buffer-modification-icon nil
-        doom-modeline-minor-modes t
-        doom-modeline-checker-simple-format nil
-        doom-modeline-buffer-encoding nil
         doom-modeline-number-limit 999
-        doom-modeline-bar-width 4
-        doom-modeline-height 20
-        doom-modeline-window-width-limit fill-column
-        doom-modeline-major-mode-color-icon t))
+        doom-modeline-persp-icon nil
+        doom-modeline-project-detection 'projectile
+        doom-modeline-unicode-fallback t
+        doom-modeline-window-width-limit fill-column))
 
 
 ;; default modeline

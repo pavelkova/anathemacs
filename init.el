@@ -74,6 +74,8 @@
 (require 'ana-web)
 ;; lib
 ;; (require 'cogent-pragmata)
+(require 'pragmatapro-lig)
+;; ui
 (require 'ana-ui-base)
 (require 'ana-org-ui-base)
 (require 'ana-editing)

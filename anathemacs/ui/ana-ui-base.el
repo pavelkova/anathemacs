@@ -38,17 +38,15 @@
                  :arrows :arrows-twoheaded :punctuation
                  :logic :sets))
     (pretty-activate-groups
-     '(:greek :arithmetic-nary))))
-
-(use-package pragmatapro-lib
-  :load-path "anathemacs/lib/pragmatapro-lig"
-  ;; :init
-  ;; (pragmatapro-lig-global-mode)
-  )
+     '(:sub-and-superscripts :greek :arithmetic-nary))))
 
 ; wrap lines to window without adding hard breaks
 (add-hook 'text-mode-hook 'visual-line-mode)
-  
+
+;; enable ligatures in certain modes
+(add-hook 'text-mode-hook 'pragmatapro-lig-mode)
+(add-hook 'prog-mode-hook 'pragmatapro-lig-mode)
+
 ;; get rid of startup warnings
 (setq ad-redefinition-action 'accept)
 

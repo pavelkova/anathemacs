@@ -5,11 +5,11 @@
 
 ;; FACES: maintain consistency and ease customization across various screen resolutions and font families
 
-(defface mono-xs '((t :family "Victor Mono" :height 80)) "xs monospace font")
-(defface mono-sm '((t :family "Victor Mono" :height 90)) "sm monospace font")
-(defface mono-md '((t :family "Victor Mono" :height 100)) "md monospace font")
-(defface mono-lg '((t :family "Victor Mono" :height 125)) "lg monospace font")
-(defface mono-xl '((t :family "Victor Mono" :height 150)) "xl monospace font")
+(defface mono-xs '((t :family "Victor Mono" :height 100)) "xs monospace font")
+(defface mono-sm '((t :family "Victor Mono" :height 110)) "sm monospace font")
+(defface mono-md '((t :family "Victor Mono" :height 125)) "md monospace font")
+(defface mono-lg '((t :family "Victor Mono" :height 150)) "lg monospace font")
+(defface mono-xl '((t :family "Victor Mono" :height 180)) "xl monospace font")
 
 ;; (defface mono-xs '((t :family "PragmataPro" :height 80)) "xs monospace font")
 ;; (defface mono-sm '((t :family "PragmataPro" :height 90)) "sm monospace font")
@@ -17,12 +17,12 @@
 ;; (defface mono-lg '((t :family "PragmataPro" :height 125)) "lg monospace font")
 ;; (defface mono-xl '((t :family "PragmataPro" :height 150)) "xl monospace font")
 
-(defface sans-xs  '((t :family "Niveau Grotesk Regular" :height 100)) "xs sans serif font")
-(defface sans-sm  '((t :family "Niveau Grotesk Regular" :height 120)) "sm sans serif font")
-(defface sans-md  '((t :family "Niveau Grotesk Regular" :height 140)) "md sans serif font")
-(defface sans-lg  '((t :family "Niveau Grotesk Regular" :height 180)) "lg sans serif font")
-(defface sans-xl  '((t :family "Niveau Grotesk Regular" :height 240)) "xl sans serif font")
-(defface sans-xxl '((t :family "Niveau Grotesk Regular" :height 320)) "xxl sans serif font")
+(defface sans-xs  '((t :family "Helvetica" :height 100)) "xs sans serif font")
+(defface sans-sm  '((t :family "Helvetica" :height 120)) "sm sans serif font")
+(defface sans-md  '((t :family "Helvetica" :height 140)) "md sans serif font")
+(defface sans-lg  '((t :family "Helvetica" :height 180)) "lg sans serif font")
+(defface sans-xl  '((t :family "Helvetica" :height 240)) "xl sans serif font")
+(defface sans-xxl '((t :family "Helvetica" :height 320)) "xxl sans serif font")
 
 (defface serif-xs  '((t :family "ETBembo" :height 90)) "xs serif font")
 (defface serif-sm  '((t :family "ETBembo" :height 110)) "sm serif font")
