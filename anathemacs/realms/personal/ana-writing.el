@@ -24,7 +24,7 @@
   (hs-leader-def
     "j" 'org-journal-new-entry)
   :config
-  (setq org-journal-dir (concat org-directory "diario/")
+  (setq org-journal-dir user-org-roam-dailies-directory
         org-journal-find-file 'find-file
         org-journal-file-type 'daily
         org-journal-enable-agenda-integration t

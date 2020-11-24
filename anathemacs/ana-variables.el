@@ -36,6 +36,9 @@
 (defvar user-org-roam-directory org-directory
   "Path to directory for org-roam files.")
 
+(defvar user-org-roam-dailies-directory org-directory
+  "Daily notes--in org-roam-dir + daily/ by default.")
+
 (defvar user-org-roam-index-file "index.org"
   "Index file, relative to org-roam-directory.")
 

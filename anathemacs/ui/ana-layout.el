@@ -61,7 +61,7 @@
   (centaur-tabs-change-fonts "Helvetica" 85)
   (setq centaur-tabs-style "chamfer"
         centaur-tabs-height 20
-        centaur-tabs-set-icons t
+        centaur-tabs-set-icons nil
         centaur-tabs-plain-icons t
         centaur-tabs-gray-out-icons 'buffer
         centaur-tabs-set-bar 'over
@@ -75,11 +75,11 @@
   :init
   (doom-modeline-mode 1)
   :config
-  ;; (progn
-  ;;   (doom-modeline-def-modeline 'ana-modeline
-  ;;     '(bar lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count "     " checker debug selection-info)
-  ;;     '("     " persp-name "" mu4e " " minor-modes github vcs remote-host))
-  ;;   (doom-modeline-set-modeline 'ana-modeline 'default))
+  (progn
+    (doom-modeline-def-modeline 'ana-modeline
+      '(bar lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count " " checker debug selection-info)
+      '("     " persp-name "" mu4e " " minor-modes github vcs remote-host))
+    (doom-modeline-set-modeline 'ana-modeline 'default))
   (setq doom-modeline-bar-width 4
         doom-modeline-buffer-encoding nil
         doom-modeline-buffer-file-name-style 'truncate-with-project
