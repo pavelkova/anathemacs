@@ -1,4 +1,4 @@
-;;; ana-planning.el --- Tools for org agenda and tasks
+;;; ana-tasks.el --- Tools for org agenda and tasks
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -9,7 +9,37 @@
 
 ;;; Code:
 
-;; TODO keybindings
+;; TODOs -- global
+(use-package hl-todo
+  :init
+  (global-hl-todo-mode)
+  :general
+  (hs-leader-def
+    :keymaps 'hl-todo-mode-map
+    "."         '(:ignore t :which-key "TODO")
+    ". <left>"  'hl-todo-previous
+    ". <right>" 'hl-todo-next
+    ". <down>"  'hl-todo-occur
+    ". <up>"    'hl-todo-insert)
+  :config
+  (setq hl-todo-keyword-faces
+        '(("[ERROR]"    . "#cc9393")
+          ("[ERR]"      . "#cc9393")
+          ("[DEBUG]"    . "#dca3a3")
+          ("[BUG]"      . "#dca3a3")
+          ("[FATAL]"    . "#8c5353")
+          ("[FAIL]"     . "#8c5353")
+          ("[WARNING]"  . "#dc8cc3")
+          ("[WARN]"     . "#dc8cc3")
+          ("[FIXME]"    . "#7cb8bb")
+          ("[HACK]"     . "#7cb8bb")
+          ("[MARK]"     . "#5f7f5f")
+          ("[TODO]"     . "#afd8af")
+          ("[NOTE]"     . "#d0bf8f")
+          ("[TRACE]"    . "#d0bf8f")
+          ("[INFO]"     . "#d0bf8f"))))
+
+;; TODO keybindings -- org
 (with-eval-after-load 'org
   (general-define-key
    "<kp-multiply>"   'org-todo
@@ -17,7 +47,7 @@
    "<C-kp-multiply>" 'org-toggle-checkbox)
 
   (hs-leader-def
-    "t." 'org-todo-list)
+    ".t" 'org-todo-list)
 
   ;; FILING
   (hs-leader-def
@@ -33,7 +63,7 @@
         '((sequence "TODO(t)" "INPROGRESS(i@)" "POSTPONED(p!)" "|" "DONE(d!)" "CANCELLED(c!)")
           (sequence "APPOINTMENT(a)" "EVENT(e)" "QUESTION(q)" "|" "APPOINTMENT.(A)" "EVENT.(E)" "ANSWERED(Q)"))
         org-hierarchical-todo-statistics nil)
-
+;; [TODO] just a test
   ;; CHECKLISTS
   (setq org-list-demote-modify-bullet '(("+" . "-")))
 
@@ -87,15 +117,6 @@
   ;;       todoist-backing-buffer "path/to/file")
   (setq todoist-show-all nil))
 
-;; LEDGER (finances)
-(use-package ledger-mode
-  :mode ("\\.dat\\'"
-         "\\.ledger\\'")
-  :custom (ledger-clear-whole-transactions t))
-
-(use-package flycheck-ledger
-  :after ledger-mode)
-
-(provide 'ana-planning)
+(provide 'ana-tasks)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-planning.el ends here
+;;; ana-tasks.el ends here

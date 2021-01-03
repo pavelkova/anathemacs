@@ -43,7 +43,7 @@
   :init
   (org-roam-mode)
   (setq org-roam-directory org-directory ; user-org-roam-directory
-        org-roam-dailies-directory "diario/"
+        org-roam-dailies-directory "/"
         org-roam-index-file user-org-roam-index-file
         org-roam-db-location (concat org-directory "org-roam.db"))
   :general
@@ -82,6 +82,15 @@
 (use-package neuron-mode
   :config
   (setq neuron-default-zettelkasten-directory "~/org/neuron"))
+
+;; LEDGER (finances)
+(use-package ledger-mode
+  :mode ("\\.dat\\'"
+         "\\.ledger\\'")
+  :custom (ledger-clear-whole-transactions t))
+
+(use-package flycheck-ledger
+  :after ledger-mode)
 
 (provide 'ana-organizing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

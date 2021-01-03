@@ -73,7 +73,10 @@
   :general
   (ha-leader-def
     "gl" 'magit-todos-list
-    "gh" 'helm-magit-todos))
+    "gh" 'helm-magit-todos)
+  :config
+  (setq magit-todos-fontify-keyword-headers t
+        magit-todos-fontify-org nil))
 
 (use-package helm-gitignore
   :general

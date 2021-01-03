@@ -29,42 +29,44 @@
 
 ;; ORG paths
 
-(defvar org-directory
+(defvar user-org-directory
   "~/Media/org/"
   "Base directory for org files.")
 
-(defvar user-org-roam-directory org-directory
+(setq org-directory user-org-directory)
+
+(defvar user-org-roam-directory user-org-directory
   "Path to directory for org-roam files.")
 
-(defvar user-org-roam-dailies-directory org-directory
+(defvar user-org-roam-dailies-directory user-org-directory
   "Daily notes--in org-roam-dir + daily/ by default.")
 
 (defvar user-org-roam-index-file "index.org"
   "Index file, relative to org-roam-directory.")
 
 (defvar user-archive-file
-  (concat org-directory "basement.org"))
+  (concat user-org-directory "basement.org"))
 
 (defvar user-bib-notes-file
-  (concat org-directory "proyectos/investigación/referencia.org"))
+  (concat user-org-directory "proyectos/investigación/referencia.org"))
 
 (defvar user-bookmarks-file
-  (concat org-directory "marcardores.org"))
+  (concat user-org-directory "marcardores.org"))
 
 (defvar user-cal-file
-  (concat org-directory "calendario.org"))
+  (concat user-org-directory "calendario.org"))
 
 (defvar user-cal-inbox-file
-  (concat org-directory ".calendario-temp.org"))
+  (concat user-org-directory ".calendario-temp.org"))
 
 (defvar user-caldav-file
   (concat user-secrets-dir "caldav.el"))
 
 (defvar user-cookbook-file
-  (concat org-directory "recetas.org"))
+  (concat user-org-directory "recetas.org"))
 
 (defvar user-default-bib-file
-  (concat org-directory "proyectos/investigación/referencia.bib"))
+  (concat user-org-directory "proyectos/investigación/referencia.bib"))
 
 ;; Contains authentication info for a remote Dokuwiki instance.  Referenced in realms/personal/ana-dokuwiki.el
 (defvar user-dokuwiki-file
@@ -72,11 +74,11 @@
 
 ;; Where org-download should store images and org-web-mode/org-board should save webpages.  Referenced by tools/ana-archiving.el
 (defvar user-download-dir
-  (concat org-directory ".data/descargas/"))
+  (concat user-org-directory ".data/descargas/"))
 
 ;; Default file for multiple org-capture templates (tasks, bookmarks, links, etc.). Referenced by realms/personal/ana-capture.el
 (defvar user-master-file
-  (concat org-directory "codex.org"))
+  (concat user-org-directory "codex.org"))
 
 ;; This top-level heading serves as an inbox for everything that needs to be processed or refiled.  Captures are added as level 2 headings beneath it.
 (defvar user-master-inbox-headline
@@ -96,7 +98,7 @@
   "~/Media/biblioteca/")
 
 (defvar user-noter-notes-dir
-  (concat org-directory "proyectos/lectura/notas/"))
+  (concat user-org-directory "proyectos/lectura/notas/"))
 
 (provide 'ana-variables)
 

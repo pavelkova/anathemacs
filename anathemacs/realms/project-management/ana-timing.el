@@ -1,4 +1,4 @@
-;;; ana-scheduling.el ---
+;;; ana-timing.el ---
 
 ;; Author: e.g. pavelka <pav@egpavelka.com>
 ;; URL: https://github.com/egpavelka/anathemacs
@@ -10,13 +10,14 @@
 ;;; Code:
 
 ;; time tracking
-;; (use-package activity-watch-mode
-;;  :delight
-;;  :general
-;;   (hs-leader-def
-;;     "C-a" 'global-activity-watch-mode)
-;;  :config
-;;   (global-activity-watch-mode t))
+(use-package activity-watch-mode
+  :delight
+  :load-path "anathemacs/lib/activity-watch-mode"
+ :general
+  (hs-leader-def
+    "C-a" 'global-activity-watch-mode)
+ :config
+  (global-activity-watch-mode t))
 
 ;; org clock and logs
 (with-eval-after-load 'org
@@ -140,7 +141,7 @@
                          (:title "ejercicio" :tags "+ejercicio+yoga" :budget "5:15" :block week)
                          (:title "aprendizaje" :tags "+aprendizaje" :budget "5:15" :block week)))
 
-(provide 'ana-scheduling)
+(provide 'ana-timing)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ana-scheduling.el ends here
+;;; ana-timing.el ends here

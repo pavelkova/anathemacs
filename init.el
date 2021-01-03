@@ -110,11 +110,11 @@
 ;; project management
 (require 'ana-capture)
 (require 'ana-organizing)
-(require 'ana-planning)
+(require 'ana-tasks)
 (require 'ana-version-control)
 (require 'ana-dokuwiki)
 (require 'ana-projects)
-(require 'ana-scheduling)
+(require 'ana-timing)
 ;; research
 (require 'ana-annotation)
 (require 'ana-reading)

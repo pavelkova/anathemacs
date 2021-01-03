@@ -3,6 +3,92 @@
 # key: <exlog
 # expand-env: ((yas-indent-line 'fixed))
 # --
+#+caption: ${1: caption of the table}
+* Workout Log - Push
+:PROPERTIES:
+:location: ${2:$$(yas-choose-value '("gym" "home"))}
+:time: [starttime--endtime]
+:END:
+** glute bridge / hip thrust
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '("glute bridge" "feet-elevated glute bridge" "frog bridge" "marching glute bridge" "hip thrust"))}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith"))}
+:END:
 | Variation | Set | Reps | Weight |
 |-----------+-----+------+--------|
 |  ${0}     |   1 | ${1} | ${2}   |
+** squat
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** lunge
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** horizontal push
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** vertical push
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** isolation - upper
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** isolation - lower
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+
+
+* Workout Log - Pull
+:PROPERTIES:
+:location: ${2:$$(yas-choose-value '("gym" "home"))}
+:time: [starttime--endtime]
+:END:
+** hip thrust
+:PROPERTIES:
+:variation: hip thrust
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith"))}
+:END:
+| Variation | Set | Reps | Weight |
+|-----------+-----+------+--------|
+|  ${0}     |   1 | ${1} | ${2}   |
+** squat
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** lunge
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** horizontal push
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** vertical push
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** isolation - upper
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:
+** isolation - lower
+:PROPERTIES:
+:variation: ${3:$$(yas-choose-value '())}
+:equipment: ${4:$$(yas-choose-value '("barbell" "bodyweight" "dumbbell" "machine" "miniband" "plate" "smith" "swiss ball"))}
+:END:

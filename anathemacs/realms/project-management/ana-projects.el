@@ -60,13 +60,6 @@
 
 ;; PERSPECTIVES
 
-;; (use-package hl-todo
-;;   :init
-;;   (global-hl-todo-mode)
-;;   :config
-;;   (setq hl-todo-keyword-faces
-;;         '(("TODO" . "#FF0000"))))
-
 (use-package persp-mode
   :init
   (persp-mode 1)
