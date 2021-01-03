@@ -59,30 +59,6 @@
          :tree-type month
          :time-prompt t)
 
-;;;;; ----- SPECIAL EVENTS
-        ("v" "jvc")
-      ;;;; JVC primary advocate shift
-        ("va" "jvc primary victim advocate shift" entry
-         (file+olp+datetree user-cal-file)
-         "** EVENT A-Primary Victim Advocate
-:PROPERTIES:
-:LOCATION: Julie Valentine - ON CALL
-:END:
-<%<%Y-%m-%d %a 18:00>>--<%<%Y-%m-%d %a 06:00>>"
-         :tree-type month
-         :time-prompt t)
-
-      ;;;; JVC backup advocate shift
-        ("vb" "jvc backup victim advocate shift" entry
-         (file+olp+datetree user-cal-file)
-         "** EVENT B-BACKUP Victim Advocate
-:PROPERTIES:
-:LOCATION: Julie Valentine - ON CALL
-:END:
-<%<%Y-%m-%d %a 18:00>>--<%<%Y-%m-%d %a 06:00>>"
-         :tree-type month
-         :time-prompt t)
-
       ;;;; ORG-CAPTURE EXTENSION
         ("P" "protocol" entry (function org-journal-find-location)
         "** %^{Title}
