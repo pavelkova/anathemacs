@@ -9,16 +9,6 @@
 
 ;;; Code:
 
-                                        ; add keybindings for inserting subheadings
-(general-define-key
- "C-M-<Return>"   'org-insert-subheading
- "C-M-<Shift>-<Return>" 'org-insert-todo-subheading)
-
-;; babel - language support
-(setq org-confirm-babel-evaluate nil
-      org-src-fontify-natively t
-      org-src-tab-acts-natively t)
-
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((C          . t)
@@ -44,6 +34,13 @@
    (table      . t)
    ))
 
+(use-package ob-cypher
+  :ensure t
+  :config
+  (add-to-list 'org-babel-load-languages '(cypher . t))
+  (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages)
+  (add-to-list 'org-babel-tangle-lang-exts '("cypher" . "cypher")))
+
 (use-package ob-graphql
   :config
   (org-babel-do-load-languages 'org-babel-load-languages
@@ -67,9 +64,25 @@
 (use-package org-special-block-extras
   :hook (org-mode . org-special-block-extras-mode))
 
+(use-package org-special-block-extras
+  :ensure t
+  :hook (org-mode . org-special-block-extras-mode)
+  :custom
+    (org-special-block-extras--docs-libraries
+     '("~/.config/emacs/anathemacs/lib/org-special-block-extras/documentation.org")
+     "The places where I keep my ‘#+documentation’")
+    ;; (org-special-block-extras-fancy-links
+    ;; nil "Disable this feature.")
+  :config
+  ;; Use short names like ‘defblock’ instead of the fully qualified name
+  ;; ‘org-special-block-extras--defblock’
+    (org-special-block-extras-short-names))
 
 ;; load
 (with-eval-after-load 'org
+  (general-define-key
+   "C-M-<Return>"   'org-insert-subheading
+   "C-M-<Shift>-<Return>" 'org-insert-todo-subheading)
   (setq org-open-directory-means-index-dot-org t
         org-modules (append org-modules '(;; ol-bookmark
                                           ;; ol-man
@@ -82,7 +95,10 @@
                                           org-id
                                           org-inlinetask
                                           ;; org-notify
-                                          ))))
+                                          ))
+        org-confirm-babel-evaluate nil
+        org-src-fontify-natively t
+        org-src-tab-acts-natively t))
 
 (provide 'ana-org-base)
 

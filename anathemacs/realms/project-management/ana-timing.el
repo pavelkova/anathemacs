@@ -24,8 +24,8 @@
   (setq org-clock-idle-time 10
         org-clock-display-default-range 'untilnow
         org-clock-in-switch-to-state "INPROGRESS"
-        org-clock-persist t
-        org-extend-today-until 7))
+        ;; org-extend-today-until 7
+        org-clock-persist t))
 
 ;; agenda
 ;; AGENDA

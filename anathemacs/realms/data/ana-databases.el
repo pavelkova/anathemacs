@@ -18,7 +18,9 @@
 ;; Connection types: mysql, pg, psql, sqlite
 (use-package emacsql)
 
-(use-package sqlformat)
+(use-package sqlformat
+  :config
+  (setq sqlformat-command 'pgformatter))
 
 (use-package ob-sql-mode)
 

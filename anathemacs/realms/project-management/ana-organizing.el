@@ -54,10 +54,6 @@
     "i"       'org-roam-insert
     "I"       'org-roam-insert-immediate))
 
-(use-package company-org-roam
-  :config
-  (push 'company-org-roam company-backends))
-
 ;; (use-package org-roam-server
 ;;   :after org-roam
 ;;   :init

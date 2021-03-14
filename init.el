@@ -89,7 +89,7 @@
 (require 'ana-statistics)
 (require 'ana-visualization)
 ;; development
-(require 'ana-docs)
+(require 'ana-base)
 (require 'ana-c)
 (require 'ana-elixir)
 (require 'ana-go)
@@ -102,6 +102,7 @@
 (require 'ana-php)
 (require 'ana-python)
 (require 'ana-ruby)
+(require 'ana-ts)
 (require 'ana-webdev)
 ;; personal
 (require 'ana-communication)

@@ -8,6 +8,7 @@
 ;;
 
 ;;; Code:
+
 (use-package foreman-mode
   :general
   (hd-leader-def
@@ -27,7 +28,9 @@
     "fu" 'foreman-start
     "fU" 'foreman-start-proc))
 
-(use-package graphql)
+(use-package graphql
+  :mode (("\\.graphql[s]" . graphql-mode)
+         ("\\.gql[s]"     . graphql-mode)))
 
 (use-package rainbow-mode)
 
@@ -39,7 +42,7 @@
   :mode (("\\.html?\\'"  . web-mode)
          ("\\.[s]css\\'" . web-mode)
          ("\\.jsx?\\'"   . web-mode)
-         ("\\.tsx?\\'"   . web-mode)
+         ;; ("\\.tsx?\\'"   . web-mode)
          ("\\.json\\'"   . web-mode))
   :config
   (setq web-mode-auto-close-style 3

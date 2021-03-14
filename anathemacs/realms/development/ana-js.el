@@ -27,8 +27,6 @@
         js2-strict-missing-semi-warning nil
         js2-strict-trailing-comma-warning nil))
 
-(use-package rjsx-mode)
-
 (use-package nodejs-repl
   :general
   (:keymaps 'web-mode-map
@@ -44,43 +42,13 @@
 ;;   :hook (js2-mode . (lambda ()
 ;;                       (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
 
-(use-package yarn-mode)
-
-;; REACT
-
 (use-package js-react-redux-yasnippets
   :config
   (setq js-react-redux-yasnippets-want-semicolon nil))
 
-(use-package tide
-  :mode (("\\.jsx?\\'" . tide-setup)
-         ("\\.jsx?\\'" . tide-hl-identifier-mode)
-         ("\\.tsx?\\'" . tide-setup)
-         ("\\.tsx?\\'" . tide-hl-identifier-mode))
-  ;; :hook (before-save . tide-format-before-save)
-       ;((js-mode typescript-mode) . tide-setup)
-       ;((js-mode typescript-mode) . tide-hl-identifier-mode)
-  :general
-  (hd-leader-def
-    :keymaps 'tide-mode-map
-    "t"  '(:ignore t :which-key "tide")
-    "tR" 'tide-restart-server
-    "tf" 'tide-format
-    "t@" 'tide-rename-symbol
-    "to" 'tide-organize-imports)
-  :config
-  (setq tide-always-show-documentation t
-        tide-completion-detailed t
-        tide-completion-enable-autoimport-suggestions t
-        tide-enable-xref t
-        tide-format-options '(:indentSize 4
-                              :placeOpenBraceOnNewLineForFunctions nil)
-        tide-user-preferences '(:includeCompletionsForModuleExports t))
-  (flycheck-add-mode 'javascript-eslint
-                     'web-mode)
-  (flycheck-add-next-checker 'javascript-eslint
-                             'jsx-tide
-                             'append))
+(use-package rjsx-mode)
+
+(use-package yarn-mode)
 
 ;; DOCSETS
 (defun js-doc ()
