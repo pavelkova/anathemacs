@@ -35,23 +35,29 @@
 ;;         'org-tag)))
 
 (with-eval-after-load 'org
-  (setq org-allow-promoting-top-level-subtree t
-        org-cycle-level-faces nil
-        org-ellipsis " ⬎"
-        org-list-indent-offset 2
-        org-indent-indentation-per-level 2
-        org-tags-column 0
-        org-pretty-entities t
-        org-hide-emphasis-markers t
+  (setq org-adapt-indentation nil
         org-agenda-block-separator ""
+        org-allow-promoting-top-level-subtree t
+        org-blank-before-new-entry '((heading . nil)
+                                     (plain-list-item . nil))
+        org-cycle-level-faces nil
+        org-cycle-separator-lines 1
+        ;; org-ellipsis " ⬎"
+        org-ellipsis " ⇢"
         org-fontify-whole-heading-line t
         org-fontify-done-headline nil
         org-fontify-quote-and-verse-blocks t
         org-footnote-auto-adjust t
         org-footnote-define-inline t
+        org-hide-emphasis-markers t
+        org-hide-leading-stars t
+        org-indent-indentation-per-level 1
+        org-list-indent-offset 1
+        org-pretty-entities t
         org-startup-align-all-tables t
         org-startup-indented t
-        org-startup-with-inline-images t))
+        org-startup-with-inline-images t
+        org-tags-column 0))
 
 (use-package olivetti
   :delight olivetti-mode
@@ -59,18 +65,36 @@
   :init
   (setq olivetti-body-width 0.85))
 
-(use-package org-bullets
-  :init
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode)
   :config
-    (setq org-bullets-bullet-list '("⋅"))
-)
+  (setq ;; org-superstar-configure-like-org-bullets t
+        org-superstar-headline-bullets-list '("⋅")
+        ;; org-superstar-headline-bullets-list '(" ")
+        org-superstar-remove-leading-stars nil
+        ;; org-superstar-leading-bullet ?\s
+        ;; org-indent-mode-turns-on-hiding-stars t
+        org-superstar-special-todo-items 'hide))
+
+
+;; (use-package org-bullets
+;;   ;; :init
+;;   ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+;;   :hook (org-mode . org-bullets-mode)
+;;   :config
+;;     (setq org-bullets-bullet-list '("⋅")))
 
 (use-package org-variable-pitch
   :delight org-variable-pitch-minor-mode
-  :hook (org-mode . org-variable-pitch-minor-mode)
+  :init
+  (org-variable-pitch-setup)
   :config
-  (add-to-list 'org-variable-pitch-fixed-faces 'org-special-keyword 'org-link))
+(setq org-variable-pitch-fontify-headline-prefix nil
+      org-variable-pitch-fixed-faces '(org-link org-date
+      org-table org-formula org-indent org-block
+      org-block-begin-line org-block-end-line org-code
+      org-meta-line org-special-keyword org-document-info-keyword
+      org-done org-todo org-verbatim org-drawer)))
 
 (provide 'ana-org-ui-base)
 

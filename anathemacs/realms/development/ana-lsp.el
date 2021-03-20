@@ -8,9 +8,9 @@
 ;;
 
 ;;; Code:
-(use-package company-lsp
-  :config
-  (push 'company-lsp company-backends))
+;; (use-package company-lsp
+;;   :config
+;;   (push 'company-lsp company-backends))
 
 (use-package dap-mode
   :after lsp-mode

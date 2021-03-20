@@ -5,11 +5,11 @@
 
 ;; FACES: maintain consistency and ease customization across various screen resolutions and font families
 
-(defface mono-xs '((t :family "Victor Mono" :height 100)) "xs monospace font")
-(defface mono-sm '((t :family "Victor Mono" :height 110)) "sm monospace font")
-(defface mono-md '((t :family "Victor Mono" :height 125)) "md monospace font")
-(defface mono-lg '((t :family "Victor Mono" :height 150)) "lg monospace font")
-(defface mono-xl '((t :family "Victor Mono" :height 180)) "xl monospace font")
+(defface mono-xs '((t :family "Victor Mono" :height 90)) "xs monospace font")
+(defface mono-sm '((t :family "Victor Mono" :height 100)) "sm monospace font")
+(defface mono-md '((t :family "Victor Mono" :height 115)) "md monospace font")
+(defface mono-lg '((t :family "Victor Mono" :height 140)) "lg monospace font")
+(defface mono-xl '((t :family "Victor Mono" :height 170)) "xl monospace font")
 
 ;; (defface mono-xs '((t :family "PragmataPro" :height 80)) "xs monospace font")
 ;; (defface mono-sm '((t :family "PragmataPro" :height 90)) "sm monospace font")

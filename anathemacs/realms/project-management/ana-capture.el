@@ -15,8 +15,7 @@
 ;; (setq org-tempo-keywords-alist '())
 
 (defun org-journal-find-location ()
-  ;; Open today's journal, but specify a non-nil prefix argument in order to
-  ;; inhibit inserting the heading; org-capture will insert the heading.
+  "Open today's journal, but specify a non-nil prefix argument in order to inhibit inserting the heading; org capture will insert the heading."
   (org-journal-new-entry t)
   ;; Position point on the journal's top-level heading so that org-capture
   ;; will add the new entry as a child entry.
@@ -25,6 +24,12 @@
 ;; TEMPLATES
 (setq org-capture-templates
       '((
+         ;;---ROAM
+         ("d" "default" plain (function org-roam--capture-get-point)
+     "%?"
+     :file-name "%(format-time-string \"%Y-%m-%d--%H-%M-%SZ--${slug}\" (current-time) t)"
+     :head "#+title: ${title}\n"
+     :unnarrowed t)
       ;;---BASIC CAPTURES
       ;;;; TODO
          "t" "tarea" entry (function org-journal-find-location)
@@ -63,7 +68,7 @@
         ("P" "protocol" entry (function org-journal-find-location)
         "** %^{Title}
 :PROPERTIES:
-:fuenta: %u, %c
+:source: %u, %c
 :END:
 %U
 #+BEGIN_QUOTE

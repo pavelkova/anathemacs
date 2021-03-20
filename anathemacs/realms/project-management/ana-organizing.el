@@ -31,6 +31,7 @@
   (setq helm-org-rifle-fontify-headings nil))
 
 (use-package deft
+  :after org
   :general
   (hs-leader-def
     "d" 'deft)
@@ -75,9 +76,9 @@
         org-roam-file-extensions '("org" "md")
         org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
 
-(use-package neuron-mode
-  :config
-  (setq neuron-default-zettelkasten-directory "~/org/neuron"))
+;; (use-package neuron-mode
+;;   :config
+;;   (setq neuron-default-zettelkasten-directory "~/org/neuron"))
 
 ;; LEDGER (finances)
 (use-package ledger-mode

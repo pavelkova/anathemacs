@@ -679,7 +679,7 @@
    `(org-habit-ready-face          ((t :background ,green-1)))
    `(org-habit-ready-future-face   ((t :background ,cyan-1)))
    `(org-headline-done             ((t :foreground ,fg-2 :strike-through nil)))
-   `(org-hide                      ((t :inherit sans-md :foreground ,bg-1)))
+   `(org-hide                      ((t :foreground ,bg-1)))
    `(org-indent                    ((t :inherit org-hide)))
    `(org-kbd                       ((t :inherit region :foreground ,fg-1 :box (:line-width 1 :style released-button))))
    `(org-level-1                   ((t :inherit serif-xl :foreground ,fg-1 :slant italic)))
@@ -704,6 +704,7 @@
    `(org-scheduled-today           ((t :foreground ,func)))
    `(org-sexp-date                 ((t :foreground ,fg-1)))
    `(org-special-keyword           ((t :inherit org-meta-line)))
+   `(org-superstar-header-bullet   ((t :inherit nil :foreground ,bg-2)))
    `(org-checkbox-statistics-done  ((t :inherit org-done)))
    `(org-checkbox-statistics-todo  ((t :inherit org-todo)))
    `(org-tag                       ((t :inherit mono-xs :foreground ,meta)))
@@ -711,6 +712,7 @@
    `(org-table                     ((t :inherit mono-xs :background nil :foreground ,fg-1)))
    `(org-time-grid                 ((t :foreground ,comment)))
    `(org-todo                      ((t :inherit mono-md :background nil :foreground ,highlight)))
+   `(org-variable-pitch-fixed-face ((t :inherit mono-sm)))
    `(org-verbatim                  ((t :inherit org-block)))
    `(org-verse                     ((t :inherit org-quote :slant italic)))
    `(org-warning                   ((t :foreground ,err)))
@@ -814,7 +816,7 @@
 
 
 ;;;;; treemacs
-   `(treemacs-directory-face                ((t :inherit mono-xs foreground ,fg-1)))
+   `(treemacs-directory-face                ((t :inherit mono-xs :foreground ,fg-1)))
    `(treemacs-directory-collapsed-face      ((t :inherit treemacs-directory-face)))
    `(treemacs-file-face                     ((t :inherit mono-xs :foreground ,fg-1)))
    `(treemacs-git-added-face                ((t :inherit mono-xs :foreground ,suc)))
