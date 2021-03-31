@@ -15,20 +15,13 @@
 (use-package toc-org
   :hook (org-mode . toc-org-mode))
 
-(use-package org-ql)
+;; (use-package org-ql)
 
 (use-package helm-org
   :after org-ql
   :general
   (hs-leader-def
     "?" 'helm-org-ql))
-
-(use-package helm-org-rifle
-  :general
-  (hs-leader-def
-    ":" 'helm-org-rifle)
-  :config
-  (setq helm-org-rifle-fontify-headings nil))
 
 (use-package deft
   :after org
@@ -45,8 +38,61 @@
   (org-roam-mode)
   (setq org-roam-directory org-directory ; user-org-roam-directory
         org-roam-dailies-directory "diario/"
-        org-roam-index-file user-org-roam-index-file
-        org-roam-db-location (concat org-directory "org-roam.db"))
+        org-roam-db-location (concat org-directory "org-roam.db")
+        org-roam-enable-headline-linking t
+        org-roam-file-extensions '("org" "md")
+        ;; org-roam-index-file user-org-roam-index-file)
+        org-roam-index-file "codex.org"
+        org-roam-tag-separator " > "
+        org-roam-tag-sources '(prop vanilla last-directory))
+  :config
+  (setq org-roam-dailies-capture-templates '(;;---DAILY NOTE - FLEETING SUBHEADER
+                                             ("n" "[F] diario/{date} - [H] fugaz" entry
+                                              #'org-roam-capture--get-point
+                                              "** %^{text}?
+:LOGBOOK:
+:CREATED: %U
+:END:"
+                                      :file-name "diario/%<%Y-%m-%d>"
+                                      :head "#+title: %<%Y-%m-%d>\n"
+                                      :olp ("fugaz"))
+
+                                             ;;---DAILY NOTE - JOURNAL SUBHEADER
+                                             ("d" "[F] diario/{date} - [H] diario" entry
+                                              #'org-roam-capture--get-point
+                                              "** %<%H:%M> :diario:
+:LOGBOOK:
+:CREATED: %U
+:END:
+:PROPERTIES:
+:CREATED: %<%Y%m%d>
+:END:
+%^{text}"
+                                      :file-name "diario/%<%Y-%m-%d>"
+                                      :head "#+title: %<%Y-%m-%d>\n"
+                                      :olp ("diario"))
+
+                                     ;;---DAILY NOTE - TASK SUBHEADER
+                                     ("t" "[F] diario/{date} - [H] tarea" entry
+                                      #'org-roam-capture--get-point
+                                      "** TODO %^{tarea} %?
+SCHEDULED: %t
+:LOGBOOK:
+- Created %U
+:END:"
+                                      :file-name "diario/%<%Y-%m-%d>"
+                                      :head "#+title: %<%Y-%m-%d>\n"
+                                      :olp ("tareas")))
+        org-roam-capture-templates '(;;---FLEETING FILE
+                                     ("f" "[F] fugaz/{date}--{time}--{slug}" entry
+                                      #'org-roam-capture--capture
+                                      "* %?
+:LOGBOOK:
+:CREATED: %U
+:END:"
+                                      :file-name "fugaz/%<%Y-%m-%d-%H%M%S>-${slug}"
+                                      :head "#+title: ${title}\n"
+                                      :unnarrowed t)))
   :general
   (hr-leader-def
     "<right>" 'org-roam
@@ -73,7 +119,6 @@
   :load-path "anathemacs/lib/md-roam"
   :config
   (setq md-roam-file-extension-single "md"
-        org-roam-file-extensions '("org" "md")
         org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
 
 ;; (use-package neuron-mode

@@ -17,12 +17,12 @@
 ;; (defface mono-lg '((t :family "PragmataPro" :height 125)) "lg monospace font")
 ;; (defface mono-xl '((t :family "PragmataPro" :height 150)) "xl monospace font")
 
-(defface sans-xs  '((t :family "Helvetica" :height 100)) "xs sans serif font")
-(defface sans-sm  '((t :family "Helvetica" :height 120)) "sm sans serif font")
-(defface sans-md  '((t :family "Helvetica" :height 140)) "md sans serif font")
-(defface sans-lg  '((t :family "Helvetica" :height 180)) "lg sans serif font")
-(defface sans-xl  '((t :family "Helvetica" :height 240)) "xl sans serif font")
-(defface sans-xxl '((t :family "Helvetica" :height 320)) "xxl sans serif font")
+(defface sans-xs  '((t :family "Helvetica" :height 90)) "xs sans serif font")
+(defface sans-sm  '((t :family "Helvetica" :height 100)) "sm sans serif font")
+(defface sans-md  '((t :family "Helvetica" :height 120)) "md sans serif font")
+(defface sans-lg  '((t :family "Helvetica" :height 160)) "lg sans serif font")
+(defface sans-xl  '((t :family "Helvetica" :height 220)) "xl sans serif font")
+(defface sans-xxl '((t :family "Helvetica" :height 300)) "xxl sans serif font")
 
 (defface serif-xs  '((t :family "ETBembo" :height 90)) "xs serif font")
 (defface serif-sm  '((t :family "ETBembo" :height 110)) "sm serif font")

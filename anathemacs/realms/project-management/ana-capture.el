@@ -24,12 +24,6 @@
 ;; TEMPLATES
 (setq org-capture-templates
       '((
-         ;;---ROAM
-         ("d" "default" plain (function org-roam--capture-get-point)
-     "%?"
-     :file-name "%(format-time-string \"%Y-%m-%d--%H-%M-%SZ--${slug}\" (current-time) t)"
-     :head "#+title: ${title}\n"
-     :unnarrowed t)
       ;;---BASIC CAPTURES
       ;;;; TODO
          "t" "tarea" entry (function org-journal-find-location)
