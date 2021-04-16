@@ -10,18 +10,18 @@
 ;;; Code:
 
 ;; SUBLIMITY
-;; (use-package sublimity
-;;   :general
-;;   (ha-leader-def
-;;     "!" 'sublimity-mode)
-;;   :config
-;;   ;; (sublimity-mode 1)
-;;   (setq sublimity-map-size 20
-;;         sublimity-map-fraction 0.3
-;;         sublimity-map-text-scale -7
-;;         sublimity-scroll-weight 5
-;;         sublimity-scroll-drift-length 10
-;;         sublimity-attractive-centering-width 110))
+(use-package sublimity
+  :general
+  (ha-leader-def
+    "!" 'sublimity-mode)
+  :config
+  ;; (sublimity-mode 1)
+  (setq sublimity-map-size 20
+        sublimity-map-fraction 0.3
+        sublimity-map-text-scale -7
+        sublimity-scroll-weight 5
+        sublimity-scroll-drift-length 10
+        sublimity-attractive-centering-width 110))
 
 ;; SIDEBAR
 (use-package treemacs
@@ -31,7 +31,7 @@
   :config
   (setq treemacs-no-png-images t
         treemacs-width 20
-        treemacs-follow-after-init t))
+        treemacs-follow-after-init nil))
 
 (use-package treemacs-magit
   :after treemacs magit)
