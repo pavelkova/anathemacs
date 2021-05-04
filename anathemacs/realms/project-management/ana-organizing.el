@@ -46,53 +46,65 @@
         org-roam-tag-separator " > "
         org-roam-tag-sources '(prop vanilla last-directory))
   :config
-  (setq org-roam-dailies-capture-templates '(;;---DAILY NOTE - FLEETING SUBHEADER
-                                             ("n" "[F] diario/{date} - [H] fugaz" entry
-                                              #'org-roam-capture--get-point
-                                              "** %^{text}?
+  (setq org-roam-capture-templates
+        '(
+          ("d" "default" plain
+           (function org-roam--capture-get-point)
+           "%?
 :LOGBOOK:
 :CREATED: %U
 :END:"
-                                      :file-name "diario/%<%Y-%m-%d>"
-                                      :head "#+title: %<%Y-%m-%d>\n"
-                                      :olp ("fugaz"))
-
-                                             ;;---DAILY NOTE - JOURNAL SUBHEADER
-                                             ("d" "[F] diario/{date} - [H] diario" entry
-                                              #'org-roam-capture--get-point
-                                              "** %<%H:%M> :diario:
+           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :head "#+title: %<%Y-%m-%d>"
+           :file-name "%<%Y%m%d%H%M%S>-${slug}"
+           :head "#+title: ${title}\n"
+           :unnarrowed t
+           :add-created t)))
+  (setq org-roam-dailies-capture-templates
+        '(;;---DAILY NOTE - FLEETING SUBHEADER
+          ("n" "[F] diario/{date} - [H] fugaz" entry
+           #'org-roam-capture--get-point
+           "** %?
+:LOGBOOK:
+:CREATED: %U
+:END:"
+           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :head "#+title: %<%Y-%m-%d>"
+           :if-new (file+head "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                              "#+title: %<%Y-%m-%d>")
+           :olp ("fugaz")
+           :unnarrowed t
+           :add-created t)
+          ;;---DAILY NOTE - JOURNAL SUBHEADER
+          ("d" "[F] diario/{date} - [H] diario" entry
+           #'org-roam-capture--get-point
+           "** %<%H:%M> :diario:
 :LOGBOOK:
 :CREATED: %U
 :END:
-:PROPERTIES:
-:CREATED: %<%Y%m%d>
-:END:
-%^{text}"
-                                      :file-name "diario/%<%Y-%m-%d>"
-                                      :head "#+title: %<%Y-%m-%d>\n"
-                                      :olp ("diario"))
-
-                                     ;;---DAILY NOTE - TASK SUBHEADER
-                                     ("t" "[F] diario/{date} - [H] tarea" entry
-                                      #'org-roam-capture--get-point
-                                      "** TODO %^{tarea} %?
+%?"
+           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :head "#+title: %<%Y-%m-%d>"
+           :if-new (file+head "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                              "#+title: %<%Y-%m-%d>")
+           :olp ("diario")
+           :unnarrowed t
+           :add-created -t)
+          ;;---DAILY NOTE - TASK SUBHEADER
+          ("t" "[F] diario/{date} - [H] tarea" entry
+           #'org-roam-capture--get-point
+           "** TODO %?
 SCHEDULED: %t
 :LOGBOOK:
-- Created %U
-:END:"
-                                      :file-name "diario/%<%Y-%m-%d>"
-                                      :head "#+title: %<%Y-%m-%d>\n"
-                                      :olp ("tareas")))
-        org-roam-capture-templates '(;;---FLEETING FILE
-                                     ("f" "[F] fugaz/{date}--{time}--{slug}" entry
-                                      #'org-roam-capture--capture
-                                      "* %?
-:LOGBOOK:
 :CREATED: %U
 :END:"
-                                      :file-name "fugaz/%<%Y-%m-%d-%H%M%S>-${slug}"
-                                      :head "#+title: ${title}\n"
-                                      :unnarrowed t)))
+           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :head "#+title: %<%Y-%m-%d>"
+           :if-new (file+head "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                              "#+title: %<%Y-%m-%d>")
+           :olp ("tareas")
+           :unnarrowed t
+           :add-created t)))
   :general
   (hr-leader-def
     "<right>" 'org-roam

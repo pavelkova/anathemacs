@@ -30,7 +30,7 @@
 ;; ORG paths
 
 (defvar user-org-directory
-  "~/Media/org/"
+  "~/Org/"
   "Base directory for org files.")
 
 (setq org-directory user-org-directory)

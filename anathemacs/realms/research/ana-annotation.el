@@ -17,8 +17,7 @@
         org-noter-insert-selected-text-inside-note t
         org-noter-insert-note-no-questions t
         org-noter-kill-frame-at-session-end t
-        ;; org-noter-notes-search-path '(user-noter-notes-dir))
-        org-noter-notes-search-path '("~/Media/org/proyectos/lectura/notas/")))
+        org-noter-notes-search-path '(user-noter-notes-dir)))
 
 (use-package org-pdftools
   :hook (org-load . org-pdftools-setup-link))

@@ -43,7 +43,7 @@
 (global-unset-key (kbd "C-c C-j"))
 
 (use-package wc-mode
-  :hook (fountain-mode mpages org-journal writeroom-mode)
+  :hook (org-mode fountain-mode mpages org-journal writeroom-mode)
   :general
   (hs-leader-def
     "w#" 'wc-mode

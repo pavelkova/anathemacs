@@ -65,24 +65,24 @@
   :init
   (setq olivetti-body-width 0.85))
 
-(use-package org-superstar
-  :hook (org-mode . org-superstar-mode)
-  :config
-  (setq ;; org-superstar-configure-like-org-bullets t
-        org-superstar-headline-bullets-list '("⋅")
-        ;; org-superstar-headline-bullets-list '(" ")
-        org-superstar-remove-leading-stars nil
-        ;; org-superstar-leading-bullet ?\s
-        ;; org-indent-mode-turns-on-hiding-stars t
-        org-superstar-special-todo-items 'hide))
-
-
-;; (use-package org-bullets
-;;   ;; :init
-;;   ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-;;   :hook (org-mode . org-bullets-mode)
+;; (use-package org-superstar
+;;   :hook (org-mode . org-superstar-mode)
 ;;   :config
-;;     (setq org-bullets-bullet-list '("⋅")))
+;;   (setq org-superstar-configure-like-org-bullets t
+;;         org-superstar-headline-bullets-list '("⋅")
+;;         ;; org-superstar-headline-bullets-list '(" ")
+;;         org-superstar-remove-leading-stars nil
+;;         ;; org-superstar-leading-bullet ?\s
+;;         ;; org-indent-mode-turns-on-hiding-stars t
+;;         org-superstar-special-todo-items 'hide))
+
+
+(use-package org-bullets
+  ;; :init
+  ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  :hook (org-mode . org-bullets-mode)
+  :config
+    (setq org-bullets-bullet-list '("⋅")))
 
 (use-package org-variable-pitch
   :delight org-variable-pitch-minor-mode
