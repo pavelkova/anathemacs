@@ -38,7 +38,7 @@
 (defvar user-org-roam-directory user-org-directory
   "Path to directory for org-roam files.")
 
-(defvar user-org-roam-dailies-directory (concat user-org-directory "diario/")
+(defvar user-org-roam-dailies-directory (concat user-org-directory "Diario/")
   "Daily notes--in org-roam-dir + daily/ by default.")
 
 (defvar user-org-roam-index-file "index.org"
@@ -48,7 +48,7 @@
   (concat user-org-directory "basement.org"))
 
 (defvar user-bib-notes-file
-  (concat user-org-directory "proyectos/investigación/referencia.org"))
+  (concat user-org-directory "Proyectos/Investigación/referencia.org"))
 
 (defvar user-bookmarks-file
   (concat user-org-directory "marcardores.org"))
@@ -66,7 +66,7 @@
   (concat user-org-directory "recetas.org"))
 
 (defvar user-default-bib-file
-  (concat user-org-directory "proyectos/investigación/referencia.bib"))
+  (concat user-org-directory "Proyectos/investigación/referencia.bib"))
 
 ;; Contains authentication info for a remote Dokuwiki instance.  Referenced in realms/personal/ana-dokuwiki.el
 (defvar user-dokuwiki-file
@@ -98,7 +98,7 @@
   "~/Media/biblioteca/")
 
 (defvar user-noter-notes-dir
-  (concat user-org-directory "proyectos/lectura/notas/"))
+  (concat user-org-directory "Proyectos/lectura/notas/"))
 
 (provide 'ana-variables)
 

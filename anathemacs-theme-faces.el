@@ -24,10 +24,10 @@
 (defface sans-xl  '((t :family "Helvetica" :height 220)) "xl sans serif font")
 (defface sans-xxl '((t :family "Helvetica" :height 300)) "xxl sans serif font")
 
-(defface serif-xs  '((t :family "ETBembo" :height 1100)) "xs serif font")
-(defface serif-sm  '((t :family "ETBembo" :height 130)) "sm serif font")
-(defface serif-md  '((t :family "ETBembo" :height 160)) "md serif font")
-(defface serif-lg  '((t :family "ETBembo" :height 200)) "lg serif font")
+(defface serif-xs  '((t :family "ETBembo" :height 130)) "xs serif font")
+(defface serif-sm  '((t :family "ETBembo" :height 150)) "sm serif font")
+(defface serif-md  '((t :family "ETBembo" :height 170)) "md serif font")
+(defface serif-lg  '((t :family "ETBembo" :height 210)) "lg serif font")
 (defface serif-xl  '((t :family "ETBembo" :height 280)) "xl serif font")
 (defface serif-xxl '((t :family "ETBembo" :height 420)) "xxl serif font")
 

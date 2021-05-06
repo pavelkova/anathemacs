@@ -37,7 +37,7 @@
   :init
   (org-roam-mode)
   (setq org-roam-directory org-directory ; user-org-roam-directory
-        org-roam-dailies-directory "diario/"
+        org-roam-dailies-directory "Diario/"
         org-roam-db-location (concat org-directory "org-roam.db")
         org-roam-enable-headline-linking t
         org-roam-file-extensions '("org" "md")
@@ -76,7 +76,7 @@
            :unnarrowed t
            :add-created t)
           ;;---DAILY NOTE - JOURNAL SUBHEADER
-          ("d" "[F] diario/{date} - [H] diario" entry
+          ("d" "[F] diario/{date} - [H] Diario" entry
            #'org-roam-capture--get-point
            "** %<%H:%M> :diario:
 :LOGBOOK:
@@ -87,7 +87,7 @@
            :head "#+title: %<%Y-%m-%d>"
            :if-new (file+head "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
                               "#+title: %<%Y-%m-%d>")
-           :olp ("diario")
+           :olp ("Diario")
            :unnarrowed t
            :add-created -t)
           ;;---DAILY NOTE - TASK SUBHEADER
@@ -126,6 +126,12 @@ SCHEDULED: %t
 ;;         org-roam-server-network-label-truncate-length 60
 ;;         org-roam-server-network-label-wrap-length 20)
 ;;   (org-roam-server-mode))
+
+(use-package org-transclusion
+  :load-path "anathemacs/lib/org-transclusion"
+  :general
+  (hr-leader-def
+    "t" 'org-transclusion-mode))
 
 (use-package md-roam
   :load-path "anathemacs/lib/md-roam"

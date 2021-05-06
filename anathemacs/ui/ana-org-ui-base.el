@@ -35,7 +35,7 @@
 ;;         'org-tag)))
 
 (with-eval-after-load 'org
-  (setq org-adapt-indentation nil
+  (setq ; org-adapt-indentation nil
         org-agenda-block-separator ""
         org-allow-promoting-top-level-subtree t
         org-blank-before-new-entry '((heading . nil)
