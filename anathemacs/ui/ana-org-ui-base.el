@@ -34,6 +34,8 @@
 ;;     (or (org-face-from-face-or-color 'tag 'org-tag special-tag-face)
 ;;         'org-tag)))
 
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+
 (with-eval-after-load 'org
   (setq ; org-adapt-indentation nil
         org-agenda-block-separator ""
@@ -65,36 +67,13 @@
   :init
   (setq olivetti-body-width 0.85))
 
-;; (use-package org-superstar
-;;   :hook (org-mode . org-superstar-mode)
-;;   :config
-;;   (setq org-superstar-configure-like-org-bullets t
-;;         org-superstar-headline-bullets-list '("⋅")
-;;         ;; org-superstar-headline-bullets-list '(" ")
-;;         org-superstar-remove-leading-stars nil
-;;         ;; org-superstar-leading-bullet ?\s
-;;         ;; org-indent-mode-turns-on-hiding-stars t
-;;         org-superstar-special-todo-items 'hide))
-
-
 (use-package org-bullets
-  ;; :init
-  ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :hook (org-mode . org-bullets-mode)
   :config
     (setq org-bullets-bullet-list '("⋅")))
 
-(use-package org-variable-pitch
-  :delight org-variable-pitch-minor-mode
-  :init
-  (org-variable-pitch-setup)
-  :config
-(setq org-variable-pitch-fontify-headline-prefix nil
-      org-variable-pitch-fixed-faces '(org-link org-date
-      org-table org-formula org-indent org-block
-      org-block-begin-line org-block-end-line org-code
-      org-meta-line org-special-keyword org-document-info-keyword
-      org-done org-todo org-verbatim org-drawer)))
+;; (use-package mixed-pitch
+;;   :hook (text-mode . mixed-pitch-mode))
 
 (provide 'ana-org-ui-base)
 

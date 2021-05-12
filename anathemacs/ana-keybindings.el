@@ -77,7 +77,7 @@
 
 (hs-leader-def
   "/"   '(:ignore t :which-key "web tools")
-  "c"   '(:ignore t :which-key "calendar")
+  "C"   '(:ignore t :which-key "calendar")
   "e"   '(:ignore t :which-key "media")
   "f"   '(:ignore t :which-key "filing")
   "w"   '(:ignore t :which-key "writing"))

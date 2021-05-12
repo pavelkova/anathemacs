@@ -33,115 +33,115 @@
         deft-recursive t))
 
 ;; ROAM
+;; (use-package md-roam
+;;   ;; :load-path "anathemacs/lib/md-roam"
+;;   :quelpa (md-roam :fetcher gitlab :repo "nobiot/md-roam")
+;;   :config
+;;   (setq md-roam-file-extension-single "md"
+;;         org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
+
 (use-package org-roam
+  ;; :after (org md-roam)
+  :after org
+  :load-path "anathemacs/lib/org-roam"
+  ;; :quelpa (org-roam :fetcher github :repo "org-roam/org-roam/tree/v2")
+  :commands
+  (org-roam-buffer
+   org-roam-setup
+   org-roam-capture
+   org-roam-node-find)
+  :general
+  (hs-leader-def
+    "<SPC>"   'org-roam-dailies-capture-today
+    "C-<SPC>" 'org-roam-dailies-capture-date
+    "c"       'org-roam-capture)
+  (hr-leader-def
+    "<right>" 'org-roam-buffer-toggle
+    "f"       'org-roam-node-find
+    "F"       'org-roam-find-file
+    "g"       'org-roam-show-graph
+    "i"       'org-roam-node-insert
+    "I"       'org-roam-insert-immediate)
   :init
-  (org-roam-mode)
-  (setq org-roam-directory org-directory ; user-org-roam-directory
+  (setq org-roam-directory org-directory
+        org-id-link-to-org-use-id t
+        org-roam-node-display-template "${title:80} ${file:9}  ${tags:20}")
+  :config
+  (setq org-roam-completion-everywhere t
         org-roam-dailies-directory "Diario/"
-        org-roam-db-location (concat org-directory "org-roam.db")
         org-roam-enable-headline-linking t
         org-roam-file-extensions '("org" "md")
-        ;; org-roam-index-file user-org-roam-index-file)
         org-roam-index-file "codex.org"
         org-roam-tag-separator " > "
-        org-roam-tag-sources '(prop vanilla last-directory))
-  :config
+        org-roam-tag-sources '(prop vanilla last-directory md-frontmatter))
   (setq org-roam-capture-templates
-        '(
-          ("d" "default" plain
-           (function org-roam--capture-get-point)
+        '(("d" "default" plain
            "%?
-:LOGBOOK:
+:PROPERTIES:
 :CREATED: %U
 :END:"
-           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
-           :head "#+title: %<%Y-%m-%d>"
-           :file-name "%<%Y%m%d%H%M%S>-${slug}"
-           :head "#+title: ${title}\n"
-           :unnarrowed t
-           :add-created t)))
+           :if-new (file+head "Fugaz/%<%Y%m%d%H%M%S>-${slug}.org"
+                              "+#TITLE: ${title}\n")
+           :unnarrowed t)))
   (setq org-roam-dailies-capture-templates
         '(;;---DAILY NOTE - FLEETING SUBHEADER
-          ("n" "[F] diario/{date} - [H] fugaz" entry
-           #'org-roam-capture--get-point
+          ("n" "[F] diario/{date} - [H] Fugaz" entry
            "** %?
-:LOGBOOK:
+:PROPERTIES:
 :CREATED: %U
 :END:"
-           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
-           :head "#+title: %<%Y-%m-%d>"
-           :if-new (file+head "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
-                              "#+title: %<%Y-%m-%d>")
-           :olp ("fugaz")
-           :unnarrowed t
-           :add-created t)
+           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                                  "#+title: %<%Y-%m-%d>\n"
+                                  ("Fugaz"))
+           :unnarrowed t)
           ;;---DAILY NOTE - JOURNAL SUBHEADER
           ("d" "[F] diario/{date} - [H] Diario" entry
-           #'org-roam-capture--get-point
            "** %<%H:%M> :diario:
-:LOGBOOK:
+:PROPERTIES:
 :CREATED: %U
 :END:
 %?"
-           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
-           :head "#+title: %<%Y-%m-%d>"
-           :if-new (file+head "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
-                              "#+title: %<%Y-%m-%d>")
-           :olp ("Diario")
-           :unnarrowed t
-           :add-created -t)
+           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                                  "#+title: %<%Y-%m-%d>\n"
+                                  ("Diario"))
+           :unnarrowed t)
           ;;---DAILY NOTE - TASK SUBHEADER
-          ("t" "[F] diario/{date} - [H] tarea" entry
-           #'org-roam-capture--get-point
+          ("t" "[F] tareas/{date} - [H] Tarea" entry
            "** TODO %?
 SCHEDULED: %t
-:LOGBOOK:
+:PROPERTIES:
 :CREATED: %U
 :END:"
-           :file-name "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
-           :head "#+title: %<%Y-%m-%d>"
-           :if-new (file+head "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
-                              "#+title: %<%Y-%m-%d>")
-           :olp ("tareas")
-           :unnarrowed t
-           :add-created t)))
-  :general
-  (hr-leader-def
-    "<right>" 'org-roam
-    "f"       'org-roam-find-file
-    "g"       'org-roam-graph-show
-    "i"       'org-roam-insert
-    "I"       'org-roam-insert-immediate))
+           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                                  "#+title: %<%Y-%m-%d>\n"
+                                  ("Tareas"))
+           :unnarrowed t)
+          ;;---DAILY NOTE - PROJECT TASK SUBHEADER
+          ("p" "[F] diario/{date} - [H] Tarea de proyecto" entry
+           "** TODO %? :proyecto:%^{nombre de proyecto}
+SCHEDULED: %t
+From file: [[file:%F]]
+Project: [[roam:%\\1]]
+:PROPERTIES:
+:CREATED: %U
+:END:"
+           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                                  "#+title: %<%Y-%m-%d>\n"
+                                  ("Tareas"))
+           :unnarrowed t)))
+  (org-roam-setup))
 
-;; (use-package org-roam-server
-;;   :after org-roam
-;;   :init
-;;   (setq org-roam-server-host "127.0.0.1"
-;;         org-roam-server-port 9091
-;;         org-roam-server-export-inline-images t
-;;         org-roam-server-authenticate nil
-;;         org-roam-server-network-poll t
-;;         org-roam-server-network-arrows nil
-;;         org-roam-server-network-label-truncate t
-;;         org-roam-server-network-label-truncate-length 60
-;;         org-roam-server-network-label-wrap-length 20)
-;;   (org-roam-server-mode))
 
 (use-package org-transclusion
   :load-path "anathemacs/lib/org-transclusion"
+  ;; :quelpa (org-transclusion :fetcher gitlab :repo "nobiot/org-transclusion")
   :general
   (hr-leader-def
     "t" 'org-transclusion-mode))
 
-(use-package md-roam
-  :load-path "anathemacs/lib/md-roam"
-  :config
-  (setq md-roam-file-extension-single "md"
-        org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
-
-;; (use-package neuron-mode
-;;   :config
-;;   (setq neuron-default-zettelkasten-directory "~/org/neuron"))
+;; (use-package vulpea
+;;   :init
+;;   (vulpea-setup))
 
 ;; LEDGER (finances)
 (use-package ledger-mode

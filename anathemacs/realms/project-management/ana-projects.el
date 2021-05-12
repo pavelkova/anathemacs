@@ -30,26 +30,6 @@
 ;; allow renaming of projects in .dir-locals.el
 (put 'projectile-project-name 'safe-local-variable #'stringp)
 
-(use-package org-projectile
-  :general
-  (hs-leader-def
-    "t" 'org-projectile-project-todo-completing-read)
-  :config
-  (org-projectile-per-project)
-  (setq org-projectile-per-project-filepath "index.org"
-        org-projectile-capture-template (format "%s" "*** TODO %? %T")
-        org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-  (add-to-list 'org-capture-templates
-               (org-projectile-project-todo-entry
-                :capture-character "p"
-                :capture-heading "tarea (projectile)")))
-
-(use-package org-projectile-helm
-  :after org-projectile
-  :general
-  (hs-leader-def
-    "<SPC>" 'org-projectile-helm-template-or-project))
-
 (use-package helm-projectile
   :after projectile
   :init

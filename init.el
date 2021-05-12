@@ -52,13 +52,29 @@
     (add-to-list 'package-archives '("org" . "https://elpa.gnu.org/packages/") t))
 
   (package-initialize)
-  
-  (unless (package-installed-p 'use-package)
-   (package-refresh-contents)
-    (package-install 'use-package))
-  
-  (require 'use-package)
-  (require 'delight)
+
+  ;; Bootstrap quelpa
+  (if (require 'quelpa nil t)
+      (quelpa-self-upgrade)
+    (with-temp-buffer
+      (url-insert-file-contents
+       "https://framagit.org/steckerhalter/quelpa/raw/master/bootstrap.el")
+      (eval-buffer)))
+
+  ;; Make Quelpa prefer MELPA-stable over melpa. This is optional but
+  ;; highly recommended.
+  ;;
+  ;; (setq quelpa-stable-p t)
+
+  ;; Install quelpa-use-package, which will install use-package as well
+  (quelpa
+   '(quelpa-use-package
+     :fetcher git
+     :url "https://framagit.org/steckerhalter/quelpa-use-package.git"
+     :stable nil))
+
+  (require 'quelpa-use-package)
+
   (setq use-package-always-ensure t
         use-package-always-defer t
         use-package-verbose t))
@@ -109,7 +125,6 @@
 (require 'ana-dokuwiki)
 (require 'ana-writing)
 ;; project management
-(require 'ana-capture)
 (require 'ana-organizing)
 (require 'ana-tasks)
 (require 'ana-version-control)

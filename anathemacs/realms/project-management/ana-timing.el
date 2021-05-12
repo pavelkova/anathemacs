@@ -65,7 +65,7 @@
 (use-package calfw
   :general
   (hs-leader-def
-    "co" 'cfw:open-org-calendar)
+    "Co" 'cfw:open-org-calendar)
   :config
   (setq cfw:fchar-junction ?┼
         cfw:fchar-vertical-line ?│
@@ -82,7 +82,7 @@
 (use-package org-caldav
  :general
  (hs-leader-def
-   "cs" 'org-caldav-sync)
+   "Cs" 'org-caldav-sync)
  :config
  (load-file user-caldav-file)
  ;; (setq org-caldav-files '(user-cal-file)

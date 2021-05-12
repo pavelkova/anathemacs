@@ -60,8 +60,8 @@
 
   ;; TODO keywords
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "INPROGRESS(i@)" "POSTPONED(p!)" "|" "DONE(d!)" "CANCELLED(c!)")
-          (sequence "APPOINTMENT(a)" "EVENT(e)" "QUESTION(q)" "|" "APPOINTMENT.(A)" "EVENT.(E)" "ANSWERED(Q)"))
+        '((sequence "TODO(t)" "INPROGRESS(i@)" "POSTPONED(p!)" "|" "DONE(d!)" "CANCELLED(c!)"))
+          ;; (sequence "APPOINTMENT(a)" "EVENT(e)" "QUESTION(q)" "|" "APPOINTMENT.(A)" "EVENT.(E)" "ANSWERED(Q)"))
         org-hierarchical-todo-statistics nil)
 ;; [TODO] just a test
   ;; CHECKLISTS
@@ -74,18 +74,18 @@
                              (push '("POSTPONED"    . "▶" ) prettify-symbols-alist)
                              (push '("DONE"         . "●" ) prettify-symbols-alist)
                              (push '("CANCELLED"    . "⮿" ) prettify-symbols-alist)
-                             (push '("APPOINTMENT"  . "△" ) prettify-symbols-alist)
-                             (push '("EVENT"        . "☆" ) prettify-symbols-alist)
-                             (push '("QUESTION"     . "❔" ) prettify-symbols-alist)
-                             (push '("APPOINTMENT." . "▲" ) prettify-symbols-alist)
-                             (push '("EVENT."       . "★" ) prettify-symbols-alist)
-                             (push '("ANSWERED"     . "❓" ) prettify-symbols-alist)
+                             ;; (push '("APPOINTMENT"  . "△" ) prettify-symbols-alist)
+                             ;; (push '("EVENT"        . "☆" ) prettify-symbols-alist)
+                             ;; (push '("QUESTION"     . "❔" ) prettify-symbols-alist)
+                             ;; (push '("APPOINTMENT." . "▲" ) prettify-symbols-alist)
+                             ;; (push '("EVENT."       . "★" ) prettify-symbols-alist)
+                             ;; (push '("ANSWERED"     . "❓" ) prettify-symbols-alist)
                              (push '("[ ]"          . "◻" ) prettify-symbols-alist)
                              (push '("[-]"          . "◪" ) prettify-symbols-alist)
                              (push '("[X]"          . "◼" ) prettify-symbols-alist)
                              (prettify-symbols-mode)))
 
-  (setq org-archive-location (concat user-archive-file "::datetree/")
+  (setq org-archive-location "~/Org/.archive/%s::" ;(concat user-archive-file "::datetree/")
         org-log-done 'note
         org-log-done-with-time t
         org-log-into-drawer t
