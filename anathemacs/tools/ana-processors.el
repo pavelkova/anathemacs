@@ -27,11 +27,9 @@
 
 (use-package helm-company
   :after company
-  :bind
-  (:map company-mode-map
-        ("C-:" . helm-company)
-        :map company-active-map
-        (("C-:" . helm-company))))
+  :config
+  (general-define-key :keymaps '(company-mode-map company-active-map)
+            "C-:" . helm-company))
 
                                         ; errors and linting
 

@@ -18,18 +18,18 @@
 (use-package crux
   :general
   (ha-leader-def
-    ".!"    'crux-sudo-edit
-    ".c"    'crux-copy-file-preserve-attributes
-    ".f"    'crux-recentf-find-file
-    ".o"    'crux-reopen-as-root
-    ".t"    'crux-transpose-windows
-    ".x"    'crux-cleanup-buffer-or-region
-    ".+"    'crux-duplicate-current-line-or-region
-    ".="    'crux-duplicate-and-comment-current-line-or-region
-    ". DEL" 'crux-kill-other-buffers)
+    "!"      'crux-sudo-edit
+    "t"      'crux-transpose-windows
+    "x"      'crux-cleanup-buffer-or-region
+    "<left>" 'crux-recentf-find-file
+    "+"      'crux-duplicate-current-line-or-region
+    "="      'crux-duplicate-and-comment-current-line-or-region
+    "DEL"    'crux-kill-other-buffers)
   (general-define-key
-   "C-x K"  'crux-delete-file-and-buffer
-   "C-x R"  'crux-rename-file-and-buffer))
+   "M-o"     'crux-other-window-or-switch-buffer
+   "C-x K"   'crux-delete-file-and-buffer
+   "C-x R"   'crux-rename-file-and-buffer
+   "C-x Y"   'crux-copy-file-preserve-attributes))
 
 (use-package format-all
   :general

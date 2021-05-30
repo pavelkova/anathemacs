@@ -30,13 +30,13 @@
 (use-package nodejs-repl
   :general
   (:keymaps 'web-mode-map
-            (hd-leader-def
+            :prefix "H-d"
               "E" 'nodejs-repl-send-last-expression
               "L" 'nodejs-repl-send-line
               "R" 'nodejs-repl-send-region
               "B" 'nodejs-repl-send-buffer
               "F" 'nodejs-repl-load-file
-              ":" 'nodejs-repl-switch-to-repl)))
+              ":" 'nodejs-repl-switch-to-repl))
 
 ;; (use-package xref-js2
 ;;   :hook (js2-mode . (lambda ()

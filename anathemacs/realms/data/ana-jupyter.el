@@ -10,10 +10,10 @@
 ;;; Code:
 (use-package ein
   :general
-  (hd-leader-def
-    "j"  '(:ignore t :which-key "jupyter")
-    "jl" 'ein:login
-    "jr" 'ein:run))
+  (hs-leader-def
+    "C-j"   '(:ignore t :which-key "jupyter")
+    "C-j l" 'ein:login
+    "C-j r" 'ein:run))
 
 (defun ein-doc ()
   (interactive)

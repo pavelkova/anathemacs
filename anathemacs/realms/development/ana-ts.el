@@ -12,28 +12,29 @@
 
 
 (use-package tide
-  :mode (("\\.jsx?\\'" . tide-setup)
-         ("\\.jsx?\\'" . tide-hl-identifier-mode)
-         ("\\.tsx?\\'" . tide-setup)
-         ("\\.tsx?\\'" . tide-hl-identifier-mode))
-  ;; :hook (before-save . tide-format-before-save)
-       ;((js-mode typescript-mode) . tide-setup)
-       ;((js-mode typescript-mode) . tide-hl-identifier-mode)
+  ;; :mode (("\\.jsx?\\'" . tide-setup)
+  ;;        ("\\.jsx?\\'" . tide-hl-identifier-mode)
+  ;;        ("\\.tsx?\\'" . tide-setup)
+  ;; ("\\.tsx?\\'" . tide-hl-identifier-mode))
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save))
   :general
-  (hd-leader-def
-    :keymaps 'tide-mode-map
-    "t"  '(:ignore t :which-key "tide")
-    "tR" 'tide-restart-server
-    "tf" 'tide-format
-    "t@" 'tide-rename-symbol
-    "to" 'tide-organize-imports)
+  (:keymaps 'tide-mode-map
+            :prefix "H-d"
+            ;; "t"  '(:ignore t :which-key "+tide")
+            "R" 'tide-restart-server
+            "F" 'tide-format
+            "@" 'tide-rename-symbol
+            "o" 'tide-organize-imports)
   :config
   (setq tide-always-show-documentation t
         tide-completion-detailed t
         tide-completion-enable-autoimport-suggestions t
         tide-enable-xref t
         tide-format-options '(:indentSize 4
-                              :placeOpenBraceOnNewLineForFunctions nil)
+                                          :placeOpenBraceOnNewLineForFunctions nil)
         tide-user-preferences '(:includeCompletionsForModuleExports t))
   (flycheck-add-mode 'javascript-eslint
                      'web-mode)
@@ -44,16 +45,15 @@
 (use-package ts-comint
   :general
   (:keymaps 'typescript-mode-map
-            (hd-leader-def
-              "e" 'ts-send-last-sexp
-              "E" 'ts-send-last-sexp-and-go
-              "b" 'ts-send-buffer
-              "B" 'ts-send-buffer-and-go
-              "F" 'ts-load-file-and-go
-              ":" 'run-ts)))
+            :prefix "H-d"
+            "e" 'ts-send-last-sexp
+            "E" 'ts-send-last-sexp-and-go
+            "b" 'ts-send-buffer
+            "B" 'ts-send-buffer-and-go
+            "f" 'ts-load-file-and-go
+            ":" 'run-ts))
 
-(use-package typescript-mode
-  :mode ("\\.tsx?\\'"   . web-mode))
+(use-package typescript-mode)
 
 (provide 'ana-ts)
 

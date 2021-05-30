@@ -12,7 +12,6 @@
   :defer t
   :config
   (hs-leader-def
-   :keymaps 'org-mode
    "dp" 'org-plot/gnuplot))
 
 (use-package graphviz-dot-mode

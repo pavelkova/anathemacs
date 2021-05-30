@@ -10,7 +10,7 @@
   :load-path "anathemacs/lib/fence-edit"
   :hook (web-mode . fence-edit.mode)
   :general
-  (hd-leader-def
+  (ha-leader-def
     "." 'fence-edit-code-at-point
     ">" 'fence-edit-code-region-with-mode))
 

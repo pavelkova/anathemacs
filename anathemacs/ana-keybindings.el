@@ -8,19 +8,25 @@
 ;;; Code:
 (use-package which-key
   :delight which-key-mode
+  ;; :general
+  ;; (:keymaps 'which-key-C-h-map
+  ;;           "<Left"   'which-key-show-previous-page-cycle
+  ;;           "<Right>" 'which-key-show-next-page-cycle)
   :init
   (which-key-mode)
   :config
-  (setq which-key-is-verbose t
-        which-key-add-column-padding 3
-        which-key-max-description-length 40
+  (setq which-key-add-column-padding 3
+        which-key-idle-delay 1.0
+        which-key-is-verbose t
+        which-key-max-description-length 60
         which-key-max-display-columns nil
-        which-key-show-docstrings t
         which-key-popup-type 'side-window
+        which-key-side-window-max-height 0.4
+        which-key-show-docstrings t
         which-key-sort-uppercase-first nil
-        which-key-paging-prefixes '("C-c" "C-x" "H-a" "H-d" "H-r" "H-s" "H-SPC")
-        ; which-key-paging-key "H-k"
-        ; help-char "H-k"
+        ;; which-key-paging-prefixes '("C-c" "C-x" "H-a" "H-d" "H-l" "H-r" "H-s" "H-SPC")
+        ;; which-key-paging-key "<kp-enter>"
+        ;; help-char "<kp-enter>"
         ))
 
 ;; Use caps key as hyper
@@ -39,9 +45,9 @@
     ;; and system/OS integration (tmux, sane-term, tramp)
     :prefix "H-d")
   ;; CUSTOM - by package / purpose
-  (general-create-definer hl-leader-def
-    ;; language server protocol
-    :prefix "H-l")
+  ;; (general-create-definer hl-leader-def
+  ;;   ;; language server protocol
+  ;;   :prefix "H-l")
   (general-create-definer hr-leader-def
     ;; reading, wRiting, research, roam
     :prefix "H-r")
@@ -63,20 +69,25 @@
   "C-z")
 
 (ha-leader-def
-  "." '(:ignore t :which-key "crux")
-  "/" '(:ignore t :which-key "system & processes")
-  "e" '(:ignore t :which-key "errors")
-  "f" '(:ignore t :which-key "folding")
-  "m" '(:ignore t :which-key "mode management")
-  "p" '(:ignore t :which-key "persp")
-  "g" '(:ignore t :which-key "git & version control")
-  "s" '(:ignore t :which-key "snippets"))
+  "/"     '(:ignore t :which-key "system & processes")
+  "e"     '(:ignore t :which-key "errors")
+  "f"     '(:ignore t :which-key "folding")
+  "J"     '(:ignore t :which-key "jupyter")
+  "m"     '(:ignore t :which-key "mode management")
+  "p"     '(:ignore t :which-key "persp")
+  "g"     '(:ignore t :which-key "git & version control")
+  "s"     '(:ignore t :which-key "snippets")
+  "C-c"   '(:ignore t :which-key "emacs")
+  "C-c k" 'save-buffers-kill-emacs
+  "C-c K" 'kill-emacs
+  "C-c e" 'eval-buffer)
 
 (hd-leader-def
   "x"  '(:ignore t :which-key "emamux"))
 
 (hs-leader-def
   "/"   '(:ignore t :which-key "web tools")
+  "d"   '(:ignore t :which-key "data")
   "C"   '(:ignore t :which-key "calendar")
   "e"   '(:ignore t :which-key "media")
   "f"   '(:ignore t :which-key "filing")

@@ -17,6 +17,7 @@
 (use-package dokuwiki
   :general
   (hs-leader-def
+    "C-d"   '(:ignore t :which-key "dokuwiki")
     "C-d =" 'load-dokuwiki-secrets
     "C-d l" 'dokuwiki-list-pages
     "C-d o" 'dokuwiki-open-page

@@ -15,23 +15,6 @@
 (use-package toc-org
   :hook (org-mode . toc-org-mode))
 
-;; (use-package org-ql)
-
-(use-package helm-org
-  :after org-ql
-  :general
-  (hs-leader-def
-    "?" 'helm-org-ql))
-
-(use-package deft
-  :after org
-  :general
-  (hs-leader-def
-    "d" 'deft)
-  :config
-  (setq deft-directory org-directory
-        deft-recursive t))
-
 ;; ROAM
 ;; (use-package md-roam
 ;;   ;; :load-path "anathemacs/lib/md-roam"

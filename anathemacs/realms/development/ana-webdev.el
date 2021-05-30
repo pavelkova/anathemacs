@@ -11,8 +11,8 @@
 
 (use-package foreman-mode
   :general
-  (hd-leader-def
-    :keymaps 'web-mode-map
+  (:keymaps 'web-mode-map
+
     "f." 'foreman-view-buffer
     "fc" 'foreman-clear
     "fd" 'foreman-stop
@@ -36,8 +36,8 @@
 
 (use-package web-mode
   :general
-  (hd-leader-def
-    :keymaps 'web-mode-map
+  (:keymaps 'web-mode-map
+            :prefix "H-d"
     "/" 'web-mode-tag-match)
   :mode (("\\.html?\\'"  . web-mode)
          ("\\.[s]css\\'" . web-mode)
