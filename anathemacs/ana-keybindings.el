@@ -45,9 +45,9 @@
     ;; and system/OS integration (tmux, sane-term, tramp)
     :prefix "H-d")
   ;; CUSTOM - by package / purpose
-  ;; (general-create-definer hl-leader-def
-  ;;   ;; language server protocol
-  ;;   :prefix "H-l")
+  (general-create-definer hl-leader-def
+    ;; language server protocol
+    :prefix "H-l")
   (general-create-definer hr-leader-def
     ;; reading, wRiting, research, roam
     :prefix "H-r")

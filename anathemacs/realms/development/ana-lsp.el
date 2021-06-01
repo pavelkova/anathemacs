@@ -144,13 +144,14 @@
 
 
 (use-package lsp-treemacs
-  ;; :general
-  ;; (hl-leader-def
-  ;;   "e" 'lsp-treemacs-errors-list
-  ;;   "f" 'lsp-treemacs-quick-fix
-  ;;   "s" 'lsp-treemacs-symbols-list
-  ;;   "r" 'lsp-treemacs-references
-  ;;   "i" 'lsp-treemacs-implementations)
+  :general
+  (hl-leader-def
+    "t" '(:ignore t :which-key "treemacs")
+    "te" 'lsp-treemacs-errors-list
+    "tf" 'lsp-treemacs-quick-fix
+    "ts" 'lsp-treemacs-symbols-list
+    "tr" 'lsp-treemacs-references
+    "ti" 'lsp-treemacs-implementations)
   :config
   (lsp-treemacs-sync-mode 1))
 
