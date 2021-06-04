@@ -12,21 +12,21 @@
 (use-package foreman-mode
   :general
   (:keymaps 'web-mode-map
-
-    "f." 'foreman-view-buffer
-    "fc" 'foreman-clear
-    "fd" 'foreman-stop
-    "fe" 'foreman-edit-env
-    "fE" 'foreman-env-save
-    "fk" 'foreman-kill-buffer
-    "fK" 'foreman-kill-proc
-    "fn" 'foreman-next-line
-    "fp" 'foreman-previous-line
-    "fr" 'foreman-restart
-    "fR" 'foreman-restart-proc
-    "ft" 'foreman-tasks
-    "fu" 'foreman-start
-    "fU" 'foreman-start-proc))
+            :prefix "H-d"
+            "f." 'foreman-view-buffer
+            "fc" 'foreman-clear
+            "fd" 'foreman-stop
+            "fe" 'foreman-edit-env
+            "fE" 'foreman-env-save
+            "fk" 'foreman-kill-buffer
+            "fK" 'foreman-kill-proc
+            "fn" 'foreman-next-line
+            "fp" 'foreman-previous-line
+            "fr" 'foreman-restart
+            "fR" 'foreman-restart-proc
+            "ft" 'foreman-tasks
+            "fu" 'foreman-start
+            "fU" 'foreman-start-proc))
 
 (use-package graphql
   :mode (("\\.graphql[s]" . graphql-mode)
@@ -38,7 +38,7 @@
   :general
   (:keymaps 'web-mode-map
             :prefix "H-d"
-    "/" 'web-mode-tag-match)
+            "/" 'web-mode-tag-match)
   :mode (("\\.html?\\'"  . web-mode)
          ("\\.[s]css\\'" . web-mode)
          ("\\.jsx?\\'"   . web-mode)

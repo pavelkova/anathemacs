@@ -12,10 +12,6 @@
 
 
 (use-package tide
-  ;; :mode (("\\.jsx?\\'" . tide-setup)
-  ;;        ("\\.jsx?\\'" . tide-hl-identifier-mode)
-  ;;        ("\\.tsx?\\'" . tide-setup)
-  ;; ("\\.tsx?\\'" . tide-hl-identifier-mode))
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
@@ -53,7 +49,8 @@
             "f" 'ts-load-file-and-go
             ":" 'run-ts))
 
-(use-package typescript-mode)
+(use-package typescript-mode
+  :mode (("\\.tsx?\\'" . typescript-mode)))
 
 (provide 'ana-ts)
 
