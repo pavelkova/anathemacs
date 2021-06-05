@@ -15,13 +15,13 @@
   :init
   (which-key-mode)
   :config
-  (setq which-key-add-column-padding 3
+  (setq which-key-add-column-padding 1
         which-key-idle-delay 1.0
         which-key-is-verbose t
         which-key-max-description-length 60
         which-key-max-display-columns nil
         which-key-popup-type 'side-window
-        which-key-side-window-max-height 0.4
+        which-key-side-window-max-height 0.6
         which-key-show-docstrings t
         which-key-sort-uppercase-first nil
         ;; which-key-paging-prefixes '("C-c" "C-x" "H-a" "H-d" "H-l" "H-r" "H-s" "H-SPC")
@@ -72,7 +72,6 @@
   "/"     '(:ignore t :which-key "system & processes")
   "e"     '(:ignore t :which-key "errors")
   "f"     '(:ignore t :which-key "folding")
-  "J"     '(:ignore t :which-key "jupyter")
   "m"     '(:ignore t :which-key "mode management")
   "p"     '(:ignore t :which-key "persp")
   "g"     '(:ignore t :which-key "git & version control")
@@ -91,6 +90,7 @@
   "C"   '(:ignore t :which-key "calendar")
   "e"   '(:ignore t :which-key "media")
   "f"   '(:ignore t :which-key "filing")
+  ;; "C-j" '(:ignore t :which-key "jupyter")
   "w"   '(:ignore t :which-key "writing"))
 
 (hr-leader-def

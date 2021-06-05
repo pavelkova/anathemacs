@@ -131,6 +131,9 @@
   :config
   (setq lsp-ui-doc-enable t
         lsp-ui-doc-delay 1
+        lsp-ui-doc-position "at point"
+        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-show-with-mouse t
         lsp-ui-doc-use-webkit t
         ;; lsp-ui-imenu-window-width 30
         lsp-ui-imenu-auto-refresh t

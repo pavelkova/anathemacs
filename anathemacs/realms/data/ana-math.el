@@ -13,12 +13,12 @@
       TeX-pdf-mode t
       TeX-save-query nil)
 
-(use-package auctex-latexmk
-  :hook ('TeX-mode . (lambda () (setq TeX-command-default "LatexMk")))
-  :init
-  (with-eval-after-load 'tex
-    (auctex-latexmk-setup))
-  (setq auctex-latexmk-inherit-TeX-PDF-mode t))
+;; (use-package auctex-latexmk
+;;   :hook ('TeX-mode . (lambda () (setq TeX-command-default "LatexMk")))
+;;   :init
+;;   (with-eval-after-load 'tex
+;;     (auctex-latexmk-setup))
+;;   (setq auctex-latexmk-inherit-TeX-PDF-mode t))
 
 (use-package cdlatex
   :hook ((LaTeX-mode latex-mode) . turn-on-cdlatex))
