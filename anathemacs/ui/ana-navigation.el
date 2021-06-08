@@ -9,6 +9,17 @@
 
 ;;; Code:
 
+(use-package ace-window
+  :general
+  (general-define-key
+   "H-w"       'ace-window
+   "H-S-<left>"  'windmove-left
+   "H-S-<right>" 'windmove-right
+   "H-S-<down>"  'windmove-down
+   "H-S-<up>"    'windmove-up)
+  :config
+  (setq aw-ignore-current t))
+
 ;; HELM
 (use-package helm
   :delight helm-mode

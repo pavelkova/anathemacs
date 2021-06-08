@@ -51,10 +51,10 @@
   (general-create-definer hr-leader-def
     ;; reading, wRiting, research, roam
     :prefix "H-r")
-(general-create-definer hs-leader-def
+  (general-create-definer hs-leader-def
     ;; prefix for personal management (via org, mu4e, dokuwiki)
-  ;; and natural language processing (word count, translation, dictionary)
-  :prefix "H-SPC")
+    ;; and natural language processing (word count, translation, dictionary)
+    :prefix "H-SPC")
   ;; BUILT IN
   ;; globally available commands organized by
   (general-create-definer cc-leader-def
