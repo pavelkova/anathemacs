@@ -46,8 +46,6 @@
   :config
   (setq js-react-redux-yasnippets-want-semicolon nil))
 
-(use-package rjsx-mode)
-
 (use-package yarn-mode)
 
 ;; DOCSETS

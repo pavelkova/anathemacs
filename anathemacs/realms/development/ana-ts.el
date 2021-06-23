@@ -29,6 +29,7 @@
 ;;         tide-completion-detailed t
 ;;         tide-completion-enable-autoimport-suggestions t
 ;;         tide-enable-xref t
+;;         tide-tsserver-executable ""
 ;;         tide-format-options '(:indentSize 4
 ;;                               :placeOpenBraceOnNewLineForFunctions nil)
 ;;         tide-user-preferences '(:includeCompletionsForModuleExports t))
