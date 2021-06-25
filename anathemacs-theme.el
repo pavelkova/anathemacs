@@ -837,6 +837,17 @@
    `(treemacs-root-remote-unreadable-face   ((t :inherit treemacs-root-unreadable-face)))
    `(treemacs-root-remote-disconnected-face ((t :inherit treemacs-root-face :foreground ,war)))
 
+   `(imenu-list-entry-face                  ((t :inherit mono-xs :foreground ,fg-1)))
+   `(imenu-list-entry-face-0                ((t :inherit imenu-list-entry-face :foreground ,highlight)))
+   `(imenu-list-entry-subalist-face-0       ((t :inherit imenu-list-entry-face-0 :weight bold :underline t)))
+   `(imenu-list-entry-face-1                ((t :inherit imenu-list-entry-face :foreground ,highlight-dim)))
+   `(imenu-list-entry-subalist-face-1       ((t :inherit imenu-list-entry-face-1 :weight bold :underline t)))
+   `(imenu-list-entry-face-2                ((t :inherit imenu-list-entry-face :foreground ,keyword)))
+   `(imenu-list-entry-subalist-face-2       ((t :inherit imenu-list-entry-face-2 :weight bold :underline t)))
+   `(imenu-list-entry-face-3                ((t :inherit imenu-list-entry-face :foreground ,type)))
+   `(imenu-list-entry-subalist-face-3       ((t :inherit imenu-list-entry-face-3 :weight bold :underline t)))
+   `(imenu-list-entry-face-4                ((t :inherit imenu-list-entry-face :foreground ,const)))
+   `(imenu-list-entry-subalist-face-4       ((t :inherit imenu-list-entry-face-4 :weight bold :underline t)))
 
 ;;;;; twittering
    `(twittering-timeline-footer-face ((t :foreground ,fg-2 :weight bold)))

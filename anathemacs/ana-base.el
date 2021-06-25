@@ -43,7 +43,7 @@
 
 ;; unicode support
 (set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
+;; (set-default-coding-systems 'utf-8)
 (set-face-font 'default "Victor Mono-10")
 (add-to-list 'default-frame-alist '(font . "Victor Mono-10"))
 ;; (set-face-attribute 'mode-line nil
