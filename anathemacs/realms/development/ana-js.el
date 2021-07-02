@@ -15,6 +15,7 @@
             (general-define-key
              "M-." nil))
   :commands js2-line-break
+  :hook (typescript-mode . js2-minor-mode)
   :config
   (setq js-chain-indent t
         js2-highlight-level 3

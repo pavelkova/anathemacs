@@ -42,7 +42,7 @@
   :mode (("\\.html?\\'"  . web-mode)
          ("\\.[s]css\\'" . web-mode)
          ("\\.jsx?\\'"   . web-mode)
-         ("\\.tsx\\'"   . web-mode)
+         ;; ("\\.tsx\\'"   . web-mode)
          ("\\.json\\'"   . web-mode))
   :config
   (setq web-mode-auto-close-style 3
