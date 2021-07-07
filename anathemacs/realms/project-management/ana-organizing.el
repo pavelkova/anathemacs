@@ -77,6 +77,14 @@
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Fugaz"))
            :unnarrowed t)
+          ;;---DAILY NOTE - FLEETING SUBHEADER - AUDIO
+          ("a" "[F] diario/{date} - [H] Fugaz (AUDIO)" entry
+           "** transcribed audio
+%?"
+           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+                                  "#+title: %<%Y-%m-%d>\n"
+                                  ("Fugaz"))
+           :unnarrowed t)
           ;;---DAILY NOTE - JOURNAL SUBHEADER
           ("d" "[F] diario/{date} - [H] Diario" entry
            "** %<%H:%M> :diario:

@@ -123,6 +123,7 @@
 ;; personal
 (require 'ana-communication)
 (require 'ana-dokuwiki)
+(require 'ana-media)
 (require 'ana-writing)
 ;; project management
 (require 'ana-organizing)
