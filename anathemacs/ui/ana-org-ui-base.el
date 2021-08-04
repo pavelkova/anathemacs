@@ -34,9 +34,8 @@
 ;;     (or (org-face-from-face-or-color 'tag 'org-tag special-tag-face)
 ;;         'org-tag)))
 
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-
 (with-eval-after-load 'org
+  (add-hook 'org-mode-hook #'variable-pitch-mode)
   (setq ; org-adapt-indentation nil
         org-agenda-block-separator ""
         org-allow-promoting-top-level-subtree t
@@ -62,13 +61,18 @@
         org-tags-column 0))
 
 (use-package olivetti
+  :after org
   :delight olivetti-mode
   :hook ((text-mode nov-mode org-mode) . olivetti-mode)
   :init
+  (add-hook 'org-mode-hook #'olivetti-mode)
   (setq olivetti-body-width 0.85))
 
 (use-package org-bullets
+  :after org
   :hook (org-mode . org-bullets-mode)
+  :init
+  (add-hook 'org-mode-hook #'org-bullets-mode)
   :config
     (setq org-bullets-bullet-list '("⋅")))
 

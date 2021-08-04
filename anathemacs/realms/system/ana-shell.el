@@ -18,18 +18,22 @@
 
 (use-package terminal-here
   :general
-  (general-define-key
-   "C-M-h"   'terminal-here-launch
-   "C-M-S-h" 'terminal-here-project-launch)
+  (hd-leader-def
+    "M-<Return>" 'terminal-here-project-launch)
+  (ha-leader-def
+    "M-<Return>" 'terminal-here-launch)
   :config
   (setq terminal-here-terminal-command '("alacritty")))
 
-(use-package vterm)
+(use-package vterm
+  :general
+  (ha-leader-def
+    "<Return>" 'vterm))
 
 (use-package vterm-toggle
   :general
-  (ha-leader-def
-    "C-t" 'vterm-toggle-cd))
+  (general-define-key
+   "C-M-t" 'vterm-toggle-cd))
 
 (use-package with-editor
   :hook ((shell-mode ansi-term fish-mode vterm tramp-term) . with-editor-export-editor))

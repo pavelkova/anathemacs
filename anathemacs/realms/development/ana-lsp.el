@@ -137,6 +137,7 @@
         lsp-ui-doc-use-webkit t
         ;; lsp-ui-imenu-window-width 30
         lsp-ui-imenu-auto-refresh t
+        lsp-ui-imenu-colors '("coral" "dark sea green")
         lsp-ui-peek-enable t
         lsp-ui-peek-show-directory t
         lsp-ui-sideline-ignore-duplicate t
@@ -178,6 +179,8 @@
 
 ;; (use-package lsp-java
 ;;   :after lsp-mode)
+
+;; (use-package lsp-pyright)
 
 (provide 'ana-lsp)
 

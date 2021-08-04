@@ -21,6 +21,12 @@
             :prefix "H-d"
             "l" 'py-live-mode))
 
+(use-package lsp-pyright
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))
+
+
 (use-package pippel
   :general
   (:keymaps 'python-mode-map

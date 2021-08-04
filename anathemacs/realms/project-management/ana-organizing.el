@@ -26,8 +26,6 @@
 (use-package org-roam
   ;; :after (org md-roam)
   :after org
-  :load-path "anathemacs/lib/org-roam"
-  ;; :quelpa (org-roam :fetcher github :repo "org-roam/org-roam/tree/v2")
   :commands
   (org-roam-buffer
    org-roam-setup
@@ -56,7 +54,8 @@
         org-roam-file-extensions '("org" "md")
         org-roam-index-file "codex.org"
         org-roam-tag-separator " > "
-        org-roam-tag-sources '(prop vanilla last-directory md-frontmatter))
+        org-roam-tag-sources '(prop vanilla last-directory md-frontmatter)
+        org-roam-v2-ack t)
   (setq org-roam-capture-templates
         '(("d" "default" plain
            "%?
@@ -73,7 +72,7 @@
 :PROPERTIES:
 :CREATED: %U
 :END:"
-           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Fugaz"))
            :unnarrowed t)
@@ -81,7 +80,7 @@
           ("a" "[F] diario/{date} - [H] Fugaz (AUDIO)" entry
            "** transcribed audio
 %?"
-           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Fugaz"))
            :unnarrowed t)
@@ -92,7 +91,7 @@
 :CREATED: %U
 :END:
 %?"
-           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Diario"))
            :unnarrowed t)
@@ -103,7 +102,7 @@ SCHEDULED: %t
 :PROPERTIES:
 :CREATED: %U
 :END:"
-           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Tareas"))
            :unnarrowed t)
@@ -116,19 +115,44 @@ Project: [[roam:%\\1]]
 :PROPERTIES:
 :CREATED: %U
 :END:"
-           :if-new (file+head+olp "%(concat org-roam-dailies-directory \"/%<%Y-%m-%d>.org\")"
+           :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Tareas"))
            :unnarrowed t)))
   (org-roam-setup))
 
+(use-package org-roam-ui
+  :after org-roam
+  :load-path "anathemacs/lib/org-roam-ui"
+  ;; :mode ("\\.org\\'" . org-roam-ui-mode)
+  :general
+  (hr-leader-def
+    "u" 'org-roam-ui-mode)
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 (use-package org-transclusion
   :load-path "anathemacs/lib/org-transclusion"
   ;; :quelpa (org-transclusion :fetcher gitlab :repo "nobiot/org-transclusion")
+  ;; :mode ("\\.org\\'" . org-transclusion-mode)
+  ;; :bind-keymap
+  ;; ("H-r t" . org-transclusion-map)
   :general
   (hr-leader-def
-    "t" 'org-transclusion-mode))
+    "t"      '(:ignore t :which-key "transclusion")
+    "t D"    'org-transclusion-demote-subtree
+    "t O"    'org-transclusion-move-to-source
+    "t P"    'org-transclusion-promote-subtree
+    "t d"    'org-transclusion-remove
+    "t e"    'org-transclusion-live-sync-start
+    "t g"    'org-transclusion-refresh
+    "t o"    'org-transclusion-open-source
+    "t l"    'org-transclusion-make-from-link
+    "t a"    'org-transclusion-add
+    "t A"    'org-transclusion-add-all))
 
 ;; (use-package vulpea
 ;;   :init
