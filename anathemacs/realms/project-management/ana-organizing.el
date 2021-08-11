@@ -10,18 +10,13 @@
 ;;; Code:
 
 
-(use-package org-bookmark-heading)
-
-(use-package toc-org
-  :hook (org-mode . toc-org-mode))
-
 ;; ROAM
-;; (use-package md-roam
-;;   ;; :load-path "anathemacs/lib/md-roam"
-;;   :quelpa (md-roam :fetcher gitlab :repo "nobiot/md-roam")
-;;   :config
-;;   (setq md-roam-file-extension-single "md"
-;;         org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
+(use-package md-roam
+  :load-path "anathemacs/lib/md-roam"
+  ;; :quelpa (md-roam :fetcher gitlab :repo "nobiot/md-roam")
+  :config
+  (setq md-roam-file-extension-single "md"
+        org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))))
 
 (use-package org-roam
   ;; :after (org md-roam)
@@ -31,7 +26,25 @@
    org-roam-setup
    org-roam-capture
    org-roam-node-find)
+  :custom
+  (org-roam-directory (file-truename org-directory)
+   org-id-link-to-org-use-id t
+   org-roam-node-display-template "${title:80} ${file:9}  ${tags:20}"
+   org-roam-completion-everywhere t
+   org-roam-dailies-directory "Diario/"
+   org-roam-enable-headline-linking t
+   org-roam-file-extensions '("org" "md")
+   org-roam-index-file "codex.org"
+   org-roam-tag-separator " > "
+   org-roam-tag-sources '(prop vanilla last-directory md-frontmatter)
+   org-roam-v2-ack t)
   :general
+  (:keymaps 'org-mode-map
+            "C-c i" 'org-roam-node-insert
+            "C-c c" 'org-roam-capture
+            "C-c f" 'org-roam-node-find
+            "C-c r" 'org-roam-buffer-toggle
+            )
   (hs-leader-def
     "<SPC>"   'org-roam-dailies-capture-today
     "C-<SPC>" 'org-roam-dailies-capture-date
@@ -43,19 +56,19 @@
     "g"       'org-roam-show-graph
     "i"       'org-roam-node-insert
     "I"       'org-roam-insert-immediate)
-  :init
-  (setq org-roam-directory org-directory
-        org-id-link-to-org-use-id t
-        org-roam-node-display-template "${title:80} ${file:9}  ${tags:20}")
   :config
-  (setq org-roam-completion-everywhere t
-        org-roam-dailies-directory "Diario/"
-        org-roam-enable-headline-linking t
-        org-roam-file-extensions '("org" "md")
-        org-roam-index-file "codex.org"
-        org-roam-tag-separator " > "
-        org-roam-tag-sources '(prop vanilla last-directory md-frontmatter)
-        org-roam-v2-ack t)
+  (org-roam-db-autosync-mode)
+  (setq org-roam-mode-section-functions
+      (list #'org-roam-backlinks-section
+            #'org-roam-reflinks-section
+            ;; #'org-roam-unlinked-references-section
+            ))
+  (add-to-list 'display-buffer-alist
+             '("\\*org-roam\\*"
+               (display-buffer-in-direction)
+               (direction . right)
+               (window-width . 0.33)
+               (window-height . fit-window-to-buffer)))
   (setq org-roam-capture-templates
         '(("d" "default" plain
            "%?

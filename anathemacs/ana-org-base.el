@@ -59,19 +59,18 @@
                                (append org-babel-load-languages
                                        '(( typescript . t)))))
 
-;; (use-package org-special-block-extras
-;;   :ensure t
-;;   :hook (org-mode . org-special-block-extras-mode)
-;;   :custom
-;;     (org-special-block-extras--docs-libraries
-;;      '("~/.config/emacs/anathemacs/lib/org-special-block-extras/documentation.org")
-;;      "The places where I keep my ‘#+documentation’")
-;;     ;; (org-special-block-extras-fancy-links
-;;     ;; nil "Disable this feature.")
-;;   :config
-;;   ;; Use short names like ‘defblock’ instead of the fully qualified name
-;;   ;; ‘org-special-block-extras--defblock’
-;;     (org-special-block-extras-short-names))
+(use-package org-special-block-extras
+  :hook (org-mode . org-special-block-extras-mode)
+  :custom
+    (org-special-block-extras--docs-libraries
+     '("~/.config/emacs/anathemacs/lib/org-special-block-extras/documentation.org")
+     "The places where I keep my ‘#+documentation’")
+    ;; (org-special-block-extras-fancy-links
+    ;; nil "Disable this feature.")
+  :config
+  ;; Use short names like ‘defblock’ instead of the fully qualified name
+  ;; ‘org-special-block-extras--defblock’
+    (org-special-block-extras-short-names))
 
 ;; load
 (with-eval-after-load 'org

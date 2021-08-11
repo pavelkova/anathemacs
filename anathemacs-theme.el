@@ -80,6 +80,7 @@
    `anathemacs
 
 ;;;;; basics
+   `(bookmar-face             ((t :background nil :foreground ,fg-2)))
    `(cursor                   ((t :background ,cursor)))
    `(custom-button            ((t :background ,bg-2 :foreground ,fg-1 :box (:line-width 2 :style released-button))))
    `(default                  ((t :inherit mono-sm :foreground ,fg-1)))
@@ -648,6 +649,7 @@
    `(org-agenda-clocking           ((t :background ,highlight :foreground ,bg-1)))
    `(org-agenda-date               ((t :foreground ,var)))
    `(org-agenda-date-today         ((t :foreground ,keyword :weight bold)))
+
    `(org-agenda-date-weekend       ((t :foreground ,var)))
    `(org-agenda-diary              ((t :foreground ,keyword)))
    `(org-agenda-done               ((t :foreground ,comment :strike-through t)))
@@ -660,7 +662,7 @@
    `(org-code                      ((t :inherit default :foreground ,fg-2 :background ,bg-2)))
    `(org-column                    ((t :background ,bg-2)))
    `(org-column-title              ((t :weight bold :foreground ,green-2)))
-   `(org-date                      ((t :inherit mono-md :foreground ,fg-2 :underline t)))
+   `(org-date                      ((t :inherit mono-xs :foreground ,magenta-2 :underline t)))
    `(org-date-selected             ((t :background ,highlight-dim :foreground ,bg-1)))
    `(org-default                   ((t :inherit variable-pitch)))
    `(org-document-info             ((t :inherit serif-xl :slant italic)))
@@ -685,12 +687,12 @@
    `(org-level-1                   ((t :inherit serif-xl :foreground ,fg-1 :slant italic)))
    `(org-level-2                   ((t :inherit serif-lg)))
    `(org-level-3                   ((t :inherit serif-md)))
-   `(org-level-4                   ((t :inherit serif-)))
+   `(org-level-4                   ((t :inherit serif-sm)))
    `(org-level-5                   ((t :inherit org-level-4)))
    `(org-level-6                   ((t :inherit org-level-4)))
    `(org-level-7                   ((t :inherit org-level-4)))
    `(org-level-8                   ((t :inherit org-level-4)))
-   `(org-link                      ((t :inherit mono-md :foreground ,comp :underline t)))
+   `(org-link                      ((t :background ,bg-2 :underline t)))
    `(org-meta-line                 ((t :inherit mode-line :foreground ,comment)))
    `(org-mode-line-clock-overrun   ((t :inherit mode-line :foreground ,err)))
    `(org-pomodoro-mode-line          ((t :inherit mode-line :foreground ,fg-2 :slant italic)))

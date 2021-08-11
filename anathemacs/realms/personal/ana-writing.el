@@ -11,7 +11,12 @@
 
 (use-package fountain-mode)
 
-(use-package binder)
+(use-package binder
+  :general
+  (hs-leader-def
+    "b"            '(:ignore t :which-key "binder")
+    "b <right>"    'binder-toggle-sidebar
+    "b C-<right>"  'binder-reveal-in-sidebar))
 
 (use-package mpages
   :load-path "anathemacs/lib/mpages"
@@ -34,6 +39,7 @@
 * diario
 :PROPERTIES:
 :CREATED: %Y%m%d
+:ROAM_TAGS: diario
 :END:"
         org-journal-time-format "%H:%M"
         org-journal-time-prefix "** "

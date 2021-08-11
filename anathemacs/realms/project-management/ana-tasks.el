@@ -110,12 +110,13 @@
   (("\\todoist.org\\'" . todoist-mode))
   :general
   (hs-leader-def
-    "C-t" 'todoist)
+    "t" 'todoist)
   :config
   (load-file user-todoist-file)
   ;; (setq todist-token "XXXXXXXXXXXX"
   ;;       todoist-backing-buffer "path/to/file")
-  (setq todoist-show-all nil))
+  (setq todoist-backing-buffer "~/Sync/Org/todoist.org"
+        todoist-show-all t))
 
 (provide 'ana-tasks)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
