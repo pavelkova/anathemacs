@@ -148,7 +148,7 @@
   "~/Media/biblioteca/")
 
 (defvar user-noter-notes-dir
-  (concat user-org-directory "Proyectos/lectura/notas/"))
+  (concat user-org-directory "Proyectos/Aprendizaje/Lectura/"))
 
 (provide 'ana-variables)
 

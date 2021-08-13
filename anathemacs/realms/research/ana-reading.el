@@ -15,7 +15,7 @@
    "cs" 'calibredb-find-helm
    "cl" 'calibredb-list)
   :config
-  (setq calibredb-root-dir "~/Biblioteca"
+  (setq calibredb-root-dir "~/Sync/Biblioteca"
         calibre-db-dir (expand-file-name "metadata.db" calibredb-root-dir)
         ;; sql-sqlite-program "/usr/bin/sqlite3"
         ;; calibredb-program "/usr/bin/calibredb"
