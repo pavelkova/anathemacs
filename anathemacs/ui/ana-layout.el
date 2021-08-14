@@ -28,6 +28,9 @@
   :general
   (general-define-key
    "<f7>" 'treemacs)
+  (general-define-key
+   :keymaps 'treemacs-mode-map
+   "f" 'treemacs-display-current-project-exclusively)
   :config
   (setq treemacs-no-png-images t
         treemacs-width 20

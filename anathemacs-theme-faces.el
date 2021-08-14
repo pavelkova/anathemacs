@@ -24,11 +24,11 @@
 (defface sans-xl  '((t :family "NotoSans" :height 220)) "xl sans serif font")
 (defface sans-xxl '((t :family "NotoSans" :height 300)) "xxl sans serif font")
 
-(defface serif-xs  '((t :family "ETBookOT" :height 110 :weight normal)) "xs serif font")
-(defface serif-sm  '((t :family "ETBookOT" :height 130 :weight normal)) "sm serif font")
-(defface serif-md  '((t :family "ETBookOT" :height 150 :weight normal)) "md serif font")
-(defface serif-lg  '((t :family "ETBookOT" :height 170 :weight normal)) "lg serif font")
-(defface serif-xl  '((t :family "ETBookOT" :height 280 :weight normal)) "xl serif font")
-(defface serif-xxl '((t :family "ETBookOT" :height 420 :weight normal)) "xxl serif font")
+(defface serif-xs  '((t :family "ETBookOT" :height 90)) "xs serif font")
+(defface serif-sm  '((t :family "ETBookOT" :height 110)) "sm serif font")
+(defface serif-md  '((t :family "ETBookOT" :height 130)) "md serif font")
+(defface serif-lg  '((t :family "ETBookOT" :height 150)) "lg serif font")
+(defface serif-xl  '((t :family "ETBookOT" :height 240)) "xl serif font")
+(defface serif-xxl '((t :family "ETBookOT" :height 320)) "xxl serif font")
 
 ;;; anathemacs-theme-faces.el ends here
