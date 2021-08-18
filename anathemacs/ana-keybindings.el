@@ -82,6 +82,7 @@
   "C-c e" 'eval-buffer)
 
 (hd-leader-def
+  "m"  '(:ignore t :which-key "polymode")
   "x"  '(:ignore t :which-key "emamux"))
 
 (hs-leader-def

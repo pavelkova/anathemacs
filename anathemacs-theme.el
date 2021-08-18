@@ -80,7 +80,7 @@
    `anathemacs
 
 ;;;;; basics
-   `(bookmar-face             ((t :background nil :foreground ,fg-2)))
+   `(bookmark-face            ((t :background ,bg-2 :foreground ,fg-2)))
    `(cursor                   ((t :background ,cursor)))
    `(custom-button            ((t :background ,bg-2 :foreground ,fg-1 :box (:line-width 2 :style released-button))))
    `(default                  ((t :inherit mono-sm :foreground ,fg-1)))

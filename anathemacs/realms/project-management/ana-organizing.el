@@ -55,7 +55,11 @@
     "F"       'org-roam-find-file
     "g"       'org-roam-show-graph
     "i"       'org-roam-node-insert
-    "I"       'org-roam-insert-immediate)
+    "I"       'org-roam-insert-immediate
+    "r"       'org-roam-refile
+    "C-a"     'org-roam-alias-add
+    "C-t"     'org-roam-tag-add
+    "C-r"     'org-roam-ref-add)
   :config
   (org-roam-db-autosync-mode)
   (setq org-roam-mode-section-functions
@@ -170,6 +174,28 @@ Project: [[roam:%\\1]]
 ;; (use-package vulpea
 ;;   :init
 ;;   (vulpea-setup))
+
+;; BRAIN
+(use-package org-brain :ensure t
+  :init
+  (setq org-brain-path org-directory)
+  :general
+  (hs-leader-def
+    "B"  'org-roam-brain-visualize)
+  :hook
+  ((org-brain-visualize-mode . org-brain-polymode))
+  :config
+  (bind-key "C-c b" 'org-brain-prefix-map org-mode-map)
+  (setq org-id-track-globally t
+        org-id-locations-file "~/.config/emacs/.org-id-locations"
+        org-brain-visualize-default-choices 'all
+        org-brain-title-max-length 24
+        org-brain-include-file-entries t
+        org-brain-file-entries-use-title t)
+  ;; (add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
+  (push '("b" "Brain" plain (function org-brain-goto-end)
+          "* %i%?" :empty-lines 1)
+        org-capture-templates))
 
 ;; LEDGER (finances)
 (use-package ledger-mode

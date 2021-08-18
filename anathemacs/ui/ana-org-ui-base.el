@@ -65,16 +65,22 @@
   :delight olivetti-mode
   :hook ((text-mode nov-mode org-mode) . olivetti-mode)
   :init
-  (add-hook 'org-mode-hook #'olivetti-mode)
+  ;; (add-hook 'org-mode-hook #'olivetti-mode)
   (setq olivetti-body-width 0.85))
+
+(use-package org-autolist
+  :hook
+  (org-mode . org-autolist-mode))
 
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode)
-  :init
-  (add-hook 'org-mode-hook #'org-bullets-mode)
+  ;; :init
+  ;; (add-hook 'org-mode-hook #'org-bullets-mode)
   :config
-    (setq org-bullets-bullet-list '("⋅")))
+  (setq org-bullets-bullet-list '("⋅")))
+
+(use-package org-index)
 
 ;; (use-package mixed-pitch
 ;;   :hook (text-mode . mixed-pitch-mode))

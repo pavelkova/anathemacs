@@ -60,6 +60,12 @@
     "f <Right>" 'origami-next-fold
     "f <Left>"  'origami-previous-fold))
 
+(use-package polymode
+  :init
+  (setq polymode-prefix-key "H-d m")
+  :bind-keymap
+  ("H-d m" . polymode-minor-mode-map))
+
 (use-package smartparens
   :delight smartparens-mode
   :init
