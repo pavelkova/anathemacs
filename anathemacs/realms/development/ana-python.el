@@ -43,7 +43,7 @@
   :general
   (:keymaps 'python-mode-map
             :prefix "H-d"
-            "t"  '(:ignore t :which-key "+pytest")
+            "t"  '(:ignore t :which-key "pytest")
             "ta" 'pytest-all
             "ta" 'pytest-module
             "ta" 'pytest-one
@@ -72,11 +72,11 @@
   :general
   (:keymaps 'python-mode-map
             :prefix "H-d"
-            "d"  '(:ignore t :which-key "+django")
-            "d:" 'django-commands-shell
-            "d." 'django-commands-server
-            "d?" 'django-commands-test
-            "d," 'django-commands-restart))
+            "j"  '(:ignore t :which-key "django")
+            "j:" 'django-commands-shell
+            "j." 'django-commands-server
+            "j?" 'django-commands-test
+            "j," 'django-commands-restart))
 
 ;; in .dir-locals.el
 ;; ((nil . ((django-commands-python-executable . "~/.virtualenvs/virtualenvname/bin/python")
@@ -86,26 +86,26 @@
   :general
   (:keymaps 'python-mode-map
             :prefix "H-d"
-            "da" 'djangonaut-find-admin-class
-            "dc" 'djangonaut-find-management-command
-            "dd" 'djangonaut-find-drf-permission
-            "dD" 'djangonaut-find-drf-serializer
-            "df" 'djangonaut-find-static-file
-            "dg" 'djangonaut-find-migration
-            "di" 'djangonaut-dired-installed-apps
-            "dm" 'djangonaut-find-model
-            "dM" 'djangonaut-find-model-manager
-            "do" 'djangonaut-find-form
-            "dp" 'djangonaut-find-template
-            "dq" 'djangonaut-find-sql-function
-            "dr" 'djangonaut-find-signal-receiver
-            "ds" 'djangonaut-find-settings-module
-            "dt" 'djangonaut-find-template-filter
-            "dT" 'djangonaut-find-template-tag
-            "du" 'djangonaut-find-url-module
-            "dv" 'djangonaut-find-view
-            "dw" 'djangonaut-find-middleware
-            "dW" 'djangonaut-find-widget)
+            "ja" 'djangonaut-find-admin-class
+            "jc" 'djangonaut-find-management-command
+            "jd" 'djangonaut-find-drf-permission
+            "jD" 'djangonaut-find-drf-serializer
+            "jf" 'djangonaut-find-static-file
+            "jg" 'djangonaut-find-migration
+            "ji" 'djangonaut-dired-installed-apps
+            "jm" 'djangonaut-find-model
+            "jM" 'djangonaut-find-model-manager
+            "jo" 'djangonaut-find-form
+            "jp" 'djangonaut-find-template
+            "jq" 'djangonaut-find-sql-function
+            "jr" 'djangonaut-find-signal-receiver
+            "js" 'djangonaut-find-settings-module
+            "jt" 'djangonaut-find-template-filter
+            "jT" 'djangonaut-find-template-tag
+            "ju" 'djangonaut-find-url-module
+            "jv" 'djangonaut-find-view
+            "jw" 'djangonaut-find-middleware
+            "jW" 'djangonaut-find-widget)
   :config
   (global-djangonaut-mode))
 

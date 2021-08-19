@@ -82,6 +82,7 @@
   "C-c e" 'eval-buffer)
 
 (hd-leader-def
+  "d"  '(:ignore t :which-key "docker")
   "m"  '(:ignore t :which-key "polymode")
   "x"  '(:ignore t :which-key "emamux"))
 

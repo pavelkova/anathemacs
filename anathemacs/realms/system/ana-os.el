@@ -72,6 +72,11 @@
 ;; integrate with system pass
 (use-package pass)
 
+(use-package auto-sudoedit
+  :delight
+  :init
+  (auto-sudoedit-mode 1))
+
 (require 'auth-source-pass)
 (auth-source-pass-enable)
 (setq auth-sources '(password-store))

@@ -24,6 +24,7 @@
       mu4e-headers-skip-duplicates t
       mu4e-hide-index-messages t
       mu4e-maildir "~/.local/mail"
+      mu4e-mu-version "1.6.3"
       mu4e-update-interval 300
       mu4e-use-fancy-chars t
       mail-user-agent 'mu4e-user-agent
@@ -33,6 +34,9 @@
       mu4e-split-view 'horizontal
       smtpmail-debug-info t
       smtpmail-send-mail-function 'smtpmail-send-it)
+
+(hs-leader-def
+  "m" 'mu4e)
 
 (use-package mu4e-alert
   :init
@@ -46,8 +50,10 @@
   :config
   (global-mu4e-conversation-mode))
 
-(hs-leader-def
-  "m" 'mu4e)
+(use-package mu4e-overview
+  :after mu4e)
+
+(use-package mu4e-views)
 
 (use-package helm-mu
   :after (helm mu4e))
