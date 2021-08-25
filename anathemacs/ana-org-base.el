@@ -88,6 +88,7 @@
                                           org-habit
                                           org-id
                                           org-inlinetask
+                                          org-wikinodes
                                           ;; org-notify
                                           ))
         org-confirm-babel-evaluate nil

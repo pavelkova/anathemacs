@@ -96,10 +96,26 @@
           ;;---DAILY NOTE - FLEETING SUBHEADER - AUDIO
           ("a" "[F] diario/{date} - [H] Fugaz (AUDIO)" entry
            "** transcribed audio
+:PROPERTIES:
+:CREATED: %U
+:END:
 %?"
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Fugaz"))
+           :unnarrowed t)
+
+          ;;---DAILY NOTE - LINK SUBHEADER - REDDIT
+          ("r" "[F] diario/{date} - [H] Enlaces (REDDIT)" entry
+           "** [REDDIT] %? :reddit:
+:PROPERTIES:
+:CREATED: %U
+:URL:
+:END:
+"
+           :if-new (file+head+olp "%<%Y-%m-%d>.org"
+                                  "#+title: %<%Y-%m-%d>\n"
+                                  ("Enlaces"))
            :unnarrowed t)
           ;;---DAILY NOTE - JOURNAL SUBHEADER
           ("d" "[F] diario/{date} - [H] Diario" entry

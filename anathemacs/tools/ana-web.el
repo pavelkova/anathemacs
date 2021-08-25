@@ -29,7 +29,9 @@
 (use-package org-cliplink
   :general
   (hs-leader-def
-    "/c" 'org-cliplink))
+    "/c" 'org-cliplink)
+  :config
+  (setq org-cliplink-max-length 160))
 
 ;; drag-and-drop support
 (use-package org-download
@@ -41,6 +43,7 @@
         org-download-heading-lvl nil))
 
 (use-package org-web-tools
+  :load-path "anathemacs/lib/org-web-tools"
   :general
   (hs-leader-def
     "/e" 'org-web-tools-insert-web-page-as-entry

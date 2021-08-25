@@ -36,10 +36,9 @@
 
 (with-eval-after-load 'org
   (add-hook 'org-mode-hook #'variable-pitch-mode)
-  (setq ; org-adapt-indentation nil
-        org-agenda-block-separator ""
+  (setq org-agenda-block-separator ""
         org-allow-promoting-top-level-subtree t
-        org-blank-before-new-entry '((heading . nil)
+        org-blank-before-new-entry '((heading . 2)
                                      (plain-list-item . nil))
         org-cycle-level-faces nil
         org-cycle-separator-lines 1
@@ -52,8 +51,11 @@
         org-footnote-define-inline t
         org-hide-emphasis-markers t
         org-hide-leading-stars t
-        org-indent-indentation-per-level 1
-        org-list-indent-offset 1
+        org-indent-indentation-per-level 2
+        org-indent-mode-turns-off-org-adapt-indentation nil
+        org-indent-mode-turns-on-hiding-stars t
+        org-indirect-buffer-display 'other-window
+        org-list-indent-offset 2
         org-pretty-entities t
         org-startup-align-all-tables t
         org-startup-indented t
