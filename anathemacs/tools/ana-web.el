@@ -53,6 +53,9 @@
   :config
   (setq org-web-tools-pandoc-sleep-time 20.0))
 
+(use-package org-yt
+  :load-path "anathemacs/lib/org-yt")
+
 
 (provide 'ana-web)
 
