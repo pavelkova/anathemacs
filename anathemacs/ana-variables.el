@@ -145,10 +145,13 @@
 ;; (setq user-org-agenda-files (concat user-dir "agenda_files"))
 
 (defvar user-pdf-dir
-  "~/Media/biblioteca/")
+  "~/Biblioteca/")
 
 (defvar user-noter-notes-dir
   (concat user-org-directory "Proyectos/Aprendizaje/Lectura/"))
+
+(defvar user-reading-list-file
+  (concat user-noter-notes-dir "index.org"))
 
 (provide 'ana-variables)
 

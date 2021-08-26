@@ -105,7 +105,7 @@
                                   ("Fugaz"))
            :unnarrowed t)
 
-          ;;---DAILY NOTE - LINK SUBHEADER - REDDIT
+          ;;---DAILY NOTE - LINK SUBHEADER
           ("r" "[F] diario/{date} - [H] Enlaces (REDDIT)" entry
            "** [REDDIT] %? :reddit:
 :PROPERTIES:
@@ -151,7 +151,22 @@ Project: [[roam:%\\1]]
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Tareas"))
-           :unnarrowed t)))
+           :unnarrowed t)
+        ("b" "Add book to reading list manually" entry
+         "** TOREAD %^{TITLE}
+:PROPERTIES:
+:CREATED: %U
+:AUTHOR: %^{AUTHOR}p
+:FILE:
+:NOTES:
+:GOODREADS:
+:END:\n%?"
+         :if-new (file+head+olp user-reading-list-file
+                                "#+title: Lista de lectura"
+                                ("Libros"))
+         :empty-lines 1)
+        ("B" "Add log note to book on reading list" item (function org-books-visit-book-log)
+           "- %U %?" :prepend t)))
   (org-roam-setup))
 
 (use-package org-roam-ui

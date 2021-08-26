@@ -21,15 +21,21 @@
         ;; calibredb-program "/usr/bin/calibredb"
         calibre-db-format-all-the-icons t))
 
+(use-package linguistic)
+
 (use-package nov
   :mode ("\\.epub\\'" . nov-mode))
 
-(use-package linguistic)
+(use-package org-books
+  :config
+  (setq org-books-file 'user-reading-list-file))
 
 (use-package pdf-tools
   :mode ("\\.pdf\\'" . pdf-tools-enable-minor-modes)
   :config
   (pdf-tools-install))
+
+(use-package pocket-reader)
 
 (provide 'ana-reading)
 
