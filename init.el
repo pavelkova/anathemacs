@@ -106,7 +106,7 @@
 (require 'ana-statistics)
 (require 'ana-visualization)
 ;; development
-(require 'ana-base)
+(require 'ana-dev-base)
 (require 'ana-c)
 (require 'ana-elixir)
 (require 'ana-go)

@@ -17,12 +17,6 @@
   :after flycheck
   :hook (flycheck-mode . flycheck-irony-setup))
 
-(defun c++-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("C++")))
-
-(add-hook 'c++-mode-hook 'c++-doc)
-
 (provide 'ana-c)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

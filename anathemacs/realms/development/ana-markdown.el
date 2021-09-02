@@ -19,12 +19,6 @@
 
 (use-package markdown-toc)
 
-(defun markdown-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("Markdown")))
-
-(add-hook 'markdown-mode-hook 'markdown-doc)
-
 (provide 'ana-markdown)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

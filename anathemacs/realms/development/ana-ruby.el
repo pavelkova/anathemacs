@@ -39,13 +39,6 @@
   (eval-after-load 'rspec-mode
     '(rspec-install-snippets)))
 
-(defun ruby-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("Ruby"
-                                  "Ruby on Rails")))
-
-(add-hook 'ruby-mode-hook 'ruby-doc)
-
 ;; RAILS
 
 ;; (use-package projectile-rails

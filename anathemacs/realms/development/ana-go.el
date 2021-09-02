@@ -16,12 +16,6 @@
 
 (use-package go-projectile)
 
-(defun go-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("Go")))
-
-(add-hook 'go-mode-hook 'go-doc)
-
 (provide 'ana-go)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

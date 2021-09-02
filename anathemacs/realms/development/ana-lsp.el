@@ -173,6 +173,11 @@
   :config
   (add-hook 'lsp-after-open-hook #'lsp-origami-try-enable))
 
+(use-package zeal-at-point
+  :general
+  (hd-leader-def
+    "z" 'zeal-at-point))
+
 ;; language-specific
 
 ;; (use-package lsp-ccls)

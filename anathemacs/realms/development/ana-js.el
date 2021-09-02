@@ -49,18 +49,6 @@
 
 (use-package yarn-mode)
 
-;; DOCSETS
-(defun js-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("JavaScript"
-                                  "jQuery"
-                                  "NodeJS"
-                                  "React"
-                                  "TypeScript"
-                                  "VueJS")))
-
-(add-hook 'web-mode-hook 'js-doc)
-
 (provide 'ana-js)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

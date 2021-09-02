@@ -20,12 +20,6 @@
    (make-local-variable 'company-backends)
    (add-to-list 'company-backends 'company-ac-php-backend)))
 
-(defun php-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("PHP")))
-
-(add-hook 'php-mode-hook 'php-doc)
-
 (provide 'ana-php)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

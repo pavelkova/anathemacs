@@ -27,12 +27,6 @@
   :config
   (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper"))
 
-(defun haskell-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("Haskell")))
-
-(add-hook 'haskell-mode-hook 'haskell-doc)
-
 (provide 'ana-haskell)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

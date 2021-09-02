@@ -53,19 +53,6 @@
             "tM" 'pytest-pdb-module
             "t!" 'pytest-pdb-one))
 
-(defun python-doc ()
-  (interactive)
-  (setq-local dash-docs-docsets '("Django"
-                                  "Flask"
-                                  "NumPy"
-                                  "SciPy"
-                                  "SQLAlchemy"
-                                  "Pandas"
-                                  ;; "Python 3"
-                                  )))
-
-(add-hook 'python-mode-hook 'python-doc)
-
 ;; DJANGO
 
 (use-package django-commands
