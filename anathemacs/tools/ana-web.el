@@ -40,6 +40,7 @@
     "/y" 'org-download-yank)
   :config
   (setq org-download-image-dir user-download-dir
+        org-download-image-org-width 650
         org-download-heading-lvl nil))
 
 (use-package org-web-tools
