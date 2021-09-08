@@ -92,12 +92,12 @@
   "C"   '(:ignore t :which-key "calendar")
   "e"   '(:ignore t :which-key "media")
   "f"   '(:ignore t :which-key "filing")
+  "C-c" '(:ignore t :which-key "calibre")
   ;; "C-j" '(:ignore t :which-key "jupyter")
   "w"   '(:ignore t :which-key "writing"))
 
 (hr-leader-def
-  "b"   '(:ignore t :which-key "bibtex")
-  "c"   '(:ignore t :which-key "calibre"))
+  "b"   '(:ignore t :which-key "bibtex"))
 
 (cx-leader-def ; add prefix descriptions to built in C-x commands
   "4" '(:ignore t :which-key "other window")

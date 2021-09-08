@@ -11,9 +11,9 @@
 
 (use-package calibredb
   :general
-  (hr-leader-def
-   "cs" 'calibredb-find-helm
-   "cl" 'calibredb-list)
+  (hs-leader-def
+   "C-c f" 'calibredb-find-helm
+   "C-c l" 'calibredb-list)
   :config
   (setq calibredb-root-dir "~/Sync/Biblioteca"
         calibre-db-dir (expand-file-name "metadata.db" calibredb-root-dir)
@@ -27,6 +27,20 @@
   :mode ("\\.epub\\'" . nov-mode))
 
 (use-package org-books
+  :init
+  (push '(("b" "Add book to reading list manually" entry '(file+head user-reading-list-file "Libros")
+         "** TOREAD %^{TITLE}
+:PROPERTIES:
+:CREATED: %U
+:AUTHOR: %^{AUTHOR}p
+:FILE:
+:NOTES:
+:GOODREADS:
+:END:\n%?"
+         :empty-lines 1)
+        ("B" "Add log note to book on reading list" item (function org-books-visit-book-log)
+         "- %U %?" :prepend t))
+        org-capture-templates)
   :config
   (setq org-books-file 'user-reading-list-file))
 

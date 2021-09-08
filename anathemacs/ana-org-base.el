@@ -75,8 +75,10 @@
 ;; load
 (with-eval-after-load 'org
   (general-define-key
-   "C-M-<Return>"   'org-insert-subheading
-   "C-M-<Shift>-<Return>" 'org-insert-todo-subheading)
+   "C-M-<Return>"         'org-insert-subheading
+   "C-M-<Shift>-<Return>" 'org-insert-todo-subheading
+   "M-<Shift>-<right>"    'org-toggle-checkbox
+   "H-<SPC> c"            'org-capture)
   (setq org-open-directory-means-index-dot-org t
         org-modules (append org-modules '(;; ol-bookmark
                                           ;; ol-man

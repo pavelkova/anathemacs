@@ -21,6 +21,8 @@
 (use-package org-roam
   ;; :after (org md-roam)
   :after org
+  :init
+  (setq org-roam-v2-ack t)
   :commands
   (org-roam-buffer
    org-roam-setup
@@ -36,8 +38,7 @@
    org-roam-file-extensions '("org" "md")
    org-roam-index-file "codex.org"
    org-roam-tag-separator " > "
-   org-roam-tag-sources '(prop vanilla last-directory md-frontmatter)
-   org-roam-v2-ack t)
+   org-roam-tag-sources '(prop vanilla last-directory md-frontmatter))
   :general
   (:keymaps 'org-mode-map
             "C-c i" 'org-roam-node-insert
@@ -47,10 +48,10 @@
             )
   (hs-leader-def
     "<SPC>"   'org-roam-dailies-capture-today
-    "C-<SPC>" 'org-roam-dailies-capture-date
-    "c"       'org-roam-capture)
+    "C-<SPC>" 'org-roam-dailies-capture-date)
   (hr-leader-def
     "<right>" 'org-roam-buffer-toggle
+    "c"       'org-roam-capture
     "f"       'org-roam-node-find
     "F"       'org-roam-find-file
     "g"       'org-roam-show-graph
@@ -81,7 +82,8 @@
 :END:"
            :if-new (file+head "Fugaz/%<%Y%m%d%H%M%S>-${slug}.org"
                               "+#TITLE: ${title}\n")
-           :unnarrowed t)))
+           :unnarrowed t
+           :jump-to-captured t)))
   (setq org-roam-dailies-capture-templates
         '(;;---DAILY NOTE - FLEETING SUBHEADER
           ("n" "[F] diario/{date} - [H] Fugaz" entry
@@ -92,7 +94,8 @@
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Fugaz"))
-           :unnarrowed t)
+           :unnarrowed t
+           :jump-to-captured t)
           ;;---DAILY NOTE - FLEETING SUBHEADER - AUDIO
           ("a" "[F] diario/{date} - [H] Fugaz (AUDIO)" entry
            "** transcribed audio
@@ -103,7 +106,8 @@
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Fugaz"))
-           :unnarrowed t)
+           :unnarrowed t
+           :jump-to-captured t)
 
           ;;---DAILY NOTE - LINK SUBHEADER
           ("r" "[F] diario/{date} - [H] Enlaces (REDDIT)" entry
@@ -127,7 +131,8 @@
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Diario"))
-           :unnarrowed t)
+           :unnarrowed t
+           :jump-to-captured t)
           ;;---DAILY NOTE - TASK SUBHEADER
           ("t" "[F] tareas/{date} - [H] Tarea" entry
            "** TODO %?
@@ -138,7 +143,8 @@ SCHEDULED: %t
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Tareas"))
-           :unnarrowed t)
+           :unnarrowed t
+           :jump-to-captured t)
           ;;---DAILY NOTE - PROJECT TASK SUBHEADER
           ("p" "[F] diario/{date} - [H] Tarea de proyecto" entry
            "** TODO %? :proyecto:%^{nombre de proyecto}
@@ -151,22 +157,7 @@ Project: [[roam:%\\1]]
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Tareas"))
-           :unnarrowed t)
-        ("b" "Add book to reading list manually" entry
-         "** TOREAD %^{TITLE}
-:PROPERTIES:
-:CREATED: %U
-:AUTHOR: %^{AUTHOR}p
-:FILE:
-:NOTES:
-:GOODREADS:
-:END:\n%?"
-         :if-new (file+head+olp user-reading-list-file
-                                "#+title: Lista de lectura"
-                                ("Libros"))
-         :empty-lines 1)
-        ("B" "Add log note to book on reading list" item (function org-books-visit-book-log)
-           "- %U %?" :prepend t)))
+           :unnarrowed t) ))
   (org-roam-setup))
 
 (use-package org-roam-ui
@@ -208,8 +199,6 @@ Project: [[roam:%\\1]]
 
 ;; BRAIN
 (use-package org-brain :ensure t
-  :init
-  (setq org-brain-path org-directory)
   :general
   (hs-leader-def
     "B"  'org-roam-brain-visualize)
@@ -218,15 +207,16 @@ Project: [[roam:%\\1]]
   :config
   (bind-key "C-c b" 'org-brain-prefix-map org-mode-map)
   (setq org-id-track-globally t
-        org-id-locations-file "~/.config/emacs/.org-id-locations"
+        org-id-locations-file "~/.config/emacs/.org-id-locations")
+  (add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
+  (push '("b" "Brain" plain (function org-brain-goto-end)
+          "* %i%?" :empty-lines 1)
+        org-capture-templates)
+  (setq org-brain-path org-directory
         org-brain-visualize-default-choices 'all
         org-brain-title-max-length 24
         org-brain-include-file-entries t
-        org-brain-file-entries-use-title t)
-  ;; (add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
-  (push '("b" "Brain" plain (function org-brain-goto-end)
-          "* %i%?" :empty-lines 1)
-        org-capture-templates))
+        org-brain-file-entries-use-title t))
 
 ;; LEDGER (finances)
 (use-package ledger-mode
@@ -236,6 +226,74 @@ Project: [[roam:%\\1]]
 
 (use-package flycheck-ledger
   :after ledger-mode)
+
+;; SPECIAL CAPTURE TEMPLATES
+(with-eval-after-load 'org
+  (setq org-capture-templates '(
+        ;; ONLINE SALES
+        ;; ("s" "Templates for online sale tracking")
+        ("c" "Add new clothing item to sales file" entry (file+headline "ventas.org" "Ropa")
+         "** %^{prompt|PHOTOGRAPH|LIST|CLEAN|IRON} %? :producto:ropa:
+:PROPERTIES:
+:PURCHASED:
+:PURCHASE-PRICE:
+:MSRP:
+:ITEM-WEIGHT:
+:CREATED: %U
+:CLEANED:
+:IRONED:
+:PHOTOGRAPHED:
+:MEASURED:
+:END:
+
+*** Description
+:PROPERTIES:
+:CATEGORY:
+:BRAND:
+:SIZE:
+:MATERIAL:
+:COLOR:
+:CONDITION: %^{prompt|NWT|NWOT|Excellent pre-owned condition with no signs of wear. Please see photos prior to purchasing.|Very good condition with no visible marks or damage. May have some light signs of wear. Please see photos prior to purchasing.|Good condition. May have minor marks or defects and/or signs of wear. Please see photos prior to purchasing.}
+:END:
+
+[DESCRIPTION]
+
+Measurements
+(All measurements taken with item lying flat.)
+Shoulder to shoulder:
+Armpit to armpit:
+Waist:
+Hips:
+Width at hem:
+Sleeve length:
+Inseam:
+Rise:
+Total length:
+
+*** Listing
+**** Ebay - [DATE]
+:PROPERTIES:
+:LIST-PLATFORM: Ebay
+:LIST-PLATFORM-ID:
+:LIST-STARTING-BID:
+:LIST-BIN-PRICE:
+:LIST-ACCEPT-OFFERS: true
+:LIST-SHIPPING-PRICE:
+:END:
+
+*** Sale
+:PROPERTIES:
+:SALE-LISTING: [ID]
+:SALE-PLATFORM:
+:SALE-TYPE: [Auction/BIN/Offer]
+:SALE-PRICE:
+:SALE-DISCOUNT:
+:SALE-DISCOUNT-TYPE:
+:SALE-SHIPPING-COST:
+:SALE-TOTAL-PAID:
+:SALE-NET:
+:END:"
+         :jump-to-captured t))))
 
 (provide 'ana-organizing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
