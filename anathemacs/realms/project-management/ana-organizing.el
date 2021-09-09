@@ -237,13 +237,15 @@ Project: [[roam:%\\1]]
 :PROPERTIES:
 :PURCHASED:
 :PURCHASE-PRICE:
-:MSRP:
 :ITEM-WEIGHT:
 :CREATED: %U
 :CLEANED:
 :IRONED:
 :PHOTOGRAPHED:
 :MEASURED:
+:LISTED:
+:SOLD:
+:SHIPPED:
 :END:
 
 *** Description
@@ -254,6 +256,7 @@ Project: [[roam:%\\1]]
 :MATERIAL:
 :COLOR:
 :CONDITION: %^{prompt|NWT|NWOT|Excellent pre-owned condition with no signs of wear. Please see photos prior to purchasing.|Very good condition with no visible marks or damage. May have some light signs of wear. Please see photos prior to purchasing.|Good condition. May have minor marks or defects and/or signs of wear. Please see photos prior to purchasing.}
+:MSRP:
 :END:
 
 [DESCRIPTION]
@@ -283,12 +286,13 @@ Total length:
 
 *** Sale
 :PROPERTIES:
-:SALE-LISTING: [ID]
+:SALE-LISTING: [PLATFORM - DATE]
 :SALE-PLATFORM:
 :SALE-TYPE: [Auction/BIN/Offer]
 :SALE-PRICE:
 :SALE-DISCOUNT:
 :SALE-DISCOUNT-TYPE:
+:SALE-PACKING-COST:
 :SALE-SHIPPING-COST:
 :SALE-TOTAL-PAID:
 :SALE-NET:
