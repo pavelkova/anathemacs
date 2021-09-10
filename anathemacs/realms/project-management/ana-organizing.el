@@ -250,12 +250,12 @@ Project: [[roam:%\\1]]
 
 *** Description
 :PROPERTIES:
-:CATEGORY:
+:CATEGORY: Clothing, Shoes and Accessories > Women > Women's Clothing > 
 :BRAND:
 :SIZE:
 :MATERIAL:
 :COLOR:
-:CONDITION: %^{prompt|NWT|NWOT|Excellent pre-owned condition with no signs of wear. Please see photos prior to purchasing.|Very good condition with no visible marks or damage. May have some light signs of wear. Please see photos prior to purchasing.|Good condition. May have minor marks or defects and/or signs of wear. Please see photos prior to purchasing.}
+:CONDITION: %^{prompt|NWT|NWOT|Excellent pre-owned condition. No visible marks, defects, or signs of wear.|Very good pre-owned condition. No visible marks or defects. May have minor signs of wear.|Good pre-owned condition.|Pre-owned condition.} Please see photos and description prior to purchasing.
 :MSRP:
 :END:
 
@@ -284,10 +284,10 @@ Total length:
 :LIST-SHIPPING-PRICE:
 :END:
 
-*** Sale
+*** Sale :venta:
 :PROPERTIES:
-:SALE-LISTING: [PLATFORM - DATE]
-:SALE-PLATFORM:
+:SALE-LISTING: [PLATFORM-ID]
+:SALE-PLATFORM: Ebay
 :SALE-TYPE: [Auction/BIN/Offer]
 :SALE-PRICE:
 :SALE-DISCOUNT:
@@ -297,7 +297,61 @@ Total length:
 :SALE-TOTAL-PAID:
 :SALE-NET:
 :END:"
-         :jump-to-captured t))))
+         :jump-to-captured t
+         :prepend t
+         :empty-lines-after 1)
+        ("g" "Add new generic item to sales file" entry (file+headline "ventas.org" "Etcetera")
+         "** %^{prompt|PHOTOGRAPH|LIST|CLEAN} %? :producto:ropa:
+:PROPERTIES:
+:PURCHASED:
+:PURCHASE-PRICE:
+:ITEM-WEIGHT:
+:CREATED: %U
+:CLEANED:
+:PHOTOGRAPHED:
+:MEASURED:
+:LISTED:
+:SOLD:
+:SHIPPED:
+:END:
+
+*** Description
+:PROPERTIES:
+:CATEGORY: 
+:BRAND:
+:CONDITION: %^{prompt|NWT|NWOT|Excellent pre-owned condition. No visible marks or defects.|Very good pre-owned condition. No visible marks or defects. May have minor signs of use.|Good pre-owned condition.|Pre-owned condition.} Please see photos and description prior to purchasing.
+:MSRP:
+:END:
+
+[DESCRIPTION]
+
+*** Listing
+**** Ebay - [DATE]
+:PROPERTIES:
+:LIST-PLATFORM: Ebay
+:LIST-PLATFORM-ID:
+:LIST-STARTING-BID:
+:LIST-BIN-PRICE:
+:LIST-ACCEPT-OFFERS: true
+:LIST-SHIPPING-PRICE:
+:END:
+
+*** Sale :venta:
+:PROPERTIES:
+:SALE-LISTING: [PLATFORM-ID]
+:SALE-PLATFORM: Ebay
+:SALE-TYPE: [Auction/BIN/Offer]
+:SALE-PRICE:
+:SALE-DISCOUNT:
+:SALE-DISCOUNT-TYPE:
+:SALE-PACKING-COST:
+:SALE-SHIPPING-COST:
+:SALE-TOTAL-PAID:
+:SALE-NET:
+:END:"
+         :jump-to-captured t
+         :prepend t
+         :empty-lines-after 1))))
 
 (provide 'ana-organizing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
