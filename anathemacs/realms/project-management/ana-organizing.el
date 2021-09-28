@@ -232,7 +232,7 @@ Project: [[roam:%\\1]]
   (setq org-capture-templates '(
         ;; ONLINE SALES
         ;; ("s" "Templates for online sale tracking")
-        ("c" "Add new clothing item to sales file" entry (file+headline "ventas.org" "Ropa")
+        ("c" "Add new clothing item to sales file" entry (file+headline "ventas.org" "[Inventario] Ropa")
          "** %^{prompt|PHOTOGRAPH|LIST|CLEAN|IRON} %? :producto:ropa:
 :PROPERTIES:
 :PURCHASED:
@@ -286,22 +286,25 @@ Total length:
 
 *** Sale :venta:
 :PROPERTIES:
-:SALE-LISTING: [PLATFORM-ID]
 :SALE-PLATFORM: Ebay
+:SALE-LISTING-ID:
+:SALE-ORDER-NUMBER: 
 :SALE-TYPE: [Auction/BIN/Offer]
-:SALE-PRICE:
-:SALE-DISCOUNT:
-:SALE-DISCOUNT-TYPE:
-:SALE-PACKING-COST:
-:SALE-SHIPPING-COST:
-:SALE-TOTAL-PAID:
-:SALE-NET:
+:SALE-PRICE: 
+:SALE-DISCOUNT: 
+:SALE-DISCOUNT-TYPE: 
+:SALE-TOTAL-PAID: 
+:SALE-PACKING-COST: 
+:SALE-SHIPPING-COST: 
+:SALE-PLATFORM-FEE: 
+:SALE-TAX: 
+:SALE-NET: 
 :END:"
          :jump-to-captured t
          :prepend t
          :empty-lines-after 1)
-        ("g" "Add new generic item to sales file" entry (file+headline "ventas.org" "Etcetera")
-         "** %^{prompt|PHOTOGRAPH|LIST|CLEAN} %? :producto:ropa:
+        ("g" "Add new generic item to sales file" entry (file+headline "ventas.org" "[Inventario] Etcetera")
+         "** %^{prompt|PHOTOGRAPH|LIST|CLEAN} %? :producto:
 :PROPERTIES:
 :PURCHASED:
 :PURCHASE-PRICE:
@@ -338,16 +341,19 @@ Total length:
 
 *** Sale :venta:
 :PROPERTIES:
-:SALE-LISTING: [PLATFORM-ID]
 :SALE-PLATFORM: Ebay
+:SALE-LISTING-ID:
+:SALE-ORDER-NUMBER: 
 :SALE-TYPE: [Auction/BIN/Offer]
-:SALE-PRICE:
-:SALE-DISCOUNT:
-:SALE-DISCOUNT-TYPE:
-:SALE-PACKING-COST:
-:SALE-SHIPPING-COST:
-:SALE-TOTAL-PAID:
-:SALE-NET:
+:SALE-PRICE: 
+:SALE-DISCOUNT: 
+:SALE-DISCOUNT-TYPE: 
+:SALE-TOTAL-PAID: 
+:SALE-PACKING-COST: 
+:SALE-SHIPPING-COST: 
+:SALE-PLATFORM-FEE: 
+:SALE-TAX: 
+:SALE-NET: 
 :END:"
          :jump-to-captured t
          :prepend t
