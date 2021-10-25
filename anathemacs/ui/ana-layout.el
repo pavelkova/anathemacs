@@ -42,8 +42,12 @@
 (use-package treemacs-projectile
   :after treemacs projectile)
 
-(use-package treemacs-persp
-  :after treemacs persp-mode
+;; (use-package treemacs-persp
+;;   :after treemacs persp-mode
+;;   :config (treemacs-set-scope-type 'Perspectives))
+
+(use-package treemacs-perspective
+  :after treemacs perspective
   :config (treemacs-set-scope-type 'Perspectives))
 
 (use-package dired-sidebar
@@ -52,6 +56,7 @@
    "<f6>" 'dired-sidebar-toggle-sidebar))
 
 ;; TAB BAR
+
 (use-package centaur-tabs
   :general
   (general-define-key
@@ -59,18 +64,20 @@
    "C-<prior>" 'centaur-tabs-backward
    "C-<next>"  'centaur-tabs-forward)
   :config
-  (centaur-tabs-mode t)
   (centaur-tabs-headline-match)
-  (centaur-tabs-change-fonts "Helvetica" 85)
-  (setq centaur-tabs-style "chamfer"
-        centaur-tabs-height 20
-        centaur-tabs-set-icons nil
-        centaur-tabs-plain-icons t
+  (centaur-tabs-group-by-projectile-project)
+  (centaur-tabs-change-fonts "Helvetica" 75)
+  (setq centaur-tabs-close-button "•"
         centaur-tabs-gray-out-icons 'buffer
+        centaur-tabs-height 32
+        centaur-tabs-plain-icons t
         centaur-tabs-set-bar 'over
-        centaur-tabs-set-modified-marker t)
+        centaur-tabs-set-icons t
+        centaur-tabs-set-modified-marker t
+        centaur-tabs-show-navigation-buttons t
+        centaur-tabs-style "chamfer")
   :hook
-  ((dired-mode treemacs-mode) . centaur-tabs-local-mode))
+  ((treemacs-mode) . centaur-tabs-local-mode))
 
 ;; MODELINE
 (use-package doom-modeline

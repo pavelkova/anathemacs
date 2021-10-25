@@ -24,7 +24,7 @@
       mu4e-headers-skip-duplicates t
       mu4e-hide-index-messages t
       mu4e-maildir "~/.local/mail"
-      mu4e-mu-version "1.6.3"
+      mu4e-mu-version "1.6.7"
       mu4e-update-interval 300
       mu4e-use-fancy-chars t
       mail-user-agent 'mu4e-user-agent

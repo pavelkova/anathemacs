@@ -730,8 +730,9 @@
 
 ;;;;; perspective
    `(persp-face-lighter-buffer-not-in-persp ((t :inherit sans-xs :weight bold :background nil :foreground ,err)))
-   `(persp-face-lighter ((t :inherit sans-xs :background nil :foreground ,highlight)))
-   `(persp-face-lighter-nil-persp ((t :inherit sans-xs :background nil :foreground ,highlight-dim)))
+   `(persp-face-lighter                     ((t :inherit sans-xs :background nil :foreground ,highlight)))
+   `(persp-face-lighter-nil-persp           ((t :inherit sans-xs :background nil :foreground ,highlight-dim)))
+   `(persp-selected-face                    ((t :inherit doom-modeline-persp-name)))
 
 ;;;;; popup
    `(popup-enu-selection-face         ((t :background ,ttip-sl :foreground ,fg-1)))
