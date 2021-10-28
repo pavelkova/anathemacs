@@ -115,7 +115,7 @@
     ruby-mode
     typescript-mode
     web-mode
-    yaml-mode) . lsp-mode)
+    yaml-mode) . lsp)
 (lsp-mode . lsp-enable-which-key-integration))
 
 (use-package lsp-ui
@@ -165,7 +165,7 @@
   (hl-leader-def
     "@"    'helm-lsp-workspace-symbol
     "M-@"  'helm-lsp-global-workspace-symbol
-    "a"    'helm-lsp-code-actions)
+    ":"    'helm-lsp-code-actions)
   :config
   (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 

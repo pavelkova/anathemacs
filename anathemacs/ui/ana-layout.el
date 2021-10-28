@@ -39,12 +39,12 @@
 (use-package treemacs-magit
   :after treemacs magit)
 
-(use-package treemacs-projectile
-  :after treemacs projectile)
+;; (use-package treemacs-projectile
+;;   :after treemacs projectile)
 
-;; (use-package treemacs-persp
-;;   :after treemacs persp-mode
-;;   :config (treemacs-set-scope-type 'Perspectives))
+(use-package treemacs-persp
+  :after treemacs persp-mode
+  :config (treemacs-set-scope-type 'Perspectives))
 
 (use-package treemacs-perspective
   :after treemacs perspective
