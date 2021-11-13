@@ -77,9 +77,11 @@
   "g"     '(:ignore t :which-key "git & version control")
   "s"     '(:ignore t :which-key "snippets")
   "C-c"   '(:ignore t :which-key "emacs")
+  "C-c e" 'eval-buffer
   "C-c k" 'save-buffers-kill-emacs
   "C-c K" 'kill-emacs
-  "C-c e" 'eval-buffer)
+  "C-c r" 'recover-this-file
+  "C-c R" 'recover-file)
 
 (hd-leader-def
   "d"  '(:ignore t :which-key "docker")
