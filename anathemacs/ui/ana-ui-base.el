@@ -8,6 +8,7 @@
 ;;
 
 ;;; Code:
+
 (setq inhibit-splash-screen t
       inhibit-startup-message t
       initial-scratch-message ""

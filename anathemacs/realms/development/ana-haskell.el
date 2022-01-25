@@ -23,7 +23,7 @@
 
 
 (use-package lsp-haskell
-  :after (haskell-mode)
+  :hook (haskell-mode)
   :config
   (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper"))
 

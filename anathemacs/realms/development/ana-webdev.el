@@ -32,6 +32,13 @@
   :mode (("\\.graphql[s]" . graphql-mode)
          ("\\.gql[s]"     . graphql-mode)))
 
+(use-package prisma-mode
+  :load-path "anathemacs/lib/emacs-prisma-mode/prisma-mode"
+  :mode ("\\.prisma\\'" . prisma-mode)
+  :init
+  (add-hook 'prisma-mode-hook #'lsp-deferred))
+
+
 (use-package rainbow-mode)
 
 (use-package web-mode

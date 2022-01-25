@@ -48,9 +48,10 @@
   :mode ("\\.pdf\\'" . pdf-tools-enable-minor-modes)
   :config
   (pdf-tools-install)
-  :general
-  (:keymaps 'pdf-view-mode-map
-            ("d" 'pdf-annot-delete)))
+  ;; :general
+  ;; (:keymaps 'pdf-view-mode-map
+  ;;           ("d" 'pdf-annot-delete))
+  )
 
 (use-package pocket-reader)
 

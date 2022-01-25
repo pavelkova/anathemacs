@@ -83,7 +83,7 @@
    `(bookmark-face            ((t :background ,bg-2 :foreground ,fg-2)))
    `(cursor                   ((t :background ,cursor)))
    `(custom-button            ((t :background ,bg-2 :foreground ,fg-1 :box (:line-width 2 :style released-button))))
-   `(default                  ((t :inherit mono-sm :foreground ,fg-1)))
+   `(default                  ((t :inherit mono-sm :foreground ,fg-1 :background ,bg-1)))
    `(default-italic           ((t :inherit default :slant italic :weight bold)))
    `(error                    ((t :foreground ,err)))
    `(eval-sexp-fu-flash       ((t :background ,suc :foreground ,bg-1)))

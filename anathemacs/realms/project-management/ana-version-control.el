@@ -23,8 +23,7 @@
 ;; GIT
 ;; (use-package browse-at-remote)
 
-(use-package gitconfig-mode
-  :mode "\\.git/config\\'")
+(use-package git-modes)
 
 (use-package git-gutter-fringe
   :delight git-gutter-mode
@@ -33,9 +32,6 @@
   :config
   (ha-leader-def
     "g." 'git-gutter-mode))
-
-(use-package gitignore-mode
-  :mode "\\.gitignore\\'")
 
 (use-package gitlab
   :config
@@ -77,11 +73,6 @@
   :config
   (setq magit-todos-fontify-keyword-headers t
         magit-todos-fontify-org nil))
-
-(use-package helm-gitignore
-  :general
-  (ha-leader-def
-    "gI" 'helm-gitignore))
 
 (use-package helm-ls-git
   :general

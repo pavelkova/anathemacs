@@ -44,6 +44,8 @@
 ;;                       (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
 
 (use-package js-react-redux-yasnippets
+  ;; :after (:any typescript-mode js2-mode)
+  :hook (typescript-mode js2-mode)
   :config
   (setq js-react-redux-yasnippets-want-semicolon nil))
 

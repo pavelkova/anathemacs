@@ -19,6 +19,7 @@
   :general
   (ha-leader-def
     "!"      'crux-sudo-edit
+    "d"      'ediff
     "t"      'crux-transpose-windows
     "x"      'crux-cleanup-buffer-or-region
     "<left>" 'crux-recentf-find-file
