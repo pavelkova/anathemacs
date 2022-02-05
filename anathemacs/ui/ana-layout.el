@@ -87,7 +87,7 @@
   :config
   (progn
     (doom-modeline-def-modeline 'ana-modeline
-      '(bar lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count " " checker debug selection-info)
+      '(lsp major-mode " " modals buffer-info process " " buffer-position " "  matches word-count " " checker debug selection-info)
       '("     " persp-name "" mu4e " " minor-modes github vcs remote-host))
     (doom-modeline-set-modeline 'ana-modeline 'default))
   (setq doom-modeline-bar-width 4

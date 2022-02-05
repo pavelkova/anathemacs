@@ -122,10 +122,21 @@
                                   ("Enlaces"))
            :unnarrowed t)
           ;;---DAILY NOTE - JOURNAL SUBHEADER
+;;           ("d" "[F] diario/{date} - [H] Diario" entry
+;;            "** %<%H:%M> :diario:
+;; :PROPERTIES:
+;; :CREATED: %U
+;; :END:
+;; %?"
+;;            :if-new (file+head+olp "%<%Y-%m-%d>.org"
+;;                                   "#+title: %<%Y-%m-%d>\n"
+;;                                   ("Diario"))
+;;            :unnarrowed t
+          ;;            :jump-to-captured t)
           ("d" "[F] diario/{date} - [H] Diario" entry
-           "** %<%H:%M> :diario:
+           "** 00:00 :diario:
 :PROPERTIES:
-:CREATED: %U
+:CREATED: %u
 :END:
 %?"
            :if-new (file+head+olp "%<%Y-%m-%d>.org"

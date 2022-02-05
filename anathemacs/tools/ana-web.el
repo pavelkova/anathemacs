@@ -26,12 +26,12 @@
   (setq org-board-capture-file 'user-inbox-file
         org-attach-directory user-download-dir))
 
-(use-package org-cliplink
-  :general
-  (hs-leader-def
-    "/c" 'org-cliplink)
-  :config
-  (setq org-cliplink-max-length 160))
+;(use-package org-cliplink
+;  :general
+;  (hs-leader-def
+;    "/c" 'org-cliplink)
+;  :config
+;  (setq org-cliplink-max-length 160))
 
 ;; drag-and-drop support
 (use-package org-download
