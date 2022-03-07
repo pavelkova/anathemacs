@@ -25,6 +25,7 @@
       (head1         ana-base-dim)
       (ttip          ana-base-dim)
       (cblk          ana-base-dim)
+      (comment       ana-base-dim)
       ;; dimmer text
       (base-2        ana-base-2)
       (act1          ana-base-2)
@@ -52,7 +53,6 @@
       ;; lt blue
       (blue-2        ana-blue-2)
       (ttip-sl       ana-blue-2)
-      (comment       ana-blue-2)
       ;; yellow
       (yellow-1      ana-yellow-1)
       (const         ana-yellow-1)
@@ -251,7 +251,7 @@
 
 ;;;;; display-line-numbers-mode
    `(line-number              ((t :inherit mono-xs :background nil :foreground ,lnum)))
-   `(line-number-current-line ((t :inherit mono-xs :background ,bg-2 :foreground ,lnum)))
+   `(line-number-current-line ((t :inherit mono-xs :background nil :foreground ,green-2)))
 
 ;;;;;; doom-neotree
    `(doom-neotree-data-file-face   ((t :inherit sans-xs :foreground ,keyword)))
@@ -603,6 +603,15 @@
    `(doom-modeline-unread-number             (( t :inherit mode-line :foreground ,war)))
    `(doom-modeline-urgent                    (( t :inherit mode-line :foreground ,err)))
    `(doom-modeline-warning                   (( t :inherit mode-line :foreground ,war)))
+
+   `(lsp-headerline-breadcrumb-path-error-face      (( t :underline (:color ,red-1))))
+   `(lsp-headerline-breadcrumb-path-hint-face       (( t :underline (:color ,green-1))))
+   `(lsp-headerline-breadcrumb-path-info-face       (( t :underline (:color ,green-1))))
+   `(lsp-headerline-breadcrumb-path-warning-face    (( t :underline (:color ,yellow-1))))
+   `(lsp-headerline-breadcrumb-symbols-error-face   (( t :underline (:color ,red-1))))
+   `(lsp-headerline-breadcrumb-symbols-hint-face    (( t :underline (:color ,green-1))))
+   `(lsp-headerline-breadcrumb-symbols-info-face    (( t :underline (:color ,green-1))))
+   `(lsp-headerline-breadcrumb-symbols-warning-face (( t :underline (:color ,yellow-1))))
 
    `(lsp-modeline-code-action                (( t :inherit mode-line :foreground ,func)))
    `(lsp-ui-doc-background                   (( t :background ,bg-2)))
