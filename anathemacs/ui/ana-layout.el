@@ -98,6 +98,7 @@
         doom-modeline-checker-simple-format nil
         doom-modeline-continuous-word-count-modes '(markdown-mode org-mode fountain-mode)
         doom-modeline-display-default-persp-name t
+        doom-modeline-enable-word-count t
         doom-modeline-gnus nil
         doom-modeline-height 20
         doom-modeline-icon t

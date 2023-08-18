@@ -18,12 +18,6 @@
     "b <right>"    'binder-toggle-sidebar
     "b C-<right>"  'binder-reveal-in-sidebar))
 
-(use-package mpages
-  :load-path "anathemacs/lib/mpages"
-  :general
-  (hs-leader-def
-    "7" 'mpages))
-
 (use-package org-journal
   :general
   (hs-leader-def
@@ -47,6 +41,11 @@
         org-journal-file-format "%Y-%m-%d.org"))
 ;; Remove default keybindings
 (global-unset-key (kbd "C-c C-j"))
+
+(use-package org-novelist
+  :load-path "anathemacs/lib/org-novelist"  ; The directory containing 'org-novelist.el'
+  :custom
+    (org-novelist-automatic-referencing-p nil))  ; Set this variable to 't' if you want Org Novelist to always keep note links up to date. This may slow down some systems when operating on complex stories. It defaults to 'nil' when not set
 
 (use-package wc-mode
   :hook (org-mode fountain-mode mpages org-journal writeroom-mode)

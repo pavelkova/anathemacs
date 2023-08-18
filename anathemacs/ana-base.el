@@ -25,7 +25,8 @@
   :init
   (setq auto-package-update-delete-old-versions t
         auto-package-update-hide-results t)
-  (auto-package-update-maybe))
+  ;;  (auto-package-update-maybe)
+  )
 
 ;; minor mode appearance in modeline (required by use-package)
 (use-package delight

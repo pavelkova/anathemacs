@@ -20,6 +20,8 @@
 (use-package dockerfile-mode
   :mode ("Dockerfile\\'" . dockerfile-mode))
 
+(use-package docker-tramp)
+
 (use-package lsp-docker
   :config
   (setq lsp-docker-client-packages
@@ -61,10 +63,12 @@
   (setq tramp-default-method "ssh")
   (add-hook 'helm-tramp-pre-command-hook '(lambda () (global-aggressive-indent-mode 0)
 				            (projectile-mode 0)
-				            (editorconfig-mode 0)))
+				            ; (editorconfig-mode 0)
+                                            ))
   (add-hook 'helm-tramp-quit-hook '(lambda () (global-aggressive-indent-mode 1)
 			             (projectile-mode 1)
-			             (editorconfig-mode 1))))
+			             ; (editorconfig-mode 1)
+                                     )))
 
 (use-package tramp-term)
 

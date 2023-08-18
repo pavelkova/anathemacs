@@ -22,6 +22,17 @@
 
 (use-package helm-bibtex)
 
+;; (use-package org-ai
+;;   :commands (org-ai-mode
+;;              org-ai-global-mode)
+;;   :init
+;;   (add-hook 'org-mode-hook #'org-ai-mode) ; enable org-ai in org-mode
+;;   (org-ai-global-mode) ; installs global keybindings on C-c M-a
+;;   :config
+;;   (setq org-ai-default-chat-model "gpt-4") ; if you are on the gpt-4 beta:
+;;   (org-ai-install-yasnippets) ; if you are using yasnippet and want `ai` snippets
+;;   )
+
 (use-package org-roam-bibtex
   :after org-roam
   :hook (org-roam-mode . org-roam-bibtex-mode)
@@ -46,7 +57,7 @@
     "rr" 'helm-recoll)
   :init
   (setq helm-recoll-directories
-        '(("biblioteca" . "~/.recoll"))))
+        '(("Biblioteca" . "~/.recoll"))))
 
 ;; WIKIPEDIA LOOKUP
 (use-package wiki-summary

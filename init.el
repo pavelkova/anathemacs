@@ -122,7 +122,7 @@
 (require 'ana-ts)
 (require 'ana-webdev)
 ;; personal
-(require 'ana-communication)
+; (require 'ana-communication)
 (require 'ana-dokuwiki)
 (require 'ana-media)
 (require 'ana-writing)

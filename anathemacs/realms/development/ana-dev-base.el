@@ -6,6 +6,9 @@
 ;;; Commentary:
 ;;
 ;;; Code:
+
+(use-package exercism)
+
 (use-package fence-edit
   :load-path "anathemacs/lib/fence-edit"
   :hook (web-mode . fence-edit.mode)

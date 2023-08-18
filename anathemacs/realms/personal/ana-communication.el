@@ -18,13 +18,13 @@
 
 (setq mu4e-completing-read-function 'ivy-completing-read
       mu4e-compose-signature-auto-include nil
-      mu4e-attachment-dir "~/Downloads"
+      mu4e-attachment-dir "~/Descargas"
       mu4e-get-mail-command "mbsync -aV"
       mu4e-headers-include-related t
       mu4e-headers-skip-duplicates t
       mu4e-hide-index-messages t
       mu4e-maildir "~/.local/mail"
-      mu4e-mu-version "1.6.9"
+      mu4e-mu-version "1.7.6"
       mu4e-update-interval 300
       mu4e-use-fancy-chars t
       mail-user-agent 'mu4e-user-agent

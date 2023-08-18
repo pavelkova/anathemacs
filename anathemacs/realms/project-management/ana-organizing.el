@@ -122,28 +122,32 @@
                                   ("Enlaces"))
            :unnarrowed t)
           ;;---DAILY NOTE - JOURNAL SUBHEADER
-;;           ("d" "[F] diario/{date} - [H] Diario" entry
-;;            "** %<%H:%M> :diario:
-;; :PROPERTIES:
-;; :CREATED: %U
-;; :END:
-;; %?"
-;;            :if-new (file+head+olp "%<%Y-%m-%d>.org"
-;;                                   "#+title: %<%Y-%m-%d>\n"
-;;                                   ("Diario"))
-;;            :unnarrowed t
-          ;;            :jump-to-captured t)
           ("d" "[F] diario/{date} - [H] Diario" entry
-           "** 00:00 :diario:
+           "** %<%H:%M> :diario:
 :PROPERTIES:
-:CREATED: %u
+:CREATED: %U
+:FINISHED: %u
+:WORDCOUNT:
 :END:
 %?"
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Diario"))
            :unnarrowed t
-           :jump-to-captured t)
+            :jump-to-captured t)
+;;           ("d" "[F] diario/{date} - [H] Diario" entry
+;;            "** 00:00 :diario:
+;; :PROPERTIES:
+;; :CREATED: %u
+;; :FINISHED:
+;; :WORDCOUNT:
+;; :END:
+;; %?"
+;;            :if-new (file+head+olp "%<%Y-%m-%d>.org"
+;;                                   "#+title: %<%Y-%m-%d>\n"
+;;                                   ("Diario"))
+;;            :unnarrowed t
+;;            :jump-to-captured t)
           ;;---DAILY NOTE - TASK SUBHEADER
           ("t" "[F] tareas/{date} - [H] Tarea" entry
            "** TODO %?
@@ -168,12 +172,27 @@ Project: [[roam:%\\1]]
            :if-new (file+head+olp "%<%Y-%m-%d>.org"
                                   "#+title: %<%Y-%m-%d>\n"
                                   ("Tareas"))
-           :unnarrowed t) ))
+           :unnarrowed t)
+          ;;---DAILY NOTE - JOURNAL SUBHEADER
+          ("N" "[F] nanowrimo/{date} - [H] NaNoWriMo" entry
+           "** Day __ :AnUnnaturalGrowth:torre:escribiendo:nanowrimo:
+:PROPERTIES:
+:CREATED: %U
+:FINISHED: %u
+:WORDCOUNT:
+:END:
+%?"
+           :if-new (file+head+olp "%<%Y-%m-%d>.org"
+                                  "#+title: %<%Y-%m-%d>\n"
+                                  ("NaNoWriMo"))
+           :unnarrowed t
+            :jump-to-captured t)
+          ))
   (org-roam-setup))
 
 (use-package org-roam-ui
   :after org-roam
-  :load-path "anathemacs/lib/org-roam-ui"
+  ;; :load-path "anathemacs/lib/org-roam-ui"
   ;; :mode ("\\.org\\'" . org-roam-ui-mode)
   :general
   (hr-leader-def
@@ -186,10 +205,6 @@ Project: [[roam:%\\1]]
 
 (use-package org-transclusion
   :load-path "anathemacs/lib/org-transclusion"
-  ;; :quelpa (org-transclusion :fetcher gitlab :repo "nobiot/org-transclusion")
-  ;; :mode ("\\.org\\'" . org-transclusion-mode)
-  ;; :bind-keymap
-  ;; ("H-r t" . org-transclusion-map)
   :general
   (hr-leader-def
     "t"      '(:ignore t :which-key "transclusion")
@@ -203,10 +218,6 @@ Project: [[roam:%\\1]]
     "t l"    'org-transclusion-make-from-link
     "t a"    'org-transclusion-add
     "t A"    'org-transclusion-add-all))
-
-;; (use-package vulpea
-;;   :init
-;;   (vulpea-setup))
 
 ;; BRAIN
 (use-package org-brain :ensure t
@@ -229,146 +240,9 @@ Project: [[roam:%\\1]]
         org-brain-include-file-entries t
         org-brain-file-entries-use-title t))
 
-;; LEDGER (finances)
-(use-package ledger-mode
-  :mode ("\\.dat\\'"
-         "\\.ledger\\'")
-  :custom (ledger-clear-whole-transactions t))
-
-(use-package flycheck-ledger
-  :after ledger-mode)
-
 ;; SPECIAL CAPTURE TEMPLATES
 (with-eval-after-load 'org
-  (setq org-capture-templates '(
-        ;; ONLINE SALES
-        ;; ("s" "Templates for online sale tracking")
-        ("c" "Add new clothing item to sales file" entry (file+headline "ventas.org" "[Inventario] Ropa")
-         "** %^{prompt|PHOTOGRAPH|LIST|CLEAN|IRON} %? :producto:ropa:
-:PROPERTIES:
-:PURCHASED:
-:PURCHASE-PRICE:
-:ITEM-WEIGHT:
-:CREATED: %U
-:CLEANED:
-:IRONED:
-:PHOTOGRAPHED:
-:MEASURED:
-:LISTED:
-:SOLD:
-:SHIPPED:
-:END:
-
-*** Description
-:PROPERTIES:
-:CATEGORY: Clothing, Shoes and Accessories > Women > Women's Clothing > 
-:BRAND:
-:SIZE:
-:MATERIAL:
-:COLOR:
-:CONDITION: %^{prompt|NWT|NWOT|Excellent pre-owned condition. No visible marks, defects, or signs of wear.|Very good pre-owned condition. No visible marks or defects. May have minor signs of wear.|Good pre-owned condition.|Pre-owned condition.} Please see photos and description prior to purchasing.
-:MSRP:
-:END:
-
-[DESCRIPTION]
-
-Measurements
-(All measurements taken with item lying flat.)
-Shoulder to shoulder:
-Armpit to armpit:
-Waist:
-Hips:
-Width at hem:
-Sleeve length:
-Inseam:
-Rise:
-Total length:
-
-*** Listing
-**** Ebay - [DATE]
-:PROPERTIES:
-:LIST-PLATFORM: Ebay
-:LIST-PLATFORM-ID:
-:LIST-STARTING-BID:
-:LIST-BIN-PRICE:
-:LIST-ACCEPT-OFFERS: true
-:LIST-SHIPPING-PRICE:
-:END:
-
-*** Sale :venta:
-:PROPERTIES:
-:SALE-PLATFORM: Ebay
-:SALE-LISTING-ID:
-:SALE-ORDER-NUMBER: 
-:SALE-TYPE: [Auction/BIN/Offer]
-:SALE-PRICE: 
-:SALE-DISCOUNT: 
-:SALE-DISCOUNT-TYPE: 
-:SALE-TOTAL-PAID: 
-:SALE-PACKING-COST: 
-:SALE-SHIPPING-COST: 
-:SALE-PLATFORM-FEE: 
-:SALE-TAX: 
-:SALE-NET: 
-:END:"
-         :jump-to-captured t
-         :prepend t
-         :empty-lines-after 1)
-        ("g" "Add new generic item to sales file" entry (file+headline "ventas.org" "[Inventario] Etcetera")
-         "** %^{prompt|PHOTOGRAPH|LIST|CLEAN} %? :producto:
-:PROPERTIES:
-:PURCHASED:
-:PURCHASE-PRICE:
-:ITEM-WEIGHT:
-:CREATED: %U
-:CLEANED:
-:PHOTOGRAPHED:
-:MEASURED:
-:LISTED:
-:SOLD:
-:SHIPPED:
-:END:
-
-*** Description
-:PROPERTIES:
-:CATEGORY: 
-:BRAND:
-:CONDITION: %^{prompt|NWT|NWOT|Excellent pre-owned condition. No visible marks or defects.|Very good pre-owned condition. No visible marks or defects. May have minor signs of use.|Good pre-owned condition.|Pre-owned condition.} Please see photos and description prior to purchasing.
-:MSRP:
-:END:
-
-[DESCRIPTION]
-
-*** Listing
-**** Ebay - [DATE]
-:PROPERTIES:
-:LIST-PLATFORM: Ebay
-:LIST-PLATFORM-ID:
-:LIST-STARTING-BID:
-:LIST-BIN-PRICE:
-:LIST-ACCEPT-OFFERS: true
-:LIST-SHIPPING-PRICE:
-:END:
-
-*** Sale :venta:
-:PROPERTIES:
-:SALE-PLATFORM: Ebay
-:SALE-LISTING-ID:
-:SALE-ORDER-NUMBER: 
-:SALE-TYPE: [Auction/BIN/Offer]
-:SALE-PRICE: 
-:SALE-DISCOUNT: 
-:SALE-DISCOUNT-TYPE: 
-:SALE-TOTAL-PAID: 
-:SALE-PACKING-COST: 
-:SALE-SHIPPING-COST: 
-:SALE-PLATFORM-FEE: 
-:SALE-TAX: 
-:SALE-NET: 
-:END:"
-         :jump-to-captured t
-         :prepend t
-         :empty-lines-after 1))))
+  (setq org-capture-templates '()))
 
 (provide 'ana-organizing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -40,13 +40,13 @@
 
 (use-package git-modes)
 
-(use-package git-gutter-fringe
-  :delight git-gutter-mode
-  :init
-  (global-git-gutter-mode)
-  :config
-  (ha-leader-def
-    "g." 'git-gutter-mode))
+;; (use-package git-gutter-fringe
+;;   :delight git-gutter-mode
+;;   :init
+;;   (global-git-gutter-mode)
+;;   :config
+;;   (ha-leader-def
+;;     "g." 'git-gutter-mode))
 
 (use-package gitlab
   :config

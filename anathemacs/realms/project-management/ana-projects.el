@@ -79,30 +79,6 @@
                   (persp-mode-projectile-bridge-mode 1))
               t)))
 
-;; (use-package perspective
-;;   :bind-keymap
-;;   ("H-a p" . perspective-map)
-;;   :bind
-;;   (("C-x b"   . persp-switch-to-buffer*)
-;;    ("C-x k"   . persp-kill-buffer*)
-;;    ("C-x C-b" . persp-ibuffer)
-;;    :map perspective-map
-;;    ("s"       . persp-switch))
-;;   :config
-;;   (persp-mode)
-;;   (setq persp-initial-frame-name "default"
-;;         persp-modestring-dividers '("⧉ " "" "::")
-;;         persp-modestring-short t
-;;         persp-mode-prefix-key "H-a p"
-;;         persp-sort 'access))
-
-;; (use-package persp-projectile
-;;   :after
-;;   (perspective projectile)
-;;   :bind
-;;   (:map perspective-map
-;;         ("o" . projectile-persp-switch-project)))
-
 (provide 'ana-projects)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
